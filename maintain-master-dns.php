@@ -9,7 +9,7 @@ $q = mysql_query('SELECT * from mirrors ORDER BY hostname');
 
 echo "; this file was automatically generated from systems/php.net.zone\n\n";
 
-echo str_replace('@SERIAL@', date('ymdHi'), file_get_contents('/local/systems/php.net.zone'));
+echo str_replace('@SERIAL@', time(), file_get_contents('/local/systems/php.net.zone'));
 
 echo "\n; mirrors\n";
 echo "\$TTL 86400 ; 1 day\n";
