@@ -7,6 +7,7 @@ for dir in *; do
     cd $dir
     rm -f .new.md5 .new.index
     echo "<html><body><ul>" > .new.index
+    touch .new.md5
     for i in *.zip *.bz2 *.gz; do
       if test -r "$i"; then
         hash=`md5sum "$i"`
