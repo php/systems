@@ -12,7 +12,8 @@ do_update ( ) {
   cp -rp $source $target
   find $target -name CVS -o -name .cvsignore | xargs rm -rf
   rm -f $target/.deps $target/ChangeLog*
-  (cd $target && ./buildconf --copy && ./genfiles) >/dev/null 2>&1
+  (cd $target && ./buildconf --force --copy && ./genfiles) >/dev/null 2>&1
+  rm -f $target/buildmk.stamp
   f=$target.tar
   tar cf $f $target
   rm -rf $target

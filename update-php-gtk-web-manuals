@@ -25,10 +25,8 @@ if [ -z "$1" -o "$1" == "-f" ]; then
 #  for a in `find $BASE $pred | cut -c 27- | sed -e 's:/.*$::' | sort | uniq`; do
    for a in `find $BASE $pred | cut -c $len- | sort | uniq`; do
     if [ -f $BASE/$a/language-defs.ent ]; then
-      if [ $a != en ]; then
         do="$do $a"
-      fi;
-    fi
+     fi
   done
 else
   do="$@"
