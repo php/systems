@@ -44,9 +44,7 @@ qa			IN CNAME ez1.php.net.
 museum	IN CNAME ez1.php.net.
 docs		IN CNAME ny1.php.net.
 
-$TTL 2560
 master	IN CNAME osu1.php.net.
-$TTL 86400 ; 1 day
 news		IN CNAME pair1.php.net.
 rsync		IN CNAME sc1.php.net.
 smarty	IN CNAME ez1.php.net.
