@@ -2,22 +2,21 @@
 ; DONT FORGET TO COMMIT ANY CHANGES YOU MAKE!!
 ; vim:ft=bindzone:
 $ORIGIN		.
-php.net		IN SOA ns1.php.net. admin.easydns.com. (
+php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 					1091550840	; serial
 					16384			;	refresh (4 hours 33 minutes 4 seconds)
 					2048		;	retry (34 minutes 8 seconds)
 					1048576	;	expire (1 week 5 days 3 hours 16 minutes 16 seconds)
 					2560		;	minimum (42 minutes 40 seconds)
 			)
-$TTL 10800 ; 3 hours
+		A	64.246.30.37
 		NS	ns1.easydns.com.
 		NS	ns2.easydns.com.
 		NS	remote1.easydns.com.
 		NS	remote2.easydns.com.
-		A	64.246.30.37
 		MX	5 sp1.php.net.
 		MX	10 smtp.oregonstate.edu.
-
+$ORIGIN php.net.
 ; Services
 
 www		CNAME php.net.
