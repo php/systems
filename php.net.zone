@@ -1,0 +1,119 @@
+; $Id$
+; DONT FORGET TO COMMIT ANY CHANGES YOU MAKE!!
+; vim:ft=bindzone:
+$ORIGIN		.
+php.net		IN SOA ns1.php.net. admin.easydns.com. (
+					1091550840	; serial
+					16384			;	refresh (4 hours 33 minutes 4 seconds)
+					2048		;	retry (34 minutes 8 seconds)
+					1048576	;	expire (1 week 5 days 3 hours 16 minutes 16 seconds)
+					2560		;	minimum (42 minutes 40 seconds)
+			)
+$TTL 10800 ; 3 hours
+		NS	ns1.easydns.com.
+		NS	ns2.easydns.com.
+		NS	remote1.easydns.com.
+		NS	remote2.easydns.com.
+		A	64.246.30.37
+		MX	5 sp1.php.net.
+		MX	10 smtp.oregonstate.edu.
+
+; Services
+
+www		CNAME php.net.
+www2		CNAME zend.php.net.
+bugs		CNAME ez1.php.net.
+
+conf			CNAME php.net.
+conf2			CNAME php.net.
+talks			CNAME php.net.
+pres			CNAME conf.php.net.
+
+cvs			CNAME pb11.php.net.
+cvsup			CNAME cvs.php.net.
+cvsweb		CNAME cvs.php.net.
+viewcvs		CNAME cvs.php.net.
+chora			CNAME cvs.php.net.
+bonsai		CNAME rn2.php.net.
+lxr		CNAME pb11.php.net.
+
+gtk		CNAME ez1.php.net.
+qa			CNAME ez1.php.net.
+
+museum	CNAME ez1.php.net.
+docs		CNAME ny1.php.net.
+
+master	CNAME rn2.php.net.
+news		CNAME pair1.php.net.
+rsync		CNAME sc1.php.net.
+smarty	CNAME ez1.php.net.
+snaps		CNAME ez1.php.net.
+snapsmaster		CNAME sc1.php.net.
+
+embed							CNAME ez1.php.net.
+irssi.embed.php.net.		CNAME ez1.php.net.
+pear		CNAME pair12.php.net.
+pecl		CNAME pear.php.net.
+*.pear.php.net.			CNAME pear.php.net.
+
+; lists operated from pair1
+lists.php.net		A 216.92.131.4
+lists.php.net		MX 10 pair1.php.net.
+
+;------------ Physical boxen
+
+; PAIR
+pair1		A 216.92.131.4
+pair2		A 216.92.131.5
+pb11		A 216.92.131.65
+pb12		A 216.92.131.66
+pair11		A 216.92.131.65
+pair12		A 216.92.131.66
+
+; RACK
+ns1		A 209.61.157.217
+rack1		A 209.61.157.217
+ 			; server1.zend.com
+zend		A 209.61.191.11
+
+; Rackshack
+rs1		A 64.246.30.37
+uses				A 64.246.30.196
+static			A 64.246.30.196
+downloads		A 64.246.30.196
+
+; Springboard (formerly Redundant Networks)
+rn1		A 12.165.50.194
+rn1a		A 12.165.50.195
+rn2		A 67.72.78.18
+rn2a		A 67.72.78.19
+rn2b		A 67.72.78.20
+
+; eZ Publish (contact: Derick)
+ez1		A 128.39.198.38
+
+sc1		A 66.225.196.49
+sp1		A 69.28.246.234
+
+; Manuel Kiessling
+wiki.gtk.php.net.		A 194.231.30.146
+
+; Misc stuff
+localhost		A 127.0.0.1
+
+; Misc PHP user groups / Mirrors ?
+chiphpug							A 66.39.34.215
+quebec							CNAME www.phpquebec.com.
+melbourne.ug.php.net.		CNAME mphpug.techsatcomputers.com.
+sydney.ug.php.net.			A 203.29.116.241
+vancouver						A 64.40.110.239
+
+; Who are these guys? 
+clan		CNAME php.atheosonline.com.
+
+; Obsolete ?
+s390		A 32.97.40.56
+usa		A 216.167.37.56 ; unreachable
+ny1		A 66.250.131.28 ; connection refused
+
+
