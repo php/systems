@@ -1,0 +1,51 @@
+php.net infrastructure contact list
+
+EV1 Servers - 
+
+a: rs1.php.net / 64.246.30.37 / www, static, talks, pres2
+
+ --  owned by EV1Servers, http://ev1servers.net/
+ --  physically located in Houston, Texas
+ --  best contact: jwendt@ev1.net (Joe Wendt, head of customer support)
+ --  second contact: <tba> (Patrick Smith, Senior System Administrator)
+ --  alternative: irc.ev1.net/#ev1servers. they should be able to help.
+ --  Linux rs1.php.net 2.4.22-rc2 #3 Fri Aug 15 11:08:54 EDT 2003 i686 unknown (redhat)
+ 
+ 
+ Pair Networks -
+ 
+ a: pb1.php.net / 216.92.131.4
+ b: pb2.php.net / 216.92.131.5
+ c: pb11.php.net / 216.92.131.65
+ d: pb12.php.net / 216.92.131.66
+ 
+   -- Pair Networks, http://www.pair.com/
+   -- physically located in Pittsburgh, Pennsylvania.
+   -- best contact is pb@pair.com (pb is pure bandwidth) -- and the name is Erik
+   -- urgent contact is urgent@pair.com -- they'll restart and so on...
+   -- all these servers are freebsd
+   
+Oregon State University
+
+a: osu1.php.net / 128.193.0.35
+
+  -- Oregon State University, http://www.osuosl.org/
+  -- physically located in Oregon
+  -- best contact is irc://irc.freenode.net/#osu-hosting 
+  -- second - scott@osuosl.org (Scott Kveton, head of open source projects)
+  -- Redhat Advanced Enterprise Server. 
+  -- Linux osu1.php.net 2.4.21-4.ELsmp #1 SMP Fri Oct 3 17:52:56 EDT 2003 i686 i686 i386 GNU/Linu
+  
+  
+ServerCentral
+
+a: sc1.php.net / 66.225.196.49 
+
+ 	-- ServerCentral, http://www.servercentral.net/
+ 	-- Physically in Chicago
+ 	-- best contact is Jordan Lowe, jordan@servercentral.net (ceo)
+ 	-- http://r1h.servercentral.net/stats/64.202.114.5_20.html << bandwidth stats
+ 	-- Redhat 7.3
+ 	-- Linux sc1.php.net 2.4.23 #2 SMP Mon Dec 8 05:24:44 CST 2003 i686 unknown
+ 	
+ 	
