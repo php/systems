@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# flush the old rulesets
+ipfw -f flush
+
+for i in `cat news-denied`;
+	do 
+	  if test $i != '216.92.131.4'; then
+		ipfw add deny tcp from $i to any
+	  fi
+done;

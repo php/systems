@@ -11,9 +11,22 @@ to 'resolve' that issue.
    cat current \@4* | cut -d " " -f1 | sort | uniq -c | sort -n
 
 For each IP you see who are clearly using more than others, then you
-can firewall them from the server by:
+should perform the following steps:
+
+	$EDITOR /local/bin/systems/news-denied
+
+	<add the offending ip to the list>
+	
+	sh /local/bin/systems/nntp-spambots
+	
+	sudo -u imajes cvs commit -m "updating news spambot list" /local/bin/systems/news-denied
+
+
+Alternatively, you can firewall them from the server by:
 
     ipfw add deny tcp from <ip> to any
+
+But be aware that this is not pervasive across reboots.
 
 if you need to remove something from the ipfw list, then use ipfw list
 and ipfw delete <rule number>
