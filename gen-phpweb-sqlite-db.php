@@ -1,5 +1,6 @@
 <?php # $Id$
 
+
 /*
 
    This is a CLI script; call it thus:
