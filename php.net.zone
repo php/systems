@@ -61,8 +61,8 @@ pecl		IN CNAME pear.php.net.
 *.pecl.php.net.			IN CNAME pecl.php.net.
 
 ; lists operated from pair1
-lists.php.net		IN A 216.92.131.4
-lists.php.net		IN MX 10 pair1.php.net.
+lists.php.net.		IN A 216.92.131.4
+lists.php.net.		IN MX 10 pair1.php.net.
 
 ;------------ Physical boxen
 
