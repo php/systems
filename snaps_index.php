@@ -83,12 +83,15 @@ function draw_directory($job)
 	while ($file = readdir($dir)) {
 		$file = $job[0] . '/' . $file;
 		
-		if (is_link($file) || !is_file($file) || !isset($job[3][get_ext($file)])) {
+		if (is_link($file) || !is_file($file) || !isset($job[3][get_ext($file)]) || strpos($file, 'dbgpack')) {
 			continue;
 		}
-		
-		if (strpos($file, 'STABLE')) {
-			$files['STABLE'][get_ts($file)][] = $file;
+		if (strpos($file, 'php4-STABLE')) {
+			$files['STABLE4'][get_ts($file)][] = $file;
+		} elseif (strpos($file, 'php4-win32-STABLE')) {
+			$files['STABLE4'][get_ts($file)][] = $file;
+		} elseif (strpos($file, 'php5-STABLE')) {
+			$files['STABLE5'][get_ts($file)][] = $file;
 		} elseif (strpos($file, '5.0')) {
 			$files['5.0'][get_ts($file)][] = $file;
 		} else {
@@ -100,8 +103,12 @@ function draw_directory($job)
 	
 	closedir($dir);
 	
-	if (isset($files['STABLE'])) {
-		krsort($files['STABLE']);
+	if (isset($files['STABLE4'])) {
+		krsort($files['STABLE4']);
+	}
+	
+	if (isset($files['STABLE5'])) {
+		krsort($files['STABLE5']);
 	}
 	
 	if (isset($files['5.0'])) {
@@ -153,12 +160,27 @@ hr {
 		<table width="100%" cellspacing=5 cellpadding=0>
 			<tr style="border-bottom: 1px solid black">
 				<td width="33%" class="HeaderBorder"><b>Stable (4.3.x-dev)</b></td>
-				<td width="34%" class="HeaderBorder"><b>Latest CVS (5.0.x-dev)</b></td>
+				<td width="33%" class="HeaderBorder"><b>Stable (5.0.x-dev)</b></td>
+				<td width="34%" class="HeaderBorder"><b>Latest CVS (5.1.x-dev)</b></td>
 			</tr>
 			<tr>
 				<td valign="top" class="cotents">
 <?php
-	foreach ($results['STABLE'] as $tm => $file) {
+	foreach ($results['STABLE4'] as $tm => $file) {
+		if (!isset($__LB_TIME['s_st'])) {
+			$__LB_TIME['s_st'] = $tm;
+		}
+		
+		sort($file);
+		echo '<b>Download:</b> <a href="'.$file[0].'">'.get_ext($file[0]).'</a> ('.print_fsize($file[0]).'M) 
+			<a href="'.$file[1].'">'.get_ext($file[1]).'</a> ('.print_fsize($file[1]).'M)
+			<br><b>Built On:</b> ' .pdate($tm). '<br><hr>';
+	}
+?>
+				</td>
+				<td valign="top" class="cotents">
+<?php
+	foreach ($results['STABLE5'] as $tm => $file) {
 		if (!isset($__LB_TIME['s_st'])) {
 			$__LB_TIME['s_st'] = $tm;
 		}
@@ -203,13 +225,13 @@ hr {
 		<table width="100%" cellspacing=5 cellpadding=0>
 			<tr style="border-bottom: 1px solid black">
 				<td width="33%" class="HeaderBorder"><b>Stable (4.3.x-dev)</b></td>
-				<td width="33%" class="HeaderBorder"><b>Stable (5.0.x-dev)</b></td>
-				<td width="33%" class="HeaderBorder"><b>Latest CVS (5.1.x-dev)</b></td>
+								     <td width="33%" class="HeaderBorder"><b>Stable (5.0.x-dev)</b> <a href="http://snaps.php.net/win32/php5.0-dbgpack-win32-latest.zip" class="cotents">Debug pack</a></td>
+				<td width="33%" class="HeaderBorder"><b>Latest CVS (5.1.x-dev)</b> <a href="http://snaps.php.net/win32/php5-dbgpack-win32-latest.zip" class="cotents">Debug pack</a></td>
 			</tr>
 			<tr>
 				<td valign="top" class="cotents">
 <?php
-	foreach ($results['STABLE'] as $tm => $file) {
+	foreach ($results['STABLE4'] as $tm => $file) {
 		if (!isset($__LB_TIME['w32_st'])) {
 			$__LB_TIME['w32_st'] = $tm;
 		}
