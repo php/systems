@@ -5,7 +5,7 @@
 # pull in details for this box
 . /local/systems/boxen/`hostname`
 
-function usage
+usage()
 {
 	echo "cron-box (monthly|weekly|daily|hourly|startup)"
 }
