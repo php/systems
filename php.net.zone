@@ -45,7 +45,7 @@ museum	IN CNAME ez1.php.net.
 docs		IN CNAME ny1.php.net.
 
 $TTL 2560
-master	IN CNAME rn2.php.net.
+master	IN CNAME osu1.php.net.
 $TTL 86400 ; 1 day
 news		IN CNAME pair1.php.net.
 rsync		IN CNAME sc1.php.net.
@@ -63,6 +63,9 @@ pecl		IN CNAME pear.php.net.
 ; lists operated from pair1
 lists.php.net.		IN A 216.92.131.4
 lists.php.net.		IN MX 10 pair1.php.net.
+
+; Ecelerity MX running on OSU1
+ecelerity	IN CNAME osu1.php.net.
 
 ;------------ Physical boxen
 

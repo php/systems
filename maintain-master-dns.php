@@ -4,7 +4,7 @@
 # Generate a complete bind zone, including the mirrors
 
 mysql_connect('localhost', 'nobody', '');
-mysql_select_db('php3');
+mysql_select_db('phpmasterdb');
 $q = mysql_query('SELECT * from mirrors ORDER BY hostname');
 
 echo "; this file was automatically generated from systems/php.net.zone\n\n";

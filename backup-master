@@ -8,7 +8,7 @@ dir=master-$date
 cd /local/backups
 mkdir $dir || exit 1
 
-mysqldump -Q php3 > $dir/php3.sql
+mysqldump -Q phpmasterdb > $dir/phpmasterdb.sql
 cp /local/httpd/conf/master-php-net.conf $dir
 
 rm -f /local/backups/master-$date.tar.bz2
