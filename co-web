@@ -15,7 +15,7 @@ for WEB in $* ; do
 	if [ ! -d /local/mirrors/$WEB ] ; then
 		cd /local/mirrors && cvs -z6 -d $CVSROOT co $WEB
 	else
-		cd /local/mirrors && cvs -z6 -d $CVSROOT -Q upd -dP 2>&1 | grep -v 'is not (any longer) pertinent'
+		cd /local/mirrors/$WEB && cvs -z6 -d $CVSROOT -Q upd -dP 2>&1 | grep -v 'is not (any longer) pertinent'
 	fi
 
 done
