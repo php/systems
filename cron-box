@@ -3,7 +3,7 @@
 # Run the cron for a box
 
 # pull in details for this box
-. /local/systems/boxen/$HOSTNAME
+. /local/systems/boxen/`hostname`
 
 function usage()
 {
@@ -11,7 +11,7 @@ function usage()
 }
 
 cd /local/systems
-PATH="/local/systems:$PATH"
+PATH="/local/systems:/usr/local/bin:$PATH"
 
 case "$1" in
 	monthly)

@@ -21,9 +21,9 @@ if ($q) {
 		}
 		
 		if (preg_match("!^\\d+\\.\\d+\\.\\d+\\.\\d+$!", $row['cname'])) {
-			$type = 'A';
+			$type = 'IN A';
 		} else {
-			$type = 'CNAME';
+			$type = 'IN CNAME';
 			if (substr($row['cname'], -1) != '.')
 				$row['cname'] .= '.';
 		}
