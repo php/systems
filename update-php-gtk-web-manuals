@@ -9,10 +9,11 @@ export TERM
 
 TMPDIR=/local/tmp
 BASE=/local/mirrors/php-gtk-doc
-
+CURDAY=`date +%a%b%d`
 dow=`date +"%w"`
 len=`echo $BASE | wc -c`
 len=`expr $len + 1`
+ENBDATE=` cat /local/mirrors/php-gtk-web/manual/en/build.log|grep starting|cut -d ' ' -f 5-|awk '{print $1 $2 $3}'`
 
 if [ -z "$1" -o "$1" == "-f" ]; then
   if [ "$dow" -ne 0 -a "$1" != "-f" ]; then
@@ -24,7 +25,9 @@ if [ -z "$1" -o "$1" == "-f" ]; then
 #  for a in `find $BASE $pred | cut -c 27- | sed -e 's:/.*$::' | sort | uniq`; do
    for a in `find $BASE $pred | cut -c $len- | sort | uniq`; do
     if [ -f $BASE/$a/language-defs.ent ]; then
-      do="$do $a"
+      if [ $a != en ]; then
+        do="$do $a"
+      fi;
     fi
   done
 else

@@ -29,7 +29,7 @@ cd $DIR || exit 1
 # work twice, so long as autoconf isn't called twice.  ..
 #
 echo ">>> running base ./configure (en) "
-./configure || exit 1
+./configure --with-lang=en || exit 1
 
 echo ">>> running ./configure --with-lang=$LANG ... "
 ./configure --with-lang=$LANG || exit 1
