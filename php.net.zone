@@ -64,6 +64,7 @@ pecl		IN CNAME pear.php.net.
 ; lists operated from pair1
 lists.php.net.		IN A 216.92.131.4
 lists.php.net.		IN MX 10 pair1.php.net.
+lists.php.net.		IN TXT "v=spf1 a mx"
 
 ; Ecelerity MX running on OSU1
 ecelerity	IN CNAME osu1.php.net.
