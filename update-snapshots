@@ -2,39 +2,33 @@
 PATH=/usr/local/bin:/usr/bin:/bin
 d=`date -u +%Y%m%d%H%M`
 t=/local/snapshots
-php5=php5-$d
-sphp5=/local/mirrors/php5
 
-cd /tmp || exit 1
+do_update ( ) {
+  prefix=$1
+  
+  source=/local/mirrors/$1
+  target=$1-$d
 
-cp -rp $sphp5 $php5
-find $php5 -name CVS -o -name .cvsignore |xargs rm -rf
-rm -f $php5/.deps $php5/ChangeLog*
-(cd $php5 && ./buildconf --copy && ./genfiles) > /dev/null 2>&1
-f=$php5.tar
-tar cf $f $php5
-rm -rf $php5
-gzip -c9 < $f > $f.gz
-bzip2 -9 < $f > $f.bz2
-rm -f $f
-mv $f* $t
-(cd $t; ln -sf $f.gz php5-latest.tar.gz; ln -sf $f.bz2 php5-latest.tar.bz2)
+  cp -rp $source $target
+  find $target -name CVS -o -name .cvsignore | xargs rm -rf
+  rm -f $target/.deps $target/ChangeLog*
+  (cd $target && ./buildconf --copy && ./genfiles) >/dev/null 2>&1
+  f=$target.tar
+  tar cf $f $target
+  rm -rf $target
+  gzip -c9 < $f > $f.gz
+  bzip2 -9 < $f > $f.bz2
+  rm -f $f
+  mv $f* $t
 
-php4=php4-STABLE-$d
-sphp4=/local/mirrors/php4-STABLE
+  (cd $t; ln -sf $f.gz $prefix-latest.tar.gz; ln -sf $f.bz2 $prefix-latest.tar.bz2)
+}
 
-cp -rp $sphp4 $php4
-find $php4 -name CVS -o -name .cvsignore|xargs rm -rf
-rm -f $php4/.deps $php4/ChangeLog*
-(cd $php4 && ./buildconf --copy && ./genfiles) > /dev/null 2>&1
-f=$php4.tar
-tar cf $f $php4
-rm -rf $php4
-gzip -c9 < $f > $f.gz
-bzip2 -9 < $f > $f.bz2
-rm -f $f
-mv $f* $t
-(cd $t; ln -sf $f.gz php4-STABLE-latest.tar.gz; ln -sf $f.bz2 php4-STABLE-latest.tar.bz2)
+cd /dev/shm || exit 1
+
+do_update php5
+do_update php4-STABLE
+do_update php4
 
 # purge files which are older than 12 hours
 find $t -name \*tar\* -mmin +540|xargs rm -rf

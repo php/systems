@@ -15,7 +15,7 @@ len=`echo $BASE | wc -c`
 len=`expr $len + 1`
 
 if [ -z "$1" -o "$1" == "-f" ]; then
-  if [ "$dow" -ne 0 -a "$1" != "-f" ]; then
+  if [ "$dow" -ne 5 -a "$1" != "-f" ]; then
     pred="-mtime 1"
   else
     pred="-maxdepth 1 -type d"
