@@ -26,33 +26,33 @@ www		IN CNAME php.net.
 www2		IN CNAME zend.php.net.
 bugs		IN CNAME ez1.php.net.
 
-conf			IN CNAME php.net.
-conf2			IN CNAME php.net.
-talks			IN CNAME php.net.
-pres			IN CNAME conf.php.net.
+conf		IN CNAME php.net.
+conf2		IN CNAME php.net.
+talks		IN CNAME php.net.
+pres		IN CNAME conf.php.net.
 
-cvs			IN CNAME pb11.php.net.
-cvsup			IN CNAME cvs.php.net.
+cvs		IN CNAME pb11.php.net.
+cvsup		IN CNAME cvs.php.net.
 cvsweb		IN CNAME cvs.php.net.
 viewcvs		IN CNAME cvs.php.net.
-chora			IN CNAME cvs.php.net.
+chora		IN CNAME cvs.php.net.
 bonsai		IN CNAME rn2.php.net.
 lxr		IN CNAME pb11.php.net.
 
 gtk		IN CNAME ez1.php.net.
-qa			IN CNAME ez1.php.net.
+qa		IN CNAME ez1.php.net.
 
-museum	IN CNAME ez1.php.net.
-docs		IN CNAME ny1.php.net.
+museum		IN CNAME ez1.php.net.
+docs		IN CNAME ez1.php.net.
 
-master	IN CNAME osu1.php.net.
+master		IN CNAME osu1.php.net.
 news		IN CNAME pair1.php.net.
 rsync		IN CNAME sc1.php.net.
-smarty	IN CNAME ez1.php.net.
+smarty		IN CNAME ez1.php.net.
 snaps		IN CNAME ez1.php.net.
-snapsmaster		IN CNAME sc1.php.net.
+snapsmaster	IN CNAME sc1.php.net.
 
-embed							IN CNAME ez1.php.net.
+embed		IN CNAME ez1.php.net.
 irssi.embed.php.net.		IN CNAME ez1.php.net.
 pear		IN CNAME pair12.php.net.
 pecl		IN CNAME pear.php.net.
@@ -86,8 +86,8 @@ rack1		IN A 209.61.157.217
 zend		IN A 209.61.191.11
 
 ; EV1
-rs1		IN A 64.246.30.37
-uses				IN A 64.246.30.196
+rs1			IN A 64.246.30.37
+uses			IN A 64.246.30.196
 static			IN A 64.246.30.196
 downloads		IN A 64.246.30.196
 
@@ -111,17 +111,12 @@ wiki.gtk.php.net.		IN A 194.231.30.146
 localhost		IN A 127.0.0.1
 
 ; Misc PHP user groups / Mirrors ?
-chiphpug							IN A 66.39.34.215
-quebec							IN CNAME www.phpquebec.com.
-melbourne.ug.php.net.		IN CNAME mphpug.techsatcomputers.com.
+chiphpug				IN A 66.39.34.215
+quebec					IN CNAME www.phpquebec.com.
+melbourne.ug.php.net.			IN CNAME mphpug.techsatcomputers.com.
 sydney.ug.php.net.			IN A 203.29.116.241
-vancouver						IN A 64.40.110.239
+vancouver				IN A 64.40.110.239
 
-; Who are these guys? 
-clan		IN CNAME php.atheosonline.com.
 
 ; Obsolete ?
 s390		IN A 32.97.40.56
-usa		IN A 216.167.37.56 ; unreachable
-ny1		IN A 66.250.131.28 ; connection refused
-
