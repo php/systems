@@ -44,7 +44,7 @@ museum		IN CNAME ez1.php.net.
 docs		IN CNAME ez1.php.net.
 
 ; phpdoc stuff
-doc					IN CNAME docs.php.mirrors.powertrip.co.za.
+doc			IN CNAME docs.php.mirrors.powertrip.co.za.
 *.doc.php.net.		IN CNAME docs.php.mirrors.powertrip.co.za.
 
 master		IN CNAME osu1.php.net.
@@ -55,7 +55,7 @@ snaps		IN CNAME ez1.php.net.
 snapsmaster	IN CNAME sc1.php.net.
 
 embed		IN CNAME ez1.php.net.
-irssi.embed.php.net.		IN CNAME ez1.php.net.
+irssi.embed	IN CNAME ez1.php.net.
 pear		IN CNAME pair12.php.net.
 pecl		IN CNAME pear.php.net.
 *.pear.php.net.			IN CNAME pear.php.net.
@@ -84,9 +84,8 @@ pair11		IN A 216.92.131.65
 pair12		IN A 216.92.131.66
 
 ; RACK
-ns1		IN A 209.61.157.217
 rack1		IN A 209.61.157.217
- 			; server1.zend.com
+		; server1.zend.com
 zend		IN A 209.61.191.11
 
 ; EV1
@@ -96,11 +95,7 @@ static			IN A 64.246.30.196
 downloads		IN A 64.246.30.196
 
 ; Springboard (formerly Redundant Networks)
-rn1		IN A 12.165.50.194
-rn1a		IN A 12.165.50.195
-rn2		IN A 67.72.78.18
-rn2a		IN A 67.72.78.19
-rn2b		IN A 67.72.78.20
+rn2		IN A 216.27.81.34
 
 ; eZ Publish (contact: Derick)
 ez1		IN A 128.39.198.38
@@ -124,7 +119,7 @@ quebec					IN CNAME www.phpquebec.com.
 melbourne.ug.php.net.			IN CNAME mphpug.techsatcomputers.com.
 sydney.ug.php.net.			IN A 203.29.116.241
 vancouver				IN A 64.40.110.239
-
+calgary.ug.php.net.			IN A 142.179.217.146
 
 ; Obsolete ?
 s390		IN A 32.97.40.56
