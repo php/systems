@@ -1,2 +1,16 @@
 #!/bin/sh
-CFLAGS="-O2 -march=pentium" ./configure --prefix=/local/httpd --enable-module=so --enable-module=auth_digest
+##
+##  config.status -- APACI auto-generated configuration restore script
+##
+##  Use this shell script to re-run the APACI configure script for
+##  restoring your configuration. Additional parameters can be supplied.
+##
+
+CFLAGS="-O2 -march=i686 -fomit-frame-pointer" \
+./configure \
+"--with-layout=Apache" \
+"--prefix=/local/httpd" \
+"--enable-module=so" \
+"--enable-module=auth_digest" \
+"--enable-module=rewrite" \
+"$@"
