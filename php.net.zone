@@ -108,6 +108,10 @@ ez1		IN A 128.39.198.38
 sc1		IN A 66.225.196.49
 sp1		IN A 69.28.246.234
 
+; DomainKeys
+
+mx._domainkey.php.net. IN TXT "t=y; g=; k=rsa; p=MHwwDQYJKoZIhvcNAQEBBQADawAwaAJhANg8QYJB/6O2nGfNk1td5uRl1MMqETEAv/Jyv3wGPpoW7drSEVa7RsuZBgut/koWyJIpe0TWQRSSk+N6E0lNxkMwZVBSDU+HOpeO4+khXWtsq9Mv9BsAbPbf8VrgP5VsLQIDAQAB"
+
 ; Manuel Kiessling
 wiki.gtk.php.net.		IN A 194.231.30.146
 
