@@ -23,10 +23,10 @@ cd $DIR || exit 1
 echo ">>> running ./configure --with-lang=$LANG ... "
 $PHPDOC/configure --with-lang=$LANG --with-zendapi=/local/mirrors/ZendAPI || exit 1
 
-if [ "$LANG" != "en" ]; then
-  echo ">>> running make revcheck.html and copying to revcheck.html.gz ... "
-  make revcheck.html && gzip -c -9 revcheck.html > $DEST/revcheck.html.gz
-fi
+#if [ "$LANG" != "en" ]; then
+#  echo ">>> running make revcheck.html and copying to revcheck.html.gz ... "
+#  make revcheck.html && gzip -c -9 revcheck.html > $DEST/revcheck.html.gz
+#fi
 
 echo ">>> running make test_man_gen ... "
 make test_man_gen || exit 1

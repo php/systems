@@ -37,8 +37,8 @@ echo "<?php \$LAST_UPDATED=$DATE; ?>" \
 
 rm -rf /local/mirrors/phpweb/manual/howto
 
-cp -a /local/tmp/dochowto \
-     /local/mirrors/phpweb/manual/howto
+#cp -a /local/tmp/dochowto \
+#     /local/mirrors/phpweb/manual/howto
 
 #cp /local/tmp/GeoIP.dat \
 #    /local/mirrors/phpweb/backend
