@@ -1,0 +1,14 @@
+#!/bin/sh
+# $Id$
+# Do whatever we need to do to run the "ecelerity" facilities
+
+if test ! -d /var/log/ecelerity/reports ; then
+	mkdir /var/log/ecelerity/reports
+	chown root:nobody /var/log/ecelerity/reports
+	chmod g+srx /var/log/ecelerity/reports
+fi
+
+/opt/ecelerity/bin/ec_rotate
+/opt/ecelerity/bin/ec_stats -l /var/log/ecelerity/mainlog.ec.1.bz2 -r /var/log/ecelerity/rejectlog.ec.1.bz2 >/dev/null 2>&1
+
+
