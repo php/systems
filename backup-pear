@@ -1,0 +1,19 @@
+#!/bin/sh
+# $Id$
+
+# Backup the PEAR/PECL services
+
+basedir=/usr/local/backups
+dir=pear-$date
+
+cd $basedir
+mkdir $dir || exit 1
+mkdir $dir/packages || exit 1
+
+nice -n 15 mysqldump --quick -u backup --password=backup pear > $dir/pear.sql
+nice -n 15 cp -r /var/lib/pear/*.tgz $dir/packages
+
+rm -f $basedir/$dir.tar.bz2
+tar cf - $dir | bzip2 -9 > $basedir/$dir.tar.bz2
+
+rm -rf $dir
