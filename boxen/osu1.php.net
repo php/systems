@@ -3,6 +3,6 @@
 # Service configuration for osu1.php.net
 
 HOURLY=maintain-master
-DAILY="backup-master backup-ecelerity maintain-ecelerity"
+DAILY="backup-master backup-ecelerity maintain-ecelerity prune-backups"
 WEEKLY=maintain-master
 

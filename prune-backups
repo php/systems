@@ -1,0 +1,4 @@
+#!/bin/sh
+# $Id$
+# Backup pruning
+find /local/backups/ -mtime +7 -exec rm  {} \;
