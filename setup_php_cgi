@@ -1,0 +1,11 @@
+#! /bin/sh
+#
+# Created by configure
+
+"./configure" \
+"--with-mysql" \
+"--enable-debug" \
+"--enable-inline-optimization" \
+"--with-gd" \
+"--with-zlib" \
+"$@"

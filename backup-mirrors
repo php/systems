@@ -1,0 +1,7 @@
+#!/bin/sh
+
+date=`date +"%Y%m%d"`
+
+cd /local/mirror
+
+tar cf - . | bzip2 -9 > /local/backup/mirrors.$date.tar.bz2

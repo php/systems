@@ -1,0 +1,2 @@
+#!/bin/sh
+CFLAGS="-O2 -march=pentium" ./configure --prefix=/local/httpd --enable-module=so --enable-module=auth_digest

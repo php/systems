@@ -1,0 +1,15 @@
+#!/bin/sh
+
+FILE=~alias/cvsusers.txt
+
+wget -q -T 30 -O $FILE~ http://master.php.net/fetch/cvsforwarding.php?token=$TOKEN
+
+if test $? -eq 0 -a -s $FILE~; then
+  mv $FILE~ $FILE
+else
+  echo failed to update $FILE
+  rm -f $FILE~
+  exit 1
+fi
+
+setforward ~alias/cvsusers.cdb ~alias/cvsusers.tmp < ~alias/cvsusers.txt

@@ -1,0 +1,18 @@
+#! /bin/sh
+
+. common
+
+ucspi=ucspi-tcp-0.88
+
+wget http://cr.yp.to/ucspi-tcp/$ucspi.tar.gz
+
+wget http://qmail.wwwservice.to/ucspi-rss.diff
+
+tar xfz $ucspi.tar.gz
+cd $ucspi
+echo "gcc $CFLAGS">conf-cc
+patch < ../ucspi-rss.diff
+make
+make setup
+cd ..
+

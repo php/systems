@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# lynx is dumb.
+TERM=vt100
+export TERM
+
+# this rebuilds all of the manuals on sunday, or just the ones
+# that have changed in the last day on other days
+
+TMPDIR=/local/tmp
+BASE=/local/mirrors/peardoc
+
+dow=`date +"%w"`
+len=`echo $BASE | wc -c`
+len=`expr $len + 1`
+
+if [ -z "$1" -o "$1" == "-f" ]; then
+  if [ "$dow" -ne 0 -a "$1" != "-f" ]; then
+    pred="-mtime 1"
+  else
+    pred="-maxdepth 1 -type d"
+  fi
+
+#  for a in `find $BASE $pred | cut -c 23- | sed -e 's:/.*$::' | sort | uniq`; do
+   for a in `find $BASE $pred | cut -c $len- | sort | uniq`; do
+    if [ -f $BASE/$a/language-defs.ent ]; then
+      do="$do $a"
+    fi
+  done
+else
+  do="$@"
+fi
+
+if test -z "$do"; then
+  exit
+fi
+
+echo $do | mail -s "rebuilding peardoc: $do" imajes@php.net
+
+for a in $do; do
+  mkdir -p /local/mirrors/pearweb/public_html/manual/$a
+  /local/bin/build-pear-manual /local/mirrors/peardoc \
+    /local/mirrors/pearweb/public_html/manual/$a $a $TMPDIR/build-pear-$a \
+    /local/mirrors/pearweb/public_html/distributions/manual \
+    > $TMPDIR/build-pear-$a.log 2>&1
+  mv $TMPDIR/build-pear-$a.log /local/mirrors/pearweb/public_html/manual/$a/build.log
+  rm -rf $TMPDIR/build-pear-$a
+done

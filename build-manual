@@ -1,0 +1,55 @@
+#!/bin/sh
+
+PATH=/usr/local/bin:$PATH
+
+if [ $# != 5 ]; then
+  echo usage: $0 phpdocdirectory destdirectory langcode workdirectory destdirectory2
+  exit 1
+fi
+
+PHPDOC=$1
+DEST=$2
+LANG=$3
+DIR=$4
+DEST2=$5
+
+echo -n ">>> starting build at: "
+date
+
+echo ">>> making work directory ... "
+mkdir $DIR
+cd $DIR || exit 1
+
+echo ">>> running ./configure --with-lang=$LANG ... "
+$PHPDOC/configure --with-lang=$LANG --with-zendapi=/local/mirrors/ZendAPI || exit 1
+
+if [ "$LANG" != "en" ]; then
+  echo ">>> running make revcheck.html and copying to revcheck.html.gz ... "
+  make revcheck.html && gzip -c -9 revcheck.html > $DEST/revcheck.html.gz
+fi
+
+echo ">>> running make test_man_gen ... "
+make test_man_gen || exit 1
+
+echo ">>> running make mirror-files ... "
+make mirror-files || exit 1
+if [ ! -f html/index.html -o ! -f php/index.php ]; then
+  echo make failed, even though it claimed to work
+  exit 1
+fi
+
+echo ">>> running make extra-mirror-files ... "
+make extra-mirror-files
+
+echo ">>> copying php version ... "
+(cd php; rsync -rlpvC --delete --delete-after --exclude build.log.gz --exclude revcheck.html.gz . $DEST) || exit 1
+(cd $DEST; ln -sf index.php manual.php) || exit 1
+
+echo ">>> copying standalone versions ... "
+rsync -rlpvC *.bz2 *.pdb $DEST2 || exit 1
+
+echo -n ">>> finished build at: "
+date
+
+echo ">>> success!"
+exit 0

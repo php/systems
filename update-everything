@@ -1,0 +1,5 @@
+#!/bin/sh
+
+/local/bin/update-repository && \
+/local/bin/update-mirrors && \
+/local/bin/update-phpweb-backend

@@ -1,0 +1,3 @@
+#!/bin/sh
+/local/bin/backup-repository
+/local/bin/backup-mirrors

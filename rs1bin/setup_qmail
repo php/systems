@@ -1,0 +1,54 @@
+#! /bin/sh
+
+. common
+
+qmail=qmail-1.03
+
+wget http://cr.yp.to/software/$qmail.tar.gz
+wget http://qmail.null.dk/big-todo.103.patch
+wget http://www.qmail.org/big-concurrency.patch
+wget http://www.ckdhr.com/ckd/qmail-103.patch
+
+rm -rf $qmail
+tar xfz $qmail.tar.gz
+cd $qmail
+patch -p1 < ../big-todo.103.patch
+patch -p1 < ../big-concurrency.patch
+patch -p1 < ../qmail-103.patch
+echo "gcc $CFLAGS">conf-cc
+echo 500 > conf-spawn
+make
+make setup
+
+mkdir -p /var/log/qmail /var/log/qmail-smtpd
+
+cd /etc
+rm -rf qmail qmail-smtpd
+mkdir -p /etc/qmail /etc/qmail-smtpd/log
+
+cat >qmail/run<<X
+#! /bin/sh
+
+ulimit -n 16384
+
+exec qmail-start ./Mailbox multilog t s1000000 n20 /var/log/qmail
+X
+
+cat >qmail-smtpd/run<<X
+#! /bin/sh
+
+exec tcpserver -vHR -u `id -u qmaild` -g `id -g qmaild` 0 25 \\
+rblsmtpd -b -r relays.mail-abuse.org -r rbl.maps.vix.com \\
+qmail-smtpd 2>&1
+X
+
+cat >qmail-smtpd/log/run<<X
+#! /bin/sh
+
+exec multilog t s1000000 n20 /var/log/qmail-smtpd
+X
+
+chmod +x qmail/run qmail-smtpd/run qmail-smtpd/log/run
+chmod +t qmail-smtpd
+
+

@@ -1,0 +1,9 @@
+#!/bin/sh
+CFLAGS="-O2 -march=pentiumpro" \
+./configure \
+"--with-layout=Apache" \
+"--prefix=/local/httpd" \
+"--enable-module=so" \
+"--enable-module=rewrite" \
+"--enable-module=auth_digest" \
+"$@"

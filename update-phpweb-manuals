@@ -1,0 +1,51 @@
+#!/bin/sh
+
+# lynx is dumb.
+TERM=vt100
+export TERM
+
+# this rebuilds all of the manuals on sunday, or just the ones
+# that have changed in the last day on other days
+
+TMPDIR=/local/tmp
+BASE=/local/mirrors/phpdoc
+
+dow=`date +"%w"`
+len=`echo $BASE | wc -c`
+len=`expr $len + 1`
+
+if [ -z "$1" -o "$1" == "-f" ]; then
+  if [ "$dow" -ne 0 -a "$1" != "-f" ]; then
+    pred="-mtime 1"
+  else
+    pred="-maxdepth 1 -type d"
+  fi
+
+  for a in `find $BASE $pred | cut -c $len- | sort | uniq`; do
+    if [ -f $BASE/$a/language-defs.ent ]; then
+      do="$do $a"
+    fi
+  done
+else
+  do="$@"
+fi
+
+if test -z "$do"; then
+  exit
+fi
+
+echo $do | mail -s "rebuilding phpdoc: $do" imajes@php.net
+
+for a in $do; do
+  if [ -d /local/mirrors/phpdoc/$a ]; then
+    mkdir -p /local/mirrors/phpweb/manual/$a
+    /local/bin/build-manual /local/mirrors/phpdoc \
+      /local/mirrors/phpweb/manual/$a $a $TMPDIR/build-$a \
+      /local/mirrors/phpweb/distributions/manual \
+      > $TMPDIR/build-$a.log 2>&1
+    grep -v '^Warning: Unknown character' $TMPDIR/build-$a.log | \
+     gzip -c -9 > /local/mirrors/phpweb/manual/$a/build.log.gz
+    rm -f /local/mirrors/phpweb/manual/$a/build.log
+    rm -rf $TMPDIR/build-$a $TMPDIR/build-$a.log
+  fi
+done

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cvsup -1 -s /local/etc/php.cvsup  > /dev/null
+
+find /local/repository -name '#cvs.lock' | xargs rm -rf

@@ -1,0 +1,51 @@
+#!/usr/bin/perl
+
+# this bounces some easily-recognized spam messages based on some simple
+# patterns gleaned from various spam messages. nearly all of them are fairly
+# specific, so false positives should be rare.
+
+sub bounce {
+  print @_, " (bounce.)";
+  exit 100;
+}
+
+while (<STDIN>) {
+  bounce("you got infected with a virus. use a real mail program.")
+    if m/I send you this file in order to have your advice/;
+  bounce("you got infected with a virus. use a real mail program.")
+    if m/Te mando este archivo para que me des tu punto de vista/;
+  bounce("sorry, it is still considered spam.")
+    if m/considered spam as long as/;
+  bounce("no matter what jody thinks, we don't like spam.")
+    if m/grumbled to Jody about receiving/;
+  bounce("spam not accepted here, even for products seen on tv.")
+    if m/as seen on ((tv|television)|national (television|tv)|oprah)/i;
+  bounce("you say it isn't spam, i say it is.")
+    if m/This is not (a )?S(PAM|pam)/;
+  bounce("sorry, your reading of title 18 is simply wrong.")
+    if m/title 18, ?section/i;
+  bounce("no, the 105th US congress passed no such law. go away.")
+    if m/105th US Congress/;
+  bounce("you honor all remove requests? honor this bounce.")
+    if m/honor (ALL|all) remove req/;
+  bounce("all remove requests are honored? honor this bounce.")
+    if m/All REMOVE requests (are )?AUTOMATICALLY honored upon receipt/;
+  bounce("i'm not in debt. spam someone else.")
+    if m/^Subject: get out of debt.$/i;
+  bounce("i don't have a mortgage. don't spam me.")
+    if m/^Subject: mortgage rates are low/i;
+  bounce("you honor all remove requests? honor this bounce.")
+    if m/we honor all remove requests/i;
+  bounce("i don't need a merchant account, so don't spam me!.")
+    if m/^Subject: Low Cost Merchant Accounts/;
+  bounce("no, as a matter of fact, i dont.")
+    if m/^Subject: Do you owe money\?/;
+  bounce("spam not accepted here.")
+    if m/^Subject: Florida-Vacation\/Cruise Getaway Sweepstakes/;
+  bounce("go away.")
+    if m/www\.SeekerCenter\.net/i;
+  bounce("go away.")
+    if m/TO BE REMOVED FROM FUTURE MAILING/;
+  bounce("think you'll fool me with a random string in the subject?")
+    if m/^Subject: .+? {10}\[.+?\]/;
+}

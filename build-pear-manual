@@ -1,0 +1,48 @@
+#!/bin/sh
+
+PATH=/usr/local/bin:$PATH
+
+if [ $# != 5 ]; then
+  echo usage: $0 phpdocdirectory destdirectory langcode workdirectory destdirectory2
+  exit 1
+fi
+
+PHPDOC=$1
+DEST=$2
+LANG=$3
+DIR=$4
+DEST2=$5
+
+echo -n ">>> starting build at: "
+date
+
+echo ">>> making work directory ... "
+cp -r $PHPDOC $DIR
+cd $DIR || exit 1
+
+echo ">>> running ./configure --with-lang=$LANG ... "
+./configure --with-lang=$LANG || exit 1
+
+echo ">>> running make html ... "
+make html || exit 1
+
+echo ">>> running make phpweb ... "
+make pearweb || exit 1
+
+echo ">>> running make mirror-files ... "
+make mirror-files || exit 1
+
+echo ">>> copying html version ... "
+rsync -rlpvC --delete --delete-after html/ $DEST/html/ || exit 1
+
+echo ">>> copying php version ... "
+(cd pearweb; rsync -rlpvC --delete --delete-after --exclude build.log --exclude html . $DEST) || exit 1
+
+echo ">>> copying standalone versions ... "
+rsync -rlpvC *.gz *.bz2 *.zip $DEST2 || exit 1
+
+echo -n ">>> finished build at: "
+date
+
+echo ">>> success!"
+exit 0

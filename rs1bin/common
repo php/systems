@@ -1,0 +1,10 @@
+set -x
+
+CFLAGS="-O2 -march=pentiumpro"
+export CFLAGS
+
+builddir=/tmp/build
+
+rm -rf $builddir
+mkdir -p $builddir
+cd $builddir

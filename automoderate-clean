@@ -1,0 +1,38 @@
+#!/usr/bin/perl -w
+use strict;
+
+$ENV{PATH} = '/var/qmail/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin';
+
+my $SA = '/var/qmail/alias/self-approved';
+
+=pod
+
+this looks at the ezmlm subscription log, and automatically
+unsubscribes anyone lingering after eight days. the mail they sent to
+trigger the confirmation would have bounced by now.
+
+=cut
+
+my %sender;
+open LOG, "$SA/pending/Log"
+  or die "unable to open pending log: $!\n";
+while (<LOG>) {
+  chomp;
+  my ($time,$action,$sender) = split / /, $_, 3;
+  next unless $time && $action && $sender;
+  if ($action eq '+manual') {
+    $sender{$sender} = $time;
+  }
+  elsif ($action eq '-manual') {
+    delete $sender{$sender};
+  }
+}
+close LOG;
+
+my $now = time();
+foreach (keys %sender) {
+  if ($sender{$_} < $now - 8*24*3600) {
+    system "ezmlm-unsub",
+      "$SA/pending", $_;
+  }
+}

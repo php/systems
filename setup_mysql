@@ -1,0 +1,9 @@
+#!/bin/sh
+
+CXX=gcc \
+CXXFLAGS="-O2 -march=pentiumpro -felide-constructors -fno-exceptions -fno-rtti" \
+CFLAGS="-O2 -march=pentiumpro" \
+./configure \
+--prefix=/local/mysql \
+--without-perl \
+--without-bench

@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# lynx is dumb.
+TERM=vt100
+export TERM
+
+# this rebuilds all of the manuals on sunday, or just the ones
+# that have changed in the last day on other days
+
+TMPDIR=/local/tmp
+BASE=/local/mirrors/php-gtk-doc
+
+dow=`date +"%w"`
+len=`echo $BASE | wc -c`
+len=`expr $len + 1`
+
+if [ -z "$1" -o "$1" == "-f" ]; then
+  if [ "$dow" -ne 0 -a "$1" != "-f" ]; then
+    pred="-mtime 1"
+  else
+    pred="-maxdepth 1 -type d"
+  fi
+
+#  for a in `find $BASE $pred | cut -c 27- | sed -e 's:/.*$::' | sort | uniq`; do
+   for a in `find $BASE $pred | cut -c $len- | sort | uniq`; do
+    if [ -f $BASE/$a/language-defs.ent ]; then
+      do="$do $a"
+    fi
+  done
+else
+  do="$@"
+fi
+
+if test -z "$do"; then
+  exit
+fi
+
+echo $do | mail -s "rebuilding php-gtk-doc: $do" imajes@php.net
+
+for a in $do; do
+  mkdir -p /local/mirrors/php-gtk-web/manual/$a
+  /local/bin/build-php-gtk-manual /local/mirrors/php-gtk-doc \
+    /local/mirrors/php-gtk-web/manual/$a $a $TMPDIR/build-gtk-$a \
+    /local/mirrors/php-gtk-web/distributions/manual \
+    > $TMPDIR/build-gtk-$a.log 2>&1
+  mv $TMPDIR/build-gtk-$a.log /local/mirrors/php-gtk-web/manual/$a/build.log
+  rm -rf $TMPDIR/build-gtk-$a
+done
+

@@ -1,0 +1,40 @@
+#! /bin/sh
+PATH=/usr/local/bin:/usr/bin:/bin
+d=`date -u +%Y%m%d%H%M`
+t=/local/snapshots
+php4=php4-$d
+sphp4=/local/mirrors/php4
+
+cd /tmp || exit 1
+
+cp -rp $sphp4 $php4
+find $php4 -name CVS -o -name .cvsignore |xargs rm -rf
+rm -f $php4/.deps $php4/ChangeLog*
+(cd $php4 && ./buildconf --copy && ./genfiles) > /dev/null 2>&1
+f=$php4.tar
+tar cf $f $php4
+rm -rf $php4
+gzip -c9 < $f > $f.gz
+bzip2 -9 < $f > $f.bz2
+rm -f $f
+mv $f* $t
+(cd $t; ln -sf $f.gz php4-latest.tar.gz; ln -sf $f.bz2 php4-latest.tar.bz2)
+
+php3=php4-STABLE-$d
+sphp3=/local/mirrors/php4-STABLE
+
+cp -rp $sphp3 $php3
+find $php3 -name CVS -o -name .cvsignore|xargs rm -rf
+rm -f $php3/.deps $php3/ChangeLog*
+(cd $php3 && ./buildconf --copy && ./genfiles) > /dev/null 2>&1
+f=$php3.tar
+tar cf $f $php3
+rm -rf $php3
+gzip -c9 < $f > $f.gz
+bzip2 -9 < $f > $f.bz2
+rm -f $f
+mv $f* $t
+(cd $t; ln -sf $f.gz php4-STABLE-latest.tar.gz; ln -sf $f.bz2 php4-STABLE-latest.tar.bz2)
+
+# purge files which are older than 12 hours
+find $t -name \*tar\* -mmin +540|xargs rm -rf
