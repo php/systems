@@ -11,7 +11,7 @@ to 'resolve' that issue.
    cat current \@4* | cut -d " " -f1 | sort | uniq -c | sort -n
 
 For each IP you see who are clearly using more than others, then you
-should perform the following steps:
+should perform the following steps, as root (environment sets cvs vars):
 
 	$EDITOR /local/bin/systems/news-denied
 
@@ -19,7 +19,7 @@ should perform the following steps:
 	
 	sh /local/bin/systems/nntp-spambots
 	
-	sudo -u imajes cvs commit -m "updating news spambot list" /local/bin/systems/news-denied
+	cvs commit -m "updating news spambot list" /local/bin/systems/news-denied
 
 
 Alternatively, you can firewall them from the server by:
