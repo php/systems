@@ -7,7 +7,7 @@
 
 function usage()
 {
-	echo "cron-box (monthly|weekly|daily|hourly)"
+	echo "cron-box (monthly|weekly|daily|hourly|startup)"
 }
 
 cd /local/systems
@@ -30,6 +30,10 @@ case "$1" in
 		WHAT=$HOURLY
 		date=`date +"%Y%m%d-%H:00"`
 		 ;;
+	startup)
+		WHAT=$BOOT
+		date=`date +"%Y%m%d"`
+		;;
 	*)
 				usage
 				exit 1
