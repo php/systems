@@ -71,7 +71,8 @@ ecelerity	IN CNAME osu1.php.net.
 ;------------ Physical boxen
 
 ; Oregon State Uni
-osu1		IN A 128.193.0.35
+;osu1		IN A 128.193.0.35
+osu1		IN A 140.211.166.39
 
 ; PAIR
 pair1		IN A 216.92.131.4
