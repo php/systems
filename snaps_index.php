@@ -134,7 +134,7 @@ hr {
 //-->
 </style>
 </head>
-<body bgcolor="white" text="black" link="blue" vlink="navy" alink="navy">
+<body>
 <div align="center">
 <h1>PHP Snapshots</h1>
 <table width="100%" border=0>
