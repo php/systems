@@ -3,12 +3,12 @@ to 'resolve' that issue.
 
    -- Login and su/sudo on lists.php.net
 
-   -- cd /var/log/news
-   -- cat current | cut -d " " -f1 | sort | uniq -c |s ort -n
+   cd /var/log/news
+   cat current | cut -d " " -f1 | sort | uniq -c | sort -n
 
    or, if you want to look over time:
 
-   -- c: cat current \@4* | cut -d " " -f1 | sort | uniq -c | sort -n
+   cat current \@4* | cut -d " " -f1 | sort | uniq -c | sort -n
 
 For each IP you see who are clearly using more than others, then you
 can firewall them from the server by:
