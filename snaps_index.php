@@ -4,7 +4,7 @@
 /* Rules */
 $__RULES = array(
 	'source'	=> array('.', 2, 2, array('.gz'=>1, '.bz2'=>1)),
-	'win32'		=> array('win32', 8, 4, array('.zip'=>1))
+	'win32'		=> array('win32', 4, 4, array('.zip'=>1))
 );
 
 $__CTIME = time();
@@ -90,11 +90,9 @@ function draw_directory($job)
 		if (strpos($file, 'STABLE')) {
 			$files['STABLE'][get_ts($file)][] = $file;
 		} else {
-		  if (strpos($file, 'php5')) {
-		    $files['UNSTABLE'][get_ts($file)][] = $file;
-		  } else {
-		    $files['UNSTABLE4'][get_ts($file)][] = $file;
-                  }
+			if (strpos($file, 'php5')) {
+				$files['UNSTABLE'][get_ts($file)][] = $file;
+			}
 		}	
 	}
 	
@@ -106,9 +104,6 @@ function draw_directory($job)
 	
 	if (isset($files['UNSTABLE'])) {
 		krsort($files['UNSTABLE']);
-	}
-	if (isset($files['UNSTABLE4'])) {
-		krsort($files['UNSTABLE4']);
 	}
 
 	return $files;
@@ -152,7 +147,6 @@ hr {
 		<table width="100%" cellspacing=5 cellpadding=0>
 			<tr style="border-bottom: 1px solid black">
 				<td width="33%" class="HeaderBorder"><b>Stable (4.3.x-dev)</b></td>
-				<td width="33%" class="HeaderBorder"><b>Latest CVS (4.5.x-dev)</b></td>
 				<td width="34%" class="HeaderBorder"><b>Latest CVS (5.0.x-dev)</b></td>
 			</tr>
 			<tr>
@@ -171,19 +165,6 @@ hr {
 ?>
 				</td>
 				
-				<td valign="top" class="cotents">
-<?php
-	foreach ($results['UNSTABLE4'] as $tm => $file) {
-		if (!isset($__LB_TIME['s_cv'])) {
-			$__LB_TIME['s_cv'] = $tm;
-		}
-		sort($file);
-		echo '<b>Download:</b> <a href="'.$file[0].'">'.get_ext($file[0]).'</a> ('.print_fsize($file[0]).'M) 
-			<a href="'.$file[1].'">'.get_ext($file[1]).'</a> ('.print_fsize($file[1]).'M)
-			<br><b>Built On:</b> ' .pdate($tm). '<br><hr>';
-	}
-?>				
-				</td>
 				<td valign="top" class="cotents">
 <?php
 	foreach ($results['UNSTABLE'] as $tm => $file) {
@@ -223,6 +204,16 @@ hr {
 		echo '<a href="'.$file[0].'">Download</a> ('.print_fsize($file[0]).'M)<br><b>Built On:</b> ' .pdate($tm). '<br><hr>';
 	}
 ?>
+		<table border=0>
+		<tr><td valign="middle">
+		<a href="win32/PECL_STABLE/">
+		<img src="/images/pecl-icon.png" border="0" align="middle" alt="PECL">
+		</a>
+		</td><td valign="middle" class="cotents">
+                <a href="win32/PECL_STABLE/">
+ 		PECL extensions for the stable win32 branch.
+		</a>
+		</td></tr></table>
 				</td>
 				
 				<td valign="top" class="cotents">
@@ -235,6 +226,16 @@ hr {
 		echo '<a href="'.$file[0].'">Download</a> ('.print_fsize($file[0]).'M)<br><b>Built On:</b> ' .pdate($tm). '<br><hr>';
 	}
 ?>				
+		<table border=0>
+		<tr><td valign="middle">
+		<a href="win32/PECL_STABLE/">
+		<img src="/images/pecl-icon.png" border="0" align="middle" alt="PECL">
+		</a>
+		</td><td valign="middle" class="cotents">
+                <a href="win32/PECL_UNSTABLE/">
+ 		PECL extensions for the unstable win32 branch.
+		</a>
+		</td></tr></table>
 				</td>
 			</tr>
 		</table>
