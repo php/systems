@@ -18,9 +18,6 @@ $implied_lang = isset($argv[4]) ? $argv[4] : false;
 
 $db_name = $argv[1];
 
-// Force it to be rebuilt
-unlink($db_name);
-
 if (!file_exists($db_name)) {
 	$s = sqlite_open($db_name);
 
