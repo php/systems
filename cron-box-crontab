@@ -1,0 +1,8 @@
+# vim:ft=crontab
+# Misc php.net service maintenance stuff to add to crontab
+# on each box
+01 * * * * root nice -10 /local/systems/cron-box hourly
+00 0 * * * root nice -10 /local/systems/cron-box daily
+22 4 * * 0 root nice -10 /local/systems/cron-box weekly
+42 4 1 * * root nice -10 /local/systems/cron-box monthly
+
