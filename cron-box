@@ -37,6 +37,8 @@ case "$1" in
 esac
 
 # export the date for backup scripts
+how=$1
+export how
 export date
 
 for svc in $WHAT ; do

@@ -23,3 +23,11 @@ if test -f $file ; then
 	rm -f $file
 fi
 
+php /local/mirrors/php-master-web/scripts/mirror-test
+
+if test "$how" = "weekly" ; then
+	php /local/mirrors/php-master-web/scripts/mirror-summary
+	php /local/mirrors/php-master-web/scripts/email-note-summaries
+fi
+
+
