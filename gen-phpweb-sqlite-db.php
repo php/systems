@@ -18,6 +18,9 @@ $implied_lang = isset($argv[4]) ? $argv[4] : false;
 
 $db_name = $argv[1];
 
+// Force it to be rebuilt
+unlink($db_name);
+
 if (!file_exists($db_name)) {
 	$s = sqlite_open($db_name);
 
@@ -25,7 +28,8 @@ if (!file_exists($db_name)) {
 lang char(5) not null,
 prefix char(32) not null,
 keyword char(128) not null,
-name varchar(238) not null
+name varchar(238) not null,
+prio int not null
 );");
 	sqlite_query($s, "CREATE INDEX map ON fs (lang,keyword)");
 	sqlite_query($s, "BEGIN");
@@ -82,8 +86,8 @@ function scan($dir, $lang)
 				$keyword = substr($keyword, 0, $x);
 			}
 			
-			foreach ($sections as $section) {
-				if (substr($f, 0, strlen($section)) == $section) {
+			foreach ($sections as $prio => $section) {
+				if (!strncmp($f, $section, strlen($section))) {
 					$keyword = substr($keyword, strlen($section));
 					$prefix = $section;
 					break;
@@ -95,8 +99,8 @@ function scan($dir, $lang)
 			}
 			echo ".";
 //			echo "$lang: $keyword\n";
-			sqlite_query($s, "INSERT INTO fs (lang, prefix, keyword, name) values ('$lang', '$prefix', '$keyword', '$doc_rel')");
-			sqlite_query($s, "INSERT INTO fs (lang, prefix, keyword, name) values ('$lang', '$prefix', '" . metaphone($keyword) . "', '$doc_rel')");
+			sqlite_query($s, "INSERT INTO fs (lang, prefix, keyword, name, prio) values ('$lang', '$prefix', '$keyword', '$doc_rel', $prio)");
+			sqlite_query($s, "INSERT INTO fs (lang, prefix, keyword, name, prio) values ('$lang', '$prefix', '" . metaphone($keyword) . "', '$doc_rel', ".++$prio.")");
 		}
 	}
 	closedir($d);
