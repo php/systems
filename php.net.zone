@@ -2,8 +2,9 @@
 ; DONT FORGET TO COMMIT ANY CHANGES YOU MAKE!!
 ; vim:ft=bindzone:
 $ORIGIN		.
+$TTL 86400 ; 1 day
 php.net.		IN SOA ns1.php.net. admin.easydns.com. (
-					1091550840	; serial
+					@SERIAL@	; serial
 					16384			;	refresh (4 hours 33 minutes 4 seconds)
 					2048		;	retry (34 minutes 8 seconds)
 					1048576	;	expire (1 week 5 days 3 hours 16 minutes 16 seconds)
@@ -42,7 +43,9 @@ qa			CNAME ez1.php.net.
 museum	CNAME ez1.php.net.
 docs		CNAME ny1.php.net.
 
+$TTL 2560
 master	CNAME rn2.php.net.
+$TTL 86400 ; 1 day
 news		CNAME pair1.php.net.
 rsync		CNAME sc1.php.net.
 smarty	CNAME ez1.php.net.
@@ -61,6 +64,9 @@ lists.php.net		MX 10 pair1.php.net.
 
 ;------------ Physical boxen
 
+; Oregon State Uni
+osu1		A 128.193.0.35
+
 ; PAIR
 pair1		A 216.92.131.4
 pair2		A 216.92.131.5
@@ -75,7 +81,7 @@ rack1		A 209.61.157.217
  			; server1.zend.com
 zend		A 209.61.191.11
 
-; Rackshack
+; EV1
 rs1		A 64.246.30.37
 uses				A 64.246.30.196
 static			A 64.246.30.196
@@ -114,5 +120,4 @@ clan		CNAME php.atheosonline.com.
 s390		A 32.97.40.56
 usa		A 216.167.37.56 ; unreachable
 ny1		A 66.250.131.28 ; connection refused
-
 
