@@ -1,0 +1,22 @@
+#! /bin/sh
+
+cd /local/Web/sites/downloads.php.net || exit 1
+
+for dir in *; do
+  if test -d $dir; then
+    cd $dir
+    rm -f .new.md5 .new.index
+    echo "<html><body><ul>" > .new.index
+    for i in *.zip *.bz2 *.gz; do
+      hash=`md5sum $i`
+      echo "<li><a href='$i'>$i</a><br />$hash</li>" >> .new.index
+      echo $hash >> .new.md5
+    done
+    echo "</ul></body></html>" >> .new.index
+    
+    chown $dir .new.md5 .new.index
+    mv .new.index index.html
+    mv .new.md5 md5sums.txt
+    cd ..
+  fi
+done
