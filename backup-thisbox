@@ -1,0 +1,7 @@
+#!/bin/sh
+# $Id$
+
+# Backup the "this-box" state; tokens, keys etc.
+cd /local/backups
+tar cf - /local/this-box | bzip2 -9 > /local/backups/thisbox-`hostname`-$date.tar.bz2
+
