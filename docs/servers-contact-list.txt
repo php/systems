@@ -47,5 +47,18 @@ a: sc1.php.net / 66.225.196.49
  	-- http://r1h.servercentral.net/stats/64.202.114.5_20.html << bandwidth stats
  	-- Redhat 7.3
  	-- Linux sc1.php.net 2.4.23 #2 SMP Mon Dec 8 05:24:44 CST 2003 i686 unknown
- 	
- 	
+
+
+eZ systems / HiT
+
+a: ez1.php.net / 128.39.198.38 / bugs, gtk, museum, smarty, snaps and qa
+
+	-- Hardware especially bought for us by eZ systems (ez.no)
+	-- Bandwidth sponsored by HiT (www.hit.no)
+	-- Physically in Oslo
+	-- best contact is: Derick Rethans (derick@php.net)
+	-- second contact for physical access (if I'm ever going to disappear):
+	   Vidar Langseid (vl@ez.no) (Systemadmin)
+	-- Running Debian Stable
+	-- Linux ez1.php.net 2.4.18-1-686 #1 Sun Feb 1 03:55:30 MST 2004 i686 unknown
+
