@@ -49,3 +49,4 @@ while (<STDIN>) {
   bounce("think you'll fool me with a random string in the subject?")
     if m/^Subject: .+? {10}\[.+?\]/;
 }
+
