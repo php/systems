@@ -1,0 +1,47 @@
+#!/bin/sh
+# $Id$
+# Run the cron for a box
+
+# pull in details for this box
+. /local/systems/boxen/$HOSTNAME
+
+function usage()
+{
+	echo "cron-box (monthly|weekly|daily|hourly)"
+}
+
+cd /local/systems
+PATH="/local/systems:$PATH"
+
+case "$1" in
+	monthly)
+		WHAT=$MONTHLY
+		date=`date +"%Y%m%d-month%m"`
+		 ;;
+	weekly)	
+		WHAT=$WEEKLY
+		date=`date +"%Y%m%d-week%V"`
+		 ;;
+	daily)	
+		WHAT=$DAILY
+		date=`date +"%Y%m%d"`
+		 ;;
+	hourly)	
+		WHAT=$HOURLY
+		date=`date +"%Y%m%d-%H:00"`
+		 ;;
+	*)
+				usage
+				exit 1
+				;;
+esac
+
+# export the date for backup scripts
+export date
+
+for svc in $WHAT ; do
+	if test -x /local/systems/$svc ; then
+		runone /tmp/.$svc.runone.pid /local/systems/$svc
+	fi
+done
+
