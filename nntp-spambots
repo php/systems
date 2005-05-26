@@ -6,9 +6,9 @@ ipfw -f flush
 # set up rate limiting pipe
 ipfw pipe 1 config bw 16Kbits/s
 # limit to 1 concurrent connection per remote address
-ipfw 100 allow tcp from not 127.0.0.1 to not 127.0.0.1 119 limit src-addr 1
+ipfw add 100 allow tcp from not 127.0.0.1 to not 127.0.0.1 119 limit src-addr 1
 # feed remote NNTP via the rate limiting pipe
-ipfw 101 pipe 1 tcp from not 127.0.0.1 to not 127.0.0.1 119
+ipfw add 101 pipe 1 tcp from not 127.0.0.1 to not 127.0.0.1 119
 
 # Load ad-hoc denied list
 for i in `cat /local/bin/systems/news-denied|sort|uniq`;
