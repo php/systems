@@ -64,7 +64,7 @@ pecl		IN CNAME pear.php.net.
 ; lists operated from pair1
 lists.php.net.		IN A 216.92.131.4
 lists.php.net.		IN MX 10 pair1.php.net.
-lists.php.net.		IN TXT "v=spf1 a mx"
+lists.php.net.		IN TXT "v=spf1 a mx a:osu1.php.net"
 
 ; Ecelerity MX running on OSU1
 ecelerity	IN CNAME osu1.php.net.
@@ -120,6 +120,7 @@ melbourne.ug.php.net.			IN CNAME mphpug.techsatcomputers.com.
 sydney.ug.php.net.			IN A 203.29.116.241
 vancouver				IN A 64.40.110.239
 calgary.ug.php.net.			IN A 142.179.217.146
+afup.php.net.			IN CNAME www.afup.org.
 
 ; Obsolete ?
 s390		IN A 32.97.40.56
