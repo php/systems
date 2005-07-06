@@ -150,6 +150,7 @@ hr {
 <body>
 <div align="center">
 <h1>PHP Snapshots</h1>
+<?php echo pdate(time()); ?>
 <table width="100%" border=0>
 <tr>
 	<td align="center" valign="top">
@@ -159,7 +160,7 @@ hr {
 		<?php $results = draw_directory($__RULES['source']); ?>	
 		<table width="100%" cellspacing=5 cellpadding=0>
 			<tr style="border-bottom: 1px solid black">
-				<td width="33%" class="HeaderBorder"><b>Stable (4.3.x-dev)</b></td>
+				<td width="33%" class="HeaderBorder"><b>Stable (4.4.x-dev)</b></td>
 				<td width="33%" class="HeaderBorder"><b>Stable (5.0.x-dev)</b></td>
 				<td width="34%" class="HeaderBorder"><b>Latest CVS (5.1.x-dev)</b></td>
 			</tr>
@@ -224,7 +225,7 @@ hr {
 		<?php $results = draw_directory($__RULES['win32']); ?>	
 		<table width="100%" cellspacing=5 cellpadding=0>
 			<tr style="border-bottom: 1px solid black">
-				<td width="33%" class="HeaderBorder"><b>Stable (4.3.x-dev)</b></td>
+				<td width="33%" class="HeaderBorder"><b>Stable (4.4.x-dev)</b></td>
 								     <td width="33%" class="HeaderBorder"><b>Stable (5.0.x-dev)</b> <a href="http://snaps.php.net/win32/php5.0-dbgpack-win32-latest.zip" class="cotents">Debug pack</a></td>
 				<td width="33%" class="HeaderBorder"><b>Latest CVS (5.1.x-dev)</b> <a href="http://snaps.php.net/win32/php5-dbgpack-win32-latest.zip" class="cotents">Debug pack</a></td>
 			</tr>
@@ -315,7 +316,7 @@ echo '<a href="'.$file[0].'">Download</a> ('.print_fsize($file[0]).'M)<br><b>Bui
 		<table cellspacing=7 cellpadding=0 border=0 width="98%" style="border: 1px dashed blue">
 			<tr>
 				<td> </td>
-				<td class="cotents" align="center"><b>Stable 4.3.x</b></td>
+				<td class="cotents" align="center"><b>Stable 4.4.x</b></td>
 				<td class="cotents" align="center"><b>Stable 5.0.x</b></td>
 				<td class="cotents" align="center"><b>Latest CVS</b></td>
 			</tr>
@@ -332,7 +333,7 @@ echo '<a href="'.$file[0].'">Download</a> ('.print_fsize($file[0]).'M)<br><b>Bui
 				Next <b>STABLE source snapshot</b> in: <?php echo next_snap_prediction($__CTIME, $__LB_TIME['s_st'], $__RULES['source'][1]); ?><br>
 				Next <b>Latest CVS source snapshot</b> in: <?php echo next_snap_prediction($__CTIME, $__LB_TIME['s_cv'], $__RULES['source'][2]); ?><br><br>
 				
-				Next <b>STABLE 4.3.x Win32 snapshot</b> in: <?php echo next_snap_prediction($__CTIME, $__LB_TIME['w32_st'], $__RULES['win32'][1], 'win32', 1); ?><br>
+				Next <b>STABLE 4.4.x Win32 snapshot</b> in: <?php echo next_snap_prediction($__CTIME, $__LB_TIME['w32_st'], $__RULES['win32'][1], 'win32', 1); ?><br>
 				Next <b>STABLE 5.0.x Win32 snapshot</b> in: <?php echo next_snap_prediction($__CTIME, $__LB_TIME['5.0'], 8, 'win32', 1); ?><br>
 				Next <b>Latest CVS Win32 snapshot</b> in: <?php echo next_snap_prediction($__CTIME, $__LB_TIME['w32_cv'], $__RULES['win32'][2], 'win32'); ?>
 				
