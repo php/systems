@@ -97,7 +97,7 @@ function scan($dir, $lang)
 			echo ".";
 //			echo "$lang: $keyword\n";
 			sqlite_query($s, "INSERT INTO fs (lang, prefix, keyword, name, prio) values ('$lang', '$prefix', '$keyword', '$doc_rel', $prio)");
-			sqlite_query($s, "INSERT INTO fs (lang, prefix, keyword, name, prio) values ('$lang', '$prefix', '" . metaphone($keyword) . "', '$doc_rel', ".++$prio.")");
+			sqlite_query($s, "INSERT INTO fs (lang, prefix, keyword, name, prio) values ('$lang', '$prefix', '" . metaphone($keyword) . "', '$doc_rel', ".($prio+10).")");
 		}
 	}
 	closedir($d);
