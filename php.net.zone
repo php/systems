@@ -61,6 +61,8 @@ pecl		IN CNAME pear.php.net.
 *.pear.php.net.			IN CNAME pear.php.net.
 *.pecl.php.net.			IN CNAME pecl.php.net.
 
+pecl4win	IN CNAME pecl4win.emini.dk.
+
 ; lists operated from pair1
 lists.php.net.		IN A 216.92.131.4
 lists.php.net.		IN MX 10 pair1.php.net.
