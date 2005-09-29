@@ -16,9 +16,7 @@ function next_snap_prediction($current_time, $last_time, $freq, $sn_log='', $sta
 	
 	if ($to < 0) {
 		$stable = $stable ? '-STABLE' : '';
-		if ($sn_log == 'win32' && strpos(file_get_contents("win32/snapshot".$stable.".log"), "Base build failed")) {
-			$res = '<font color="red">Win32 build failed. Consult <a href="win32/compile'.$stable.'.log">compile.log</a> for failure reason.</font>';
-		} else if ($to > -600) {
+		if ($to > -600) {
 			$res = '<font color="red">any moment now.</font>';
 		} else {
 			$res = '<font color="red">please consult /dev/urandom</font>';
@@ -94,6 +92,8 @@ function draw_directory($job)
 			$files['STABLE5'][get_ts($file)][] = $file;
 		} elseif (strpos($file, '5.0')) {
 			$files['5.0'][get_ts($file)][] = $file;
+		} elseif (strpos($file, '5.1')) {
+                        $files['5.1'][get_ts($file)][] = $file;
 		} else {
 			if (strpos($file, 'php5')) {
 				$files['UNSTABLE'][get_ts($file)][] = $file;
@@ -114,6 +114,11 @@ function draw_directory($job)
 	if (isset($files['5.0'])) {
 		krsort($files['5.0']);
 	}
+
+	if (isset($files['5.1'])) {
+		krsort($files['5.1']);
+	}
+				
 
 	if (isset($files['UNSTABLE'])) {
 		krsort($files['UNSTABLE']);
@@ -161,7 +166,7 @@ hr {
 		<table width="100%" cellspacing=5 cellpadding=0>
 			<tr style="border-bottom: 1px solid black">
 				<td width="33%" class="HeaderBorder"><b>Stable (4.4.x-dev)</b></td>
-				<td width="33%" class="HeaderBorder"><b>Stable (5.0.x-dev)</b></td>
+ 				<td width="33%" class="HeaderBorder"><b>Stable (5.0.x-dev)</b></td>
 				<td width="34%" class="HeaderBorder"><b>Latest CVS (5.1.x-dev)</b></td>
 			</tr>
 			<tr>
@@ -193,7 +198,6 @@ hr {
 	}
 ?>
 				</td>
-				
 				<td valign="top" class="cotents">
 <?php
 	foreach ($results['UNSTABLE'] as $tm => $file) {
@@ -226,8 +230,9 @@ hr {
 		<table width="100%" cellspacing=5 cellpadding=0>
 			<tr style="border-bottom: 1px solid black">
 				<td width="33%" class="HeaderBorder"><b>Stable (4.4.x-dev)</b></td>
-								     <td width="33%" class="HeaderBorder"><b>Stable (5.0.x-dev)</b> <a href="http://snaps.php.net/win32/php5.0-dbgpack-win32-latest.zip" class="cotents">Debug pack</a></td>
-				<td width="33%" class="HeaderBorder"><b>Latest CVS (5.1.x-dev)</b> <a href="http://snaps.php.net/win32/php5-dbgpack-win32-latest.zip" class="cotents">Debug pack</a></td>
+				<td width="33%" class="HeaderBorder"><b>Stable (5.0.x-dev)</b>
+					<a href="http://snaps.php.net/win32/php5.0-dbgpack-win32-latest.zip" class="cotents">Debug pack</a></td>
+				<td width="33%" class="HeaderBorder"><b>Latest CVS (5.1.x-dev)</b> <a href="http://snaps.php.net/win32/php5.1-dbgpack-win32-latest.zip" class="cotents">Debug pack</a></td>
 			</tr>
 			<tr>
 				<td valign="top" class="cotents">
@@ -242,16 +247,15 @@ hr {
 ?>
 		<table border=0>
 		<tr><td valign="middle">
-		<a href="win32/PECL_STABLE/">
+		<a href="http://pecl4win.php.net/list.php/4_4">
 		<img src="/images/pecl-icon.png" border="0" align="middle" alt="PECL">
 		</a>
 		</td><td valign="middle" class="cotents">
-                <a href="win32/PECL_STABLE/">
- 		PECL extensions for the stable win32 branch.
+                <a href="http://pecl4win.php.net/list.php/4_4">
+ 		PECL extensions for the 4.4.x win32 branch.
 		</a>
 		</td></tr></table>
 				</td>
-
 
 <td valign="top" class="cotents"> 
 <?php 
@@ -265,24 +269,23 @@ echo '<a href="'.$file[0].'">Download</a> ('.print_fsize($file[0]).'M)<br><b>Bui
 ?>
       <table border=0>
 		<tr><td valign="middle">
-		<a href="win32/PECL_5_0/">
+		<a href="http://pecl4win.php.net/list.php/5_0">
 		<img src="/images/pecl-icon.png" border="0" align="middle" alt="PECL">
 		</a>
 		</td><td valign="middle" class="cotents">
-                <a href="win32/PECL_5_0/">
- 		PECL extensions for the Stable 5.0 branch.
+                <a href="http://pecl4win.php.net/list.php/5_0">
+ 		PECL extensions for the 5.0.x branch.
 		</a>
        </td></tr></table>
 </td>
 
 
-
 				
 				<td valign="top" class="cotents">
 <?php
-	foreach ($results['UNSTABLE'] as $tm => $file) {
-		if (!isset($__LB_TIME['w32_cv'])) {
-			$__LB_TIME['w32_cv'] = $tm;
+	foreach ($results['5.1'] as $tm => $file) {
+		if (!isset($__LB_TIME['5.1'])) {
+			$__LB_TIME['5.1'] = $tm;
 		}
 	
 		echo '<a href="'.$file[0].'">Download</a> ('.print_fsize($file[0]).'M)<br><b>Built On:</b> ' .pdate($tm). '<br><hr>';
@@ -290,12 +293,12 @@ echo '<a href="'.$file[0].'">Download</a> ('.print_fsize($file[0]).'M)<br><b>Bui
 ?>				
 		<table border=0>
 		<tr><td valign="middle">
-		<a href="win32/PECL_UNSTABLE/">
+		<a href="http://pecl4win.php.net/list.php/5_1">
 		<img src="/images/pecl-icon.png" border="0" align="middle" alt="PECL">
 		</a>
 		</td><td valign="middle" class="cotents">
-                <a href="win32/PECL_UNSTABLE/">
- 		PECL extensions for the unstable win32 branch.
+                <a href="http://pecl4win.php.net/list.php/5_1">
+ 		PECL extensions for the 5.1 win32 branch.
 		</a>
 		</td></tr></table>
 				</td>
@@ -335,7 +338,7 @@ echo '<a href="'.$file[0].'">Download</a> ('.print_fsize($file[0]).'M)<br><b>Bui
 				
 				Next <b>STABLE 4.4.x Win32 snapshot</b> in: <?php echo next_snap_prediction($__CTIME, $__LB_TIME['w32_st'], $__RULES['win32'][1], 'win32', 1); ?><br>
 				Next <b>STABLE 5.0.x Win32 snapshot</b> in: <?php echo next_snap_prediction($__CTIME, $__LB_TIME['5.0'], 8, 'win32', 1); ?><br>
-				Next <b>Latest CVS Win32 snapshot</b> in: <?php echo next_snap_prediction($__CTIME, $__LB_TIME['w32_cv'], $__RULES['win32'][2], 'win32'); ?>
+				Next <b>Latest CVS Win32 snapshot</b> in: <?php echo next_snap_prediction($__CTIME, $__LB_TIME['5.1'], $__RULES['win32'][2], 'win32'); ?>
 				
 			</td></tr>
 		</table>
