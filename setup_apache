@@ -6,7 +6,17 @@
 ##  restoring your configuration. Additional parameters can be supplied.
 ##
 
-CFLAGS="-O2 -march=i686 -fomit-frame-pointer" \
+## If you're configuring mod_ssl:
+# cd mod_ssl-xxx
+# ./configure --with-apache=../apache_1.3.33 --prefix=/local/httpd --enable-shared=ssl
+# then switch back to ../apache_1.3.33
+# and run this file passing --enable-module=ssl
+
+CFLAGS_RH=`pkg-config openssl --cflags`
+LDFLAGS_RH=`pkg-config openssl --libs`
+
+CFLAGS="-O2 -march=i686 -fomit-frame-pointer $CFLAGS_RH" \
+LDFLAGS="$LDFLAGS_RH" \
 ./configure \
 "--with-layout=Apache" \
 "--prefix=/local/httpd" \
