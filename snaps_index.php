@@ -321,13 +321,13 @@ echo '<a href="'.$file[0].'">Download</a> ('.print_fsize($file[0]).'M)<br><b>Bui
 				<td> </td>
 				<td class="cotents" align="center"><b>Stable 4.4.x</b></td>
 				<td class="cotents" align="center"><b>Stable 5.0.x</b></td>
-				<td class="cotents" align="center"><b>Latest CVS</b></td>
+				<td class="cotents" align="center"><b>5.1.x-dev</b></td>
 			</tr>
 			<tr>
 				<td class="cotents"><b>Win32 Package</b></td>
 				<td align="center" nowrap class="cotents"><a href="win32/compile-STABLE.log">Compile Log</a> || <a href="win32/snapshot-STABLE.log">Snapshot Log</a></td>
 				<td align="center" nowrap class="cotents"><a href="win32/snapshot-5.0.log">Snapshot Log</a></td>
-				<td align="center" nowrap class="cotents"><a href="win32/snapshot.log">Snapshot Log</a></td>
+				<td align="center" nowrap class="cotents"><a href="win32/snapshot-5.1.log">Snapshot Log</a></td>
 			</tr>
 		</table><br>
 
