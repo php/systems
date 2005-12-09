@@ -48,6 +48,7 @@ doc			IN CNAME docs.php.mirrors.powertrip.co.za.
 *.doc.php.net.		IN CNAME docs.php.mirrors.powertrip.co.za.
 
 master		IN CNAME osu1.php.net.
+beta.master            IN CNAME osu1.php.net.
 news		IN CNAME pair1.php.net.
 rsync		IN CNAME sc1.php.net.
 smarty		IN CNAME ez1.php.net.
@@ -106,6 +107,9 @@ ez1		IN A 128.39.198.38
 
 sc1		IN A 66.225.196.49
 sp1		IN A 69.28.246.234
+
+; Yahoo! (contact: Rasmus or Andrei)
+y1		IN A 66.163.161.116
 
 ; DomainKeys
 
