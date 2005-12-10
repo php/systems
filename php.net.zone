@@ -71,8 +71,10 @@ lists.php.net.		IN TXT "v=spf1 a mx a:osu1.php.net"
 
 ; Ecelerity MX running on OSU1
 ecelerity	IN CNAME osu1.php.net.
+opengrok		IN CNAME osu1.php.net.
 
 gcov			IN CNAME sp1.php.net.
+
 
 ;------------ Physical boxen
 
