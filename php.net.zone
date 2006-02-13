@@ -113,6 +113,7 @@ sp1		IN A 69.28.246.234
 ; Yahoo! (contact: Rasmus or Andrei)
 y1		IN A 66.163.161.116
 y2		IN A 66.163.161.117
+y2a		IN A 66.163.161.118
 
 ; DomainKeys
 
