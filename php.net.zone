@@ -25,8 +25,8 @@ www2		IN CNAME zend.php.net.
 bugs		IN CNAME ez1.php.net.
 
 conf		IN CNAME php.net.
-conf2		IN CNAME php.net.
-talks		IN CNAME php.net.
+conf2		IN CNAME y2.php.net.
+talks		IN CNAME y2.php.net.
 pres		IN CNAME conf.php.net.
 
 cvs		IN CNAME pb11.php.net.
