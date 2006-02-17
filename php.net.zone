@@ -9,7 +9,7 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 					1048576	;	expire (1 week 5 days 3 hours 16 minutes 16 seconds)
 					2560		;	minimum (42 minutes 40 seconds)
 			)
-		IN A	64.246.30.37
+		IN A	66.163.161.116
 		IN NS	ns1.easydns.com.
 		IN NS	ns2.easydns.com.
 		IN NS	remote1.easydns.com.
@@ -24,10 +24,10 @@ www		IN CNAME php.net.
 www2		IN CNAME zend.php.net.
 bugs		IN CNAME ez1.php.net.
 
-conf		IN CNAME php.net.
+conf		IN CNAME y2.php.net.
 conf2		IN CNAME y2.php.net.
 talks		IN CNAME y2.php.net.
-pres		IN CNAME conf.php.net.
+pres		IN CNAME y2.php.net.
 
 cvs		IN CNAME pb11.php.net.
 cvsup		IN CNAME cvs.php.net.
