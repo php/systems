@@ -20,6 +20,7 @@ LDFLAGS="$LDFLAGS_RH" \
 ./configure \
 "--with-layout=Apache" \
 "--prefix=/local/httpd" \
+"--disable-rule=EXPAT" \
 "--enable-module=so" \
 "--enable-module=auth_digest" \
 "--enable-module=rewrite" \
