@@ -36,15 +36,19 @@ if test -z "$do"; then
   exit
 fi
 
-echo $do | mail -s "rebuilding php-gtk-doc: $do" imajes@php.net
+if [ -f $BASE/gen_name_to_id.xsl ]; then
+  version=1
+fi
+
+echo $do | mail -s "rebuilding php-gtk-doc$version: $do" sfox@php.net
 
 for a in $do; do
-  mkdir -p /local/mirrors/php-gtk-web/manual/$a
+  mkdir -p /local/mirrors/php-gtk-web/manual$version/$a
   /local/bin/build-php-gtk-manual /local/mirrors/php-gtk-doc \
-    /local/mirrors/php-gtk-web/manual/$a $a $TMPDIR/build-gtk-$a \
-    /local/mirrors/php-gtk-web/distributions/manual \
+    /local/mirrors/php-gtk-web/manual$version/$a $a $TMPDIR/build-gtk-$a \
+    /local/mirrors/php-gtk-web/distributions/manual$version \
     > $TMPDIR/build-gtk-$a.log 2>&1
-  mv $TMPDIR/build-gtk-$a.log /local/mirrors/php-gtk-web/manual/$a/build.log
+  mv $TMPDIR/build-gtk-$a.log /local/mirrors/php-gtk-web/manual$version/$a/build.log
   rm -rf $TMPDIR/build-gtk-$a
 done
 

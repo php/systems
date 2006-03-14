@@ -21,12 +21,11 @@ cp -R -u $PHPDOC $DIR
 cd $DIR || exit 1
 
 #
-# only files that have been translated are utf-8 converted during
+# NB: THIS IS NEEDED FOR PHP_GTK_1 BUILD ONLY, BUT WON'T HURT CVS HEAD.
+# Only files that have been translated are utf-8 converted during
 # ./configure, therefore the en ./configure needs to be run before any
 # of the others are (else cs and de makes will fail, assuming they run
 # in alphabetical order).
-# NB en doesn't need to be make'd at this point and won't do all the
-# work twice, so long as autoconf isn't called twice.  ..
 #
 echo ">>> running base ./configure (en) "
 ./configure --with-lang=en || exit 1
