@@ -17,7 +17,7 @@ echo -n ">>> starting build at: "
 date
 
 echo ">>> making work directory ... "
-cp -R -u $PHPDOC $DIR
+rsync -ru $PHPDOC/ $DIR/
 cd $DIR || exit 1
 
 #
@@ -42,17 +42,29 @@ make phpweb || exit 1
 echo ">>> running make mirror-files ... "
 make mirror-files || exit 1
 
+if test -f testclasses.xml; then
+	echo ">>> running make updates ... "
+	make updates || exit 1
+fi
+
 echo ">>> copying html version ... "
 rsync -rlpvC --delete --delete-after build/$LANG/html/ $DEST/html/ || exit 1
 
 echo ">>> copying php version ... "
-(cd build/$LANG/php; rsync -rlpvC --delete --delete-after --exclude build.log --exclude html . $DEST) || exit 1
+(cd build/$LANG/php; rsync -rlpvC --delete --delete-after --exclude build.log --exclude html --exclude 'updates*.php' . $DEST) || exit 1
 
 echo ">>> copying standalone versions ... "
 rsync -rlpvC build/$LANG/*.gz build/$LANG/*.bz2 build/$LANG/*.zip $DEST2 || exit 1
 
+if test -f testclasses.xml; then
+	rsync -au testbuild/updates.php $DEST/updates-current.php || exit 1
+fi
+	
 echo -n ">>> finished build at: "
 date
+
+echo -n ">>> running make clean ... "
+make clean || exit 1
 
 echo ">>> success!"
 exit 0
