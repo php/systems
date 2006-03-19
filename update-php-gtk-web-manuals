@@ -40,7 +40,7 @@ if [ -f $BASE/gen_name_to_id.xsl ]; then
   version=1
 fi
 
-echo $do | mail -s "rebuilding php-gtk-doc$version: $do" sfox@php.net
+echo $do | mail -s "rebuilding php-gtk-doc$version: $do" sfox@php.net andrei@gravitonic.com
 
 for a in $do; do
   mkdir -p /local/mirrors/php-gtk-web/manual$version/$a
@@ -49,6 +49,6 @@ for a in $do; do
     /local/mirrors/php-gtk-web/distributions/manual$version \
     > $TMPDIR/build-gtk-$a.log 2>&1
   mv $TMPDIR/build-gtk-$a.log /local/mirrors/php-gtk-web/manual$version/$a/build.log
-  rm -rf $TMPDIR/build-gtk-$a
+  #rm -rf $TMPDIR/build-gtk-$a
 done
 
