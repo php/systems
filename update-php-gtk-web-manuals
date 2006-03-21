@@ -8,7 +8,7 @@ export TERM
 # that have changed in the last day on other days
 
 TMPDIR=/local/tmp
-HISTORY=/local/history
+HISTORY=/local/tmp/history
 BASE=/local/mirrors/php-gtk-doc
 CURDAY=`date +%a%b%d`
 dow=`date +"%w"`
