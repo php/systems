@@ -56,10 +56,6 @@ echo ">>> copying php version ... "
 echo ">>> copying standalone versions ... "
 rsync -rlpvC build/$LANG/*.gz build/$LANG/*.bz2 build/$LANG/*.zip $DEST2 || exit 1
 
-if test -f testclasses.xml; then
-	rsync -au testbuild/updates.php $DEST/updates-current.php || exit 1
-fi
-	
 echo -n ">>> finished build at: "
 date
 

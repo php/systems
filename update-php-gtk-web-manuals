@@ -50,5 +50,8 @@ for a in $do; do
     > $TMPDIR/build-gtk-$a.log 2>&1
   mv $TMPDIR/build-gtk-$a.log /local/mirrors/php-gtk-web/manual$version/$a/build.log
   mv $TMPDIR/build-gtk-$a $TMPDIR/history-build-gtk-$a
+  if test -f $TMPDIR/history-build-gtk-$a/scripts/testclasses.xml; then
+    rsync -au $TMPDIR/history-build-gtk-$a/testbuild/updates.php \
+    /local/mirrors/php-gtk-web/manual$version/en/updates-current.php
+  fi
 done
-
