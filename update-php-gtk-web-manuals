@@ -8,6 +8,7 @@ export TERM
 # that have changed in the last day on other days
 
 TMPDIR=/local/tmp
+HISTORY=/local/history
 BASE=/local/mirrors/php-gtk-doc
 CURDAY=`date +%a%b%d`
 dow=`date +"%w"`
@@ -49,6 +50,6 @@ for a in $do; do
     /local/mirrors/php-gtk-web/distributions/manual$version \
     > $TMPDIR/build-gtk-$a.log 2>&1
   mv $TMPDIR/build-gtk-$a.log /local/mirrors/php-gtk-web/manual$version/$a/build.log
-  #rm -rf $TMPDIR/build-gtk-$a
+  mv $TMPDIR/build-gtk-$a $HISTORY/build-gtk-$a
 done
 
