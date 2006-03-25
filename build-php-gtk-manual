@@ -2,8 +2,8 @@
 
 PATH=/usr/local/bin:$PATH
 
-if [ $# != 5 ]; then
-  echo usage: $0 phpdocdirectory destdirectory langcode workdirectory destdirectory2
+if [ $# != 6 ]; then
+  echo usage: $0 phpdocdirectory destdirectory langcode workdirectory destdirectory2 archivepath
   exit 1
 fi
 
@@ -12,6 +12,7 @@ DEST=$2
 LANG=$3
 DIR=$4
 DEST2=$5
+HISTORY=$6
 
 echo -n ">>> starting build at: "
 date
@@ -30,8 +31,8 @@ cd $DIR || exit 1
 echo ">>> running base ./configure (en) "
 ./configure --with-lang=en || exit 1
 
-echo ">>> running ./configure --with-lang=$LANG ... "
-./configure --with-lang=$LANG || exit 1
+echo ">>> running ./configure --with-lang=$LANG --with-history=$HISTORY ... "
+./configure --with-lang=$LANG --with-history=$HISTORY || exit 1
 
 echo ">>> running make html ... "
 make html || exit 1
@@ -42,7 +43,7 @@ make phpweb || exit 1
 echo ">>> running make mirror-files ... "
 make mirror-files || exit 1
 
-if test -f testclasses.xml; then
+if test -f scripts/testclasses.xml; then
 	echo ">>> running make updates ... "
 	make updates || exit 1
 fi
@@ -55,6 +56,10 @@ echo ">>> copying php version ... "
 
 echo ">>> copying standalone versions ... "
 rsync -rlpvC build/$LANG/*.gz build/$LANG/*.bz2 build/$LANG/*.zip $DEST2 || exit 1
+
+if test -f testbuild/updates-$lang.php; then
+	rsync -au testbuild/updates-$lang.php $DEST/updates.php || exit 1
+fi
 
 echo -n ">>> finished build at: "
 date
