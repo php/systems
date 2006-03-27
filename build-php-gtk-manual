@@ -48,6 +48,11 @@ if test -f scripts/testclasses.xml; then
 	make updates || exit 1
 fi
 
+if test -f testclasses.xml; then
+	echo ">>> running make updates ... "
+	make updates || exit 1
+fi
+
 echo ">>> copying html version ... "
 rsync -rlpvC --delete --delete-after build/$LANG/html/ $DEST/html/ || exit 1
 
@@ -56,6 +61,10 @@ echo ">>> copying php version ... "
 
 echo ">>> copying standalone versions ... "
 rsync -rlpvC build/$LANG/*.gz build/$LANG/*.bz2 build/$LANG/*.zip $DEST2 || exit 1
+
+if test -f testclasses.xml; then
+	rsync -au testbuild/updates.php $DEST/updates-current.php || exit 1
+fi
 
 if test -f testbuild/updates-$lang.php; then
 	rsync -au testbuild/updates-$lang.php $DEST/updates.php || exit 1

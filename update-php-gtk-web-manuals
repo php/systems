@@ -42,13 +42,14 @@ fi
 
 echo $do | mail -s "rebuilding php-gtk-doc$version: $do" sfox@php.net andrei@gravitonic.com
 
-# we can drop this after the first successful run - it sets up a permanent archive
-mkdir -p $TMPDIR/history-build-gtk/manual
-cp /local/mirrors/php-gtk-web/manual/en/updates.php $TMPDIR/history-build-gtk/updates-en.php
-
-# this is to get around the limitations imposed by the 'clean' structure
-mkdir -p $TMPDIR/gtk-meta
-cp /local/mirrors/php-gtk-web/manual/en/updates.php $TMPDIR/gtk-meta/updates-meta.php
+if test -z "$version"; then
+  # we can drop this after the first successful run - it sets up a permanent archive
+  mkdir -p $TMPDIR/history-build-gtk/manual
+  cp /local/mirrors/php-gtk-web/manual/en/updates.php $TMPDIR/history-build-gtk/updates-en.php
+  # this is to get around the limitations imposed by the 'clean' structure
+  mkdir -p $TMPDIR/gtk-meta
+  cp /local/mirrors/php-gtk-web/manual/en/updates.php $TMPDIR/gtk-meta/updates-meta.php
+fi
 
 for a in $do; do
   mkdir -p /local/mirrors/php-gtk-web/manual$version/$a
@@ -62,9 +63,13 @@ for a in $do; do
     php $TMPDIR/build-gtk-$a/scripts/merge_updates.php
     $TMPDIR/history-build-gtk-$a/updates-$a.php $TMPDIR/gtk-meta/updates-meta.php
   fi
-  mv $TMPDIR/build-gtk-$a/manual/$a $TMPDIR/history-build-gtk/manual
+  if test -z "$version"; then
+    mv $TMPDIR/build-gtk-$a/manual/$a $TMPDIR/history-build-gtk/manual
+  fi
   rm -rf $TMPDIR/build-gtk-$a
 done
 
-rsync -au $TMPDIR/gtk-meta/updates-meta.php /local/mirrors/php-gtk-web/manual/updates.php
-rm -rf gtk-meta
+if test -z "$version"; then
+  rsync -au $TMPDIR/gtk-meta/updates-meta.php /local/mirrors/php-gtk-web/manual/updates.php
+  rm -rf gtk-meta
+fi
