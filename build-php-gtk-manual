@@ -63,10 +63,12 @@ echo ">>> copying standalone versions ... "
 rsync -rlpvC build/$LANG/*.gz build/$LANG/*.bz2 build/$LANG/*.zip $DEST2 || exit 1
 
 if test -f testclasses.xml; then
+	echo ">>> rsyncing testbuild/updates.php to $DEST/updates-current.php ... "
 	rsync -au testbuild/updates.php $DEST/updates-current.php || exit 1
 fi
 
 if test -f testbuild/updates-$lang.php; then
+	echo ">>> rsyncing testbuild/updates-$lang.php to $DEST/updates.php ... "
 	rsync -au testbuild/updates-$lang.php $DEST/updates.php || exit 1
 fi
 
