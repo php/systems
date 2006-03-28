@@ -23,8 +23,8 @@ if [ -z "$1" -o "$1" == "-f" ]; then
   fi
 
 #  for a in `find $BASE $pred | cut -c 27- | sed -e 's:/.*$::' | sort | uniq`; do
-   for a in `find $BASE $pred | cut -c $len- | sort | uniq`; do
-    if [ -f $BASE/$a/language-defs.ent ]; then
+   for a in `find $BASE/manual $pred | cut -c $len- | sort | uniq`; do
+    if [ -f $BASE/manual/$a/language-defs.ent ]; then
         do="$do $a"
      fi
   done
