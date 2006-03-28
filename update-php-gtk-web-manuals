@@ -11,7 +11,7 @@ TMPDIR=/local/tmp
 BASE=/local/mirrors/php-gtk-doc
 CURDAY=`date +%a%b%d`
 dow=`date +"%w"`
-len=`echo $BASE | wc -c`
+len=`echo $BASE/manual | wc -c`
 len=`expr $len + 1`
 ENBDATE=` cat /local/mirrors/php-gtk-web/manual/en/build.log|grep starting|cut -d ' ' -f 5-|awk '{print $1 $2 $3}'`
 
