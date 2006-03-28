@@ -60,8 +60,7 @@ for a in $do; do
   mv $TMPDIR/build-gtk-$a.log /local/mirrors/php-gtk-web/manual$version/$a/build.log
   if test -f $TMPDIR/build-gtk-$a/testbuild/updates-$a.php; then
     mv $TMPDIR/build-gtk-$a/testbuild/updates-$a.php $TMPDIR/history-build-gtk/updates-$a.php
-    php $TMPDIR/build-gtk-$a/scripts/merge_updates.php
-    $TMPDIR/history-build-gtk-$a/updates-$a.php $TMPDIR/gtk-meta/updates-meta.php
+    php $TMPDIR/build-gtk-$a/scripts/merge_updates.php $TMPDIR/history-build-gtk-$a/updates-$a.php $TMPDIR/gtk-meta/updates-meta.php
   fi
   if test -z "$version"; then
     mv $TMPDIR/build-gtk-$a/manual/$a $TMPDIR/history-build-gtk/manual
