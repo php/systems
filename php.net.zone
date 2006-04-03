@@ -22,7 +22,8 @@ $ORIGIN php.net.
 
 www		IN CNAME php.net.
 www2		IN CNAME zend.php.net.
-bugs		IN CNAME ez1.php.net.
+;bugs		IN CNAME ez1.php.net.
+bugs		IN CNAME y1.php.net.
 
 conf		IN CNAME y2.php.net.
 conf2		IN CNAME y2.php.net.
@@ -37,11 +38,15 @@ chora		IN CNAME cvs.php.net.
 bonsai		IN CNAME rn2.php.net.
 lxr		IN CNAME pb11.php.net.
 
-gtk		IN CNAME ez1.php.net.
-qa		IN CNAME ez1.php.net.
+;gtk		IN CNAME ez1.php.net.
+;qa		IN CNAME ez1.php.net.
+gtk		IN CNAME y1.php.net.
+qa		IN CNAME y1.php.net.
 
-museum		IN CNAME ez1.php.net.
-docs		IN CNAME ez1.php.net.
+;museum		IN CNAME ez1.php.net.
+;docs		IN CNAME ez1.php.net.
+museum		IN CNAME y1.php.net.
+docs		IN CNAME y1.php.net.
 
 ; phpdoc stuff
 doc			IN CNAME docs.php.mirrors.powertrip.co.za.
@@ -51,12 +56,16 @@ master		IN CNAME osu1.php.net.
 beta.master            IN CNAME osu1.php.net.
 news		IN CNAME pair1.php.net.
 rsync		IN CNAME sc1.php.net.
-smarty		IN CNAME ez1.php.net.
-snaps		IN CNAME ez1.php.net.
+;smarty		IN CNAME ez1.php.net.
+;snaps		IN CNAME ez1.php.net.
+smarty		IN CNAME y1.php.net.
+snaps		IN CNAME y1.php.net.
 snapsmaster	IN CNAME sc1.php.net.
 
-embed		IN CNAME ez1.php.net.
-irssi.embed	IN CNAME ez1.php.net.
+;embed		IN CNAME ez1.php.net.
+;irssi.embed	IN CNAME ez1.php.net.
+embed		IN CNAME y1.php.net.
+irssi.embed	IN CNAME y1.php.net.
 pear		IN CNAME pair12.php.net.
 pecl		IN CNAME pear.php.net.
 *.pear.php.net.			IN CNAME pear.php.net.
