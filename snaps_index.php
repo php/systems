@@ -84,20 +84,12 @@ function draw_directory($job)
 		if (is_link($file) || !is_file($file) || !isset($job[3][get_ext($file)]) || strpos($file, 'dbgpack')) {
 			continue;
 		}
-		if (strpos($file, 'php4-STABLE')) {
+		if (strpos($file, 'php4-STABLE') || strpos($file, 'php4-win32-STABLE')) {
 			$files['STABLE4'][get_ts($file)][] = $file;
-		} elseif (strpos($file, 'php4-win32-STABLE')) {
-			$files['STABLE4'][get_ts($file)][] = $file;
-		} elseif (strpos($file, 'php5-STABLE')) {
+		} else if (strpos($file, 'php5.1')) {
 			$files['STABLE5'][get_ts($file)][] = $file;
-		} elseif (strpos($file, '5.0')) {
-			$files['5.0'][get_ts($file)][] = $file;
-		} elseif (strpos($file, '5.1')) {
-                        $files['5.1'][get_ts($file)][] = $file;
-		} else {
-			if (strpos($file, 'php5')) {
-				$files['UNSTABLE'][get_ts($file)][] = $file;
-			}
+		} else if (strpos($file, 'php6')) {
+			$files['UNSTABLE'][get_ts($file)][] = $file;
 		}	
 	}
 	
@@ -111,15 +103,6 @@ function draw_directory($job)
 		krsort($files['STABLE5']);
 	}
 	
-	if (isset($files['5.0'])) {
-		krsort($files['5.0']);
-	}
-
-	if (isset($files['5.1'])) {
-		krsort($files['5.1']);
-	}
-				
-
 	if (isset($files['UNSTABLE'])) {
 		krsort($files['UNSTABLE']);
 	}
@@ -166,8 +149,8 @@ hr {
 		<table width="100%" cellspacing=5 cellpadding=0>
 			<tr style="border-bottom: 1px solid black">
 				<td width="33%" class="HeaderBorder"><b>Stable (4.4.x-dev)</b></td>
- 				<td width="33%" class="HeaderBorder"><b>Stable (5.0.x-dev)</b></td>
-				<td width="34%" class="HeaderBorder"><b>Latest CVS (5.1.x-dev)</b></td>
+ 				<td width="33%" class="HeaderBorder"><b>Stable (5.1.x-dev)</b></td>
+				<td width="34%" class="HeaderBorder"><b>Latest CVS (6.0-dev)</b></td>
 			</tr>
 			<tr>
 				<td valign="top" class="cotents">
@@ -200,6 +183,7 @@ hr {
 				</td>
 				<td valign="top" class="cotents">
 <?php
+if (!empty($results['UNSTABLE'])) {
 	foreach ($results['UNSTABLE'] as $tm => $file) {
 		if (!isset($__LB_TIME['s_cv'])) {
 			$__LB_TIME['s_cv'] = $tm;
@@ -209,6 +193,9 @@ hr {
 			<a href="'.$file[1].'">'.get_ext($file[1]).'</a> ('.print_fsize($file[1]).'M)
 			<br><b>Built On:</b> ' .pdate($tm). '<br><hr>';
 	}
+} else {
+	$__LB_TIME['s_cv'] = 0;
+}
 ?>				
 				</td>
 			</tr>
@@ -224,15 +211,14 @@ hr {
 <tr>
 	<td align="center" valign="top">
 	<fieldset>
-		<legend align="center">Win32 Package</legend>
+		<legend align="center">Win32 Packages</legend>
 	<div>
 		<?php $results = draw_directory($__RULES['win32']); ?>	
 		<table width="100%" cellspacing=5 cellpadding=0>
 			<tr style="border-bottom: 1px solid black">
 				<td width="33%" class="HeaderBorder"><b>Stable (4.4.x-dev)</b></td>
-				<td width="33%" class="HeaderBorder"><b>Stable (5.0.x-dev)</b>
-					<a href="http://snaps.php.net/win32/php5.0-dbgpack-win32-latest.zip" class="cotents">Debug pack</a></td>
-				<td width="33%" class="HeaderBorder"><b>Latest CVS (5.1.x-dev)</b> <a href="http://snaps.php.net/win32/php5.1-dbgpack-win32-latest.zip" class="cotents">Debug pack</a></td>
+				<td width="33%" class="HeaderBorder"><b>Stable (5.1.x-dev)</b> <a href="http://snaps.php.net/win32/php5.1-dbgpack-win32-latest.zip" class="cotents">Debug pack</a></td>
+				<td width="33%" class="HeaderBorder"><b>Latest CVS (6.0-dev)</b> <a href="http://snaps.php.net/win32/php6.0-dbgpack-win32-latest.zip" class="cotents">Debug pack</a></td>
 			</tr>
 			<tr>
 				<td valign="top" class="cotents">
@@ -259,22 +245,21 @@ hr {
 
 <td valign="top" class="cotents"> 
 <?php 
-foreach ($results['5.0'] as $tm => $file) { 
-if (!isset($__LB_TIME['5.0'])) { 
-$__LB_TIME['5.0'] = $tm; 
-} 
-
-echo '<a href="'.$file[0].'">Download</a> ('.print_fsize($file[0]).'M)<br><b>Built On:</b> ' .pdate($tm). '<br><hr>';
+foreach ($results['STABLE5'] as $tm => $file) { 
+	if (!isset($__LB_TIME['STABLE5'])) { 
+		$__LB_TIME['STABLE5'] = $tm; 
+	} 
+	echo '<a href="'.$file[0].'">Download</a> ('.print_fsize($file[0]).'M)<br><b>Built On:</b> ' .pdate($tm). '<br><hr>';
 } 
 ?>
       <table border=0>
 		<tr><td valign="middle">
-		<a href="http://pecl4win.php.net/list.php/5_0">
+		<a href="http://pecl4win.php.net/list.php/5_1">
 		<img src="/images/pecl-icon.png" border="0" align="middle" alt="PECL">
 		</a>
 		</td><td valign="middle" class="cotents">
-                <a href="http://pecl4win.php.net/list.php/5_0">
- 		PECL extensions for the 5.0.x branch.
+                <a href="http://pecl4win.php.net/list.php/5_1">
+ 		PECL extensions for the 5.1.x branch.
 		</a>
        </td></tr></table>
 </td>
@@ -283,9 +268,9 @@ echo '<a href="'.$file[0].'">Download</a> ('.print_fsize($file[0]).'M)<br><b>Bui
 				
 				<td valign="top" class="cotents">
 <?php
-	foreach ($results['5.1'] as $tm => $file) {
-		if (!isset($__LB_TIME['5.1'])) {
-			$__LB_TIME['5.1'] = $tm;
+	foreach ($results['UNSTABLE'] as $tm => $file) {
+		if (!isset($__LB_TIME['UNSTABLE'])) {
+			$__LB_TIME['UNSTABLE'] = $tm;
 		}
 	
 		echo '<a href="'.$file[0].'">Download</a> ('.print_fsize($file[0]).'M)<br><b>Built On:</b> ' .pdate($tm). '<br><hr>';
@@ -293,12 +278,12 @@ echo '<a href="'.$file[0].'">Download</a> ('.print_fsize($file[0]).'M)<br><b>Bui
 ?>				
 		<table border=0>
 		<tr><td valign="middle">
-		<a href="http://pecl4win.php.net/list.php/5_1">
+		<a href="http://pecl4win.php.net/list.php/6_0">
 		<img src="/images/pecl-icon.png" border="0" align="middle" alt="PECL">
 		</a>
 		</td><td valign="middle" class="cotents">
-                <a href="http://pecl4win.php.net/list.php/5_1">
- 		PECL extensions for the 5.1 win32 branch.
+                <a href="http://pecl4win.php.net/list.php/6_0">
+ 		PECL extensions for the 6.0 win32 branch.
 		</a>
 		</td></tr></table>
 				</td>
@@ -320,14 +305,14 @@ echo '<a href="'.$file[0].'">Download</a> ('.print_fsize($file[0]).'M)<br><b>Bui
 			<tr>
 				<td> </td>
 				<td class="cotents" align="center"><b>Stable 4.4.x</b></td>
-				<td class="cotents" align="center"><b>Stable 5.0.x</b></td>
-				<td class="cotents" align="center"><b>5.1.x-dev</b></td>
+				<td class="cotents" align="center"><b>Stable 5.1.x</b></td>
+				<td class="cotents" align="center"><b>6.0-dev</b></td>
 			</tr>
 			<tr>
 				<td class="cotents"><b>Win32 Package</b></td>
 				<td align="center" nowrap class="cotents"><a href="win32/compile-STABLE.log">Compile Log</a> || <a href="win32/snapshot-STABLE.log">Snapshot Log</a></td>
-				<td align="center" nowrap class="cotents"><a href="win32/snapshot-5.0.log">Snapshot Log</a></td>
 				<td align="center" nowrap class="cotents"><a href="win32/snapshot-5.1.log">Snapshot Log</a></td>
+				<td align="center" nowrap class="cotents"><a href="win32/snapshot-6.0.log">Snapshot Log</a></td>
 			</tr>
 		</table><br>
 
@@ -337,8 +322,8 @@ echo '<a href="'.$file[0].'">Download</a> ('.print_fsize($file[0]).'M)<br><b>Bui
 				Next <b>Latest CVS source snapshot</b> in: <?php echo next_snap_prediction($__CTIME, $__LB_TIME['s_cv'], $__RULES['source'][2]); ?><br><br>
 				
 				Next <b>STABLE 4.4.x Win32 snapshot</b> in: <?php echo next_snap_prediction($__CTIME, $__LB_TIME['w32_st'], $__RULES['win32'][1], 'win32', 1); ?><br>
-				Next <b>STABLE 5.0.x Win32 snapshot</b> in: <?php echo next_snap_prediction($__CTIME, $__LB_TIME['5.0'], 8, 'win32', 1); ?><br>
-				Next <b>Latest CVS Win32 snapshot</b> in: <?php echo next_snap_prediction($__CTIME, $__LB_TIME['5.1'], $__RULES['win32'][2], 'win32'); ?>
+				Next <b>STABLE 5.1.x Win32 snapshot</b> in: <?php echo next_snap_prediction($__CTIME, $__LB_TIME['STABLE5'], 8, 'win32', 1); ?><br>
+				Next <b>Latest CVS Win32 snapshot</b> in: <?php echo next_snap_prediction($__CTIME, $__LB_TIME['UNSTABLE'], $__RULES['win32'][2], 'win32'); ?>
 				
 			</td></tr>
 		</table>
