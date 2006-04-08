@@ -18,18 +18,13 @@ echo -n ">>> starting build at: "
 date
 
 echo ">>> making work directory ... "
-rsync -ru $PHPDOC/ $DIR/
+# copy php-gtk-doc sources to build dir:
+#   -r   recursively
+#   -t   preserve timestamps
+#   -C   ignore files that CVS would ignore
+#   -u   update (don't overwrite newer files)
+rsync -rtuC $PHPDOC/ $DIR/
 cd $DIR || exit 1
-
-#
-# NB: THIS IS NEEDED FOR PHP_GTK_1 BUILD ONLY, BUT WON'T HURT CVS HEAD.
-# Only files that have been translated are utf-8 converted during
-# ./configure, therefore the en ./configure needs to be run before any
-# of the others are (else cs and de makes will fail, assuming they run
-# in alphabetical order).
-#
-echo ">>> running base ./configure (en) "
-./configure --with-lang=en || exit 1
 
 echo ">>> running ./configure --with-lang=$LANG --with-history=$HISTORY ... "
 ./configure --with-lang=$LANG --with-history=$HISTORY || exit 1
@@ -48,28 +43,28 @@ if test -f scripts/testclasses.xml; then
 	make updates || exit 1
 fi
 
-if test -f testclasses.xml; then
-	echo ">>> running make updates ... "
-	make updates || exit 1
-fi
-
-echo ">>> copying html version ... "
+# copy generated HTML files to php-gtk-web/ destination
+#   -l   preserve symlinks
+#   -p   preserve permissions
+#   -v   be verbose
+echo ">>> copying HTML version ... "
 rsync -rlpvC --delete --delete-after build/$LANG/html/ $DEST/html/ || exit 1
 
-echo ">>> copying php version ... "
+# copy generated PHP files to php-gtk-web/ destination
+#   --delete         delete files that don't exist in the source dir
+#   --delete-after   do deletes after transfer, not before
+#   --exclude        exclude files from copying and deleting
+echo ">>> copying PHP version ... "
 (cd build/$LANG/php; rsync -rlpvC --delete --delete-after --exclude build.log --exclude html --exclude 'updates*.php' . $DEST) || exit 1
 
 echo ">>> copying standalone versions ... "
 rsync -rlpvC build/$LANG/*.gz build/$LANG/*.bz2 build/$LANG/*.zip $DEST2 || exit 1
 
-if test -f testclasses.xml; then
-	echo ">>> rsyncing testbuild/updates.php to $DEST/updates-current.php ... "
-	rsync -au testbuild/updates.php $DEST/updates-current.php || exit 1
-fi
-
-if test -f testbuild/updates-$lang.php; then
-	echo ">>> rsyncing testbuild/updates-$lang.php to $DEST/updates.php ... "
-	rsync -au testbuild/updates-$lang.php $DEST/updates.php || exit 1
+if test -f testbuild/updates-$LANG.php; then
+	# copy language-specific updates file to destination
+    #   -a   archive mode (equivalent to -rlptgoD)	
+	echo ">>> copying testbuild/updates-$LANG.php to $DEST/updates.php ... "
+	rsync -au testbuild/updates-$LANG.php $DEST/updates.php || exit 1
 fi
 
 echo -n ">>> finished build at: "
