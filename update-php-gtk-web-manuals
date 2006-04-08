@@ -22,8 +22,8 @@ if [ -z "$1" -o "$1" == "-f" ]; then
     pred="-maxdepth 1 -type d"
   fi
 
-#  for a in `find $BASE $pred | cut -c 27- | sed -e 's:/.*$::' | sort | uniq`; do
-   for a in `find $BASE/manual $pred | cut -c $len- | sort | uniq`; do
+  for a in `find $BASE/manual $pred | cut -c $len- | sed -e 's:/.*$::' | sort | uniq`; do
+#   for a in `find $BASE/manual $pred | cut -c $len- | sort | uniq`; do
     if [ -f $BASE/manual/$a/language-defs.ent ]; then
         do="$do $a"
      fi
@@ -65,7 +65,7 @@ for a in $do; do
     /usr/local/bin/php $TMPDIR/build-gtk-$a/scripts/merge_updates.php $TMPDIR/history-build-gtk/updates-$a.php $TMPDIR/gtk-meta/updates-meta.php
   fi
   if test -z "$version"; then
-    mv $TMPDIR/build-gtk-$a/manual/$a $TMPDIR/history-build-gtk/manual
+    rsync -au --delete --delete-after $TMPDIR/build-gtk-$a/manual/$a $TMPDIR/history-build-gtk/manual
   fi
   rm -rf $TMPDIR/build-gtk-$a
 done
