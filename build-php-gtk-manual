@@ -21,9 +21,8 @@ echo ">>> making work directory ... "
 # copy php-gtk-doc sources to build dir:
 #   -r   recursively
 #   -t   preserve timestamps
-#   -C   ignore files that CVS would ignore
 #   -u   update (don't overwrite newer files)
-rsync -rtuC $PHPDOC/ $DIR/
+rsync -rtu $PHPDOC/ $DIR/
 cd $DIR || exit 1
 
 echo ">>> running ./configure --with-lang=$LANG --with-history=$HISTORY ... "
