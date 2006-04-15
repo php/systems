@@ -58,7 +58,7 @@ for a in $do; do
   /local/bin/build-php-gtk-manual /local/mirrors/php-gtk-doc \
     /local/mirrors/php-gtk-web/manual$version/$a $a $TMPDIR/build-gtk-$a \
     /local/mirrors/php-gtk-web/distributions/manual$version \
-    $TMPDIR/history-build-gtk > $TMPDIR/build-gtk-$a.log 2>&1
+    $TMPDIR/history-build-gtk > $TMPDIR/build-gtk-$a.log 2>&1 || exit
   mv $TMPDIR/build-gtk-$a.log /local/mirrors/php-gtk-web/manual$version/$a/build.log
   if [ -f $TMPDIR/build-gtk-$a/testbuild/updates-$a.php ]; then
     mv $TMPDIR/build-gtk-$a/testbuild/updates-$a.php $TMPDIR/history-build-gtk/updates-$a.php
@@ -71,5 +71,6 @@ for a in $do; do
 done
 
 if test -z "$version"; then
+  /usr/local/php5/bin/php /local/mirrors/php-gtk-web/include/make-manual2-index.php
   rsync -au $TMPDIR/gtk-meta/updates-meta.php /local/mirrors/php-gtk-web/manual/updates.php
 fi
