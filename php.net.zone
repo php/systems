@@ -30,13 +30,13 @@ conf2		IN CNAME y2.php.net.
 talks		IN CNAME y2.php.net.
 pres		IN CNAME y2.php.net.
 
-cvs		IN CNAME pb11.php.net.
+cvs		IN CNAME y1.php.net.
 cvsup		IN CNAME cvs.php.net.
 cvsweb		IN CNAME cvs.php.net.
 viewcvs		IN CNAME cvs.php.net.
 chora		IN CNAME cvs.php.net.
-bonsai		IN CNAME rn2.php.net.
-lxr		IN CNAME pb11.php.net.
+bonsai		IN CNAME cvs.php.net.
+lxr		IN CNAME cvs.php.net.
 
 ;gtk		IN CNAME ez1.php.net.
 ;qa		IN CNAME ez1.php.net.
@@ -51,6 +51,7 @@ docs		IN CNAME y1.php.net.
 doc			IN CNAME docs.php.mirrors.powertrip.co.za.
 *.doc.php.net.		IN CNAME docs.php.mirrors.powertrip.co.za.
 
+mail IN CNAME osu1.php.net.
 master		IN CNAME osu1.php.net.
 beta.master            IN CNAME osu1.php.net.
 news		IN CNAME pair1.php.net.
