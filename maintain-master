@@ -18,4 +18,4 @@ if test "$how" = "weekly" ; then
 	php /local/mirrors/php-master-web/scripts/email-note-summaries
 fi
 
-update-systems
+/local/systems/update-systems
