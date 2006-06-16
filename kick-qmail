@@ -1,0 +1,9 @@
+#!/bin/sh
+exit
+cd /service
+/usr/local/bin/svc -d qmail
+/usr/local/bin/svc -d qmail-smtp
+sleep 15
+/usr/local/bin/svc -u qmail
+/usr/local/bin/svc -u qmail-smtp
+

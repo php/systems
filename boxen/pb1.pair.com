@@ -1,8 +1,9 @@
-# $Id: pb1.pair.com,v 1.1 2004-12-30 23:43:28 wez Exp $
+# $Id: pb1.pair.com,v 1.2 2006-06-16 18:25:18 wez Exp $
 
 # Service configuration for pb1.pair.com
 
 BOOT="nntp-spambots"
-HOURLY=
-DAILY=
+HOURLY="kick-qmail"
+DAILY="backup-ecelerity maintain-ecelerity prune-backups"
+
 
