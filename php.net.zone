@@ -107,10 +107,7 @@ rack1		IN A 209.61.157.217
 zend		IN A 209.61.191.11
 
 ; EV1
-rs1			IN A 64.246.30.37
-
-; Springboard (formerly Redundant Networks)
-rn2		IN A 216.27.81.34
+rs1			IN A 207.44.132.102
 
 ; eZ Publish (contact: Derick)
 ez1		IN A 128.39.198.38
