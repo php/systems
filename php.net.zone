@@ -101,8 +101,6 @@ pb12		IN A 216.92.131.66
 pair11		IN A 216.92.131.65
 pair12		IN A 216.92.131.66
 
-; RACK
-rack1		IN A 209.61.157.217
 		; server1.zend.com
 zend		IN A 209.61.191.11
 
