@@ -19,7 +19,7 @@ $__RULES = array(
 					),
 				'STABLE5'=>array(
 					'header'=>'Stable (5.2.x-dev)', 
-					'pecl'=>array('http://pecl4win.php.net/list.php/5_1','PECL extensions for the 5.1.x branch'),
+					'pecl'=>array('http://pecl4win.php.net/list.php/5_2','PECL extensions for the 5.2.x branch'),
 					'snaplog'=>'win32/snapshot-5.2.log',
 					'debugpack'=>'/win32/php5.2-dbgpack-win32-latest.zip',
 					),
