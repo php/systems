@@ -74,6 +74,8 @@ pecl		IN CNAME pear.php.net.
 *.pear.php.net.			IN CNAME pear.php.net.
 *.pecl.php.net.			IN CNAME pecl.php.net.
 
+pecl2 IN CNAME ovh.php.net.
+
 pecl4win	IN CNAME pecl4win.emini.dk.
 
 ; lists operated from pair1
@@ -121,6 +123,9 @@ y2a		IN A 66.163.161.118
 uses			IN A 66.163.161.118
 static			IN A 66.163.161.118
 downloads		IN A 66.163.161.118
+
+; ovh, paid for by BinarySec. (contact Pierre)
+ovh	IN A 213.251.181.15
 
 ; DomainKeys
 
