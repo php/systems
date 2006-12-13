@@ -140,7 +140,7 @@ localhost		IN A 127.0.0.1
 ; Misc PHP user groups / Mirrors ?
 chiphpug				IN A 66.39.34.215
 quebec					IN CNAME www.phpquebec.com.
-melbourne.ug.php.net.			IN CNAME mphpug.techsatcomputers.com.
+melbourne.ug.php.net.   IN CNAME phpcname.phpmelb.org.
 sydney.ug.php.net.			IN A 203.29.116.241
 vancouver				IN A 64.40.110.239
 calgary.ug.php.net.			IN A 142.179.217.146
