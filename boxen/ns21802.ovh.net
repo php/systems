@@ -1,7 +1,7 @@
 # $Id$
 # Service configuration for ns21802.ovh.net (pecl2)
 
-HOURLY=""
+HOURLY="update-systems"
 DAILY="backup-thisbox prune-backups"
 WEEKLY=""
 
