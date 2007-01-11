@@ -4,7 +4,7 @@ $ORIGIN		.
 $TTL 86400 ; 1 day
 php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 					@SERIAL@	; serial
-					16384			;	refresh (4 hours 33 minutes 4 seconds)
+					3600			;	refresh (4 hours 33 minutes 4 seconds)
 					2048		;	retry (34 minutes 8 seconds)
 					1048576	;	expire (1 week 5 days 3 hours 16 minutes 16 seconds)
 					2560		;	minimum (42 minutes 40 seconds)
