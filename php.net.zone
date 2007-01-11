@@ -20,7 +20,7 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 $ORIGIN php.net.
 ; Services
 
-www		IN CNAME php.net.
+www		IN CNAME us3.php.net.
 www2		IN CNAME zend.php.net.
 ;bugs		IN CNAME ez1.php.net.
 bugs		IN CNAME y1.php.net.
