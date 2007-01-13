@@ -1,10 +1,10 @@
 ; vim:ft=bindzone:
 ; $Id$
 $ORIGIN		.
-$TTL 3600 ; 1 day
+$TTL 86400 ; 1 day
 php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 					@SERIAL@	; serial
-					3600			;	refresh (4 hours 33 minutes 4 seconds)
+					16384			;	refresh (4 hours 33 minutes 4 seconds)
 					2048		;	retry (34 minutes 8 seconds)
 					1048576	;	expire (1 week 5 days 3 hours 16 minutes 16 seconds)
 					2560		;	minimum (42 minutes 40 seconds)
@@ -20,7 +20,7 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 $ORIGIN php.net.
 ; Services
 
-www		IN CNAME us3.php.net.
+www		IN CNAME y2.php.net.
 www2		IN CNAME zend.php.net.
 ;bugs		IN CNAME ez1.php.net.
 bugs		IN CNAME y1.php.net.
