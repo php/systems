@@ -257,11 +257,11 @@ echo next_snap_prediction($__CTIME, $__LB_TIME['sourceSTABLE4'], $__RULES['sourc
 		</dd>	<dt><b>Latest CVS source</b> in</dt><dd><?php 
 echo next_snap_prediction($__CTIME, $__LB_TIME['sourceUNSTABLE'], $__RULES['source'][2]); ?>
 		</dd>			<dt><b>STABLE 4.4.x Win32</b> in</dt><dd><?php 
-echo next_snap_prediction($__CTIME, $__LB_TIME['win32STABLE4'], $__RULES['win32'][1], 'win32', 1); ?>
+echo next_snap_prediction($__CTIME, $__LB_TIME['win32STABLE4'], 8, 'win32', 1); ?>
 		</dd>			<dt><b>STABLE 5.2.x Win32</b> in</dt><dd><?php 
-echo next_snap_prediction($__CTIME, $__LB_TIME['win32STABLE5'], 8, 'win32', 1); ?>
+echo next_snap_prediction($__CTIME, $__LB_TIME['win32STABLE5'], 4, 'win32', 1); ?>
 		</dd>		<dt><b>Latest CVS Win32</b> in</dt><dd><?php 
-echo next_snap_prediction($__CTIME, $__LB_TIME['win32UNSTABLE'], $__RULES['win32'][2], 'win32'); ?>		
+echo next_snap_prediction($__CTIME, $__LB_TIME['win32UNSTABLE'], 8, 'win32'); ?>		
 		</dd></dl></div>
 	</div>
 	<div id="footer">
