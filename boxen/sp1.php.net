@@ -1,0 +1,10 @@
+# $Id$
+
+# Service configuration for sp1.php.net
+
+export CONTINENT="us"
+
+HOURLY="update-systems"
+DAILY="update-time"
+WEEKLY=""
+MONTHLY=""
