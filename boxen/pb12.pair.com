@@ -1,7 +1,10 @@
-# $Id: pb12.pair.com,v 1.1 2004-08-05 15:59:06 mj Exp $
+# $Id: pb12.pair.com,v 1.2 2007-03-09 21:09:43 mj Exp $
 
 # Service configuration for pb12.pair.com
 
-HOURLY=
-DAILY=backup-pear
+export CONTINENT="us"
 
+HOURLY="update-systems"
+DAILY="update-time backup-thisbox backup-pear prune-backups"
+WEEKLY=""
+MONTHLY=""

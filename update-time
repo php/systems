@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# sync system time using the NTP pool.
+#
+# $Id$
+
+/usr/bin/env ntpdate -s ${CONTINENT}.pool.ntp.org 1>/dev/null

@@ -3,17 +3,48 @@
 
 # Backup the PEAR/PECL services
 
-basedir=/usr/local/backups
+basedir=/local/backups
 dir=pear-$date
 
 cd $basedir
 mkdir $dir || exit 1
 mkdir $dir/packages || exit 1
+mkdir $dir/pearweb-rest || exit 1
 
-nice -n 15 mysqldump --quick -u backup --password=backup pear > $dir/pear.sql
-nice -n 15 cp -r /var/lib/pear/*.tgz $dir/packages
+#
+# Apache configuration
+#
+cp /local/httpd/conf/pear.php.net.conf $dir/
+cp /local/httpd/conf/go-pear.org.conf $dir/
 
-rm -f $basedir/$dir.tar.bz2
-tar cf - $dir | bzip2 -9 > $basedir/$dir.tar.bz2
+#
+# rrdtool stuff
+#
+cp -r /local/rrdtool $dir/
 
-rm -rf $dir
+#
+# Database
+#
+nice -n 15 mysqldump --quick pear > $dir/pear.sql
+
+#
+# Packages
+#
+for file in /var/lib/pear/*.tgz; do
+	cp $file $dir/packages/`basename $file`
+done
+
+#
+# REST files
+#
+cp -r /var/lib/pearweb/rest $basedir/$dir/pearweb-rest
+
+#
+# Compress the whole stuff in a gzipped tar archive
+#
+tar cf - $dir | gzip -9 > $basedir/$dir.tar.gz
+
+#
+# cleanup
+#
+rm -r $dir
