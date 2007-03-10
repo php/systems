@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $Id$
+#
+# regular housekeeping for PEAR
+#
+
+if test "$how" = "daily";
+then
+	# rotate Apache's access logs
+	/usr/local/sbin/logrotate /usr/local/etc/logrotate.conf
+
+	# webalizer
+	/local/webalizer/run.sh
+fi
+
+if test "$how" = "hourly";
+then
+	# purging for Cache_Lite
+	/usr/bin/env php /local/www/pear.php.net/cron/bug-summary.php > /dev/null
+fi
+
+if test "$how" = "weekly";
+then
+	# clean trackbacks that are marked as spam
+	/usr/bin/env php /local/web/pear.php.net/cron/trackback-cleanup.php
+fi
+
+if test "$how" =  "monthly";
+then
+	/usr/bin/env php /local/web/pear.php.net/cron/bug-summary.php > /dev/null
+fi

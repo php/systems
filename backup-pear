@@ -16,6 +16,7 @@ mkdir $dir/pearweb-rest || exit 1
 #
 cp /local/httpd/conf/pear.php.net.conf $dir/
 cp /local/httpd/conf/go-pear.org.conf $dir/
+cp /etc/crontab $dir/
 
 #
 # rrdtool stuff
