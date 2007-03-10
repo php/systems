@@ -17,7 +17,7 @@ fi
 if test "$how" = "hourly";
 then
 	# purging for Cache_Lite
-	/usr/bin/env php /local/www/pear.php.net/cron/bug-summary.php > /dev/null
+	/usr/bin/env php /local/www/pear.php.net/cron/cache-garbage-collector.php > /dev/null
 fi
 
 if test "$how" = "weekly";
