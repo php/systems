@@ -11,7 +11,7 @@ include "/local/mirrors/php-master-web/fetch/cvspasswd.php";
 
 /local/systems/process-zone-file
 
-php /local/mirrors/php-master-web/scripts/mirror-test
+/local/php5/bin/php /local/mirrors/php-master-web/scripts/mirror-test
 
 if test "$how" = "weekly" ; then
 	php /local/mirrors/php-master-web/scripts/mirror-summary
