@@ -120,6 +120,9 @@ ez1		IN A 128.39.198.38
 sc1		IN A 66.225.196.49
 sp1		IN A 66.249.27.150
 
+; Nexcess (contact: Chris Wells clwells at nexcess dot net)
+nex1		IN A 208.69.122.11
+
 ; Yahoo! (contact: Rasmus or Andrei)
 ; y1		IN A 66.163.161.116
 ; y2		IN A 66.163.161.117
