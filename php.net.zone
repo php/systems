@@ -52,8 +52,8 @@ livedocs	IN CNAME pb11.php.net.
 people		IN CNAME y1.php.net.
 
 ; phpdoc stuff
-doc			IN CNAME docs.php.mirrors.powertrip.co.za.
-*.doc.php.net.		IN CNAME docs.php.mirrors.powertrip.co.za.
+doc			IN CNAME pb11.php.net.
+*.doc.php.net.		IN CNAME pb11.php.net.
 
 mail IN CNAME osu1.php.net.
 master		IN CNAME osu1.php.net.
