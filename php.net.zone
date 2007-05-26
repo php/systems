@@ -75,6 +75,8 @@ pecl		IN CNAME pear.php.net.
 ; PEAR mirrors
 de.pear.php.net. IN A 80.237.146.62
 us.pear.php.net. IN A 66.79.188.205
+wiki.pear.php.net. IN A 66.79.188.205
+blog.pear.php.net. IN A 66.79.188.205
 
 *.pear.php.net.			IN CNAME pear.php.net.
 *.pecl.php.net.			IN CNAME pecl.php.net.
