@@ -10,6 +10,7 @@ cd $basedir
 mkdir $dir || exit 1
 mkdir $dir/packages || exit 1
 mkdir $dir/pearweb-rest || exit 1
+mkdir $dir/bug-patches || exit 1
 
 #
 # Apache configuration
@@ -39,6 +40,11 @@ done
 # REST files
 #
 cp -r /var/lib/pearweb/rest $basedir/$dir/pearweb-rest
+
+#
+# Patches in the bug tracker
+#
+cp -r /var/tmp/pear/patch $basedir/$dir/bug-patches/
 
 #
 # Compress the whole stuff in a gzipped tar archive
