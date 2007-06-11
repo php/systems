@@ -4,4 +4,4 @@
 #
 # $Id$
 
-/usr/bin/env ntpdate -s ${CONTINENT}.pool.ntp.org 1>/dev/null
+/usr/bin/env ntpdate -s ${CONTINENT}.pool.ntp.org >/dev/null 2>&1
