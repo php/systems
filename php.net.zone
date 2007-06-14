@@ -78,6 +78,8 @@ us.pear.php.net. IN A 66.79.188.205
 wiki.pear.php.net. IN A 66.79.188.205
 blog.pear.php.net. IN A 66.79.188.205
 
+svn.pear.php.net. IN A 66.79.163.178
+
 *.pear.php.net.			IN CNAME pear.php.net.
 *.pecl.php.net.			IN CNAME pecl.php.net.
 
