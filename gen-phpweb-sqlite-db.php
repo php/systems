@@ -52,7 +52,9 @@ function scan($dir, $lang)
 {
 	global $s;
 	static $sections = array('ref.', 'function.', 'class.', 'feature-',
-		'control-structures.', 'language.');
+		'control-structures.', 'language.',
+		"about.", "faq.", "features.", 
+	);
 	global $DOCUMENT_ROOT_LEN;
 	
 	$dot = 0;
@@ -64,7 +66,7 @@ function scan($dir, $lang)
 	}
 	readdir($d); readdir($d); // skip . and ..
 	while (($f = readdir($d)) !== false) {
-		if ($f === 'CVS') {
+		if ($f === 'CVS' || $f === 'figures') {
 			continue;
 		}
 		$file = $dir . DIRECTORY_SEPARATOR . $f;
