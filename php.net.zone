@@ -79,7 +79,7 @@ wiki.pear.php.net. IN A 66.79.188.205
 blog.pear.php.net. IN A 66.79.188.205
 planet.pear.php.net. IN A 84.19.184.187
 
-svn.pear.php.net. IN A 66.79.163.178
+svn.pear.php.net. IN A 38.99.98.20
 
 *.pear.php.net.			IN CNAME pear.php.net.
 *.pecl.php.net.			IN CNAME pecl.php.net.
