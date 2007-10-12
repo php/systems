@@ -73,6 +73,28 @@ $b["5.2"] =
   ),
   );
 
+/* 5.3 */
+$b["5.3"] = 
+  array(
+  "Source" => array(
+    "freq" => 3600 * 2,
+    "glob" => array(
+      "php-5.3-dev (tar.bz2)" => "php5.3-2*.tar.bz2",
+      "php-5.3-dev (tar.gz)"  => "php5.3-2*.tar.gz"
+      ),
+  ),
+  "Win32" => array(
+    "freq" => 3600 * 4,
+    "glob" => array(
+      "php-5.3-dev (zip)" => "win32/php5.3-win32-2*.zip",
+      "php-5.3-dev (msi)" => "win32/php5.3-win32-installer-2*.msi",
+      "pecl-5.3-dev (zip)" => "win32/pecl5.3-win32-2*.zip",
+      "Debug pack"  => "win32/php5.3-dbgpack-win32-2*.zip",
+      "Snapshot log"  => "win32/snapshot-5.3.log",
+    ),
+  ),
+  );
+
 /* 6.0 */
 $b["6.0"] = 
   array(
