@@ -140,7 +140,7 @@ static			IN A 69.147.83.198
 downloads		IN A 69.147.83.198
 
 ; OmniTI (contact: Wez or George)
-oti1   IN A 66.80.117.35
+oti1   IN A 8.8.38.133
 oti2   IN A 8.8.38.129
 
 ; ovh, paid for by BinarySec. (contact Pierre)
