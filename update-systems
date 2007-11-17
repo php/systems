@@ -12,5 +12,5 @@ if [ ! -d $HOME ] ; then
 fi
 
 cd /local/systems
-cvs -q up
+cvs -Q up
 
