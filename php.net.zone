@@ -99,6 +99,7 @@ opengrok		IN CNAME osu1.php.net.
 
 gcov			IN CNAME nex1.php.net.
 
+monitoring		IN CNAME sp1.php.net.
 
 ;------------ Physical boxen
 
