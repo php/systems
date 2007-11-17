@@ -70,6 +70,7 @@ snapsmaster	IN CNAME sc1.php.net.
 embed		IN CNAME y1.php.net.
 irssi.embed	IN CNAME y1.php.net.
 pear		IN CNAME pair12.php.net.
+pear2		IN CNAME pair12.php.net.
 pecl		IN CNAME pear.php.net.
 
 ; Misc. PEAR sites
