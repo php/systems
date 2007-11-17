@@ -4,7 +4,7 @@
 
 export CONTINENT="us"
 
-HOURLY="update-systems"
-DAILY="update-time"
+HOURLY="update-systems maintain-monitoring"
+DAILY="update-time backup-thisbox"
 WEEKLY=""
 MONTHLY=""

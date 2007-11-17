@@ -1,0 +1,16 @@
+#!/bin/sh
+
+FILE=/var/www/monitoring.php.net/passwd
+TOKEN=`cat /local/this-box/TOKEN`
+
+/usr/bin/curl -s -o $FILE~ -d "token=$TOKEN" -m 30 https://master.php.net/fetch/cvspasswd.php               
+
+if test $? -eq 0 -a -s $FILE~; then
+	mv $FILE~ $FILE
+	chown www-data $FILE
+	chmod 0400 $FILE
+else
+	echo failed to update $FILE
+	rm -f $FILE~
+	exit 1
+fi
