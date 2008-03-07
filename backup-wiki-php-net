@@ -1,0 +1,70 @@
+#!/bin/sh
+# $Id$
+
+# Backup the Wiki data: pages and media
+# The wiki code itself is in CVS
+#
+# config
+WIKIPATH="/home/web/wiki.php.net/public_html" # path to your wiki, no symbolic are links allowed!
+BACKUPPATH="/local/this-box/wiki.php.net" # where do you save the backups?
+DAILY_DATA_BACKUPS="8" # keep this amount data backups
+DAILY_MEDIA_BACKUPS="3" # and media backups
+# no more config
+
+# creates $1, if not existant
+checkDir()
+{
+	if [ ! -d "${BACKUPPATH}/$1" ]
+	then
+		mkdir -p "${BACKUPPATH}/$1"
+	fi
+}
+
+# 1 -> path
+# 2 -> name
+# 3 -> number of backups
+rotateDir()
+{
+	for i in `seq $(($3 - 1)) -1 1`
+	do
+		if [ -f "$1/$2.$i.tar.bz2" ]
+		then
+			mv "$1/$2.$i.tar.bz2" "$1/$2.$((i + 1)).tar.bz2"
+		fi
+	done
+}
+
+
+# make sure everything exists
+checkDir "data"
+checkDir "data/archive"
+checkDir "data/daily"
+
+checkDir "media"
+checkDir "media/archive"
+checkDir "media/daily"
+
+# first step: rotate daily.
+rotateDir "${BACKUPPATH}/data/daily" "data" "$DAILY_DATA_BACKUPS"
+rotateDir "${BACKUPPATH}/media/daily" "media" "$DAILY_MEDIA_BACKUPS"
+
+# then create our backup
+#   --exclude is not accepted for Linksys NSLU2 box, any alternative?
+tar --exclude=".*" -cjf "/tmp/data.1.tar.bz2" -C "${WIKIPATH}" "data"
+tar --exclude=".*" -cjf "/tmp/media.1.tar.bz2" -C "${WIKIPATH}" "data/media"
+
+
+# for debian etch, replace "media" by "data/media" in line above
+# and add --excude="media" to first tar line
+
+
+# create an archive backup?
+if [ `date +%d` == "01" ]
+then
+	cp "/tmp/data.1.tar.bz2" "${BACKUPPATH}/data/archive/data-"`date +%m-%d-%Y`".tar.bz2"
+	cp "/tmp/media.1.tar.bz2" "${BACKUPPATH}/media/archive/media-"`date +%m-%d-%Y`".tar.bz2"
+fi
+
+# add them to daily.
+mv "/tmp/data.1.tar.bz2" "${BACKUPPATH}/data/daily"
+mv "/tmp/media.1.tar.bz2" "${BACKUPPATH}/media/daily"
