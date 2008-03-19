@@ -35,10 +35,7 @@ DATE=`date +"%s"`
 echo "<?php \$LAST_UPDATED=$DATE; ?>" \
   > /local/mirrors/phpweb/include/last_updated.inc
 
-rm -rf /local/mirrors/phpweb/manual/howto
-
-#cp -a /local/tmp/dochowto \
-#     /local/mirrors/phpweb/manual/howto
 
 #cp /local/tmp/GeoIP.dat \
 #    /local/mirrors/phpweb/backend
+
