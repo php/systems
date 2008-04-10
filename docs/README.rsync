@@ -1,0 +1,52 @@
+
+Every hour systems/update-everything is executed which does:
+    systems/update-repository
+        Updates the cvsup checkout
+
+    systems/update-mirrors
+        Updates the entire cvs checkout
+
+    systems/update-phpweb-backend
+        php-master-web/scripts/update-backend
+            Creates phpweb/include/mirrors.inc                        (http://php-master-web/fetch/mirrors.php)
+            Creates phpweb/include/countries.inc                      (http://php-master-web/fetch/countries.php)
+            Creates phpweb/include/events.csv                         (http://php-master-web/fetch/events.php)
+
+            Creates phpweb/include/pregen-events.inc                  (php-master-web/scripts/event_listing)
+
+            Does some ip-country stuff (php-master-web/scripts/ip-to-country)
+
+            Creates phpweb/include/pregen-news.inc & phpweb/feed.atom (php-master-web/scripts/pregen_news)
+
+            Creates phpweb/news.rss && phpweb/conferences/news.rss    (php-master-web/scripts/rss_parser)
+
+            Creates phpweb/include/pregen-confs.inc                   (php-master-web/scripts/conference_teaser)
+
+            Creates:                                                  (php-master-web/scripts/php_version)
+                phpweb/include/version.inc
+                phpweb/include/releases.inc
+                phpweb/releases.atom
+
+            Creates phpweb/reST/cache/*                               (php-master-web/scripts/rest_render)
+
+            Creates phpweb/mirrorkit.tgz
+
+        Copies CHMs from the "manual-chms" rsync module
+
+        php-master-web/scripts/update-user-notes
+
+        Creates phpweb/include/last_updated.inc
+
+
+Every other hour systems/update-snapshots is executed 
+
+Four times a day *.chm files are copied from Derick home directory to phpweb/distributions/manual/
+
+Every thursday Nunos echm file is fetched and copied to phpweb/distributions/manual/php_manual_chm.zip
+
+Once a day systems/gen-phpweb-sqlite-db.php is executed (phpweb/backend/manual-lookup.sqlite)
+
+On sundays systems/update-pearweb-manuals -f is executed
+
+Once a day systems/update-php-gtk-web-manuals is executed
+
