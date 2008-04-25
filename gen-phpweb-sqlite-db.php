@@ -51,7 +51,7 @@ exit(0);
 function scan($dir, $lang)
 {
 	global $s;
-	static $sections = array('intro.', 'book.', 'ref.', 'function.', 'class.', 'feature-',
+	static $sections = array('book.', 'ref.', 'function.', 'class.', 'feature-',
 		'control-structures.', 'language.',
 		"about.", "faq.", "features.", 
 	);
