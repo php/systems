@@ -1,14 +1,18 @@
 #! /bin/sh
 PATH=/usr/local/bin:/usr/bin:/bin
 d=`date -u +%Y%m%d%H%M`
-t=/local/snapshots
+t=/local/sites/snaps.php.net/www
 
 do_update ( ) {
   prefix=$1
   
-  source=/local/mirrors/$1
+  source=/local/repository/$1
   target=$1-$d
 
+  cd $source
+  cvs up -dP >/dev/null
+
+  cd /dev/shm || exit 1
   cp -rp $source $target
   find $target -name CVS -o -name .cvsignore | xargs rm -rf
   rm -f $target/.deps $target/ChangeLog*
@@ -25,11 +29,9 @@ do_update ( ) {
   (cd $t; ln -sf $f.gz $prefix-latest.tar.gz; ln -sf $f.bz2 $prefix-latest.tar.bz2)
 }
 
-cd /dev/shm || exit 1
-
-do_update php5
-do_update php4-STABLE
-do_update php4
+do_update php6.0
+do_update php5.3
+do_update php5.2
 
 # purge files which are older than 12 hours
 find $t -name \*tar\* -mmin +540|xargs rm -rf
