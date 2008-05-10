@@ -1,0 +1,23 @@
+#!/bin/sh
+# $Id$
+
+# Backup the PEAR/PECL services
+
+basedir=/local/this-box
+dir=testfest-"`date +%m-%d-%Y-%H-%M`"
+attachments_dir=/home/web/testfest.php.net/docroot/attachments/
+
+cd $basedir
+mkdir $basedir/$dir || exit 1
+mkdir $basedir/$dir/attachments || exit 1
+
+#
+# Database
+#
+nice -n 15 /local/mysql-5.0.27/bin/mysqldump -ubackup -pbackup --quick testfest_flyspray > $dir/testfest-php-net.sql
+
+#
+# Attachments 
+#
+cp -r $attachments_dir/* $basedir/$dir/attachments/
+
