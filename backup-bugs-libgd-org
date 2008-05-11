@@ -1,13 +1,12 @@
 #!/bin/sh
-#Id$
+# $Id$
 
-TESTFESTPATH=/home/web/testfest.php.net/docroot
-BASEDIR=/local/this-box/testfest.php.net
-DIR=testfest-"`date +%m-%d-%Y-%H-%M`"
-BACKUPPATH="/local/this-box/testfest.php.net" # where do you save the backups?
+BUGSLIBGDPATH=/home/web/gdbugs
+BASEDIR=/local/this-box/bugs.libgd.org
+BACKUPPATH="/local/this-box/bugs.libgd.org" # where do you save the backups?
 
 # Attachments path
-ATTACHMENTS_DIR=$TESTFESTPATH/attachments/
+ATTACHMENTS_DIR=$BUGSLIBGDPATH/attachments/
 DAILY_BACKUPS="8" # keep this amount data backups
 
 # creates $1, if not existant
@@ -49,25 +48,25 @@ checkDir "sql/daily"
 
 # first step: rotate daily.
 rotateDir "${BACKUPPATH}/attachments/daily" "attachments" "$DAILY_BACKUPS"
-rotateDir "${BACKUPPATH}/sql/daily" "testfest-php-net.sql" "$DAILY_BACKUPS"
+rotateDir "${BACKUPPATH}/sql/daily" "bugs-libgd-org.sql" "$DAILY_BACKUPS"
 
 # then create our backup
 #   --exclude is not accepted for Linksys NSLU2 box, any alternative?
-tar --exclude=".*" -cjf "/tmp/attachments.1.tar.bz2" -C "${TESTFESTPATH}" "attachments"
+tar --exclude=".*" -cjf "/tmp/attachments.1.tar.bz2" -C "${BUGSLIBGDPATH}" "attachments"
 
 #
 # Database
 #
-nice -n 15 /local/mysql-5.0.27/bin/mysqldump -ubackup -pbackup --quick testfest_flyspray | bzip2 > /tmp/testfest-php-net.sql.1.bz2
+nice -n 15 /local/mysql-5.0.27/bin/mysqldump -ubackup -pbackup --quick gd_bugs | bzip2 > /tmp/bugs-libgd-org.sql.1.bz2
 
 
 # create an archive backup?
 if [ `date +%d` == "01" ]
 then
 	cp "/tmp/attachments.1.tar.bz2" "${BACKUPPATH}/attachments/archive/attachments-"`date +%m-%d-%Y`".tar.bz2"
-	cp "/tmp/testfest-php-net.sql.1.bz2" "${BACKUPPATH}/sql/archive/sql-"`date +%m-%d-%Y`".tar.bz2"
+	cp "/tmp/bugs-libgd-org.sql.1.bz2" "${BACKUPPATH}/sql/archive/sql-"`date +%m-%d-%Y`".tar.bz2"
 fi
 
 # add them to daily.
 mv "/tmp/attachments.1.tar.bz2" "${BACKUPPATH}/attachments/daily"
-mv "/tmp/testfest-php-net.sql.1.bz2" "${BACKUPPATH}/sql/daily"
+mv "/tmp/bugs-libgd-org.sql.1.bz2" "${BACKUPPATH}/sql/daily"
