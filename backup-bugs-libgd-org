@@ -1,12 +1,13 @@
 #!/bin/sh
-# $Id$
+#Id$
 
-BUGSLIBGDPATH=/home/web/gdbugs
+GDBUGPATH=/home/web/gdbugs
 BASEDIR=/local/this-box/bugs.libgd.org
+DIR=gdbugs-"`date +%m-%d-%Y-%H-%M`"
 BACKUPPATH="/local/this-box/bugs.libgd.org" # where do you save the backups?
 
 # Attachments path
-ATTACHMENTS_DIR=$BUGSLIBGDPATH/attachments/
+ATTACHMENTS_DIR=$GDBUGPATH/attachments/
 DAILY_BACKUPS="8" # keep this amount data backups
 
 # creates $1, if not existant
@@ -52,7 +53,8 @@ rotateDir "${BACKUPPATH}/sql/daily" "bugs-libgd-org.sql" "$DAILY_BACKUPS"
 
 # then create our backup
 #   --exclude is not accepted for Linksys NSLU2 box, any alternative?
-tar --exclude=".*" -cjf "/tmp/attachments.1.tar.bz2" -C "${BUGSLIBGDPATH}" "attachments"
+echo "${GDBUGPATH}"
+tar --exclude=".*" -cjf "/tmp/attachments.1.tar.bz2" -C "${GDBUGPATH}" "attachments"
 
 #
 # Database
