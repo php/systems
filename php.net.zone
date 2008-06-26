@@ -75,11 +75,11 @@ pecl		IN CNAME pear.php.net.
 
 ; Misc. PEAR sites
 de.pear.php.net. 	IN A 80.237.146.62
-us.pear.php.net. 	IN A 66.79.188.205
-wiki.pear.php.net. 	IN A 66.79.188.205
-blog.pear.php.net. 	IN A 66.79.188.205
+us.pear.php.net. 	IN A 208.83.33.20
+wiki.pear.php.net. 	IN A 208.83.33.20
+blog.pear.php.net. 	IN A 208.83.33.20
 planet.pear.php.net. 	IN A 84.19.184.187
-svn.pear.php.net. 	IN A 38.99.98.20
+svn.pear.php.net. 	IN A 208.83.33.20
 
 *.pear.php.net.		IN CNAME pear.php.net.
 *.pecl.php.net.		IN CNAME pecl.php.net.
