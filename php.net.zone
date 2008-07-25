@@ -38,6 +38,8 @@ chora		IN CNAME cvs.php.net.
 bonsai		IN CNAME cvs.php.net.
 lxr		IN CNAME cvs.php.net.
 
+svn		IN CNAME y1.php.net.
+
 ;gtk		IN CNAME ez1.php.net.
 ;qa		IN CNAME ez1.php.net.
 gtk		IN CNAME y1.php.net.
