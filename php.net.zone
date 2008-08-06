@@ -62,9 +62,8 @@ master		IN CNAME osu1.php.net.
 beta.master            IN CNAME osu1.php.net.
 news		IN CNAME pair1.php.net.
 rsync		IN CNAME sc1.php.net.
-;smarty		IN CNAME ez1.php.net.
 snaps		IN CNAME ez1.php.net.
-smarty		IN CNAME y1.php.net.
+smarty		IN CNAME smarty.net.
 snapsmaster	IN CNAME sc1.php.net.
 
 ;embed		IN CNAME ez1.php.net.
