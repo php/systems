@@ -25,8 +25,8 @@ if ($_SERVER['QUERY_STRING'] === "source") {
   highlight_file($_SERVER['SCRIPT_FILENAME']);
   die();
 }
-//ini_set( 'display_errors', 1 );
-//ini_set( 'error_reporting', 'E_ALL' );
+ini_set( 'display_errors', 1 );
+ini_set( 'error_reporting', 'E_ALL' );
 /* All times on this site are UTC */
 date_default_timezone_set("UTC");
 
@@ -66,11 +66,10 @@ $b["5.3"] =
       ),
   ),
   "Win32" => array(
-    "freq" => 3600 * 4,
+    "freq" => 3600 * 2,
     "glob" => array(
       "php-5.3-dev (zip)" => "win32/php5.3-win32-2*.zip",
       "php-5.3-dev (msi)" => "win32/php5.3-win32-installer-2*.msi",
-      "pecl-5.3-dev (zip)" => "win32/pecl5.3-win32-2*.zip",
       "Debug pack"  => "win32/php5.3-dbgpack-win32-2*.zip",
       "Snapshot log"  => "win32/snapshot-5.3.log",
     ),
@@ -107,8 +106,11 @@ function get_file_info($glob, $freq = 0)
   } else {
 
     $ret = new stdClass;
+
     $g = glob($glob);
 
+    $test = trim(`ls $glob`);
+    $g = split( "\n", $test );
     if (!is_array($g)) {
       return $ret;
     }
@@ -126,10 +128,10 @@ function get_file_info($glob, $freq = 0)
       $f->name = $filename;
       $f->size = @filesize($f->name);
       $f->size_str = sprintf("%.1f",$f->size/1024/1024);
- 
+
       if (preg_match("((\\d{12}))", $f->name, $m)) {
 
-	$t = @strtotime($m[1]);
+	$t = strtotime($m[1]);
 	$f->time = $t;
 	$f->time_str = str_replace(" ", "&nbsp;", date("M d, Y H:i T", $f->time));
 
