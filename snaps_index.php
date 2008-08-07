@@ -25,31 +25,13 @@ if ($_SERVER['QUERY_STRING'] === "source") {
   highlight_file($_SERVER['SCRIPT_FILENAME']);
   die();
 }
-
+//ini_set( 'display_errors', 1 );
+//ini_set( 'error_reporting', 'E_ALL' );
 /* All times on this site are UTC */
 date_default_timezone_set("UTC");
 
 /* Configure branches and distributions */
 $b = array();
-
-/* 4.4 */
-$b["4.4"] = 
-  array(
-  "Source" => array(
-    "freq" => 3600 * 2,
-    "glob" => array(
-      "php-4.4-dev (tar.bz2)" => "php4-STABLE-2*.tar.bz2",
-      "php-4.4-dev (tar.gz)"  => "php4-STABLE-2*.tar.gz"
-      ),
-  ),
-  "Win32" => array(
-    "freq" => 3600 * 8,
-    "glob" => array(
-      "php-4.4-dev (zip)" => "win32/php4-win32-STABLE-2*.zip",
-      "Snapshot log"  => "win32/snapshot-STABLE.log"
-    ),
-  ),
-  );
 
 /* 5.2 */
 $b["5.2"] = 
@@ -125,7 +107,7 @@ function get_file_info($glob, $freq = 0)
   } else {
 
     $ret = new stdClass;
-    $g = @glob($glob);
+    $g = glob($glob);
 
     if (!is_array($g)) {
       return $ret;
