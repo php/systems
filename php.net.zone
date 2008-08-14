@@ -88,6 +88,7 @@ svn.pear.php.net. 	IN A 208.83.222.20
 pecl2 IN CNAME ovh.php.net.
 wiki IN CNAME ovh.php.net.
 testfest IN CNAME ovh.php.net.
+windows IN CNAME ovh.php.net.
 
 pecl4win	IN CNAME pecl4win.edin.dk.
 
