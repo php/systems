@@ -151,6 +151,9 @@ oti2   IN A 8.8.38.129
 ; ovh, paid for by BinarySec. (contact Pierre)
 ovh	IN A 213.251.181.15
 
+; eUKhost LTD.
+euk1	IN A 78.129.214.25
+
 ; DomainKeys
 
 mx._domainkey.php.net. IN TXT "t=y; g=; k=rsa; p=MHwwDQYJKoZIhvcNAQEBBQADawAwaAJhANg8QYJB/6O2nGfNk1td5uRl1MMqETEAv/Jyv3wGPpoW7drSEVa7RsuZBgut/koWyJIpe0TWQRSSk+N6E0lNxkMwZVBSDU+HOpeO4+khXWtsq9Mv9BsAbPbf8VrgP5VsLQIDAQAB"
