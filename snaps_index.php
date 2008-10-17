@@ -43,16 +43,6 @@ $b["5.2"] =
       "php-5.2-dev (tar.gz)"  => "php5.2-2*.tar.gz"
       ),
   ),
-  "Win32" => array(
-    "freq" => 3600 * 4,
-    "glob" => array(
-      "php-5.2-dev (zip)" => "win32/php5.2-win32-2*.zip",
-      "php-5.2-dev (msi)" => "win32/php5.2-win32-installer-2*.msi",
-      "pecl-5.2-dev (zip)" => "win32/pecl5.2-win32-2*.zip",
-      "Debug pack"  => "win32/php5.2-dbgpack-win32-2*.zip",
-      "Snapshot log"  => "win32/snapshot-5.2.log",
-    ),
-  ),
   );
 
 /* 5.3 */
@@ -65,15 +55,6 @@ $b["5.3"] =
       "php-5.3-dev (tar.gz)"  => "php5.3-2*.tar.gz"
       ),
   ),
-  "Win32" => array(
-    "freq" => 3600 * 2,
-    "glob" => array(
-      "php-5.3-dev (zip)" => "win32/php5.3-win32-2*.zip",
-      "php-5.3-dev (msi)" => "win32/php5.3-win32-installer-2*.msi",
-      "Debug pack"  => "win32/php5.3-dbgpack-win32-2*.zip",
-      "Snapshot log"  => "win32/snapshot-5.3.log",
-    ),
-  ),
   );
 
 /* 6.0 */
@@ -85,13 +66,6 @@ $b["6.0"] =
       "php-6.0-dev (tar.bz2)" => "php6.0-2*.tar.bz2",
       "php-6.0-dev (tar.gz)"  => "php6.0-2*.tar.gz"
       ),
-  ),
-  "Win32" => array(
-    "freq" => 3600 * 8,
-    "glob" => array(
-      "php-6.0-dev (zip)" => "win32/php6.0-win32-2*.zip",
-      "Snapshot log"  => "win32/snapshot-6.0.log",
-    ),
   ),
   );
 
@@ -130,7 +104,6 @@ function get_file_info($glob, $freq = 0)
       $f->size_str = sprintf("%.1f",$f->size/1024/1024);
 
       if (preg_match("((\\d{12}))", $f->name, $m)) {
-
 	$t = strtotime($m[1]);
 	$f->time = $t;
 	$f->time_str = str_replace(" ", "&nbsp;", date("M d, Y H:i T", $f->time));
@@ -185,7 +158,7 @@ function display_next_snap($conf)
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
-        <title>PHP Snapshots</title>
+        <title>PHP Sources Snapshots</title>
         <style type="text/css" media="all">
         @import url("http://static.php.net/www.php.net/styles/site.css");
         @import url("http://static.php.net/www.php.net/styles/phpnet.css");
@@ -220,10 +193,12 @@ function display_next_snap($conf)
             <div id="leftbar">
                 <h3>Snapshot Builds</h3>
                 <p>
-                    You can find the latest development source and binary 
-                    packages for PHP 4, PHP 5, and PHP 6 here. Source code is 
-                    checked out of CVS and packaged every 2 hours and Win32 
-                    builds are produced every 8 hours.
+                    You can find the latest development sources
+                    packages for PHP 5, and PHP 6 here. Source code is 
+                    checked out of CVS and packaged every 2 hours.
+                </p>
+                <p>
+		   <strong> For Windows builds, see <a href="http://windows.php.net/snapshots/">Windows Snapshot page</a>.</strong>
                 </p>
                 <p>
                     These packages are <strong>NOT</strong> intended for 
@@ -239,7 +214,6 @@ function display_next_snap($conf)
             <div id="content" class=".">
                 <div id="snaps">
                     <h1>PHP Snapshots</h1>
-
 <?php   
 if (isset($_GET['branch']) && isset($_GET['distro']) && isset($b[$_GET['branch']][$_GET['distro']])) {
 
@@ -301,11 +275,11 @@ if (isset($_GET['branch']) && isset($_GET['distro']) && isset($b[$_GET['branch']
     echo "</tr>\n<tr>\n";
 
     foreach($branch as $distro_name => $distro) {
-
       echo "<td>\n";
       foreach ($distro["glob"] as $glob) break;
       $info = get_file_info($glob);
       $f = $info->files[0];
+
       echo "<b>Built on:</b> " . $f->time_str ."<br />\n";
       echo "<span class=\"filelink\"><a href=\"" . htmlentities($_SERVER['PHP_SELF']). "?branch=" . urlencode($branch_name) . "&distro=" . urlencode($distro_name) . "\">Previous Builds</a></span><br />\n";
 
