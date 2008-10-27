@@ -1,14 +1,11 @@
 #!/bin/sh
 
-for i in php3 php4 php4-STABLE php5 pear peardoc pearweb \
-         phpdoc phpweb php-bugs-web php-master-web php-news-web \
-         php-gtk php-gtk-doc php-gtk-web qaweb smarty-web \
-         ZendAPI distributions pres2 embed-web; do
+for i in `ls -1 /local/mirrors|grep -v manual`; do
 #  echo updating $i mirror
   cd /local/mirrors/$i && cvs -Q upd -dP 2>&1 | \
     grep -v 'is not (any longer) pertinent'
 done
 
-cd /local/mirrors/phpdoc && /usr/local/bin/autoconf
-cd /local/mirrors/php-gtk-doc && /usr/local/bin/autoconf
-cd /local/mirrors/peardoc && /usr/local/bin/autoconf
+#cd /local/mirrors/phpdoc && /usr/bin/autoconf
+cd /local/mirrors/php-gtk-doc && /usr/bin/autoconf
+#cd /local/mirrors/peardoc && /usr/bin/autoconf
