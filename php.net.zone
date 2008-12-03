@@ -90,7 +90,7 @@ wiki IN CNAME ovh.php.net.
 testfest IN CNAME ovh.php.net.
 windows IN CNAME ovh.php.net.
 
-pecl4win	IN CNAME pecl4win.edin.dk.
+;pecl4win	IN CNAME pecl4win.edin.dk.
 
 ; lists operated from pair1
 lists.php.net.		IN A 216.92.131.4
