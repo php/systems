@@ -73,6 +73,7 @@ irssi.embed	IN CNAME y1.php.net.
 pear		IN CNAME pair12.php.net.
 pear2		IN CNAME pair12.php.net.
 pecl		IN CNAME pear.php.net.
+pecl4win	IN CNAME ez1.php.net.
 
 ; Misc. PEAR sites
 de.pear.php.net. 	IN A 80.237.146.62
