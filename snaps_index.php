@@ -3,7 +3,7 @@
    +----------------------------------------------------------------------+
    | PHP Infrastucture                                                    |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1997-2007 The PHP Group                                |
+   | Copyright (c) 1997-2009 The PHP Group                                |
    +----------------------------------------------------------------------+
    | This source file is subject to version 3.01 of the PHP license,      |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -304,7 +304,7 @@ if (isset($_GET['branch']) && isset($_GET['distro']) && isset($b[$_GET['branch']
         
         <div id="pagefooter">
             <div id="copyright">
-                <a href="http://www.php.net/copyright.php">Copyright &copy; 2001-2007 The PHP Group</a><br />
+                <a href="http://www.php.net/copyright.php">Copyright &copy; 2001-2009 The PHP Group</a><br />
                 All rights reserved.
             </div>
         
