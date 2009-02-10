@@ -134,6 +134,9 @@ sp1		IN A 66.249.27.150
 ; Nexcess (contact: Chris Wells clwells at nexcess dot net)
 nex1		IN A 208.69.122.11
 
+; PPC testing box, hosted by Dedipower
+dp1		IN A 89.151.87.82
+
 ; Yahoo! (contact: Rasmus or Andrei)
 ; y1		IN A 66.163.161.116
 ; y2		IN A 66.163.161.117
