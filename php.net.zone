@@ -65,6 +65,7 @@ rsync		IN CNAME sc1.php.net.
 snaps		IN CNAME ez1.php.net.
 smarty		IN CNAME y1.php.net.
 snapsmaster	IN CNAME sc1.php.net.
+testfest	IN CNAME y1.php.net.
 
 ;embed		IN CNAME ez1.php.net.
 ;irssi.embed	IN CNAME ez1.php.net.
@@ -88,7 +89,6 @@ svn.pear.php.net. 	IN A 208.83.222.20
 
 pecl2 IN CNAME ovh.php.net.
 wiki IN CNAME ovh.php.net.
-testfest IN CNAME ovh.php.net.
 windows IN CNAME ovh.php.net.
 
 ;pecl4win	IN CNAME pecl4win.edin.dk.
