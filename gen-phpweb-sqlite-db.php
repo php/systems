@@ -111,6 +111,22 @@ function scan($dir, $lang)
 					break;
 				}
 			}
+
+			// Hack until PhD generates ids from the DocBook files, and error.php uses them
+			// $hackme contains class [method] prefixes with their function counterparts
+			$hackme = array(
+				'mysqli-result.' => 'mysqli-',
+				'mysqli.'        => 'mysqli-',
+			);
+			foreach ($hackme as $class => $procedural) {
+				if (false !== strpos($keyword, $class)) {
+					$tmp = str_replace($class, $procedural, $keyword);
+					sqlite_query($s, "INSERT INTO fs (lang, prefix, keyword, name, prio) values ('$lang', '$prefix', '$tmp', '$doc_rel', " . ($prio+5).")");
+					sqlite_query($s, "INSERT INTO fs (lang, prefix, keyword, name, prio) values ('$lang', '$prefix', '". metaphone($tmp) ."', '$doc_rel', " . ($prio+15).")");
+					break;
+				}
+			}
+
 			++$count;
 
 			sqlite_query($s, "INSERT INTO fs (lang, prefix, keyword, name, prio) values ('$lang', '$prefix', '$keyword', '$doc_rel', $prio)");
