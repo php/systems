@@ -26,16 +26,15 @@ $MANUAL_PREFIX		= $argv[3];
 $implied_lang		= isset($argv[4]) ? $argv[4] : false;
 $db_name			= $argv[1];
 
-$s = sqlite_open($db_name);
-if (!$s) {
-	return;
-}
-
 if (!file_exists($db_name)) {
-	if (!create_url_database($s)) {
+	if (!$s = sqlite_open($db_name)) {
 		return;
 	}
+	create_url_database($s);
 } else {
+	if (!$s = sqlite_open($db_name)) {
+		return;
+	}
 	sqlite_query($s, "BEGIN");
 	sqlite_query($s, "delete from fs");
 }
