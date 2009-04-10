@@ -128,7 +128,8 @@ rs1			IN A 207.44.132.102
 ; eZ Publish (contact: Derick)
 ez1		IN A 128.39.198.38
 
-sc1		IN A 66.225.196.49
+;sc1		IN A 66.225.196.49
+sc1		IN A 75.102.5.106
 sp1		IN A 66.249.27.150
 
 ; Nexcess (contact: Chris Wells clwells at nexcess dot net)
