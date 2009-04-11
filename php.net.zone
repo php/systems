@@ -158,8 +158,9 @@ oti2   IN A 8.8.38.129
 ovh	IN A 213.251.181.15
 
 ; eUKhost LTD.
-euk1	IN A 78.129.214.25
-euk2	IN A 213.175.195.123
+euk1		IN A 78.129.214.25
+euk2		IN A 213.175.195.123
+translate	IN A 213.175.195.123
 
 ; DomainKeys
 
