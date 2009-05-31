@@ -46,16 +46,14 @@ gtk		IN CNAME y1.php.net.
 qa		IN CNAME y1.php.net.
 
 museum		IN CNAME ez1.php.net.
-;docs		IN CNAME ez1.php.net.
 
 ; New people.php.net user directory
 people		IN CNAME y1.php.net.
 
 ; phpdoc stuff
-;livedocs	IN CNAME pb11.php.net.
-;*.doc.php.net.		IN CNAME pb11.php.net.
 doc			IN CNAME euk2.php.net.
 docs		IN CNAME euk2.php.net.
+translate	IN CNAME euk2.php.net.
 
 mail IN CNAME osu1.php.net.
 master		IN CNAME osu1.php.net.
@@ -158,10 +156,9 @@ oti2   IN A 8.8.38.129
 ; ovh, paid for by BinarySec. (contact Pierre)
 ovh	IN A 213.251.181.15
 
-; eUKhost LTD.
+; eUKhost LTD. (contact Philip)
 euk1		IN A 78.129.214.25
 euk2		IN A 213.175.195.123
-translate	IN A 213.175.195.123
 
 ; DomainKeys
 
