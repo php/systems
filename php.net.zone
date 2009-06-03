@@ -79,7 +79,7 @@ de.pear.php.net. 	IN A 92.51.134.4
 us.pear.php.net. 	IN A 208.83.222.20
 wiki.pear.php.net. 	IN A 208.83.222.20
 blog.pear.php.net. 	IN A 208.83.222.20
-planet.pear.php.net. 	IN A 84.19.184.187
+;planet.pear.php.net. 	IN A 84.19.184.187
 svn.pear.php.net. 	IN A 208.83.222.20
 
 *.pear.php.net.		300	IN CNAME euk1.php.net.
