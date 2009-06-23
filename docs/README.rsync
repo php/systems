@@ -38,14 +38,17 @@ Every hour systems/update-everything is executed which does:
         Creates phpweb/include/last_updated.inc
 
 
+## Commented out, different box handles these now
 Every other hour systems/update-snapshots is executed 
 
-Four times a day *.chm files are copied from Derick home directory to phpweb/distributions/manual/
+Four times a day *.chm files are copied from bjori home directory to phpweb/distributions/manual/
 
+## Commented out, not been in use for a good while
 Every thursday Nunos echm file is fetched and copied to phpweb/distributions/manual/php_manual_chm.zip
 
 Once a day systems/gen-phpweb-sqlite-db.php is executed (phpweb/backend/manual-lookup.sqlite)
 
+## Commented out, PEAR builds their own manuals now
 On sundays systems/update-pearweb-manuals -f is executed
 
 Once a day systems/update-php-gtk-web-manuals is executed
