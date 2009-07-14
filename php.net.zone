@@ -101,6 +101,7 @@ lists.php.net.		IN TXT "v=spf1 a mx a:osu1.php.net"
 
 ; Ecelerity MX running on OSU1
 ecelerity	IN CNAME osu1.php.net.
+php.net.		IN TXT "v=spf1 ptr ?all"
 opengrok		IN CNAME osu1.php.net.
 
 gcov			IN CNAME nex1.php.net.
