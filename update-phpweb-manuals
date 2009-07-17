@@ -34,7 +34,7 @@ if test -z "$do"; then
   exit
 fi
 
-echo $do | mail -s "rebuilding phpdoc: $do" imajes@php.net
+echo $do | mail -s "rebuilding phpdoc: $do" derick@php.net
 
 for a in $do; do
   if [ -d /local/mirrors/phpdoc/$a ]; then

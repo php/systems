@@ -1,5 +1,12 @@
 #!/bin/sh
 
+for i in phpweb php-master-web; do
+	cd /local/mirrors/$i
+	svn up -q
+done
+
+exit;
+
 for i in `ls -1 /local/mirrors|grep -v manual`; do
 #  echo updating $i mirror
   cd /local/mirrors/$i && cvs -Q upd -dP 2>&1 | \

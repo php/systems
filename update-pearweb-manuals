@@ -35,7 +35,7 @@ if test -z "$do"; then
   exit
 fi
 
-echo $do | mail -s "rebuilding peardoc: $do" imajes@php.net
+echo $do | mail -s "rebuilding peardoc: $do" derick@php.net
 
 for a in $do; do
   mkdir -p /local/mirrors/pearweb/public_html/manual/$a

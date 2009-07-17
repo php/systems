@@ -14,6 +14,12 @@ then
 	/local/webalizer/run.sh
 fi
 
+if test "$how" = "hourly";
+then
+	# purging for Cache_Lite
+	/usr/bin/env php /local/web/pear.php.net/cron/cache-garbage-collector.php > /dev/null
+fi
+
 #if test "$how" = "weekly";
 #then
 #	# clean trackbacks that are marked as spam
