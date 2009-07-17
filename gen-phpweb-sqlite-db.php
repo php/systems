@@ -69,7 +69,7 @@ function scan($dir, $lang)
 	while (($f = readdir($d)) !== false) {
 
 		// Directories to skip
-		$skips = array('CVS', 'images', 'toc', '.', '..');
+		$skips = array('.svn', 'images', 'toc', '.', '..');
 		if (in_array($f, $skips)) {
 			continue;
 		}
@@ -149,7 +149,7 @@ function scan_langs($root)
 	}
 	readdir($d); readdir($d);
 	while (($f = readdir($d)) !== false) {
-		if ($f === 'CVS') {
+		if ($f === '.svn') {
 			continue;
 		}
 		$file = $root . DIRECTORY_SEPARATOR . $f;
