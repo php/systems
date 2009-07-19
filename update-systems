@@ -2,15 +2,5 @@
 # $Id$
 # Update systems checkout under /local/systems
 
-export CVSROOT=":pserver:cvsread@cvs.php.net:/repository"
-export HOME=/local/.home-for-anon-cvs-checkouts
-
-if [ ! -d $HOME ] ; then
-	mkdir $HOME
-	# "log in" to cvs
-	echo "/1 :pserver:cvsread@cvs.php.net:2401/repository A:c:E?" > $HOME/.cvspass
-fi
-
 cd /local/systems
-cvs -q up
-
+svn update -q
