@@ -15,36 +15,29 @@ mkdir $dir/bug-patches || exit 1
 #
 # Apache configuration
 #
-cp /local/httpd/conf/pear.php.net.conf $dir/
-cp /local/httpd/conf/go-pear.org.conf $dir/
-cp /etc/crontab $dir/
-
-#
-# rrdtool stuff
-#
-cp -r /local/rrdtool $dir/
+cp /etc/httpd/conf/*.conf $dir/
 
 #
 # Database
 #
-nice -n 15 mysqldump --quick pear > $dir/pear.sql
+nice -n 15 mysqldump -u pear --password=pear --quick pear > $dir/pear.sql
 
 #
 # Packages
 #
-for file in /var/lib/pear/*.tgz; do
+for file in /home/pear/packages/*.tgz; do
 	cp $file $dir/packages/`basename $file`
 done
 
 #
 # REST files
 #
-cp -r /var/lib/pearweb/rest $basedir/$dir/pearweb-rest
+cp -r /home/pear/pearweb/rest $basedir/$dir/pearweb-rest
 
 #
 # Patches in the bug tracker
 #
-cp -r /var/tmp/pear/patch $basedir/$dir/bug-patches/
+cp -r /home/pear/pearweb/patches $basedir/$dir/bug-patches/
 
 #
 # Compress the whole stuff in a gzipped tar archive
