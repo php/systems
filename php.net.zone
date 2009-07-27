@@ -165,6 +165,10 @@ ovh	IN A 213.251.181.15
 euk1		IN A 78.129.214.25
 euk2		IN A 213.175.195.123
 
+; servergroove
+sg1			IN A 64.34.169.233
+test.pear	IN CNAME sg1.php.net.
+
 ; DomainKeys
 
 mx._domainkey.php.net. IN TXT "t=y; g=; k=rsa; p=MHwwDQYJKoZIhvcNAQEBBQADawAwaAJhANg8QYJB/6O2nGfNk1td5uRl1MMqETEAv/Jyv3wGPpoW7drSEVa7RsuZBgut/koWyJIpe0TWQRSSk+N6E0lNxkMwZVBSDU+HOpeO4+khXWtsq9Mv9BsAbPbf8VrgP5VsLQIDAQAB"
