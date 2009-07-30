@@ -47,7 +47,7 @@ qa		IN CNAME y1.php.net.
 
 museum		IN CNAME ez1.php.net.
 
-; New people.php.net user directory
+; people.php.net user directory
 people		IN CNAME y1.php.net.
 
 ; phpdoc stuff
