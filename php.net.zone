@@ -82,8 +82,8 @@ wiki.pear.php.net. 	IN A 208.83.222.20
 blog.pear.php.net. 	IN A 208.83.222.20
 ;planet.pear.php.net. 	IN A 84.19.184.187
 svn.pear.php.net. 	IN A 208.83.222.20
+download.pear       IN CNAME euk1.php.net.
 
-*.pear.php.net.		300	IN CNAME euk1.php.net.
 *.pecl.php.net.		300	IN CNAME pecl.php.net.
 
 pecl2 IN CNAME ovh.php.net.
