@@ -169,6 +169,7 @@ euk2		IN A 213.175.195.123
 ; servergrove
 sg1			IN A 64.34.169.233
 test.pear	IN CNAME sg1.php.net.
+test.pear2	IN CNAME sg1.php.net.
 
 ; DomainKeys
 
