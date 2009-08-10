@@ -77,7 +77,7 @@ pecl4win	IN CNAME ez1.php.net.
 ; Misc. PEAR sites
 de.pear.php.net. 	IN A 92.51.134.4
 us.pear.php.net. 	IN A 208.83.222.20
-us2.pear.php.net  IN A 64.34.169.233
+us2.pear.php.net.  IN A 64.34.169.233
 wiki.pear.php.net. 	IN A 208.83.222.20
 blog.pear.php.net. 	IN A 208.83.222.20
 ;planet.pear.php.net. 	IN A 84.19.184.187
@@ -166,7 +166,7 @@ ovh	IN A 213.251.181.15
 euk1		IN A 78.129.214.25
 euk2		IN A 213.175.195.123
 
-; servergroove
+; servergrove
 sg1			IN A 64.34.169.233
 test.pear	IN CNAME sg1.php.net.
 
