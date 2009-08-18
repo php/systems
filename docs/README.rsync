@@ -1,10 +1,10 @@
 
 Every hour systems/update-everything is executed which does:
     systems/update-repository
-        Updates the cvsup checkout
+        Updates the svnsync checkout
 
     systems/update-mirrors
-        Updates the entire cvs checkout
+        Updates the entire SVN checkout
 
     systems/update-phpweb-backend
         php-master-web/scripts/update-backend
