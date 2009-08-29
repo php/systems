@@ -35,7 +35,7 @@ then
 	exit 1
 fi
 tmp_dirname=$webdir-src-`date +%Y%m%d%H%M`
-svn co http://svn.php.net/repository/php/php-src/$branch $tmp_dirname &> /dev/null 
+svn export http://svn.php.net/repository/php/php-src/$branch $tmp_dirname &> /dev/null 
 #cvs -d :pserver:cvsread@cvs.php.net:/repository export $branch -d $tmp_dirname $module &> /dev/null 
 
 zip -r $base_www_dir/$webdir/$tmp_dirname.zip $tmp_dirname &> /dev/null
