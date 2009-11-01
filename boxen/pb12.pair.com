@@ -4,7 +4,7 @@
 
 export CONTINENT="us"
 
-HOURLY="update-systems maintain-pear"
-DAILY="update-time backup-pear prune-backups maintain-pear"
-WEEKLY="maintain-pear"
-MONTHLY="maintain-pear"
+HOURLY="update-systems"
+DAILY="update-time prune-backups"
+WEEKLY=""
+MONTHLY=""
