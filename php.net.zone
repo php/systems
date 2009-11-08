@@ -75,7 +75,7 @@ pecl		IN CNAME pair12.php.net.
 pecl4win	IN CNAME ez1.php.net.
 
 ; Misc. PEAR sites
-de.pear.php.net. 	IN A 92.51.134.4
+de.pear.php.net. 	IN A 83.169.7.198
 us.pear.php.net. 	IN A 64.191.203.6
 us2.pear.php.net.  IN A 64.34.169.233
 wiki.pear.php.net. 	IN A 208.83.222.20
