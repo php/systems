@@ -2,6 +2,7 @@
 
 FILE=/var/www/monitoring.php.net/passwd
 TOKEN=`cat /local/this-box/TOKEN`
+STATUS_PASSWD=`cat /local/this-box/STATUS_PASSWD`
 
 /usr/bin/curl -s -o $FILE~ -d "token=$TOKEN" -m 30 https://master.php.net/fetch/cvspasswd.php               
 
@@ -9,6 +10,7 @@ if test $? -eq 0 -a -s $FILE~; then
 	mv $FILE~ $FILE
 	chown www-data $FILE
 	chmod 0400 $FILE
+	htpasswd -b $FILE status $STATUS_PASSWD 2> /dev/null
 else
 	echo failed to update $FILE
 	rm -f $FILE~
