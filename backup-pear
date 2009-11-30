@@ -20,7 +20,7 @@ cp /etc/httpd/conf/*.conf $dir/
 #
 # Database
 #
-nice -n 15 mysqldump -u pear --password=pear --quick pear > $dir/pear.sql
+nice -n 15 mysqldump --quote-names -u pear --password=pear --quick pear > $dir/pear.sql
 
 #
 # Packages
