@@ -63,19 +63,21 @@ testfest	IN CNAME dp1a.php.net.
 
 embed		IN CNAME y1.php.net.
 irssi.embed	IN CNAME y1.php.net.
-pear		300	IN CNAME euk1.php.net.
-pear2		300	IN CNAME euk1.php.net.
+pear		IN CNAME euk1.php.net.
+pear2		IN CNAME euk1.php.net.
 pecl		IN CNAME pair12.php.net.
 pecl4win	IN CNAME ez1.php.net.
 
 ; Misc. PEAR sites
 de.pear.php.net. 	IN A 83.169.7.198
 us.pear.php.net. 	IN A 64.191.203.6
-us2.pear.php.net.  	IN A 64.34.169.233
+us2.pear.php.net.  	IN CNAME sg1.php.net.
 wiki.pear.php.net. 	IN A 208.83.222.20
 blog.pear.php.net. 	IN A 208.83.222.20
 svn.pear.php.net. 	IN A 208.83.222.20
 download.pear       	IN CNAME euk1.php.net.
+test.pear	IN CNAME sg1.php.net.
+test.pear2	IN CNAME sg1.php.net.
 
 *.pecl.php.net.		300	IN CNAME pecl.php.net.
 
@@ -156,9 +158,7 @@ euk1		IN A 78.129.214.25
 euk2		IN A 213.175.195.123
 
 ; servergrove
-sg1		IN A 64.34.169.233
-test.pear	IN CNAME sg1.php.net.
-test.pear2	IN CNAME sg1.php.net.
+sg1		IN A 38.108.46.133
 
 ; DomainKeys
 
