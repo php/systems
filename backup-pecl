@@ -1,0 +1,56 @@
+#!/bin/sh
+# $Id: backup-pear,v 1.4 2007/06/09 18:21:52 mj Exp $
+
+# Backup the PECL services
+
+basedir=/local/backups
+dir=pecl-$date
+
+cd $basedir
+mkdir $dir || exit 1
+mkdir $dir/packages || exit 1
+mkdir $dir/peclweb-rest || exit 1
+mkdir $dir/bug-patches || exit 1
+
+#
+# Apache configuration
+#
+cp /local/httpd/conf/pecl.php.net.conf $dir/
+cp /etc/crontab $dir/
+
+#
+# rrdtool stuff
+#
+cp -r /local/rrdtool $dir/
+
+#
+# Database
+#
+nice -n 15 mysqldump --quote-names --quick pear > $dir/pecl.sql
+
+#
+# Packages
+#
+for file in /var/lib/pear/*.tgz; do
+	cp $file $dir/packages/`basename $file`
+done
+
+#
+# REST files
+#
+cp -r /var/lib/peclweb/rest $basedir/$dir/peclweb-rest
+
+#
+# Patches in the bug tracker
+#
+cp -r /var/tmp/pear/patch $basedir/$dir/bug-patches/
+
+#
+# Compress the whole stuff in a gzipped tar archive
+#
+tar cf - $dir | gzip -9 > $basedir/$dir.tar.gz
+
+#
+# cleanup
+#
+rm -r $dir
