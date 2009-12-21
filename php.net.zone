@@ -109,7 +109,7 @@ results.testfest	IN CNAME sp1.php.net.
 osu1		IN A 140.211.166.39
 
 ; PAIR
-pair1		IN A 216.92.131.4
+pair1		IN A 76.75.200.58
 pb11		IN A 76.75.200.61
 pb12		IN A 76.75.200.106
 pair11		IN A 76.75.200.61
