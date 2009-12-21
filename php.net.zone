@@ -89,7 +89,7 @@ fr.windows 		IN CNAME ovh.php.net.
 ca.windows.php.net. 	IN A 38.108.68.10
 
 ; lists operated from pair1
-lists.php.net.		IN A 216.92.131.4
+lists.php.net.		IN A 76.75.200.58
 lists.php.net.		IN MX 10 pair1.php.net.
 lists.php.net.		IN TXT "v=spf1 a mx a:osu1.php.net"
 
