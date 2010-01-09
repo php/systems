@@ -1,0 +1,59 @@
+#!/bin/sh
+#Id$
+
+RMTOOLS_PATH=/home/web/rmtools.php.net
+BASEDIR=/local/this-box/rmtools.php.net
+DIR=gdbugs-"`date +%m-%d-%Y-%H-%M`"
+BACKUPPATH="/local/this-box/rmtools.php.net" # where do you save the backups?
+
+# Attachments path
+DAILY_BACKUPS="2" # keep this amount data backups
+
+# creates $1, if not existant
+checkDir()
+{
+	if [ ! -d "${BACKUPPATH}/$1" ]
+	then
+		mkdir -p "${BACKUPPATH}/$1"
+	fi
+}
+
+# 1 -> path
+# 2 -> name
+# 3 -> number of backups
+rotateDir()
+{
+	for i in `seq $(($3 - 1)) -1 1`
+	do
+		if [ -f "$1/$2.$i.tar.bz2" ]
+		then
+			mv "$1/$2.$i.tar.bz2" "$1/$2.$((i + 1)).tar.bz2"
+		fi
+#  for the SQL data, bzip'ed content not using tar
+		if [ -f "$1/$2.$i.bz2" ]
+		then
+			mv "$1/$2.$i.bz2" "$1/$2.$((i + 1)).bz2"
+		fi
+
+	done
+}
+
+checkDir "archive"
+checkDir "daily"
+
+# first step: rotate daily.
+rotateDir "${BACKUPPATH}/daily" "data" "$DAILY_BACKUPS"
+
+# then create our backup
+#   --exclude is not accepted for Linksys NSLU2 box, any alternative?
+echo "${RMTOOLS_PATH}"
+tar --exclude=".*" -cjf "/tmp/data.1.tar.bz2" -C "${RMTOOLS_PATH}" "data"
+
+# create an archive backup?
+if [ `date +%d` == "01" ]
+then
+	cp "/tmp/data.1.tar.bz2" "${BACKUPPATH}/archive/data-"`date +%m-%d-%Y`".tar.bz2"
+fi
+
+# add them to daily.
+mv "/tmp/data.1.tar.bz2" "${BACKUPPATH}/daily"
