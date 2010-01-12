@@ -47,7 +47,7 @@ rotateDir "${BACKUPPATH}/daily" "data" "$DAILY_BACKUPS"
 # then create our backup
 #   --exclude is not accepted for Linksys NSLU2 box, any alternative?
 echo "${RMTOOLS_PATH}"
-tar --exclude=".*" -cjf "/tmp/data.1.tar.bz2" -C "${RMTOOLS_PATH}" "data"
+tar --exclude=repo -cjf "/tmp/data.1.tar.bz2" -C "${RMTOOLS_PATH}" "data"
 
 # create an archive backup?
 if [ `date +%d` == "01" ]
