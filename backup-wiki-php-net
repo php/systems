@@ -7,8 +7,8 @@
 # config
 WIKIPATH="/home/web/wiki.php.net/public_html" # path to your wiki, no symbolic are links allowed!
 BACKUPPATH="/local/this-box/wiki.php.net" # where do you save the backups?
-DAILY_DATA_BACKUPS="8" # keep this amount data backups
-DAILY_MEDIA_BACKUPS="3" # and media backups
+DAILY_DATA_BACKUPS="2" # keep this amount data backups
+DAILY_MEDIA_BACKUPS="2" # and media backups
 # no more config
 
 # creates $1, if not existant
