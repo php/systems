@@ -50,6 +50,7 @@ people		IN CNAME y1.php.net.
 doc		IN CNAME euk2.php.net.
 docs		IN CNAME euk2.php.net.
 translate	IN CNAME euk2.php.net.
+edit	IN CNAME pb11.php.net.
 
 mail IN CNAME osu1.php.net.
 master		IN CNAME osu1.php.net.
