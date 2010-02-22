@@ -22,6 +22,7 @@ $ORIGIN php.net.
 www		IN CNAME y2.php.net.
 www2		IN CNAME zend.php.net.
 bugs		IN CNAME y1.php.net.
+bugs-beta   IN CNAME ez1.php.net.
 
 conf		IN CNAME y2.php.net.
 conf2		IN CNAME y2.php.net.
@@ -126,7 +127,7 @@ zend		IN A 209.61.191.11
 ; EV1
 rs1		IN A 207.44.132.102
 
-; eZ Publish (contact: Derick)
+; eZ/Hit (contact: Derick)
 ez1		IN A 128.39.198.38
 
 sc1		IN A 75.102.5.106
