@@ -21,7 +21,7 @@ $ORIGIN php.net.
 
 www		IN CNAME y2.php.net.
 www2		IN CNAME zend.php.net.
-bugs		IN CNAME y1.php.net.
+bugs		IN CNAME ez1.php.net.
 bugs-beta   IN CNAME ez1.php.net.
 
 conf		IN CNAME y2.php.net.
