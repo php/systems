@@ -33,9 +33,6 @@ cvs		IN CNAME y1.php.net.
 cvsup		IN CNAME cvs.php.net.
 cvsweb		IN CNAME cvs.php.net.
 viewcvs		IN CNAME cvs.php.net.
-chora		IN CNAME cvs.php.net.
-bonsai		IN CNAME cvs.php.net.
-lxr		IN CNAME cvs.php.net.
 
 svn		IN CNAME y1.php.net.
 
