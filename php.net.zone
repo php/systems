@@ -130,6 +130,7 @@ ez1		IN A 128.39.198.38
 sc1		IN A 75.102.5.106
 sp1		IN A 66.249.27.150
 sp2		IN A 173.236.52.218
+lxr		IN A 94.23.222.92
 
 ; Nexcess (contact: Chris Wells clwells at nexcess dot net)
 nex1		IN A 208.69.122.11
