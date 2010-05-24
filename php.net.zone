@@ -189,3 +189,8 @@ afup.php.net.		IN CNAME www.afup.org.
 
 ; Obsolete?
 s390			IN A 32.97.40.56
+
+; scaffolding for the unit tests
+mx1.tests.php.net.     IN MX 10 127.0.0.1.
+mx2.tests.php.net.     IN MX 10 10.0.0.10.
+mx2.tests.php.net.     IN MX 20 10.0.0.20.
