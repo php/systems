@@ -69,7 +69,7 @@ function scan($dir, $lang)
 	while (($f = readdir($d)) !== false) {
 
 		// Directories to skip
-		$skips = array('.svn', 'images', 'toc', '.', '..');
+		$skips = array('.svn', 'feeds', 'images', 'toc', '.', '..');
 		if (in_array($f, $skips)) {
 			continue;
 		}
