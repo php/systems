@@ -91,6 +91,14 @@ function scan($dir, $lang)
 			if ($x !== false) {
 				$keyword = substr($keyword, 0, $x);
 			}
+			
+			// Skip PHP 4 domxml (book.domxml). It uses function. syntax, unlike book.dom
+			if (0 === strpos($keyword, 'function.dom') && false === strpos($keyword, 'simplexml')) {
+				continue;
+			}
+			if (0 === strpos($keyword, 'function.xpath') || 0 === strpos($keyword, 'function.xptr')) {
+				continue;
+			}
 
 			/* Example:
 			- section:	book.
