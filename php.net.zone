@@ -30,6 +30,7 @@ talks		IN CNAME y2.php.net.
 pres		IN CNAME y2.php.net.
 
 cvs		IN CNAME y1.php.net.
+cvsold		IN CNAME cvs.php.net.
 cvsup		IN CNAME cvs.php.net.
 cvsweb		IN CNAME cvs.php.net.
 viewcvs		IN CNAME cvs.php.net.
