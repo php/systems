@@ -164,7 +164,7 @@ euk1		IN A 78.129.214.25
 euk2		IN A 213.175.195.123
 
 ; servergrove
-sg1		IN A 38.108.46.133
+sg1		IN A 69.195.198.158 
 
 ; streamservice (prototype website for new design)
 prototype   IN CNAME php.streamservice.nl.
