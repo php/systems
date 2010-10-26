@@ -3,7 +3,7 @@
    +----------------------------------------------------------------------+
    | PHP Infrastucture                                                    |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1997-2009 The PHP Group                                |
+   | Copyright (c) 1997-2010 The PHP Group                                |
    +----------------------------------------------------------------------+
    | This source file is subject to version 3.01 of the PHP license,      |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -194,8 +194,8 @@ function display_next_snap($conf)
                 <h3>Snapshot Builds</h3>
                 <p>
                     You can find the latest development sources
-                    packages for PHP 5, and PHP 6 here. Source code is 
-                    checked out of CVS and packaged every 2 hours.
+                    packages for PHP 5, and Trunk here. Source code is 
+                    checked out of SVN and packaged every 2 hours.
                 </p>
                 <p>
 		   <strong> For Windows builds, see <a href="http://windows.php.net/snapshots/">Windows Snapshot page</a>.</strong>
@@ -304,7 +304,7 @@ if (isset($_GET['branch']) && isset($_GET['distro']) && isset($b[$_GET['branch']
         
         <div id="pagefooter">
             <div id="copyright">
-                <a href="http://www.php.net/copyright.php">Copyright &copy; 2001-2009 The PHP Group</a><br />
+                <a href="http://www.php.net/copyright.php">Copyright &copy; 2001-2010 The PHP Group</a><br />
                 All rights reserved.
             </div>
         
