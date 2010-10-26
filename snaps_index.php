@@ -207,6 +207,12 @@ function display_next_snap($conf)
                     production use; please use the packages at 
                     <a href="http://www.php.net/downloads">PHP downloads</a>.
                 </p>
+
+                <p>
+                 Note: Replacing the date string with 'latest' will refer to
+                 the latest version of the snapshot. For example:
+                 <a href="php-trunk-latest.tar.bz2">php-trunk-latest.tar.bz2</a>
+                </p>
                 
                 <h3>Next snapshot</h3>
                 <dl><?php display_next_snap($b); ?></dl>
