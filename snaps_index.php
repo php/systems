@@ -197,9 +197,11 @@ function display_next_snap($conf)
                     packages for PHP 5, and Trunk here. Source code is 
                     checked out of SVN and packaged every 2 hours.
                 </p>
+<!--
                 <p>
 		   <strong> For Windows builds, see <a href="http://windows.php.net/snapshots/">Windows Snapshot page</a>.</strong>
                 </p>
+-->
                 <p>
                     These packages are <strong>NOT</strong> intended for 
                     production use; please use the packages at 
