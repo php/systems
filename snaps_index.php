@@ -57,14 +57,14 @@ $b["5.3"] =
   ),
   );
 
-/* 6.0 */
-$b["6.0"] = 
+/* trunk */
+$b["trunk"] = 
   array(
   "Source" => array(
     "freq" => 3600 * 2,
     "glob" => array(
-      "php-6.0-dev (tar.bz2)" => "php6.0-2*.tar.bz2",
-      "php-6.0-dev (tar.gz)"  => "php6.0-2*.tar.gz"
+      "php-trunk-dev (tar.bz2)" => "php-trunk-2*.tar.bz2",
+      "php-trunk-dev (tar.gz)"  => "php-trunk-2*.tar.gz"
       ),
   ),
   );
