@@ -168,6 +168,7 @@ sg1		IN A 69.195.198.158
 
 ; streamservice (prototype website for new design)
 prototype   IN CNAME proto.php.streamservice.nl.
+ns6.is.not.my.friend  IN CNAME proto.php.streamservice.nl.
 
 ; DomainKeys
 
@@ -195,3 +196,4 @@ s390			IN A 32.97.40.56
 mx1.tests.php.net.     IN MX 10 127.0.0.1.
 mx2.tests.php.net.     IN MX 10 10.0.0.10.
 mx2.tests.php.net.     IN MX 20 10.0.0.20.
+
