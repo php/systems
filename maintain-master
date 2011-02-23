@@ -16,6 +16,7 @@ include "/local/mirrors/php-master-web/fetch/cvspasswd.php";
 if test "$how" = "weekly" ; then
 	php /local/mirrors/php-master-web/scripts/mirror-summary
 	php /local/mirrors/php-master-web/scripts/email-note-summaries
+	php /local/mirrors/php-master-web/scripts/event-weekly-email
 fi
 
 /local/systems/update-systems
