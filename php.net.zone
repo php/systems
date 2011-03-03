@@ -36,6 +36,7 @@ cvsweb		IN CNAME cvs.php.net.
 viewcvs		IN CNAME cvs.php.net.
 
 svn		IN CNAME y1.php.net.
+websvn		IN CNAME y1.php.net.
 
 gtk		IN CNAME y1.php.net.
 qa		IN CNAME y1.php.net.
