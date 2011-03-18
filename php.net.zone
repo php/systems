@@ -84,13 +84,13 @@ test.pyrus	IN CNAME sg1.php.net.
 
 *.pecl.php.net.		300	IN CNAME pecl.php.net.
 
-pecl2 			IN CNAME ovh.php.net.
-pecl-test		IN CNAME ovh.php.net.
-wiki 			IN CNAME ovh.php.net.
-windows 		IN CNAME ovh.php.net.
-rmtools			IN CNAME ovh.php.net.
+pecl2 			IN CNAME maintenance.php.net.
+pecl-test		IN CNAME maintenance.php.net.
+wiki 			IN CNAME maintenance.php.net.
+windows 		IN CNAME maintenance.php.net.
+rmtools			IN CNAME maintenance.php.net.
 nl.windows.php.net. 	IN A 195.8.208.150 
-fr.windows 		IN CNAME ovh.php.net.
+fr.windows 		IN CNAME maintenance.php.net.
 ca.windows.php.net. 	IN A 38.108.68.10
 
 ; lists operated from pair1
@@ -162,6 +162,10 @@ oti2   		IN A 8.8.38.129
 
 ; ovh, paid for by BinarySec. (contact Pierre)
 ovh		IN A 213.251.181.15
+
+; temporary fix for ovh being hax0red
+maintenance IN A 87.238.48.210
+
 
 ; eUKhost LTD. (contact Philip)
 euk1		IN A 78.129.214.25
