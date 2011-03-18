@@ -1,7 +1,7 @@
 ; vim:ft=bindzone:
 ; $Id$
 $ORIGIN		.
-$TTL 86400 ; 1 day
+$TTL 300 ; 5 minutes
 php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 					@SERIAL@	; serial
 					16384		; refresh (4 hours 33 minutes 4 seconds)
