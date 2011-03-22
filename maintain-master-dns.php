@@ -12,11 +12,11 @@ echo "; this file was automatically generated from systems/php.net.zone\n\n";
 echo str_replace('@SERIAL@', time(), file_get_contents('/local/systems/php.net.zone'));
 
 echo "\n; mirrors\n";
-echo "\$TTL 86400 ; 1 day\n";
+echo "\$TTL 3600 ; 1 hour\n";
 
 if ($q) {
 	while ($row = mysql_fetch_array($q)) {
-		if ($row['mirrortype'] != 1 || !preg_match("!^\\w{2}\\d?.php.net$!", $row['hostname'])) {
+		if ($row['mirrortype'] != 1 || !preg_match("!^\\w{2}\\d?.php.net$!", $row['hostname']) || $row['active'] != 1) {
 			continue;
 		}
 		
