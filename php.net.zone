@@ -87,7 +87,7 @@ test.pyrus	IN CNAME sg1.php.net.
 pecl2 			IN CNAME maintenance.php.net.
 pecl-test		IN CNAME maintenance.php.net.
 wiki 			IN CNAME maintenance.php.net.
-windows 		IN CNAME maintenance.php.net.
+windows 		IN A 195.8.208.241 
 rmtools			IN CNAME maintenance.php.net.
 nl.windows.php.net. 	IN A 195.8.208.150 
 fr.windows 		IN CNAME maintenance.php.net.
