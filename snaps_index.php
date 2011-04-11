@@ -300,7 +300,7 @@ if (isset($_GET['branch']) && isset($_GET['distro']) && isset($b[$_GET['branch']
         
         <div id="pagefooter">
             <div id="copyright">
-                <a href="http://www.php.net/copyright.php">Copyright &copy; 2001-2010 The PHP Group</a><br />
+                <a href="http://www.php.net/copyright.php">Copyright &copy; 2001-2011 The PHP Group</a><br />
                 All rights reserved.
             </div>
         
