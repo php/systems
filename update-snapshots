@@ -26,8 +26,8 @@ do_update ( ) {
   f=$target.tar
   tar cf $f $target
   rm -rf $target
-  gzip -c9 < $f > $f.gz
-  bzip2 -9 < $f > $f.bz2
+  gzip -c5 < $f > $f.gz
+  bzip2 -5 < $f > $f.bz2
   rm -f $f
   mv $f* $t
 
