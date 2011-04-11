@@ -3,6 +3,11 @@ PATH=/usr/local/bin:/usr/bin:/bin
 d=`date -u +%Y%m%d%H%M`
 t=/local/sites/snaps.php.net/www
 
+fetch_index ( ) {
+  cd /local/repository/systems
+  svn up -q >/dev/null
+}
+
 do_update ( ) {
   prefix=$1
   
@@ -10,26 +15,27 @@ do_update ( ) {
   target=$1-$d
 
   cd $source
-  cvs up -dP >/dev/null
+  svn up -q >/dev/null
 
   cd /dev/shm || exit 1
   cp -rp $source $target
-  find $target -name CVS -o -name .cvsignore | xargs rm -rf
+  find $target -name .svn -o -name .cvsignore | xargs rm -rf
   rm -f $target/.deps $target/ChangeLog*
   (cd $target && ./buildconf --force --copy && ./genfiles) >/dev/null 2>&1
   rm -f $target/buildmk.stamp
   f=$target.tar
   tar cf $f $target
   rm -rf $target
-  gzip -c5 < $f > $f.gz
-  bzip2 -5 < $f > $f.bz2
+  gzip -c9 < $f > $f.gz
+  bzip2 -9 < $f > $f.bz2
   rm -f $f
   mv $f* $t
 
   (cd $t; ln -sf $f.gz $prefix-latest.tar.gz; ln -sf $f.bz2 $prefix-latest.tar.bz2)
 }
 
-do_update php6.0
+fetch_index
+do_update php-trunk
 do_update php5.3
 do_update php5.2
 
