@@ -33,18 +33,6 @@ date_default_timezone_set("UTC");
 /* Configure branches and distributions */
 $b = array();
 
-/* 5.2 */
-$b["5.2"] = 
-  array(
-  "Source" => array(
-    "freq" => 3600 * 2,
-    "glob" => array(
-      "php-5.2-dev (tar.bz2)" => "php5.2-2*.tar.bz2",
-      "php-5.2-dev (tar.gz)"  => "php5.2-2*.tar.gz"
-      ),
-  ),
-  );
-
 /* 5.3 */
 $b["5.3"] = 
   array(
