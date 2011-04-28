@@ -154,7 +154,7 @@ if (!empty($qs)) {
   foreach ($shortcuts as $sc_branch_name => $sc_options) {
     if (in_array($qs, $sc_options)) {
       header('HTTP/1.1 302 Found');
-      header('http://snaps.php.net/'. $sc_branch_name . '-latest.tar.bz2');
+      header('Location: http://snaps.php.net/'. $sc_branch_name . '-latest.tar.bz2');
       exit;
     }
   }
