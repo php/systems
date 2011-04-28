@@ -140,7 +140,25 @@ function display_next_snap($conf)
   }
 }
 
-
+// Testing. Use 404 eventually, and probably better downloading mechanism.
+// Example usage: http://snaps.php.net/?latest
+// Example usage of tomorrow: http://snaps.php.net/latest
+// @todo consider adding information to $b, and using that instead
+$qs = trim($_SERVER['QUERY_STRING']);
+if (!empty($qs)) {
+  $shortcuts = array(
+    'php-trunk' => array('trunk', 'latest', 'latesttrunk'),
+    'php5.3'    => array('53', 'latest53'),
+    #'php5.4'    => array('54', 'latest54'),
+  );
+  foreach ($shortcuts as $sc_branch_name => $sc_options) {
+    if (in_array($qs, $sc_options)) {
+      header('HTTP/1.1 302 Found');
+      header('http://snaps.php.net/'. $sc_branch_name . '-latest.tar.bz2');
+      exit;
+    }
+  }
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
