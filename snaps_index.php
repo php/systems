@@ -215,9 +215,12 @@ if (!empty($qs)) {
                 </p>
 
                 <p>
-                 Note: Replacing the date string with 'latest' will refer to
-                 the latest version of the snapshot. For example:
-                 <a href="php-trunk-latest.tar.bz2">php-trunk-latest.tar.bz2</a>
+                 URL shortcuts: Downloading the latest snapshot for specific PHP branches is easy.
+                 Example URLs:
+                 <a href="?53">http://snaps.php.net/?53</a> (latest 5.3 snap),
+                 <a href="?trunk">http://snaps.php.net/?trunk</a> (latest trunk snap), and 
+                 URLs like <a href="php-trunk-latest.tar.bz2">php-trunk-latest.tar.bz2</a> also
+                 work.
                 </p>
                 
                 <h3>Next snapshot</h3>
