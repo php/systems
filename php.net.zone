@@ -1,4 +1,4 @@
-; vim:ft=bindzone:
+; vim:ft=bindzone noet ts=7:
 ; $Id$
 $ORIGIN		.
 $TTL 300 ; 5 minutes
@@ -54,6 +54,8 @@ edit	IN CNAME pb11.php.net.
 
 mail IN CNAME osu1.php.net.
 master		IN CNAME osu1.php.net.
+backend	IN CNAME rl2.php.net.
+frontend	IN CNAME rl2.php.net.
 beta.master	IN CNAME osu1.php.net.
 news		IN CNAME pair1.php.net.
 rsync		IN CNAME sc1.php.net.
@@ -168,6 +170,7 @@ maintenance IN A 87.238.48.210
 
 ; Redpill Linpro (contact: ms.shared+lists/php-ops@redpill-linpro.com)
 rl IN A 87.238.48.210
+rl2 IN A 87.238.48.211
 
 
 ; eUKhost LTD. (contact Philip)
