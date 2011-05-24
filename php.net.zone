@@ -78,8 +78,8 @@ de.pear.php.net. 	IN A 83.169.7.198
 us.pear.php.net. 	IN A 64.191.203.6
 us2.pear.php.net.  	IN CNAME sg1.php.net.
 wiki.pear.php.net. 	IN A 208.83.222.20
-blog.pear.php.net. 	IN A 208.83.222.20
 svn.pear.php.net. 	IN A 208.83.222.20
+blog.pear 		IN CNAME euk1.php.net.
 download.pear       	IN CNAME euk1.php.net.
 test.pear	IN CNAME sg1.php.net.
 test.pear2	IN CNAME sg1.php.net.
