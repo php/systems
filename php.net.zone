@@ -40,6 +40,7 @@ websvn		IN CNAME y1.php.net.
 
 gtk		IN CNAME y1.php.net.
 qa		IN CNAME y1.php.net.
+qa-beta	IN A 67.23.255.166
 
 museum		IN CNAME ez1.php.net.
 
