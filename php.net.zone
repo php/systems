@@ -39,8 +39,8 @@ svn		IN CNAME y1.php.net.
 websvn		IN CNAME y1.php.net.
 
 gtk		IN CNAME y1.php.net.
-qa		IN A 67.23.255.166
-qa-beta	IN A 67.23.255.166
+qa		IN CNAME micfo1.php.net.
+qa-beta	IN CNAME micfo1.php.net.
 
 museum		IN CNAME ez1.php.net.
 
@@ -176,6 +176,9 @@ rl2 IN A 87.238.48.211
 ; eUKhost LTD. (contact Philip)
 euk1		IN A 78.129.214.25
 euk2		IN A 213.175.195.123
+
+; Micfo (contact danbrown or philip)
+micfo1		IN A 67.23.255.166
 
 ; servergrove
 sg1		IN A 69.195.198.158 
