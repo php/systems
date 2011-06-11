@@ -177,8 +177,9 @@ rl2 IN A 87.238.48.211
 euk1		IN A 78.129.214.25
 euk2		IN A 213.175.195.123
 
-; Micfo (contact danbrown or philip)
+; Micfo (contact danbrown, philip or dsp)
 micfo1		IN A 67.23.255.166
+micfo2		IN A 64.37.62.241
 
 ; servergrove
 sg1		IN A 69.195.198.158 
