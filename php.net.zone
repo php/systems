@@ -44,6 +44,9 @@ qa-beta	IN CNAME micfo1.php.net.
 
 museum		IN CNAME ez1.php.net.
 
+hg		IN CNAME micfo2.php.net.
+git		IN CNAME micfo2.php.net.
+
 ; people.php.net user directory
 people		IN CNAME y1.php.net.
 
