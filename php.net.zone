@@ -21,7 +21,9 @@ $ORIGIN php.net.
 
 www		IN CNAME y2.php.net.
 www2		IN CNAME zend.php.net.
-bugs		IN CNAME ez1.php.net.
+;bugs		IN CNAME ez1.php.net.
+; Temporary override during downtime. [danbrown]
+bugs		IN CNAME micfo1.php.net.
 bugs-beta   IN CNAME ez1.php.net.
 
 conf		IN CNAME y2.php.net.
@@ -42,7 +44,9 @@ gtk		IN CNAME y1.php.net.
 qa		IN CNAME micfo1.php.net.
 qa-beta	IN CNAME micfo1.php.net.
 
-museum		IN CNAME ez1.php.net.
+;museum		IN CNAME ez1.php.net.
+; Temporary override during downtime. [danbrown]
+museum		IN CNAME micfo1.php.net.
 
 hg		IN CNAME micfo2.php.net.
 git		IN CNAME micfo2.php.net.
@@ -64,7 +68,9 @@ frontend	IN CNAME rl2.php.net.
 beta.master	IN CNAME osu1.php.net.
 news		IN CNAME pair1.php.net.
 rsync		IN CNAME sc1.php.net.
-snaps		IN CNAME ez1.php.net.
+;snaps		IN CNAME ez1.php.net.
+; Temporary override during downtime. [danbrown]
+snaps		IN CNAME micfo1.php.net.
 smarty		IN CNAME y1.php.net.
 snapsmaster	IN CNAME sc1.php.net.
 testfest	IN CNAME dp1a.php.net.
