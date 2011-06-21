@@ -25,6 +25,7 @@ www2		IN CNAME zend.php.net.
 ; Temporary override during downtime. [danbrown]
 bugs		IN CNAME micfo1.php.net.
 bugs-beta   IN CNAME ez1.php.net.
+bugs-test	IN CNAME pecl2.php.net.
 
 conf		IN CNAME y2.php.net.
 conf2		IN CNAME y2.php.net.
