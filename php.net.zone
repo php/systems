@@ -95,7 +95,7 @@ test.pyrus	IN CNAME sg1.php.net.
 
 *.pecl.php.net.		300	IN CNAME pecl.php.net.
 
-pecl2 			IN CNAME maintenance.php.net.
+pecl2 			IN A 69.195.199.133
 pecl-test		IN CNAME maintenance.php.net.
 wiki 			IN CNAME rl.php.net.
 windows 		IN A 195.8.208.241 
