@@ -23,9 +23,9 @@ www		IN CNAME y2.php.net.
 www2		IN CNAME zend.php.net.
 ;bugs		IN CNAME ez1.php.net.
 ; Temporary override during downtime. [danbrown]
-bugs		IN CNAME micfo1.php.net.
-bugs-beta   IN CNAME ez1.php.net.
-bugs-test	IN CNAME pecl2.php.net.
+bugs		IN CNAME sg2.php.net.
+bugs-beta   IN CNAME sg2.php.net.
+bugs-test	IN CNAME sg2.php.net.
 
 conf		IN CNAME y2.php.net.
 conf2		IN CNAME y2.php.net.
@@ -82,7 +82,7 @@ pear		IN CNAME euk1.php.net.
 pear2		IN CNAME euk1.php.net.
 pyrus		IN CNAME euk1.php.net.
 pecl		IN CNAME pair12.php.net.
-pecl4win	IN CNAME ez1.php.net.
+pecl4win	IN CNAME sg2.php.net.
 
 ; Misc. PEAR sites
 de.pear.php.net. 	IN A 83.169.7.198
@@ -94,10 +94,10 @@ test.pear	IN CNAME sg1.php.net.
 test.pear2	IN CNAME sg1.php.net.
 test.pyrus	IN CNAME sg1.php.net.
 
-*.pecl.php.net.		300	IN CNAME pecl.php.net.
+*.pecl.php.net.		300	IN CNAME sg2.php.net.
 
-pecl2 			IN A 69.195.199.133
-pecl-test		IN CNAME maintenance.php.net.
+pecl2 			IN CNAME sg2.php.net.
+pecl-test		IN CNAME sg2.php.net.
 wiki 			IN CNAME rl.php.net.
 windows 		IN A 195.8.208.241 
 rmtools			IN CNAME maintenance.php.net.
@@ -193,6 +193,7 @@ micfo2		IN A 64.37.62.241
 
 ; servergrove
 sg1		IN A 69.195.198.158 
+sg2		IN A 69.195.199.133
 
 ; streamservice (prototype website for new design)
 prototype   IN CNAME proto.php.streamservice.nl.
