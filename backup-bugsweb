@@ -1,0 +1,37 @@
+#!/bin/sh
+# $Id: backup-pear,v 1.4 2007/06/09 18:21:52 mj Exp $
+
+# Backup the PECL services
+
+basedir=/local/backups
+dir=php-bugsweb-$date
+
+cd $basedir
+mkdir $dir || exit 1
+mkdir $dir/php-bugs-patches || exit 1
+mkdir $dir/php-bugs || exit 1
+
+#
+# Apache configuration
+#
+cp /etc/apache2/sites-available/bugs.php.net $dir/
+
+#
+# Database
+#
+nice -n 15 mysqldump --quote-names --quick phpbugsdb > $dir/phpbugs.sql
+
+#
+# Patches in the bug tracker
+#
+cp -r /home/www/bugs.php.net/uploads $basedir/$dir/php-bug-patches/
+
+#
+# Compress the whole stuff in a gzipped tar archive
+#
+tar cf - $dir | gzip -9 > $basedir/$dir.tar.gz
+
+#
+# cleanup
+#
+rm -r $dir
