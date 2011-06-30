@@ -4,7 +4,7 @@
 
 export CONTINENT="us"
 
-HOURLY="update-systems"
+HOURLY="update-systems backup-bugsweb"
 DAILY="update-time backup-bugsweb prune-backups"
 WEEKLY=""
 MONTHLY=""
