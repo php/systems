@@ -1,0 +1,10 @@
+# $Id$
+
+# Service configuration for sgrv2.php.net 
+
+export CONTINENT="us"
+
+HOURLY="update-systems"
+DAILY="update-time backup-bugsweb prune-backups"
+WEEKLY=""
+MONTHLY=""
