@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Updates (pear|pecl).php.net from rsync
+#
+# public_html/rest must be excluded because these are symlinks on the
+# destination machine pointing to the static XML files for the installer.
+#
+# 4       *       *       *       *       root    /usr/local/www/update 2&1>/dev/null
+#
+# $Id: update-peclweb 276687 2009-03-02 18:53:16Z pajoye $
+
+rsync -aC --delete --delete-after --exclude=logs --exclude=uploads --exclude=local_config.php \
+	    rsync.php.net::php-bugs-web /home/www/bugs.php.net
+chown -R www-data.www-data /home/www/bugs.php.net
