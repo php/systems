@@ -41,10 +41,7 @@ Every hour systems/update-everything is executed which does:
 ## Commented out, different box handles these now
 Every other hour systems/update-snapshots is executed 
 
-Four times a day *.chm files are copied from bjori home directory to phpweb/distributions/manual/
-
-## Commented out, not been in use for a good while
-Every thursday Nunos echm file is fetched and copied to phpweb/distributions/manual/php_manual_chm.zip
+CHMS are copied from oti1.php.net with the phpdoc/doc-base/trunk/scripts/fetch-chms.php script
 
 Once a day systems/gen-phpweb-sqlite-db.php is executed (phpweb/backend/manual-lookup.sqlite)
 
