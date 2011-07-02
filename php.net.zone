@@ -103,7 +103,6 @@ windows 		IN A 195.8.208.241
 rmtools			IN CNAME maintenance.php.net.
 nl.windows.php.net. 	IN A 195.8.208.150 
 fr.windows 		IN CNAME maintenance.php.net.
-ca.windows.php.net. 	IN A 38.108.68.10
 
 ; lists operated from pair1
 lists.php.net.		IN A 76.75.200.58
