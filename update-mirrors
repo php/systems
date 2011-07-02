@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for i in phpweb php-master-web; do
+for i in phpweb php-master-web qaweb php-gtk-web php-gtk-doc php-bugs-web php-people-web php-news-web embed-web peclweb talks talks/presentations php-wiki php-rmtools; do
 	cd /local/mirrors/$i
 	svn up -q
 done
