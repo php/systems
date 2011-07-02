@@ -129,10 +129,11 @@ wepay    IN A 66.201.49.173
 
 ; PAIR
 pair1		IN A 76.75.200.58
-pb11		IN A 76.75.200.61
-pb12		IN A 76.75.200.106
 pair11		IN A 76.75.200.61
 pair12		IN A 76.75.200.106
+pb1		IN A 76.75.200.58
+pb11            IN A 76.75.200.61
+pb12            IN A 76.75.200.106
 
 ; server1.zend.com
 zend		IN A 209.61.191.11
