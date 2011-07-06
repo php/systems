@@ -4,7 +4,7 @@
 
 This script scans files within the generated PHP Manual (phpweb theme)
 and creates shortcut lookups for them with their metaphone based
-companions. Mirrors with SQLite then check against this data. So,
+companions. Mirrors with pdo_sqlite then check against this data. So,
 this allows the likes of "php.net/foo" to work.
 
 This script is known to be imperfect, and future plans will use PhD to
@@ -26,18 +26,37 @@ $MANUAL_PREFIX		= $argv[3];
 $implied_lang		= isset($argv[4]) ? $argv[4] : false;
 $db_name			= $argv[1];
 
-if (!file_exists($db_name)) {
-	if (!$s = sqlite_open($db_name)) {
-		return;
-	}
-	create_url_database($s);
-} else {
-	if (!$s = sqlite_open($db_name)) {
-		return;
-	}
-	sqlite_query($s, "BEGIN");
-	sqlite_query($s, "delete from fs");
+if (file_exists($db_name)) {
+	unlink($db_name);
 }
+
+$dbh = new PDO( "sqlite:$db_name", '', '' );
+$dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+
+$sql = "CREATE TABLE fs (
+			lang char(5) not null,
+			prefix char(32) not null,
+			keyword char(128) not null,
+			name varchar(238) not null,
+			prio int not null
+		);";
+
+try {
+	$res = $dbh->query( $sql );
+	$res = $dbh->query( 'CREATE INDEX map ON fs (lang,keyword)' );
+} catch ( PDOException $e ) {
+	echo 'Error: Cannot create db table. Here is the error message: ' . $e->getMessage() . PHP_EOL;
+	exit;
+}
+
+if (empty($DOCUMENT_ROOT) || empty($MANUAL_PREFIX) || empty($db_name)) {
+	echo 'Usage:' . PHP_EOL;
+	echo '  php gen-phpweb-sqlite-db.php database DOCUMENT_ROOT MANUAL_PREFIX [implied_lang]' . PHP_EOL;
+	echo '  php gen-phpweb-sqlite-db.php database /local/Web/sites/phpweb /manual' . PHP_EOL;
+	exit;
+}
+
+$dbh->beginTransaction();
 
 if ($implied_lang !== false) {
 	scan($DOCUMENT_ROOT . $MANUAL_PREFIX, $implied_lang);
@@ -45,11 +64,12 @@ if ($implied_lang !== false) {
 	scan_langs($DOCUMENT_ROOT . $MANUAL_PREFIX);
 }
 
-sqlite_query($s, "COMMIT");
+$dbh->commit();
 exit(0);
 
 function scan($dir, $lang)
 {
+	global $dbh;
 	global $s;
 	global $DOCUMENT_ROOT_LEN;
 	static $sections = array(
@@ -128,16 +148,16 @@ function scan($dir, $lang)
 			foreach ($hackme as $class => $procedural) {
 				if (false !== strpos($keyword, $class)) {
 					$tmp = str_replace($class, $procedural, $keyword);
-					sqlite_query($s, "INSERT INTO fs (lang, prefix, keyword, name, prio) values ('$lang', '$prefix', '$tmp', '$doc_rel', " . ($prio+5).")");
-					sqlite_query($s, "INSERT INTO fs (lang, prefix, keyword, name, prio) values ('$lang', '$prefix', '". metaphone($tmp) ."', '$doc_rel', " . ($prio+15).")");
+					$dbh->exec("INSERT INTO fs (lang, prefix, keyword, name, prio) values ('$lang', '$prefix', '$tmp', '$doc_rel', " . ($prio+5).")");
+					$dbh->exec("INSERT INTO fs (lang, prefix, keyword, name, prio) values ('$lang', '$prefix', '". metaphone($tmp) ."', '$doc_rel', " . ($prio+15).")");
 					break;
 				}
 			}
 
 			++$count;
 
-			sqlite_query($s, "INSERT INTO fs (lang, prefix, keyword, name, prio) values ('$lang', '$prefix', '$keyword', '$doc_rel', $prio)");
-			sqlite_query($s, "INSERT INTO fs (lang, prefix, keyword, name, prio) values ('$lang', '$prefix', '" . metaphone($keyword) . "', '$doc_rel', ".($prio+10).")");
+			$dbh->exec("INSERT INTO fs (lang, prefix, keyword, name, prio) values ('$lang', '$prefix', '$keyword', '$doc_rel', $prio)");
+			$dbh->exec("INSERT INTO fs (lang, prefix, keyword, name, prio) values ('$lang', '$prefix', '" . metaphone($keyword) . "', '$doc_rel', ".($prio+10).")");
 
 		}
 	}
@@ -169,17 +189,3 @@ function scan_langs($root)
 	closedir($d);
 }
 
-function create_url_database ($s) {
-	$q = "
-		CREATE TABLE fs (
-			lang char(5) not null,
-			prefix char(32) not null,
-			keyword char(128) not null,
-			name varchar(238) not null,
-			prio int not null
-		);
-		";
-	sqlite_query($s, $q);
-	sqlite_query($s, "CREATE INDEX map ON fs (lang,keyword)");
-	sqlite_query($s, "BEGIN");
-}
