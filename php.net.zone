@@ -114,7 +114,7 @@ ecelerity		IN CNAME osu1.php.net.
 php.net.		IN TXT "v=spf1 ptr ?all"
 opengrok		IN CNAME osu1.php.net.
 
-gcov			IN CNAME nex1.php.net.
+gcov			IN CNAME nex2.php.net.
 
 monitoring		IN CNAME sp2.php.net.
 results.testfest	IN CNAME sp1.php.net.
@@ -152,6 +152,7 @@ lxr		CNAME sp2.php.net.
 
 ; Nexcess (contact: Chris Wells clwells at nexcess dot net)
 nex1		IN A 208.69.122.11
+nex2		IN A 208.69.122.227
 
 ; PPC testing box, hosted by Dedipower
 dp1		IN A 89.151.87.82
