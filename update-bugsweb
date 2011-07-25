@@ -12,3 +12,6 @@
 rsync -aC --delete --delete-after --exclude=logs --exclude=uploads --exclude=local_config.php \
 	    rsync.php.net::php-bugs-web /home/www/bugs.php.net
 chown -R www-data.www-data /home/www/bugs.php.net
+
+# update the mysql config file
+rsync -az /local/systems/bugs.php.net/additional.mysql.cnf /etc/mysql/conf.d/additional.mysql.cnf

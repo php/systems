@@ -1,0 +1,7 @@
+[mysqld]
+ft_min_word_len=3
+default-time-zone='+00:00'
+
+[myisamchk]
+ft_min_word_len=3
+
