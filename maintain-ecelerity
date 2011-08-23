@@ -2,6 +2,8 @@
 # $Id$
 # Do whatever we need to do to run the "ecelerity" facilities
 
+exit 0
+
 if test ! -d /var/log/ecelerity/reports ; then
 	mkdir /var/log/ecelerity/reports
 	chown root:ecuser /var/log/ecelerity/reports
