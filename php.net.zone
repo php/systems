@@ -98,6 +98,7 @@ test.pyrus	IN CNAME sgrv1.php.net.
 *.pecl.php.net.		300	IN CNAME sgrv2.php.net.
 
 pecl2 			IN CNAME sgrv2.php.net.
+developer.pecl		IN CNAME sgrv2.php.net.
 pecl-test		IN CNAME sgrv2.php.net.
 wiki 			IN CNAME rl.php.net.
 windows 		IN A 195.8.208.241 
