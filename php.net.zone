@@ -45,6 +45,8 @@ gtk		IN CNAME y1.php.net.
 qa		IN CNAME micfo1.php.net.
 qa-beta	IN CNAME micfo1.php.net.
 
+ci.qa		IN CNAME 34sp.php.net.
+
 ;museum		IN CNAME ez1.php.net.
 ; Temporary override during downtime. [danbrown]
 museum		IN CNAME micfo1.php.net.
@@ -199,6 +201,13 @@ micfo2		IN A 64.37.62.241
 ; servergrove
 sgrv1		IN A 69.195.198.158
 sgrv2		IN A 69.195.199.133
+
+; 34sp.com Tom Hill (tom at 34sp)
+34sp1		IN A 80.82.121.132
+;34sp2		IN A 80.82.121.133
+;34sp3		IN A 80.82.121.134
+;34sp4		IN A 80.82.121.135
+;34sp5		IN A 80.82.121.136
 
 ; streamservice (prototype website for new design)
 prototype   IN CNAME proto.php.streamservice.nl.
