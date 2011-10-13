@@ -45,7 +45,7 @@ gtk		IN CNAME y1.php.net.
 qa		IN CNAME micfo1.php.net.
 qa-beta	IN CNAME micfo1.php.net.
 
-ci.qa		IN CNAME 34sp.php.net.
+ci.qa		IN CNAME 34sp1.php.net.
 
 ;museum		IN CNAME ez1.php.net.
 ; Temporary override during downtime. [danbrown]
