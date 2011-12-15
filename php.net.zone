@@ -43,7 +43,11 @@ websvn		IN CNAME y1.php.net.
 
 gtk		IN CNAME y1.php.net.
 qa		IN CNAME micfo1.php.net.
-qa-beta	IN CNAME micfo1.php.net.
+qa-beta		IN CNAME micfo1.php.net.
+
+; Temporary hostname during (another!) migration
+; @FIXME - Drop the 'temporary' junk
+qa1		IN A 108.163.197.98
 
 ci.qa		IN CNAME 34sp1.php.net.
 
