@@ -42,18 +42,11 @@ svn		IN CNAME y1.php.net.
 websvn		IN CNAME y1.php.net.
 
 gtk		IN CNAME y1.php.net.
-qa		IN CNAME micfo1.php.net.
-qa-beta		IN CNAME micfo1.php.net.
-
-; Temporary hostname during (another!) migration
-; @FIXME - Drop the 'temporary' junk
-qa1		IN A 108.163.197.98
+qa		IN CNAME sph1.php.net.
 
 ci.qa		IN CNAME 34sp1.php.net.
 
-;museum		IN CNAME ez1.php.net.
-; Temporary override during downtime. [danbrown]
-museum		IN CNAME micfo1.php.net.
+museum		IN CNAME sph1.php.net.
 
 hg		IN CNAME micfo2.php.net.
 hg-test	IN CNAME micfo2.php.net.
@@ -75,9 +68,7 @@ frontend	IN CNAME rl2.php.net.
 beta.master	IN CNAME osu1.php.net.
 news		IN CNAME pair1.php.net.
 rsync		IN CNAME sc1.php.net.
-;snaps		IN CNAME ez1.php.net.
-; Temporary override during downtime. [danbrown]
-snaps		IN CNAME micfo1.php.net.
+snaps		IN CNAME sph1.php.net.
 smarty		IN CNAME y1.php.net.
 snapsmaster	IN CNAME sc1.php.net.
 testfest	IN CNAME dp1a.php.net.
@@ -200,6 +191,9 @@ euk2		IN A 213.175.195.123
 ; Micfo (contact danbrown, philip or dsp)
 micfo1		IN A 67.23.255.166
 micfo2		IN A 64.37.62.241
+
+; Dan's (maybe temp box, for now, replacement for micfo1)
+sph1		IN A 108.163.197.98
 
 ; servergrove
 sgrv1		IN A 69.195.198.158
