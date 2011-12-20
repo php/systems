@@ -204,6 +204,9 @@ sgrv2		IN A 69.195.199.133
 ;34sp4		IN A 80.82.121.135
 ;34sp5		IN A 80.82.121.136
 
+; Bauer + Kirch GmbH (contact mj)
+bk1		IN A 89.238.71.179
+
 ; streamservice (prototype website for new design)
 prototype   IN CNAME proto.php.streamservice.nl.
 ns6.is.not.my.friend  IN CNAME proto.php.streamservice.nl.
