@@ -48,9 +48,9 @@ ci.qa		IN CNAME 34sp1.php.net.
 
 museum		IN CNAME sph1.php.net.
 
-hg		IN CNAME micfo2.php.net.
+hg		IN CNAME y3.php.net.
 hg-test		IN CNAME y3.php.net.
-git		IN CNAME micfo2.php.net.
+git		IN CNAME y3.php.net.
 git-test	IN CNAME y3.php.net.
 
 ; people.php.net user directory
@@ -185,10 +185,6 @@ rl2 IN A 87.238.48.211
 ; eUKhost LTD. (contact Philip)
 euk1		IN A 78.129.214.25
 euk2		IN A 213.175.195.123
-
-; Micfo (contact danbrown, philip or dsp)
-micfo1		IN A 67.23.255.166
-micfo2		IN A 64.37.62.241
 
 ; Dan's (maybe temp box, for now, replacement for micfo1)
 sph1		IN A 108.163.197.98
