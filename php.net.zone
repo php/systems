@@ -174,9 +174,6 @@ y3		IN A 69.147.83.199
 oti1   		IN A 8.8.38.133
 oti2   		IN A 8.8.38.129
 
-; ovh, paid for by BinarySec. (contact Pierre)
-ovh		IN A 213.251.181.15
-
 ; temporary fix for ovh being hax0red
 maintenance IN A 87.238.48.210
 
