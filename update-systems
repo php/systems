@@ -2,5 +2,4 @@
 # $Id$
 # Update systems checkout under /local/systems
 
-cd /local/systems
-git reset -q --hard master && git pull -q origin master
+rsync -qavzC --timeout=600 --delete --delete-after rsync.php.net::systems /local/systems
