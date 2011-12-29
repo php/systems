@@ -3,4 +3,4 @@
 # Update systems checkout under /local/systems
 
 cd /local/systems
-svn update -q
+git reset --hard master && git pull origin master
