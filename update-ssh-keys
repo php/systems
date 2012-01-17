@@ -17,17 +17,21 @@ while($row = mysql_fetch_array($res, MYSQL_ASSOC)) {
     $ssh_keys = get_ssh_keys($row['ssh_keys']);
     $mainfile = sprintf('%s.pub', $username);
 
-    foreach(glob($username . '@*.pub') as $filename) {
-       unlink ($filename);
+    if ($globbed = glob($username . '@*.pub')) {
+        foreach($globbed as $filename) {
+            unlink ($filename);
+        }
     }
 
     false !== system('git add -u') or die ('cannot update git information');
     foreach($ssh_keys as $keyinfo) {
-            $filename = sprintf('%s@%s.pub',
-                    $username,
-                    substr(sha1($keyinfo['key']), 0, 12));
+        $filename = sprintf('%s@%s.pub',
+                $username,
+                substr(sha1($keyinfo['key']), 0, 12));
 
-        file_put_contents($filename, trim($keyinfo['key']) . "\n");
+        $fp = fopen($filename, 'w+');
+        fwrite($fp, trim($keyinfo['key']) . "\n");
+        fclose($fp);
         false !== system('git add ' . $filename) or die ('cannot execute git');
     }
 }
