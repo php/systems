@@ -10,7 +10,11 @@ mysql_select_db('phpmasterdb')
 $query = 'SELECT DISTINCT username, ssh_keys FROM users';
 $res   = mysql_query($query) or die ('cannot query ssh keys');
 
-chdir(SSH_KEY_REPO) or die ('cannot change working directory');
+chdir(SSH_KEY_REPO)
+    or die ('cannot change working directory');
+
+false !== system('git pull origin master')
+    or die ('cannot update repository');
 
 while($row = mysql_fetch_array($res, MYSQL_ASSOC)) {
     $username = $row['username'];
@@ -23,7 +27,9 @@ while($row = mysql_fetch_array($res, MYSQL_ASSOC)) {
         }
     }
 
-    false !== system('git add -u') or die ('cannot update git information');
+    false !== system('git add -u')
+        or die ('cannot update git information');
+
     foreach($ssh_keys as $keyinfo) {
         $filename = sprintf('%s@%s.pub',
                 $username,
@@ -32,13 +38,16 @@ while($row = mysql_fetch_array($res, MYSQL_ASSOC)) {
         $fp = fopen($filename, 'w+');
         fwrite($fp, trim($keyinfo['key']) . "\n");
         fclose($fp);
-        false !== system('git add ' . $filename) or die ('cannot execute git');
+        false !== system('git add ' . $filename)
+            or die ('cannot execute git');
     }
 }
 
 if (system('git status --porcelain -uno')) {
-    false !== system('git commit -m"Automatic update"') or die ('cannot commit');
-    false !== system('git push origin master') or die ('cannot push');
+    false !== system('git commit -m"Automatic update"')
+        or die ('cannot commit');
+    false !== system('git push origin master')
+        or die ('cannot push');
 }
 
 function get_ssh_keys($string) {
