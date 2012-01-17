@@ -1,0 +1,50 @@
+#!/usr/bin/env php
+<?php
+define('SSH_KEY_REPO', '/local/gitolite-admin/keydir');
+
+mysql_connect('localhost', 'nobody')
+    or die ('unable to connect to server');
+mysql_select_db('phpmasterdb')
+    or die ('unable to select database');
+
+$query = 'SELECT DISTINCT username, ssh_keys FROM users';
+$res   = mysql_query($query) or die ('cannot query ssh keys');
+
+chdir(SSH_KEY_REPO) or die ('cannot change working directory');
+
+while($row = mysql_fetch_array($res, MYSQL_ASSOC)) {
+    $username = $row['username'];
+    $ssh_keys = get_ssh_keys($row['ssh_keys']);
+    $mainfile = sprintf('%s.pub', $username);
+
+    foreach(glob($username . '@*.pub') as $filename) {
+       unlink ($filename);
+    }
+
+    false !== system('git add -u') or die ('cannot update git information');
+    foreach($ssh_keys as $keyinfo) {
+            $filename = sprintf('%s@%s.pub',
+                    $username,
+                    substr(sha1($keyinfo['key']), 0, 12));
+
+        file_put_contents($filename, trim($keyinfo['key']) . "\n");
+        false !== system('git add ' . $filename) or die ('cannot execute git');
+    }
+}
+
+if (system('git status --porcelain -uno')) {
+    false !== system('git commit -m"Automatic update"') or die ('cannot commit');
+    false !== system('git push origin master') or die ('cannot push');
+}
+
+function get_ssh_keys($string) {
+    $results = array();
+    if (preg_match_all('@(ssh-(?:rsa|dsa) ([^\s]+) ([^\s]*))@', $string, $matches, PREG_SET_ORDER)) {
+        foreach ($matches as $match) {
+            $results[] = array('key'  => $match[1],
+                               'name' => $match[3]);
+        }
+    }
+
+    return $results;
+}
