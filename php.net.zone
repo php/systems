@@ -62,6 +62,7 @@ preview	IN CNAME pb11.php.net.
 
 mail IN CNAME osu1.php.net.
 master		IN CNAME osu1.php.net.
+master2		IN CNAME osu1php.osuosl.org.
 backend	IN CNAME rl2.php.net.
 frontend	IN CNAME rl2.php.net.
 beta.master	IN CNAME osu1.php.net.
