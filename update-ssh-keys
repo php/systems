@@ -1,5 +1,8 @@
 #!/usr/bin/env php
 <?php
+/* Fetch SSH Keys from the master db and create username@sha1ofkey.pub
+ * files and push them to the gitolite administration repository
+ */
 define('SSH_KEY_REPO', '/local/gitolite-admin/keydir');
 
 mysql_connect('localhost', 'nobody')
