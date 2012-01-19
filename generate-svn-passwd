@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php // vim: et ts=2 sw=2
+
+define('REALM', 'PHP Subversion Repository');
+
+// Connect and generate the list from the DB
+if (@mysql_connect("localhost","nobody","")) {
+  if (@mysql_select_db("phpmasterdb")) {
+    $res = @mysql_query("SELECT username, svnpasswd FROM users WHERE svnpasswd != '' AND cvsaccess ORDER BY username");
+    if ($res) {
+      while ($row = @mysql_fetch_array($res)) {
+        printf("%s:%s:%s\n", $row["username"], REALM, $row["svnpasswd"]);
+      }
+    }
+  }
+}
+
