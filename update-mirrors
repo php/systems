@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for i in php-master-web php-news-web php-bugs-web systems; do
+for i in php-gcov-web php-master-web php-news-web php-bugs-web systems; do
     cd /local/mirrors/$i
     git reset --hard HEAD && git pull origin master;
 done
