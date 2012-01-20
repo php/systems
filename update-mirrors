@@ -1,11 +1,11 @@
 #!/bin/sh
 
-for i in php-rmtools php-people-web qaweb php-gcov-web php-master-web php-news-web php-bugs-web systems; do
+for i in php-rmtools php-people-web qaweb php-gcov-web php-master-web php-news-web php-bugs-web systems talks talks/presentations; do
     cd /local/mirrors/$i
     git reset --hard HEAD && git pull origin master;
 done
 
-for i in phpweb php-gtk-web php-gtk-doc embed-web peclweb talks talks/presentations php-wiki; do
+for i in phpweb php-gtk-web php-gtk-doc embed-web peclweb php-wiki; do
 	cd /local/mirrors/$i
 	svn up -q
 done
