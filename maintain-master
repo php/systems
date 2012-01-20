@@ -3,7 +3,7 @@
 # Do whatever we need to do to run the "master" facilities
 
 /local/systems/update-systems
-co-web php-master-web
+rsync -qavzC --timeout=600 --delete --delete-after rsync.php.net::php-master-web /local/mirrors/php-master-web
 
 php -r '
 $token=rtrim(file_get_contents("/local/this-box/CVSPASSTOKEN"));
