@@ -5,7 +5,7 @@ for i in php-rmtools php-people-web qaweb php-gcov-web php-master-web php-news-w
     git reset --hard HEAD && git pull origin master;
 done
 
-for i in phpweb php-gtk-web php-gtk-doc embed-web peclweb php-wiki; do
+for i in phpweb php-gtk-web php-gtk-doc peclweb php-wiki; do
 	cd /local/mirrors/$i
 	svn up -q
 done
