@@ -15,7 +15,7 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 		IN NS	remote1.easydns.com.
 		IN NS	remote2.easydns.com.
 		IN NS	remote3.easydns.com.
-		IN MX 	5 osu1.php.net.
+;		IN MX 	5 osu1.php.net.
 		IN MX 	5 osu1php.osuosl.org.
 		IN MX 	15 smtp.osuosl.org.
 $ORIGIN php.net.
@@ -26,7 +26,7 @@ www2		IN CNAME zend.php.net.
 ;bugs		IN CNAME ez1.php.net.
 ; Temporary override during downtime. [danbrown]
 bugs		IN CNAME sgrv2.php.net.
-bugs-beta   IN CNAME sgrv2.php.net.
+bugs-beta	IN CNAME sgrv2.php.net.
 bugs-test	IN CNAME sgrv2.php.net.
 
 conf		IN CNAME y2.php.net.
@@ -38,7 +38,7 @@ cvs		IN CNAME y1.php.net.
 cvsold		IN CNAME cvs.php.net.
 cvsup		IN CNAME cvs.php.net.
 cvsweb		IN CNAME cvs.php.net.
-viewcvs		IN CNAME cvs.php.net.
+viewcvs	IN CNAME cvs.php.net.
 
 svn		IN CNAME y1.php.net.
 websvn		IN CNAME y1.php.net.
@@ -59,7 +59,7 @@ people		IN CNAME y1.php.net.
 ; phpdoc stuff
 doc		IN CNAME euk2.php.net.
 docs		IN CNAME euk2.php.net.
-edit	IN CNAME pb11.php.net.
+edit		IN CNAME pb11.php.net.
 preview	IN CNAME pb11.php.net.
 
 mail 		IN CNAME osu1php.osuosl.org.
