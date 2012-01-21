@@ -14,6 +14,7 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 		IN NS	ns2.easydns.com.
 		IN NS	remote1.easydns.com.
 		IN NS	remote2.easydns.com.
+		IN NS	remote3.easydns.com.
 		IN MX 	5 osu1.php.net.
 		IN MX 	5 osu1php.osuosl.org.
 		IN MX 	15 smtp.osuosl.org.
