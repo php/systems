@@ -33,6 +33,7 @@ conf		IN CNAME y2.php.net.
 conf2		IN CNAME y2.php.net.
 talks		IN CNAME y2.php.net.
 pres		IN CNAME y2.php.net.
+pres2		IN CNAME y2.php.net.
 
 cvs		IN CNAME y1.php.net.
 cvsold		IN CNAME cvs.php.net.
