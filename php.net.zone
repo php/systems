@@ -15,6 +15,7 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 		IN NS	remote1.easydns.com.
 		IN NS	remote2.easydns.com.
 		IN MX 	5 osu1.php.net.
+		IN MX 	5 osu1php.osuosl.org.
 		IN MX 	15 smtp.osuosl.org.
 $ORIGIN php.net.
 ; Services
@@ -60,12 +61,12 @@ docs		IN CNAME euk2.php.net.
 edit	IN CNAME pb11.php.net.
 preview	IN CNAME pb11.php.net.
 
-mail IN CNAME osu1.php.net.
-master		IN CNAME osu1.php.net.
-master2		IN CNAME osu1php.osuosl.org.
+mail 		IN CNAME osu1php.osuosl.org.
+master		IN CNAME osu1php.osuosl.org.
+master2	IN CNAME osu1php.osuosl.org.
 backend	IN CNAME rl2.php.net.
 frontend	IN CNAME rl2.php.net.
-beta.master	IN CNAME osu1.php.net.
+beta.master	IN CNAME osu1php.osuosl.org.
 news		IN CNAME pair1.php.net.
 rsync		IN CNAME sc1.php.net.
 snaps		IN CNAME sph1.php.net.
@@ -105,12 +106,12 @@ fr.windows 		IN CNAME maintenance.php.net.
 ; lists operated from pair1
 lists.php.net.		IN A 76.75.200.58
 lists.php.net.		IN MX 10 pair1.php.net.
-lists.php.net.		IN TXT "v=spf1 a mx a:osu1.php.net"
+lists.php.net.		IN TXT "v=spf1 a mx a:osu1php.osuosl.org."
 
 ; Ecelerity MX running on OSU1
-ecelerity		IN CNAME osu1.php.net.
+ecelerity		IN CNAME osu1php.osuosl.org.
 php.net.		IN TXT "v=spf1 ptr ?all"
-opengrok		IN CNAME osu1.php.net.
+opengrok		IN CNAME osu1php.osuosl.org.
 
 gcov			IN CNAME nex2.php.net.
 
@@ -121,9 +122,7 @@ results.testfest	IN CNAME sp1.php.net.
 
 ; Oregon State Uni
 osu1		IN A 140.211.166.39
-
-; box slated to replace the aging pair1 lists server
-wepay    IN A 66.201.49.173
+osu1php	IN A 140.211.15.143
 
 ; PAIR
 pair1		IN A 76.75.200.58
