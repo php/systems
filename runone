@@ -25,3 +25,4 @@ print FILE $$;
 close FILE;
 
 exec @ARGV;
+unlink $lockfile;
