@@ -5,10 +5,10 @@
 /local/systems/update-systems
 rsync -qavzC --timeout=600 --delete --delete-after rsync.php.net::php-master-web /local/mirrors/php-master-web
 
-php -r '
-$token=rtrim(file_get_contents("/local/this-box/CVSPASSTOKEN"));
-include "/local/mirrors/php-master-web/fetch/cvspasswd.php";
-' > /repository/CVSROOT/passwd
+#php -r '
+#$token=rtrim(file_get_contents("/local/this-box/CVSPASSTOKEN"));
+#include "/local/mirrors/php-master-web/fetch/cvspasswd.php";
+#' > /repository/CVSROOT/passwd
 
 /local/systems/process-zone-file
 
