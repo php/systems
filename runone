@@ -24,5 +24,5 @@ open FILE, ">$lockfile"
 print FILE $$;
 close FILE;
 
-exec @ARGV;
+system @ARGV;
 unlink $lockfile;
