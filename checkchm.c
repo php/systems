@@ -339,6 +339,17 @@ typedef long                    Int32;
 typedef unsigned long           UInt32;
 typedef long long               Int64;
 typedef unsigned long long      UInt64;
+
+/* 64-bit, non-Windows [silly hack by danbrown, separate for ease of changing values] */
+#elif __x86_64__
+typedef unsigned char           UChar;
+typedef short                   Int16;
+typedef unsigned short          UInt16;
+typedef long                    Int32;
+typedef unsigned long           UInt32;
+typedef long long               Int64;
+typedef unsigned long long      UInt64;
+
 #else
 
 /* yielding an error is preferable to yielding incorrect behavior */
