@@ -4,7 +4,7 @@
 
 if ls /local/mirrors/manual-chms/*.chm > /dev/null 2> /dev/null; then
   for i in /local/mirrors/manual-chms/*.chm; do
-    /local/bin/checkchm $i
+    /local/systems/checkchm $i
     if [ $? == 0 ]; then
       cp -p $i /local/mirrors/phpweb/distributions/manual
     fi

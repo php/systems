@@ -39,7 +39,7 @@ echo $do | mail -s "rebuilding phpdoc: $do" derick@php.net
 for a in $do; do
   if [ -d /local/mirrors/phpdoc/$a ]; then
     mkdir -p /local/mirrors/phpweb/manual/$a
-    /local/bin/build-manual /local/mirrors/phpdoc \
+    /local/systems/build-manual /local/mirrors/phpdoc \
       /local/mirrors/phpweb/manual/$a $a $TMPDIR/build-$a \
       /local/mirrors/phpweb/distributions/manual \
       > $TMPDIR/build-$a.log 2>&1

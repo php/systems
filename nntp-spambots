@@ -11,7 +11,7 @@ ipfw add 100 allow tcp from not 127.0.0.1 to not 127.0.0.1 119 limit src-addr 1
 ipfw add 101 pipe 1 tcp from not 127.0.0.1 to not 127.0.0.1 119
 
 # Load ad-hoc denied list
-for i in `cat /local/bin/systems/news-denied|sort|uniq`;
+for i in `cat /local/systems/news-denied|sort|uniq`;
 	do 
 	  if test $i != '76.75.200.58'; then
 		ipfw add deny tcp from $i to any

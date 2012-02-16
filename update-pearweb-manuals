@@ -39,7 +39,7 @@ echo $do | mail -s "rebuilding peardoc: $do" derick@php.net
 
 for a in $do; do
   mkdir -p /local/mirrors/pearweb/public_html/manual/$a
-  /local/bin/build-pear-manual /local/mirrors/peardoc \
+  /local/systems/build-pear-manual /local/mirrors/peardoc \
     /local/mirrors/pearweb/public_html/manual/$a $a $TMPDIR/build-pear-$a \
     /local/mirrors/pearweb/public_html/distributions/manual \
     > $TMPDIR/build-pear-$a.log 2>&1

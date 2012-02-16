@@ -1,6 +1,5 @@
 #!/bin/sh
-/local/bin/update-php-gtk-web-manuals
-/local/bin/update-pearweb-manuals
+/local/systems/update-php-gtk-web-manuals
+/local/systems/update-pearweb-manuals
 # do phpdoc last, since it takes the longest.
-/local/bin/update-phpweb-manuals
-
+/local/systems/update-phpweb-manuals

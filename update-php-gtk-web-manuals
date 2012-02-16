@@ -56,7 +56,7 @@ fi
 
 for a in $do; do
   mkdir -p /local/mirrors/php-gtk-web/manual$version/$a
-  /local/bin/build-php-gtk-manual /local/mirrors/php-gtk-doc \
+  /local/systems/build-php-gtk-manual /local/mirrors/php-gtk-doc \
     /local/mirrors/php-gtk-web/manual$version/$a $a $TMPDIR/build-gtk-$a \
     /local/mirrors/php-gtk-web/distributions/manual$version \
     $TMPDIR/history-build-gtk > $TMPDIR/build-gtk-$a.log 2>&1 || exit

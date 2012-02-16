@@ -6,4 +6,3 @@ cd /service
 sleep 15
 /usr/local/bin/svc -u qmail
 /usr/local/bin/svc -u qmail-smtp
-
