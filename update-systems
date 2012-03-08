@@ -2,4 +2,4 @@
 # $Id$
 # Update systems checkout under /local/systems
 
-rsync -qavzC --timeout=600 --delete --delete-after rsync.php.net::systems /local/systems
+rsync -qazC --timeout=600 --delete --delete-after rsync.php.net::systems /local/systems
