@@ -212,7 +212,7 @@ if (!empty($qs)) {
                 <p>
                     You can find the latest development sources
                     packages for PHP 5, and Trunk here. Source code is 
-                    checked out of SVN and packaged every 2 hours.
+                    checked out of Git and packaged every 2 hours.
                 </p>
 <!--
                 <p>
