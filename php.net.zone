@@ -21,9 +21,7 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 $ORIGIN php.net.
 ; Services
 
-;www		IN CNAME y2.php.net.
-www		IN A 69.147.83.197
-		IN A 72.55.140.6
+www		IN CNAME y2.php.net.
 www2		IN CNAME zend.php.net.
 ;bugs		IN CNAME ez1.php.net.
 ; Temporary override during downtime. [danbrown]
