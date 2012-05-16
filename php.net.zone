@@ -77,6 +77,7 @@ snapsmaster	IN CNAME sc1.php.net.
 testfest	IN CNAME dp1a.php.net.
 
 ; Geodispersion of rsync; regional rsync nodes (RRNs)
+us.rsync	IN CNAME rsync.php.net.
 americas.rsync	IN CNAME rsync.php.net.
 asia.rsync	IN CNAME rsync.php.net.
 europe.rsync	IN CNAME rsync.php.streamservice.nl.
