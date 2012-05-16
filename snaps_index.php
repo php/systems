@@ -40,7 +40,8 @@ $b["5.3"] =
     "freq" => 3600 * 2,
     "glob" => array(
       "php-5.3-dev (tar.bz2)" => "php5.3-2*.tar.bz2",
-      "php-5.3-dev (tar.gz)"  => "php5.3-2*.tar.gz"
+      "php-5.3-dev (tar.gz)"  => "php5.3-2*.tar.gz",
+      "php-5.3-dev (tar.xz)"  => "php5.3-2*.tar.xz",
       ),
   ),
   );
@@ -51,7 +52,8 @@ $b["5.4"] =
     "freq" => 3600 * 2,
     "glob" => array(
       "php-5.4-dev (tar.bz2)" => "php5.4-2*.tar.bz2",
-      "php-5.4-dev (tar.gz)"  => "php5.4-2*.tar.gz"
+      "php-5.4-dev (tar.gz)"  => "php5.4-2*.tar.gz",
+      "php-5.4-dev (tar.xz)"  => "php5.4-2*.tar.xz",
       ),
   ),
   );
@@ -63,7 +65,8 @@ $b["trunk"] =
     "freq" => 3600 * 2,
     "glob" => array(
       "php-trunk-dev (tar.bz2)" => "php-trunk-2*.tar.bz2",
-      "php-trunk-dev (tar.gz)"  => "php-trunk-2*.tar.gz"
+      "php-trunk-dev (tar.gz)"  => "php-trunk-2*.tar.gz",
+      "php-trunk-dev (tar.xz)"  => "php-trunk-2*.tar.xz",
       ),
   ),
   );
@@ -332,7 +335,7 @@ if (isset($_GET['branch']) && isset($_GET['distro']) && isset($b[$_GET['branch']
         
         <div id="pagefooter">
             <div id="copyright">
-                <a href="http://www.php.net/copyright.php">Copyright &copy; 2001-2012 The PHP Group</a><br />
+                <a href="http://www.php.net/copyright.php">Copyright &copy;2001-<?php echo date('Y'); ?> The PHP Group</a><br />
                 All rights reserved.
             </div>
         

@@ -28,10 +28,11 @@ do_update ( ) {
   rm -rf $target
   gzip -c5 < $f > $f.gz
   bzip2 -5 < $f > $f.bz2
+  xz -9 < $f > $f.xz;
   rm -f $f
   mv $f* $t
 
-  (cd $t; ln -sf $f.gz $prefix-latest.tar.gz; ln -sf $f.bz2 $prefix-latest.tar.bz2)
+  (cd $t; ln -sf $f.gz $prefix-latest.tar.gz; ln -sf $f.bz2 $prefix-latest.tar.bz2; ln -sf $f.xz $prefix-latest.tar.xz;)
 }
 
 fetch_index
