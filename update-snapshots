@@ -1,7 +1,7 @@
 #! /bin/sh
 PATH=/usr/local/bin:/usr/bin:/bin
 d=`date -u +%Y%m%d%H%M`
-t=/local/sites/snaps.php.net/www
+t=/local/php/web/snaps/;
 
 fetch_index ( ) {
   cd /local/repository/systems
