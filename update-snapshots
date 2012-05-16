@@ -5,7 +5,7 @@ t=/local/sites/snaps.php.net/www
 
 fetch_index ( ) {
   cd /local/repository/systems
-  svn up -q >/dev/null
+  git pull > /dev/null;
 }
 
 do_update ( ) {
@@ -15,11 +15,11 @@ do_update ( ) {
   target=$1-$d
 
   cd $source
-  svn up -q >/dev/null
+  git pull > /dev/null;
 
   cd /dev/shm || exit 1
   cp -rp $source $target
-  find $target -name .svn -o -name .cvsignore | xargs rm -rf
+  find $target -name '.git*' | xargs rm -rf
   rm -f $target/.deps $target/ChangeLog*
   (cd $target && ./buildconf --force --copy && ./genfiles) >/dev/null 2>&1
   rm -f $target/buildmk.stamp
