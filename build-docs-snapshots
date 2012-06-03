@@ -23,16 +23,16 @@ configure()
 	lang=$1
 	outputfile=$2 
 
-	echo "====> Configuring $lang" > $LOGFILE
+	echo "====> Configuring $lang" >> $LOGFILE
 	pushd $BASEDIR
-	$PHP doc-base/configure.php --with-lang=$lang --output=$outputfile --disable-segfault-speed > $LOGFILE
+	$PHP doc-base/configure.php --with-lang=$lang --output=$outputfile --disable-segfault-speed >> $LOGFILE
 	if [ "$?" -ne 0 ]; then
 		broken_lang $lang
 		popd
 		return 187
 	fi
 	popd
-	echo "====> Done configuring" > $LOGFILE
+	echo "====> Done configuring" >> $LOGFILE
 }
 
 build()
@@ -41,13 +41,13 @@ build()
 	docbook=$2
 	out=$OUTPUTFOLDER/$lang
 
-	echo "====> Building $lang" > $LOGFILE
+	echo "====> Building $lang" >> $LOGFILE
 	pushd $PHDROOT
 	rm -rf $out
 
-	$PHP -dmemory_limit=1024M render.php -P PHP -d $docbook -f xhtml -f bigxhtml -f php -f tocfeed --output $out > $LOGFILE
+	$PHP -dmemory_limit=1024M render.php -P PHP -d $docbook -f xhtml -f bigxhtml -f php -f tocfeed --output $out >> $LOGFILE
 	popd
-	echo "====> Done building $lang" > $LOGFILE
+	echo "====> Done building $lang" >> $LOGFILE
 }
 
 move()
@@ -55,17 +55,17 @@ move()
 	lang=$1
 	out=$OUTPUTFOLDER/$lang
 
-	echo "====> Moving $lang" > $LOGFILE
+	echo "====> Moving $lang" >> $LOGFILE
 	mv -f $out/php-web $DOCSWEB/manual/$lang
-	echo "====> Done" > $LOGFILE
+	echo "====> Done" >> $LOGFILE
 }
 
 
 warning()
 {
-	echo "=============> Something happenend when snapshotting $1" > $LOGFILE
-	echo $2 > $LOGFILE
-	echo "=============> Please have a look!" > $LOGFILE
+	echo "=============> Something happenend when snapshotting $1" >> $LOGFILE
+	echo $2 >> $LOGFILE
+	echo "=============> Please have a look!" >> $LOGFILE
 }
 broken_lang ()
 {
