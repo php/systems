@@ -1,17 +1,17 @@
 #!/bin/sh
 
 BASEDIR=/local/src/phpdoc-all/
-TIMESTAMP=`/bin/date +%Y-%M-%d-%H`
+TIMESTAMP=`/bin/date +%Y-%m-%d-%H`
 PHDROOT=/local/src/phd
 LOGFOLDER=/local/logs/docs/
 OUTPUTFOLDER=/local/building/
 DOCSWEB=/local/Web/sites/docs.php.net/
-PHP=/usr/bin/php
+PHP="/usr/bin/php -dmemory_limit=1024M"
 
 
 HOUR=`/bin/date +%H`
 
-# Only run this 4 times a day, or when explicitly given an force argument
+# Only run this 4 times a day, or when explicitly given an language to build (i.e. from cli)
 if [ `expr $HOUR % 6` -ne 0 ]; then
 	if [ $# -ne 1 ]; then
 		exit 0
@@ -23,16 +23,16 @@ configure()
 	lang=$1
 	outputfile=$2 
 
-	echo "====> Configuring $lang" >> $LOGFILE
+	log "Configuring $lang"
 	pushd $BASEDIR
-	$PHP doc-base/configure.php --with-lang=$lang --output=$outputfile --disable-segfault-speed >> $LOGFILE
+	$PHP doc-base/configure.php --with-lang=$lang --output=$outputfile --disable-segfault-speed >> $LOGFILE 2>&1
 	if [ "$?" -ne 0 ]; then
 		broken_lang $lang
 		popd
 		return 187
 	fi
 	popd
-	echo "====> Done configuring" >> $LOGFILE
+	log "Finished configuring"
 }
 
 build()
@@ -41,62 +41,183 @@ build()
 	docbook=$2
 	out=$OUTPUTFOLDER/$lang
 
-	echo "====> Building $lang" >> $LOGFILE
+	log "Building $lang"
+
 	pushd $PHDROOT
 	rm -rf $out
 
-	$PHP -dmemory_limit=1024M render.php -P PHP -d $docbook -f xhtml -f bigxhtml -f php -f tocfeed --output $out >> $LOGFILE
+	log "Rendering xhtml, bigxhtml, php and tocfeed"
+	$PHP render.php -P PHP -d $docbook -f xhtml -f bigxhtml -f php -f tocfeed --output $out >> $LOGFILE 2>&1
+	if [ "$?" -ne 0 ]; then
+		broken_lang $lang
+		popd
+		return 187
+	fi
+
+	case $lang in
+		en)
+			log "Rendering funclist, xml and sqlite (IDE)"
+			$PHP render.php -P IDE -d $docbook -f funclist -f xml -f sqlite --output $out >> $LOGFILE 2>&1
+			if [ "$?" -ne 0 ]; then
+				broken_lang $lang
+				popd
+				return 187
+			fi
+
+			log "Rendering epub and pdf"
+			$PHP render.php -P PHP -d $docbook -f epub --output $out >> $LOGFILE 2>&1
+			###$PHP render.php -P PHP -d $docbook -f epub -f bigpdf -f pdf --output $out >> $LOGFILE 2>&1
+			if [ "$?" -ne 0 ]; then
+				broken_lang $lang
+				popd
+				return 187
+			fi
+
+			log "Rendering JSON IDE format"
+			$PHP gen-ide-json.php -l $lang >> $LOGFILE 2>&1
+			if [ "$?" -ne 0 ]; then
+				broken_lang $lang
+				popd
+				return 187
+			fi
+		;;
+
+		*)
+			log "Skipping all other redering formats"
+		;;
+	esac
+
+
 	popd
-	echo "====> Done building $lang" >> $LOGFILE
+	log "Finished building"
 }
 
 move()
 {
 	lang=$1
 	out=$OUTPUTFOLDER/$lang
+	otherdownload=/local/Web/sites/doc.php.net/www/downloads/
 
-	echo "====> Moving $lang" >> $LOGFILE
-	mv -f $out/php-web $DOCSWEB/manual/$lang
-	echo "====> Done" >> $LOGFILE
+	if [ ! -d $otherdownload ]; then
+		mkdir -p $otherdownload/{sqlite,epub,pdf,pdf/split}
+	fi
+
+	log "Moving phpweb"
+	pushd $out
+
+	fname=php_manual_$lang
+
+
+	# Downloadable chunked html
+	tar -czf $fname.tar.gz php-chunked-xhtml/
+	mv   -f  $fname.tar.gz $DOCSWEB/distributions/manual/
+
+	# Downloadable bightml
+	gzip     php-bigxhtml.html
+	mv   -f  php-bigxhtml.html.gz $DOCSWEB/distributions/manual/$fname.html.gz
+
+	# Include the tocfeed in phpweb
+	mv       php-tocfeed $out/php-web/feeds
+	rm   -rf $DOCSWEB/manual/$lang
+	mv   -f  php-web $DOCSWEB/manual/$lang
+
+
+
+	case $lang in
+		en)
+			log "Moving SQLite download file"
+			mv -f ide-sqlite.sqlite $otherdownload/sqlite/$fname.sqlite
+
+			log "Moving epub"
+			pushd php-epub
+			zip -0Xq  php-manual.epub mimetype
+			zip -Xr9Dq php-manual.epub *
+			popd
+			mv -f php-epub/php-manual.epub $otherdownload/epub/$fname.epub
+
+			# Moving PDF
+			###mv -f output/php-bigpdf.pdf $otherdownload/pdf/$fname.pdf
+			###rm -rf $otherdownload/pdf/split/$lang
+			###mv -f output/php-pdf $otherdownload/pdf/split/$lang
+		;;
+
+		*)
+			log "Not moving anything else for $lang"
+		;;
+	esac
+	popd
 }
 
 
 warning()
 {
-	echo "=============> Something happenend when snapshotting $1" >> $LOGFILE
-	echo $2 >> $LOGFILE
-	echo "=============> Please have a look!" >> $LOGFILE
+	echo "=============> Something happenend when snapshotting $1" >> $LOGFILE 2>&1
+	echo $2 >> $LOGFILE 2>&1
+	echo "=============> Please have a look!" >> $LOGFILE 2>&1
 }
 broken_lang ()
 {
+	toaddr="bjori@php.net"
 	warning $1 "Failed completely"
-	# Send mail?
+	echo -e "The $1 build of the PHP Manual is broken, so it does not validate or build. Please fix it! ;)\n\nAttached is the full log\n\nLove,\n\tThe docs.php.net server" | mail -s "This PHP Manual build is broken" -a $LOGFILE -r noreply@php.net $toaddr 
+	exit
 }
 
-pushd $BASEDIR
-for i in `/bin/ls -1 | grep -v doc-base`; do 
-	mkdir $LOGFOLDER/$TIMESTAMP
-	if [ -d $i ]; then
-		XMLFILENAME=$BASEDIR/doc-base/$TIMESTAMP-$i.xml
-		LOGFILE=$LOGFOLDER/$TIMESTAMP/$i.txt
+log() 
+{
+	echo "===> `date` $1" >> $LOGFILE 2>&1
+}
 
-		configure $i $XMLFILENAME
-		if [ "$?" -gt 0 ]; then
-			warning $i "Failed configuring $i"
-			continue
-		fi
 
-		build $i $XMLFILENAME
-		if [ "$?" -gt 0 ]; then
-			warning $i "Failed building $i"
-			continue
-		fi
+do_lang ()
+{
+	LANG=$1
+	XMLFILENAME=$BASEDIR/doc-base/$TIMESTAMP-$LANG.xml
+	LOGFILE=$LOGFOLDER/$TIMESTAMP/$LANG.txt
 
-		move $i
-		if [ "$?" -gt 0 ]; then
-			warning $i "Failed moving $i"
-			continue
-		fi
+	log "Starting $LANG"
+
+	configure $LANG $XMLFILENAME
+	if [ "$?" -gt 0 ]; then
+		warning $LANG "Failed configuring $LANG"
+		continue
 	fi
-done
+
+	build $LANG $XMLFILENAME
+	if [ "$?" -gt 0 ]; then
+		warning $LANG "Failed building $LANG"
+		continue
+	fi
+
+	move $LANG
+	if [ "$?" -gt 0 ]; then
+		warning $LANG "Failed moving $LANG"
+		continue
+	fi
+
+	log "$LANG Finished successfully"
+}
+
+
+
+
+
+pushd $BASEDIR
+
+mkdir -p $LOGFOLDER/$TIMESTAMP
+if [ $# -eq 1 ]; then
+	if [ -d "$BASEDIR/$1" ]; then
+		do_lang $1
+	else
+		echo "$1 ($BASEDIR/$1) doesn't seem to be valid language"
+		exit 1
+	fi
+else
+	for i in `/bin/ls -1 | grep -v doc-base`; do 
+		if [ -d $i ]; then
+			do_lang $i
+		fi
+	done
+fi
 popd
+
