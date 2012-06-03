@@ -73,13 +73,6 @@ build()
 				return 187
 			fi
 
-			log "Rendering JSON IDE format"
-			$PHP gen-ide-json.php -l $lang >> $LOGFILE 2>&1
-			if [ "$?" -ne 0 ]; then
-				broken_lang $lang
-				popd
-				return 187
-			fi
 		;;
 
 		*)
@@ -99,7 +92,7 @@ move()
 	otherdownload=/local/Web/sites/doc.php.net/www/downloads/
 
 	if [ ! -d $otherdownload ]; then
-		mkdir -p $otherdownload/{sqlite,epub,pdf,pdf/split}
+		mkdir -p $otherdownload/{sqlite,epub,pdf,pdf/split,json}
 	fi
 
 	log "Moving phpweb"
@@ -134,6 +127,14 @@ move()
 			zip -Xr9Dq php-manual.epub *
 			popd
 			mv -f php-epub/php-manual.epub $otherdownload/epub/$fname.epub
+
+			log "Generating JSON IDE format download.."
+			$PHP /local/systems/gen-ide-json.php -l $lang >> $LOGFILE 2>&1
+			if [ "$?" -ne 0 ]; then
+				broken_lang $lang
+				popd
+				return 187
+			fi
 
 			# Moving PDF
 			###mv -f output/php-bigpdf.pdf $otherdownload/pdf/$fname.pdf
