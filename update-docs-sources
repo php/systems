@@ -1,0 +1,20 @@
+#!/bin/sh
+
+for i in phd; do
+    cd /local/src/$i
+    git fetch origin && git reset --hard origin/master;
+done
+
+for i in phpdoc-all; do
+	cd /local/src/$i
+	svn up -q
+done
+
+rsync -avzC --timeout=600 --delete --delete-after \
+	--include='manual/*.php' \
+	--exclude='manual/**' \
+	--exclude='distributions/manual/**' \
+	rsync.php.net::phpweb /local/src/phpweb
+
+rsync -avzC --timeout=600 --delete --delete-after \
+	rsync.php.net::docweb /local/src/docweb

@@ -1,0 +1,10 @@
+# Service configuration for euk2.php.net 
+
+export CONTINENT="eu"
+
+#HOURLY="update-systems "
+HOURLY="update-docs-sources build-docs-snapshots"
+DAILY="update-time "
+WEEKLY=""
+MONTHLY=""
+
