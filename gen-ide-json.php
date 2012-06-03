@@ -3,10 +3,15 @@
 
 use phpdotnet\phd as PhD;
 
+$lang = $argv[2];
+if (empty($lang)) { 
+	$lang = 'en'; 
+}
+
 // @todo document these settings and requirements
-define ('FILENAME_JSON',	'/local/Web/sites/doc.php.net/www/downloads/json/php_manual_LANG.json');
-define ('PHD_INSTALL_DIR',	'/local/svn/phd_trunk/');
-define ('PHD_OUTPUT_DIR',	'/local/svn/phd_trunk/output/');
+define ('FILENAME_JSON',	'/local/Web/sites/doc.php.net/www/downloads/json/php_manual_ ' . $lang . '.json');
+define ('PHD_INSTALL_DIR',	'/local/src/phd/');
+define ('PHD_OUTPUT_DIR',	'/local/building/' . $lang . '/');
 define ('DS',				DIRECTORY_SEPARATOR);
 
 if (!is_dir(PHD_INSTALL_DIR)) {
@@ -32,11 +37,6 @@ $api = new PhD\Package_IDE_API(PHD_OUTPUT_DIR);
 
 // Gets all documented functions/methods
 $functions = $api->getFunctionList();
-
-$lang = $argv[2];
-if (empty($lang)) { 
-	$lang = 'en'; 
-}
 
 
 $json_arr = array();
