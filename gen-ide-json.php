@@ -9,7 +9,7 @@ if (empty($lang)) {
 }
 
 // @todo document these settings and requirements
-define ('FILENAME_JSON',	'/local/Web/sites/doc.php.net/www/downloads/json/php_manual_ ' . $lang . '.json');
+define ('FILENAME_JSON',	'/local/Web/sites/doc.php.net/www/downloads/json/php_manual_' . $lang . '.json');
 define ('PHD_INSTALL_DIR',	'/local/src/phd/');
 define ('PHD_OUTPUT_DIR',	'/local/building/' . $lang . '/');
 define ('DS',				DIRECTORY_SEPARATOR);
