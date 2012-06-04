@@ -16,5 +16,5 @@ rsync -avzC --timeout=600 --delete --delete-after \
 	--exclude='distributions/manual/**' \
 	rsync.php.net::phpweb /local/src/phpweb
 
-rsync -avzC --timeout=600 --delete --delete-after \
+rsync -avzC --timeout=600 \
 	rsync.php.net::docweb /local/src/docweb
