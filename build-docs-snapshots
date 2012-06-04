@@ -161,7 +161,6 @@ broken_lang ()
 	toaddr="bjori@php.net"
 	warning $1 "Failed completely"
 	echo -e "The $1 build of the PHP Manual is broken, so it does not validate or build. Please fix it! ;)\n\nAttached is the full log\n\nLove,\n\tThe docs.php.net server" | mail -s "This PHP Manual build is broken" -a $LOGFILE -r noreply@php.net $toaddr 
-	exit
 }
 
 log() 
@@ -215,7 +214,7 @@ if [ $# -eq 1 ]; then
 	fi
 else
 	for i in `/bin/ls -1 | grep -v doc-base`; do 
-		if [ -d $i ]; then
+		if [ -d $i -a ! -f "$i/broken-language.txt" ]; then
 			do_lang $i
 		fi
 	done
