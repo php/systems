@@ -11,8 +11,8 @@ PHP="/usr/bin/php -dmemory_limit=1024M"
 
 HOUR=`/bin/date +%H`
 
-# Only run this 4 times a day, or when explicitly given an language to build (i.e. from cli)
-if [ `expr $HOUR % 6` -ne 0 ]; then
+# Only run this 6 times a day, or when explicitly given an language to build (i.e. from cli)
+if [ `expr $HOUR % 4` -ne 0 ]; then
 	if [ $# -ne 1 ]; then
 		exit 0
 	fi
