@@ -158,11 +158,9 @@ warning()
 }
 broken_lang ()
 {
-	ccaddr="phpdoc@lists.php.net"
 	case $1 in
 		en)
 			toaddr="phpdoc@lists.php.net"
-			ccaddr="bjori@php.net"
 		;;
 
 		# Slightly inconsistent mailinglist addr :)
@@ -177,7 +175,7 @@ broken_lang ()
 
 	warning $1 "Failed completely"
 
-	echo -e "The $1 build of the PHP Manual is broken, so it does not validate or build. Please fix it! ;)\n\nAttached is the full log\n\nLove,\n\tThe docs.php.net server" | mail -s "This PHP Manual build is broken" -c $ccaddr -a $LOGFILE -r noreply@php.net $toaddr 
+	echo -e "The $1 build of the PHP Manual is broken, so it does not validate or build. Please fix it! ;)\n\nAttached is the full log\n\nLove,\n\tThe docs.php.net server" | mail -s "This PHP Manual build is broken" -a $LOGFILE -r noreply@php.net $toaddr 
 }
 
 log() 
