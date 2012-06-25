@@ -76,6 +76,9 @@ smarty		IN CNAME y1.php.net.
 snapsmaster	IN CNAME sc1.php.net.
 testfest	IN CNAME dp1a.php.net.
 
+; Network Health Status Page
+status		IN CNAME osu1php.osuosl.org.
+
 ; Geodispersion of rsync; regional rsync nodes (RRNs)
 americas.rsync	IN CNAME rsync.php.net.
 asia.rsync	IN CNAME rsync.php.net.
