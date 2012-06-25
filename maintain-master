@@ -10,9 +10,9 @@ rsync -qavzC --timeout=600 --delete --delete-after rsync.php.net::php-master-web
 #include "/local/mirrors/php-master-web/fetch/cvspasswd.php";
 #' > /repository/CVSROOT/passwd
 
-/local/systems/process-zone-file
-
 /usr/local/bin/php /local/mirrors/php-master-web/scripts/mirror-test
+
+/local/systems/process-zone-file
 
 if test "$how" = "weekly" ; then
 	php /local/mirrors/php-master-web/scripts/mirror-summary
