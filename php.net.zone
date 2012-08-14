@@ -89,6 +89,7 @@ irssi.embed	IN CNAME y1.php.net.
 pear		IN CNAME euk1.php.net.
 pear2		IN CNAME euk1.php.net.
 pyrus		IN CNAME euk1.php.net.
+www.pecl	IN CNAME pair12.php.net.
 pecl		IN CNAME pair12.php.net.
 pecl4win	IN CNAME sgrv2.php.net.
 
@@ -101,8 +102,6 @@ download.pear       	IN CNAME euk1.php.net.
 test.pear	IN CNAME sgrv1.php.net.
 test.pear2	IN CNAME sgrv1.php.net.
 test.pyrus	IN CNAME sgrv1.php.net.
-
-*.pecl.php.net.		300	IN CNAME sgrv2.php.net.
 
 pecl2 			IN CNAME sgrv2.php.net.
 developer.pecl		IN CNAME sgrv2.php.net.
