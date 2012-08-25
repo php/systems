@@ -96,12 +96,12 @@ pecl4win	IN CNAME sgrv2.php.net.
 ; Misc. PEAR sites
 de.pear.php.net. 	IN A 83.169.7.198
 us.pear.php.net. 	IN A 64.191.203.6
-us2.pear.php.net.  	IN CNAME sgrv1.php.net.
+ie.pear.php.net.  	IN CNAME sgrv3.php.net.
 blog.pear 		IN CNAME euk1.php.net.
 download.pear       	IN CNAME euk1.php.net.
-test.pear	IN CNAME sgrv1.php.net.
-test.pear2	IN CNAME sgrv1.php.net.
-test.pyrus	IN CNAME sgrv1.php.net.
+test.pear	IN CNAME sgrv3.php.net.
+test.pear2	IN CNAME sgrv3.php.net.
+test.pyrus	IN CNAME sgrv3.php.net.
 
 pecl2 			IN CNAME sgrv2.php.net.
 developer.pecl		IN CNAME sgrv2.php.net.
@@ -197,7 +197,6 @@ euk2		IN A 92.48.119.85
 sph1		IN A 108.163.197.98
 
 ; servergrove
-sgrv1		IN A 69.195.198.158
 sgrv2		IN A 69.195.199.133
 sgrv3		IN A 149.5.47.192
 
