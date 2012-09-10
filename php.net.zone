@@ -102,8 +102,6 @@ test.pear2	IN CNAME sgrv3.php.net.
 test.pyrus	IN CNAME sgrv3.php.net.
 
 pecl2 			IN CNAME sgrv2.php.net.
-developer.pecl		IN CNAME sgrv2.php.net.
-pecl-test		IN CNAME sgrv2.php.net.
 wiki 			IN CNAME rl.php.net.
 windows 		IN A 195.8.208.241 
 rmtools			IN CNAME maintenance.php.net.
