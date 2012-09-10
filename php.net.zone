@@ -23,8 +23,6 @@ $ORIGIN php.net.
 
 www		IN CNAME y2.php.net.
 www2		IN CNAME zend.php.net.
-;bugs		IN CNAME ez1.php.net.
-; Temporary override during downtime. [danbrown]
 bugs		IN CNAME sgrv2.php.net.
 bugs-beta	IN CNAME sgrv2.php.net.
 bugs-test	IN CNAME sgrv2.php.net.
