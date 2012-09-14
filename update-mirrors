@@ -5,6 +5,11 @@ for i in phpweb; do
     cd /local/repos/$i
     git fetch origin && git reset --hard origin/master
     git checkout-index -a -f --prefix=/local/mirrors/$i/;
+    submodules=$(git submodule status)
+    if [ -n "$submodules" ]; then
+        git submodule update
+        git submodule foreach git checkout-index -a -f --prefix=/local/mirrors/$i/\$path/
+    fi
 done
 
 for i in systems doc-editor docweb php-wiki php-rmtools php-people-web qaweb php-gcov-web php-master-web php-news-web php-bugs-web talks talks/presentations; do
