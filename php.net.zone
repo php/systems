@@ -9,7 +9,6 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 					1048576		; expire (1 week 5 days 3 hours 16 minutes 16 seconds)
 					2560		; minimum (42 minutes 40 seconds)
 			)
-		IN A	69.147.83.197 ; Y2
 		IN A	69.147.83.199 ; Y3
 		IN NS	ns1.easydns.com.
 		IN NS	ns2.easydns.com.
@@ -22,10 +21,7 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 $ORIGIN php.net.
 ; Services
 
-; Temporary (?) round-robin for @ and www. between Y2 and Y3.
-;www		IN CNAME y2.php.net.
-www		IN A 69.147.83.197 ; Y2
-		IN A 69.147.83.199 ; Y3
+www		IN A 69.147.83.199 ; Y3
 
 www2		IN CNAME zend.php.net.
 bugs		IN CNAME sgrv2.php.net.
