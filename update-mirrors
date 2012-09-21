@@ -5,7 +5,7 @@ for i in phpweb; do
     cd /local/repos/$i
     git fetch origin && git reset --hard origin/master
     git submodule update
-    rsync -qavzC --exclude=".git" /local/repos/$i/ /local/mirrors/$i
+    rsync -qrltoDvzC --exclude=".git" /local/repos/$i/ /local/mirrors/$i
 done
 
 for i in systems doc-editor docweb php-wiki php-rmtools php-people-web qaweb php-gcov-web php-master-web php-news-web php-bugs-web talks talks/presentations; do
