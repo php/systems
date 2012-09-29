@@ -50,7 +50,6 @@ ci.qa		IN CNAME 34sp1.php.net.
 
 museum		IN CNAME sph1.php.net.
 
-hg		IN CNAME y3.php.net.
 git		IN CNAME y3a.php.net.
 
 ; people.php.net user directory
