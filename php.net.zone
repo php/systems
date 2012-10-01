@@ -167,7 +167,7 @@ y1		IN A 69.147.83.196
 y2		IN A 69.147.83.197
 y2a		IN A 69.147.83.198
 uses		IN A 69.147.83.198
-static		CNAME y3b.php.net.
+static		IN A 69.147.83.198
 downloads	IN A 69.147.83.198
 y3		IN A 69.147.83.199
 y3a		IN A 69.147.83.200
