@@ -19,7 +19,16 @@ if ($q) {
 		if ($row['mirrortype'] != 1 || !preg_match("!^\\w{2}\\d?.php.net$!", $row['hostname']) || $row['active'] != 1) {
 			continue;
 		}
-		
+
+		// For load balancing		
+		if (preg_match('/\w{2}/',$row['load_balanced'])) {
+			$ipv4 = gethostbyname($row['cname']);
+			if ($ipv4 != $row['cname']) {
+				echo $row['load_balanced'].' IN A '.$ipv4.PHP_EOL;
+			}
+		}
+
+
 		if (preg_match("!^\\d+\\.\\d+\\.\\d+\\.\\d+$!", $row['cname'])) {
 			$type = 'IN A';
 		} else {
@@ -38,6 +47,3 @@ if ($q) {
 } else {
 	exit(1);
 }
-
-
-?>

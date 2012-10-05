@@ -21,75 +21,75 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 $ORIGIN php.net.
 ; Services
 
-www		IN A 69.147.83.199 ; Y3
+www			IN A 69.147.83.199 ; Y3
 
-www2		IN CNAME zend.php.net.
-bugs		IN CNAME sgrv2.php.net.
-bugs-beta	IN CNAME sgrv2.php.net.
-bugs-test	IN CNAME sgrv2.php.net.
+www2			IN CNAME zend.php.net.
+bugs			IN CNAME sgrv2.php.net.
+bugs-beta		IN CNAME sgrv2.php.net.
+bugs-test		IN CNAME sgrv2.php.net.
 
-conf		IN CNAME y2.php.net.
-conf2		IN CNAME y2.php.net.
-talks		IN CNAME y2.php.net.
-pres		IN CNAME y2.php.net.
-pres2		IN CNAME y2.php.net.
+conf			IN CNAME y2.php.net.
+conf2			IN CNAME y2.php.net.
+talks			IN CNAME y2.php.net.
+pres			IN CNAME y2.php.net.
+pres2			IN CNAME y2.php.net.
 
-cvs		IN CNAME y1.php.net.
-cvsold		IN CNAME cvs.php.net.
-cvsup		IN CNAME cvs.php.net.
-cvsweb		IN CNAME cvs.php.net.
-viewcvs	IN CNAME cvs.php.net.
+cvs			IN CNAME y1.php.net.
+cvsold			IN CNAME cvs.php.net.
+cvsup			IN CNAME cvs.php.net.
+cvsweb			IN CNAME cvs.php.net.
+viewcvs			IN CNAME cvs.php.net.
 
-svn		IN CNAME y1.php.net.
-websvn		IN CNAME y1.php.net.
+svn			IN CNAME y1.php.net.
+websvn			IN CNAME y1.php.net.
 
-gtk		IN CNAME y1.php.net.
-qa		IN CNAME sph1.php.net.
+gtk			IN CNAME y1.php.net.
+qa			IN CNAME sph1.php.net.
 
-ci.qa		IN CNAME 34sp1.php.net.
+ci.qa			IN CNAME 34sp1.php.net.
 
-museum		IN CNAME sph1.php.net.
+museum			IN CNAME sph1.php.net.
 
-git		IN CNAME y3a.php.net.
+git			IN CNAME y3a.php.net.
 
 ; people.php.net user directory
-people		IN CNAME y1.php.net.
+people			IN CNAME y1.php.net.
 
 ; phpdoc stuff
-doc		IN CNAME euk2.php.net.
-docs		IN CNAME euk2.php.net.
-edit		IN CNAME pb11.php.net.
-preview	IN CNAME pb11.php.net.
+doc			IN CNAME euk2.php.net.
+docs			IN CNAME euk2.php.net.
+edit			IN CNAME pb11.php.net.
+preview			IN CNAME pb11.php.net.
 
-mail 		IN CNAME osu1php.osuosl.org.
-master		IN CNAME osu1php.osuosl.org.
-master2	IN CNAME osu1php.osuosl.org.
-backend	IN CNAME rl2.php.net.
-frontend	IN CNAME rl2.php.net.
-beta.master	IN CNAME osu1php.osuosl.org.
-news		IN CNAME pair1.php.net.
-rsync		IN CNAME sc1.php.net.
-snaps		IN CNAME sph1.php.net.
-smarty		IN CNAME y1.php.net.
-snapsmaster	IN CNAME sc1.php.net.
-testfest	IN CNAME dp1a.php.net.
+mail 			IN CNAME osu1php.osuosl.org.
+master			IN CNAME osu1php.osuosl.org.
+master2			IN CNAME osu1php.osuosl.org.
+backend			IN CNAME rl2.php.net.
+frontend		IN CNAME rl2.php.net.
+beta.master		IN CNAME osu1php.osuosl.org.
+news			IN CNAME pair1.php.net.
+rsync			IN CNAME sc1.php.net.
+snaps			IN CNAME sph1.php.net.
+smarty			IN CNAME y1.php.net.
+snapsmaster		IN CNAME sc1.php.net.
+testfest		IN CNAME dp1a.php.net.
 
 ; Network Health Status Page
-status		IN CNAME osu1php.osuosl.org.
+status			IN CNAME osu1php.osuosl.org.
 
 ; Geodispersion of rsync; regional rsync nodes (RRNs)
-americas.rsync	IN CNAME rsync.php.net.
-asia.rsync	IN CNAME rsync.php.net.
-europe.rsync	IN CNAME rsync.php.streamservice.nl.
+americas.rsync		IN CNAME rsync.php.net.
+asia.rsync		IN CNAME rsync.php.net.
+europe.rsync		IN CNAME rsync.php.streamservice.nl.
 
-embed		IN CNAME y1.php.net.
-irssi.embed	IN CNAME y1.php.net.
-pear		IN CNAME euk1.php.net.
-pear2		IN CNAME euk1.php.net.
-pyrus		IN CNAME euk1.php.net.
-www.pecl	IN CNAME pair12.php.net.
-pecl		IN CNAME pair12.php.net.
-pecl4win	IN CNAME sgrv2.php.net.
+embed			IN CNAME y1.php.net.
+irssi.embed		IN CNAME y1.php.net.
+pear			IN CNAME euk1.php.net.
+pear2			IN CNAME euk1.php.net.
+pyrus			IN CNAME euk1.php.net.
+www.pecl		IN CNAME pair12.php.net.
+pecl			IN CNAME pair12.php.net.
+pecl4win		IN CNAME sgrv2.php.net.
 
 ; Misc. PEAR sites
 de.pear.php.net. 	IN A 83.169.7.198
@@ -97,9 +97,9 @@ us.pear.php.net. 	IN A 64.191.203.6
 ie.pear.php.net.  	IN CNAME sgrv3.php.net.
 blog.pear 		IN CNAME euk1.php.net.
 download.pear       	IN CNAME euk1.php.net.
-test.pear	IN CNAME sgrv3.php.net.
-test.pear2	IN CNAME sgrv3.php.net.
-test.pyrus	IN CNAME sgrv3.php.net.
+test.pear		IN CNAME sgrv3.php.net.
+test.pear2		IN CNAME sgrv3.php.net.
+test.pyrus		IN CNAME sgrv3.php.net.
 
 pecl2 			IN CNAME sgrv2.php.net.
 wiki 			IN CNAME rl.php.net.
@@ -124,95 +124,95 @@ results.testfest	IN CNAME sp1.php.net.
 ;------------ Physical boxen
 
 ; Oregon State Uni
-osu1		IN A 140.211.166.39
-osu1php	IN A 140.211.15.143
+osu1			IN A 140.211.166.39
+osu1php			IN A 140.211.15.143
 
 ; PAIR
-pair1		IN A 76.75.200.58
-pair11		IN A 76.75.200.61
-pair12		IN A 76.75.200.106
-pb1		IN A 76.75.200.58
-pb11            IN A 76.75.200.61
-pb12            IN A 76.75.200.106
+pair1			IN A 76.75.200.58
+pair11			IN A 76.75.200.61
+pair12			IN A 76.75.200.106
+pb1			IN A 76.75.200.58
+pb11    	        IN A 76.75.200.61
+pb12            	IN A 76.75.200.106
 
 ; server1.zend.com
-zend		IN A 209.61.191.11
+zend			IN A 209.61.191.11
 
 ; EV1 // Temporarily-disabled.  EV1 hasn't existed for some
 ;     // time, but even the RackSpace IP isn't responding to pings.
 ;rs1		IN A 207.44.132.102
 
 ; eZ/Hit (contact: Derick)
-ez1		IN A 128.39.198.38
+ez1			IN A 128.39.198.38
 
-sc1		IN A 75.102.5.106
-sp1		IN A 66.249.27.150
-sp2		IN A 173.236.52.218
-lxr		CNAME sp2.php.net.
+sc1			IN A 75.102.5.106
+sp1			IN A 66.249.27.150
+sp2			IN A 173.236.52.218
+lxr			CNAME sp2.php.net.
 
 ; Nexcess (contact: Chris Wells clwells at nexcess dot net)
-nex1		IN A 208.69.122.11
-nex2		IN A 208.69.122.227
+nex1			IN A 208.69.122.11
+nex2			IN A 208.69.122.227
 
 ; PPC testing box, hosted by Dedipower
-dp1		IN A 89.151.87.82
-dp1a		IN A 89.151.87.83
-dp2     	IN A 89.151.87.86 ; for buildbot testing
+dp1			IN A 89.151.87.82
+dp1a			IN A 89.151.87.83
+dp2     		IN A 89.151.87.86 ; for buildbot testing
 
 ; Yahoo! (contact: Rasmus or Dan Brown)
-; y1		IN A 66.163.161.116
-; y2		IN A 66.163.161.117
-; y2a		IN A 66.163.161.118
-y1		IN A 69.147.83.196
-y2		IN A 69.147.83.197
-y2a		IN A 69.147.83.198
-uses		IN A 69.147.83.198
-static		CNAME y3b.php.net.
-downloads	IN A 69.147.83.198
-y3		IN A 69.147.83.199
-y3a		IN A 69.147.83.200
-y3b		IN A 69.147.83.201
+; y1			IN A 66.163.161.116
+; y2			IN A 66.163.161.117
+; y2a			IN A 66.163.161.118
+y1			IN A 69.147.83.196
+y2			IN A 69.147.83.197
+y2a			IN A 69.147.83.198
+uses			IN A 69.147.83.198
+static			CNAME y3b.php.net.
+downloads		IN A 69.147.83.198
+y3			IN A 69.147.83.199
+y3a			IN A 69.147.83.200
+y3b			IN A 69.147.83.201
 
 ; OmniTI (contact: Wez or George)
-oti1   		IN A 8.8.38.133
-oti2   		IN A 8.8.38.129
+oti1   			IN A 8.8.38.133
+oti2   			IN A 8.8.38.129
 
 ; temporary fix for ovh being hax0red
-maintenance IN A 87.238.48.210
+maintenance 		IN A 87.238.48.210
 
 ; Redpill Linpro (contact: ms.shared+lists/php-ops@redpill-linpro.com)
-rl IN A 87.238.48.210
-rl2 IN A 87.238.48.211
+rl 			IN A 87.238.48.210
+rl2 			IN A 87.238.48.211
 
 
 ; eUKhost LTD. (contact Philip)
-euk1		IN A 5.77.39.20
-euk2		IN A 92.48.119.85
+euk1			IN A 5.77.39.20
+euk2			IN A 92.48.119.85
 
 ; Dan's (maybe temp box, for now, replacement for micfo1)
-sph1		IN A 108.163.197.98
+sph1			IN A 108.163.197.98
 
 ; servergrove
-sgrv2		IN A 69.195.199.133
-sgrv3		IN A 149.5.47.192
+sgrv2			IN A 69.195.199.133
+sgrv3			IN A 149.5.47.192
 
 ; 34sp.com Tom Hill (tom at 34sp)
-34sp1		IN A 80.82.121.132
-;34sp2		IN A 80.82.121.133
-;34sp3		IN A 80.82.121.134
-;34sp4		IN A 80.82.121.135
-;34sp5		IN A 80.82.121.136
+34sp1			IN A 80.82.121.132
+;34sp2			IN A 80.82.121.133
+;34sp3			IN A 80.82.121.134
+;34sp4			IN A 80.82.121.135
+;34sp5			IN A 80.82.121.136
 
 ; Bauer + Kirch GmbH (contact mj)
-bk1		IN A 89.238.71.179
+bk1			IN A 89.238.71.179
 
 ; streamservice (prototype website for new design)
-prototype   IN CNAME proto.php.streamservice.nl.
-ns6.is.not.my.friend  IN CNAME proto.php.streamservice.nl.
+prototype		IN CNAME proto.php.streamservice.nl.
+ns6.is.not.my.friend	IN CNAME proto.php.streamservice.nl.
 
 ; DomainKeys
 
-mx._domainkey.php.net. IN TXT "t=y; g=; k=rsa; p=MHwwDQYJKoZIhvcNAQEBBQADawAwaAJhANg8QYJB/6O2nGfNk1td5uRl1MMqETEAv/Jyv3wGPpoW7drSEVa7RsuZBgut/koWyJIpe0TWQRSSk+N6E0lNxkMwZVBSDU+HOpeO4+khXWtsq9Mv9BsAbPbf8VrgP5VsLQIDAQAB"
+mx._domainkey.php.net.	IN TXT "t=y; g=; k=rsa; p=MHwwDQYJKoZIhvcNAQEBBQADawAwaAJhANg8QYJB/6O2nGfNk1td5uRl1MMqETEAv/Jyv3wGPpoW7drSEVa7RsuZBgut/koWyJIpe0TWQRSSk+N6E0lNxkMwZVBSDU+HOpeO4+khXWtsq9Mv9BsAbPbf8VrgP5VsLQIDAQAB"
 
 ; Manuel Kiessling // Seems to be defunct, temporarily-disabling, pending permanent removal.
 ;wiki.gtk.php.net.	IN A 194.231.30.146
@@ -229,12 +229,12 @@ melbourne.ug.php.net.   IN CNAME phpcname.phpmelb.org.
 s390			IN A 32.97.40.56
 
 ; scaffolding for the unit tests
-mx1.tests.php.net.     IN MX 10 127.0.0.1.
-mx2.tests.php.net.     IN MX 10 10.0.0.10.
-mx2.tests.php.net.     IN MX 20 10.0.0.20.
+mx1.tests.php.net.	IN MX 10 127.0.0.1.
+mx2.tests.php.net.	IN MX 10 10.0.0.10.
+mx2.tests.php.net.	IN MX 20 10.0.0.20.
 
 ; New IRC idling box for those who prefer persistent connections (contact Dan <danbrown@php.net>).
 idle			IN A 184.154.127.102
 
 ; Sponsored by krystal.co.uk (contact danbrown)
-k1		IN A 77.72.6.42
+k1			IN A 77.72.6.42
