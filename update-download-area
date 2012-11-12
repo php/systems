@@ -8,7 +8,7 @@ for dir in *; do
     rm -f .new.md5 .new.index
     echo "<html><body><ul>" > .new.index
     touch .new.md5
-    for i in *.zip *.bz2 *.gz; do
+    for i in *.zip *.bz2 *.gz *.xz; do
       if test -r "$i"; then
         hash=`md5sum "$i"`
         echo "<li><a href='$i'>$i</a><br />$hash</li>" >> .new.index
