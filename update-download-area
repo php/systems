@@ -10,14 +10,16 @@ for dir in *; do
     touch .new.md5
     for i in *.zip *.bz2 *.gz *.xz; do
       if test -r "$i"; then
-        hash=`md5sum "$i"`
-        echo "<li><a href='$i'>$i</a><br />$hash</li>" >> .new.index
+        hash=`/sbin/md5 "$i"`
+        time=`stat -f "%Sm" -t "%Y-%m-%d %H:%M %z" $i`
+        size=`du -sh $i | awk '{print $1}'`
+        echo "<li><a href='$i'>$i</a> ($time) - $size<br />$hash</li>" >> .new.index
         echo $hash >> .new.md5
       fi
     done
     echo "</ul></body></html>" >> .new.index
-    
-    chown $dir .new.md5 .new.index
+
+    /usr/sbin/chown $dir .new.md5 .new.index
     mv .new.index index.html
     mv .new.md5 md5sums.txt
     cd ..
