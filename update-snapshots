@@ -39,6 +39,7 @@ fetch_index
 do_update php-trunk
 do_update php5.3
 do_update php5.4
+do_update php5.5
 
 # purge files which are older than 12 hours
 find $t -name \*tar\* -mmin +540|xargs rm -rf
