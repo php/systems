@@ -195,21 +195,29 @@ do_lang ()
 	configure $LANG $XMLFILENAME
 	if [ "$?" -gt 0 ]; then
 		warning $LANG "Failed configuring $LANG"
+		log "Cleaning $XMLFILENAME"
+		rm $XMLFILENAME
 		continue
 	fi
 
 	build $LANG $XMLFILENAME
 	if [ "$?" -gt 0 ]; then
 		warning $LANG "Failed building $LANG"
+		log "Cleaning $XMLFILENAME"
+		rm $XMLFILENAME
 		continue
 	fi
 
 	move $LANG
 	if [ "$?" -gt 0 ]; then
 		warning $LANG "Failed moving $LANG"
+		log "Cleaning $XMLFILENAME"
+		rm $XMLFILENAME
 		continue
 	fi
 
+	log "Cleaning $XMLFILENAME"
+	rm $XMLFILENAME
 	log "$LANG Finished successfully"
 }
 
