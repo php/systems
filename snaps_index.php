@@ -58,6 +58,18 @@ $b["5.4"] =
   ),
   );
 
+$b["5.5"] =
+  array(
+  "Source" => array(
+    "freq" => 3600 * 2,
+    "glob" => array(
+      "php-5.5-dev (tar.bz2)" => "php5.5-2*.tar.bz2",
+      "php-5.5-dev (tar.gz)"  => "php5.5-2*.tar.gz",
+      "php-5.5-dev (tar.xz)"  => "php5.5-2*.tar.xz",
+      ),
+  ),
+  );
+
 /* trunk */
 $b["trunk"] = 
   array(
@@ -164,6 +176,7 @@ if (!empty($qs)) {
     'php-trunk' => array('trunk', 'latest', 'latesttrunk'),
     'php5.3'    => array('53', 'latest53'),
     'php5.4'    => array('54', 'latest54'),
+    'php5.5'	=> array('55', 'latest55'),
   );
   foreach ($shortcuts as $sc_branch_name => $sc_options) {
     if (in_array($qs, $sc_options)) {
