@@ -5,7 +5,13 @@
 
 mysql_connect('localhost', 'nobody', '');
 mysql_select_db('phpmasterdb');
-$q = mysql_query('SELECT * from mirrors ORDER BY hostname');
+
+$lct = mysql_query("SELECT UNIX_TIMESTAMP(lastchecked) FROM mirrors ORDER BY lastchecked DESC LIMIT 1");
+list($checktime) = mysql_fetch_row($lct);
+
+$q = mysql_query("SELECT mirrors.*, " .
+	"(DATE_SUB(FROM_UNIXTIME($checktime), INTERVAL 3 DAY) < mirrors.lastchecked) AS up " .
+	"FROM mirrors ORDER BY hostname");
 
 echo "; this file was automatically generated from systems/php.net.zone\n\n";
 
@@ -21,7 +27,7 @@ if ($q) {
 		}
 
 		// For load balancing		
-		if (preg_match('/\w{2}/',$row['load_balanced'])) {
+		if (preg_match('/\w{2}/',$row['load_balanced']) && $row['up']) {
 			$ipv4 = gethostbyname($row['cname']);
 			if ($ipv4 != $row['cname']) {
 				echo $row['load_balanced'].' IN A '.$ipv4.PHP_EOL;
