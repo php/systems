@@ -17,4 +17,4 @@ rsync -avzC --timeout=600 --delete --delete-after \
 	rsync.php.net::phpweb /local/src/phpweb
 
 rsync -avzC --timeout=600 \
-	rsync.php.net::docweb /local/src/docweb
+	rsync.php.net::docweb /local/Web/sites/doc.php.net
