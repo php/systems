@@ -26,7 +26,7 @@ if ($q) {
 			continue;
 		}
 
-		// For load balancing		
+		// For load balancing
 		if (preg_match('/\w{2}/',$row['load_balanced']) && $row['up']) {
 			$ipv4 = gethostbyname($row['cname']);
 			if ($ipv4 != $row['cname']) {
