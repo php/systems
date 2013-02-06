@@ -47,7 +47,7 @@ websvn			IN CNAME y1.php.net.
 gtk			IN CNAME y1.php.net.
 qa			IN CNAME sph1.php.net.
 
-ci.qa			IN CNAME 34sp1.php.net.
+ci.qa			IN CNAME k1a.php.net.
 
 museum			IN CNAME sph1.php.net.
 
@@ -197,13 +197,6 @@ sph1			IN A 108.163.197.98
 sgrv2			IN A 69.195.199.133
 sgrv3			IN A 149.5.47.192
 
-; 34sp.com Tom Hill (tom at 34sp)
-34sp1			IN A 80.82.121.132
-;34sp2			IN A 80.82.121.133
-;34sp3			IN A 80.82.121.134
-;34sp4			IN A 80.82.121.135
-;34sp5			IN A 80.82.121.136
-
 ; Bauer + Kirch GmbH (contact mj)
 bk1			IN A 89.238.71.179
 
@@ -239,6 +232,10 @@ idle			IN A 184.154.127.102
 
 ; Sponsored by krystal.co.uk (contact danbrown)
 k1			IN A 77.72.6.42
+k1a			IN A 77.72.6.43
+k1b			IN A 77.72.6.44
+k1c			IN A 77.72.6.45
+k1d			IN A 77.72.6.46
 
 ; Myracloud.com (contact Dan or Rasmus)
 ;static			IN A 185.5.82.1
