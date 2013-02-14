@@ -93,7 +93,8 @@ pecl			IN CNAME pair12.php.net.
 pecl4win		IN CNAME sgrv2.php.net.
 
 ; Misc. PEAR sites
-de.pear.php.net. 	IN A 83.169.7.198
+de.pear.php.net. 	IN A 5.35.241.22
+de.pear.php.net. 	IN AAAA 2a01:488:66:1000:523:f116:0:1
 us.pear.php.net. 	IN A 64.191.203.6
 ie.pear.php.net.  	IN CNAME sgrv3.php.net.
 blog.pear 		IN CNAME euk1.php.net.
