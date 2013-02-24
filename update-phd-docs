@@ -2,4 +2,4 @@
 #
 # build the phd docs using phd itself. inception.
 
-/usr/bin/phd -d /local/src/phd/docs/phd-guide/phd-guide.xml -o /local/Web/sites/doc.php.net/www/phd/docs/ -f bigxhtml -F index.html --verbose 0
+/usr/bin/phd --docbook '/local/src/phd/docs/phd-guide/phd-guide.xml' --css 'http://php.net/styles/site.css' --output '/local/Web/sites/doc.php.net/www/phd/docs/' --format 'bigxhtml' --outputfilename 'index.html'
