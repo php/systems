@@ -36,7 +36,7 @@ do_update ( ) {
 }
 
 fetch_index
-do_update php-trunk
+do_update php-master
 do_update php5.3
 do_update php5.4
 do_update php5.5

@@ -70,15 +70,15 @@ $b["5.5"] =
   ),
   );
 
-/* trunk */
-$b["trunk"] = 
+/* Git master */
+$b["master"] = 
   array(
   "Source" => array(
     "freq" => 3600 * 2,
     "glob" => array(
-      "php-trunk-dev (tar.bz2)" => "php-trunk-2*.tar.bz2",
-      "php-trunk-dev (tar.gz)"  => "php-trunk-2*.tar.gz",
-      "php-trunk-dev (tar.xz)"  => "php-trunk-2*.tar.xz",
+      "php-master-dev (tar.bz2)" => "php-master-2*.tar.bz2",
+      "php-master-dev (tar.gz)"  => "php-master-2*.tar.gz",
+      "php-master-dev (tar.xz)"  => "php-master-2*.tar.xz",
       ),
   ),
   );
@@ -173,7 +173,7 @@ function display_next_snap($conf)
 $qs = trim($_SERVER['QUERY_STRING']);
 if (!empty($qs)) {
   $shortcuts = array(
-    'php-trunk' => array('trunk', 'latest', 'latesttrunk'),
+    'php-master' => array('master', 'latest', 'latestmaster'),
     'php5.3'    => array('53', 'latest53'),
     'php5.4'    => array('54', 'latest54'),
     'php5.5'	=> array('55', 'latest55'),
@@ -227,7 +227,7 @@ if (!empty($qs)) {
                 <h3>Snapshot Builds</h3>
                 <p>
                     You can find the latest development sources
-                    packages for PHP 5, and Trunk here. Source code is 
+                    packages for PHP 5, and master here. Source code is 
                     checked out of Git and packaged every 2 hours.
                 </p>
 <!--
@@ -245,8 +245,8 @@ if (!empty($qs)) {
                  URL shortcuts: Downloading the latest snapshot for specific PHP branches is easy.
                  Example URLs:
                  <a href="?53">http://snaps.php.net/?53</a> (latest 5.3 snap),
-                 <a href="?trunk">http://snaps.php.net/?trunk</a> (latest trunk snap), and 
-                 URLs like <a href="php-trunk-latest.tar.bz2">php-trunk-latest.tar.bz2</a> also
+                 <a href="?master">http://snaps.php.net/?master</a> (latest master snap), and 
+                 URLs like <a href="php-master-latest.tar.bz2">php-master-latest.tar.bz2</a> also
                  work.
                 </p>
                 
