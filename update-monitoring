@@ -1,0 +1,10 @@
+#!/bin/sh
+
+nagios3 -v /etc/nagios3/nagios.cfg > /dev/null
+
+if [ $? -eq 0 ];
+then
+        /etc/init.d/nagios3 restart > /dev/null
+else
+        echo "Refusing to reload Nagios because the configuration contains errors" 1>&2
+fi
