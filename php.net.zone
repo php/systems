@@ -120,7 +120,7 @@ opengrok		IN CNAME osu1php.osuosl.org.
 
 gcov			IN CNAME nex2.php.net.
 
-monitoring		IN CNAME sp2.php.net.
+monitoring		IN CNAME bk1.php.net.
 results.testfest	IN CNAME sp1.php.net.
 
 ;------------ Physical boxen
