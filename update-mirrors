@@ -20,15 +20,3 @@ git fetch origin && git reset --hard origin/old_auth;
 # Systems scripts were dropped down a level at some point.
 cd /local/systems;
 git fetch origin && git reset --hard origin/master;
-
-exit;
-
-for i in `ls -1 /local/mirrors|grep -v manual`; do
-#  echo updating $i mirror
-  cd /local/mirrors/$i && cvs -Q upd -dP 2>&1 | \
-    grep -v 'is not (any longer) pertinent'
-done
-
-#cd /local/mirrors/phpdoc && /usr/bin/autoconf
-cd /local/mirrors/php-gtk-doc && /usr/bin/autoconf
-#cd /local/mirrors/peardoc && /usr/bin/autoconf
