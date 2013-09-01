@@ -106,7 +106,6 @@ test.pyrus		IN CNAME sgrv3.php.net.
 pecl2 			IN CNAME sgrv2.php.net.
 wiki 			IN CNAME rl.php.net.
 windows 		IN A 195.8.208.241 
-rmtools			IN CNAME maintenance.php.net.
 
 ; lists operated from pair1
 lists.php.net.		IN A 76.75.200.58
@@ -178,9 +177,6 @@ y3b			IN A 69.147.83.201
 ; OmniTI (contact: Wez or George)
 oti1   			IN A 8.8.38.133
 oti2   			IN A 8.8.38.129
-
-; temporary fix for ovh being hax0red
-maintenance 		IN A 87.238.48.210
 
 ; Redpill Linpro (contact: ms.shared+lists/php-ops@redpill-linpro.com)
 rl 			IN A 87.238.48.210
