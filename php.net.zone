@@ -9,7 +9,8 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 					1048576		; expire (1 week 5 days 3 hours 16 minutes 16 seconds)
 					2560		; minimum (42 minutes 40 seconds)
 			)
-		IN A	69.147.83.199 ; Y3
+		; IN A	69.147.83.199 ; Y3
+		IN A	72.52.91.12; sascha
 		;IN A	185.5.82.1 ; myracloud.com
 		IN NS	ns1.easydns.com.
 		IN NS	ns2.easydns.com.
@@ -22,12 +23,12 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 $ORIGIN php.net.
 ; Services
 
-www			IN A 69.147.83.199 ; Y3
-;www			IN A 185.5.82.1 ; myracloud.com
-www2			IN CNAME zend.php.net.
-bugs			IN CNAME sgrv2.php.net.
-bugs-beta		IN CNAME sgrv2.php.net.
-bugs-test		IN CNAME sgrv2.php.net.
+; www			IN A 69.147.83.199 ; Y3
+www			IN A 72.52.91.12
+static			IN A 72.52.91.12
+php-web1		IN A 72.52.91.12
+php-git1		IN A 72.52.91.13
+bugs			IN CNAME sgrv20.php.net.
 
 conf			IN CNAME y2.php.net.
 conf2			IN CNAME y2.php.net.
@@ -90,7 +91,6 @@ pear2			IN CNAME euk1.php.net.
 pyrus			IN CNAME euk1.php.net.
 www.pecl		IN CNAME pair12.php.net.
 pecl			IN CNAME pair12.php.net.
-pecl4win		IN CNAME sgrv2.php.net.
 
 ; Misc. PEAR sites
 de.pear.php.net. 	IN A 5.35.241.22
@@ -103,7 +103,6 @@ test.pear		IN CNAME sgrv3.php.net.
 test.pear2		IN CNAME sgrv3.php.net.
 test.pyrus		IN CNAME sgrv3.php.net.
 
-pecl2 			IN CNAME sgrv2.php.net.
 wiki 			IN CNAME rl.php.net.
 windows 		IN A 195.8.208.241 
 
@@ -168,7 +167,7 @@ y1			IN A 69.147.83.196
 y2			IN A 69.147.83.197
 y2a			IN A 69.147.83.198
 uses			IN A 69.147.83.198
-static			CNAME y3b.php.net. ; Moved to myracloud.com (contact Dan or Rasmus)
+;static			CNAME y3b.php.net. ; Moved to myracloud.com (contact Dan or Rasmus)
 downloads		IN A 69.147.83.198
 y3			IN A 69.147.83.199
 y3a			IN A 69.147.83.200
@@ -191,6 +190,7 @@ euk2			IN A 92.48.119.85
 sph1			IN A 108.163.197.98
 
 ; servergrove
+sgrv20			IN A 69.195.222.219
 sgrv2			IN A 69.195.199.133
 sgrv3			IN A 149.5.47.192
 
