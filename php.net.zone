@@ -9,9 +9,7 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 					1048576		; expire (1 week 5 days 3 hours 16 minutes 16 seconds)
 					2560		; minimum (42 minutes 40 seconds)
 			)
-		; IN A	69.147.83.199 ; Y3
-		IN A	72.52.91.12; sascha
-		;IN A	185.5.82.1 ; myracloud.com
+		IN A	72.52.91.14; sascha
 		IN NS	ns1.easydns.com.
 		IN NS	ns2.easydns.com.
 		IN NS	remote1.easydns.com.
@@ -23,12 +21,13 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 $ORIGIN php.net.
 ; Services
 
-; www			IN A 69.147.83.199 ; Y3
-www			IN A 72.52.91.12
-static			IN A 72.52.91.12
 php-web1		IN A 72.52.91.12
 php-git1		IN A 72.52.91.13
 bugs			IN CNAME sgrv20.php.net.
+
+php-web2		IN A 72.52.91.14
+static			IN CNAME php-web2.php.net.
+www			IN CNAME php-web2.php.net.
 
 conf			IN CNAME y2.php.net.
 conf2			IN CNAME y2.php.net.
