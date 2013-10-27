@@ -139,12 +139,6 @@ pb1			IN A 76.75.200.58
 pb11    	        IN A 76.75.200.61
 pb12            	IN A 76.75.200.106
 
-; server1.zend.com
-zend			IN A 209.61.191.11
-
-; EV1 // Temporarily-disabled.  EV1 hasn't existed for some
-;     // time, but even the RackSpace IP isn't responding to pings.
-;rs1		IN A 207.44.132.102
 
 ; eZ/Hit (contact: Derick)
 ez1			IN A 128.39.198.38
@@ -209,19 +203,8 @@ ns6.is.not.my.friend	IN CNAME proto.php.streamservice.nl.
 
 mx._domainkey.php.net.	IN TXT "t=y; g=; k=rsa; p=MHwwDQYJKoZIhvcNAQEBBQADawAwaAJhANg8QYJB/6O2nGfNk1td5uRl1MMqETEAv/Jyv3wGPpoW7drSEVa7RsuZBgut/koWyJIpe0TWQRSSk+N6E0lNxkMwZVBSDU+HOpeO4+khXWtsq9Mv9BsAbPbf8VrgP5VsLQIDAQAB"
 
-; Manuel Kiessling // Seems to be defunct, temporarily-disabling, pending permanent removal.
-;wiki.gtk.php.net.	IN A 194.231.30.146
-
 ; Misc stuff
 localhost		IN A 127.0.0.1
-
-; Misc PHP user groups / Mirrors ?
-chiphpug		IN A 66.39.34.215
-quebec			IN CNAME www.phpquebec.com.
-melbourne.ug.php.net.   IN CNAME phpcname.phpmelb.org.
-
-; Obsolete?
-s390			IN A 32.97.40.56
 
 ; scaffolding for the unit tests
 mx1.tests.php.net.	IN MX 10 127.0.0.1.
@@ -238,5 +221,3 @@ k1b			IN A 77.72.6.44
 k1c			IN A 77.72.6.45
 k1d			IN A 77.72.6.46
 
-; Myracloud.com (contact Dan or Rasmus)
-;static			IN A 185.5.82.1
