@@ -29,6 +29,11 @@ php-web2		IN A 72.52.91.14
 static			IN CNAME php-web2.php.net.
 www			IN CNAME php-web2.php.net.
 
+
+; Jump servers, contact sascha
+php-jump1		IN A 72.52.91.11
+php-jump2		IN A 88.198.148.245
+
 conf			IN CNAME y2.php.net.
 conf2			IN CNAME y2.php.net.
 talks			IN CNAME y2.php.net.
@@ -51,7 +56,7 @@ ci.qa			IN CNAME k1a.php.net.
 
 museum			IN CNAME sph1.php.net.
 
-git			IN CNAME y3a.php.net.
+git			IN CNAME php-git1.php.net.
 
 ; people.php.net user directory
 people			IN CNAME y1.php.net.
