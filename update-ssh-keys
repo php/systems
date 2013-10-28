@@ -30,7 +30,7 @@ while($row = mysql_fetch_array($res, MYSQL_ASSOC)) {
         }
     }
 
-    false !== system('git add -u')
+    false !== system('git add -u :/')
         or die ('cannot update git information');
 
     foreach($ssh_keys as $keyinfo) {
