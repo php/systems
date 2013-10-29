@@ -34,7 +34,7 @@ static			IN CNAME php-web2.php.net.
 bugs			IN CNAME sgrv20.php.net.
 
 americas.jump		IN CNAME php-jump1.php.net.
-europe.jum		IN CNAME php-jump2.php.net.
+europe.jump		IN CNAME php-jump2.php.net.
 
 conf			IN CNAME y2.php.net.
 conf2			IN CNAME y2.php.net.
