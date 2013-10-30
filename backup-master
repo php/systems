@@ -5,10 +5,11 @@
 
 dir=master-$date
 
+mkdir -p /local/backups
 cd /local/backups
 mkdir $dir || exit 1
 
-mysqldump -Q phpmasterdb > $dir/phpmasterdb.sql
+mysqldump -u nobody -Q phpmasterdb > $dir/phpmasterdb.sql
 cp /local/httpd/conf/master-php-net.conf $dir
 
 rm -f /local/backups/master-$date.tar.bz2
