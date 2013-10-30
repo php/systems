@@ -6,7 +6,7 @@ dir=ecelerity-$date
 cd /local/backups
 mkdir $dir || exit 1
 
-mysqldump -Q accounts > $dir/acounts.sql
+mysqldump -u nobody -Q accounts > $dir/acounts.sql
 cp /opt/ecapache/conf/httpd.conf $dir
 cp -r /opt/ecelerity/etc /opt/ecelerity/custom_modules $dir
 cp /var/log/ecelerity/listdb $dir
