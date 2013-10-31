@@ -21,7 +21,6 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 $ORIGIN php.net.
 ; Services
 
-
 ; Myracloud, contact sascha
 php-web2		IN A 72.52.91.14
 php-git1		IN A 72.52.91.13
@@ -35,6 +34,9 @@ bugs			IN CNAME sgrv20.php.net.
 
 americas.jump		IN CNAME php-jump1.php.net.
 europe.jump		IN CNAME php-jump2.php.net.
+
+; sinnerg.nl VMs
+svn2			IN A 213.189.17.212
 
 conf			IN CNAME y2.php.net.
 conf2			IN CNAME y2.php.net.
