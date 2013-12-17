@@ -48,10 +48,10 @@ cvs			IN CNAME y1.php.net.
 cvsold			IN CNAME cvs.php.net.
 cvsup			IN CNAME cvs.php.net.
 cvsweb			IN CNAME cvs.php.net.
-viewcvs			IN CNAME cvs.php.net.
+viewcvs		IN CNAME cvs.php.net.
 
-svn			IN CNAME y1.php.net.
-websvn			IN CNAME y1.php.net.
+svn			IN CNAME svn2.php.net.
+websvn			IN CNAME svn2.php.net.
 
 gtk			IN CNAME svn2.php.net.
 qa			IN CNAME sph1.php.net.
