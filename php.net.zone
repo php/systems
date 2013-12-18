@@ -38,17 +38,17 @@ europe.jump		IN CNAME php-jump2.php.net.
 ; sinnerg.nl VMs
 svn2			IN A 213.189.17.212
 
-conf			IN CNAME y2.php.net.
-conf2			IN CNAME y2.php.net.
-talks			IN CNAME y2.php.net.
-pres			IN CNAME y2.php.net.
-pres2			IN CNAME y2.php.net.
+conf			IN CNAME svn2.php.net.
+conf2			IN CNAME svn2.php.net.
+talks			IN CNAME svn2.php.net.
+pres			IN CNAME svn2.php.net.
+pres2			IN CNAME svn2.php.net.
 
-cvs			IN CNAME y1.php.net.
-cvsold			IN CNAME cvs.php.net.
-cvsup			IN CNAME cvs.php.net.
-cvsweb			IN CNAME cvs.php.net.
-viewcvs		IN CNAME cvs.php.net.
+;cvs			IN CNAME y1.php.net.
+;cvsold			IN CNAME cvs.php.net.
+;cvsup			IN CNAME cvs.php.net.
+;cvsweb			IN CNAME cvs.php.net.
+;viewcvs		IN CNAME cvs.php.net.
 
 svn			IN CNAME svn2.php.net.
 websvn			IN CNAME svn2.php.net.
