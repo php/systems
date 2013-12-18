@@ -9,8 +9,7 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 					1048576		; expire (1 week 5 days 3 hours 16 minutes 16 seconds)
 					2560		; minimum (42 minutes 40 seconds)
 			)
-		IN A	69.147.83.199 ; Y3
-		;IN A	185.5.82.1 ; myracloud.com
+		IN A	72.52.91.14; sascha
 		IN NS	ns1.easydns.com.
 		IN NS	ns2.easydns.com.
 		IN NS	remote1.easydns.com.
@@ -22,12 +21,22 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 $ORIGIN php.net.
 ; Services
 
-www			IN A 69.147.83.199 ; Y3
-;www			IN A 185.5.82.1 ; myracloud.com
-www2			IN CNAME zend.php.net.
-bugs			IN CNAME sgrv2.php.net.
-bugs-beta		IN CNAME sgrv2.php.net.
-bugs-test		IN CNAME sgrv2.php.net.
+; Myracloud, contact sascha
+php-web2		IN A 72.52.91.14
+php-git1		IN A 72.52.91.13
+; Jump servers, contact sascha
+php-jump1		IN A 72.52.91.11
+php-jump2		IN A 88.198.148.245
+
+www			IN CNAME php-web2.php.net.
+static			IN CNAME php-web2.php.net.
+bugs			IN CNAME sgrv20.php.net.
+
+americas.jump		IN CNAME php-jump1.php.net.
+europe.jump		IN CNAME php-jump2.php.net.
+
+; sinnerg.nl VMs
+svn2			IN A 213.189.17.212
 
 conf			IN CNAME y2.php.net.
 conf2			IN CNAME y2.php.net.
@@ -39,22 +48,22 @@ cvs			IN CNAME y1.php.net.
 cvsold			IN CNAME cvs.php.net.
 cvsup			IN CNAME cvs.php.net.
 cvsweb			IN CNAME cvs.php.net.
-viewcvs			IN CNAME cvs.php.net.
+viewcvs		IN CNAME cvs.php.net.
 
-svn			IN CNAME y1.php.net.
-websvn			IN CNAME y1.php.net.
+svn			IN CNAME svn2.php.net.
+websvn			IN CNAME svn2.php.net.
 
-gtk			IN CNAME y1.php.net.
+gtk			IN CNAME svn2.php.net.
 qa			IN CNAME sph1.php.net.
 
 ci.qa			IN CNAME k1a.php.net.
 
 museum			IN CNAME sph1.php.net.
 
-git			IN CNAME y3a.php.net.
+git			IN CNAME php-git1.php.net.
 
 ; people.php.net user directory
-people			IN CNAME y1.php.net.
+people			IN CNAME svn2.php.net.
 
 ; phpdoc stuff
 doc			IN CNAME euk2.php.net.
@@ -71,7 +80,6 @@ beta.master		IN CNAME osu1php.osuosl.org.
 news			IN CNAME pair1.php.net.
 rsync			IN CNAME sc1.php.net.
 snaps			IN CNAME sph1.php.net.
-smarty			IN CNAME y1.php.net.
 snapsmaster		IN CNAME sc1.php.net.
 testfest		IN CNAME dp1a.php.net.
 
@@ -83,14 +91,11 @@ americas.rsync		IN CNAME rsync.php.net.
 asia.rsync		IN CNAME rsync.php.net.
 europe.rsync		IN CNAME rsync.php.streamservice.nl.
 
-embed			IN CNAME y1.php.net.
-irssi.embed		IN CNAME y1.php.net.
 pear			IN CNAME euk1.php.net.
 pear2			IN CNAME euk1.php.net.
 pyrus			IN CNAME euk1.php.net.
 www.pecl		IN CNAME pair12.php.net.
 pecl			IN CNAME pair12.php.net.
-pecl4win		IN CNAME sgrv2.php.net.
 
 ; Misc. PEAR sites
 de.pear.php.net. 	IN A 5.35.241.22
@@ -103,7 +108,6 @@ test.pear		IN CNAME sgrv3.php.net.
 test.pear2		IN CNAME sgrv3.php.net.
 test.pyrus		IN CNAME sgrv3.php.net.
 
-pecl2 			IN CNAME sgrv2.php.net.
 wiki 			IN CNAME rl.php.net.
 windows 		IN A 195.8.208.241 
 
@@ -136,12 +140,6 @@ pb1			IN A 76.75.200.58
 pb11    	        IN A 76.75.200.61
 pb12            	IN A 76.75.200.106
 
-; server1.zend.com
-zend			IN A 209.61.191.11
-
-; EV1 // Temporarily-disabled.  EV1 hasn't existed for some
-;     // time, but even the RackSpace IP isn't responding to pings.
-;rs1		IN A 207.44.132.102
 
 ; eZ/Hit (contact: Derick)
 ez1			IN A 128.39.198.38
@@ -168,7 +166,7 @@ y1			IN A 69.147.83.196
 y2			IN A 69.147.83.197
 y2a			IN A 69.147.83.198
 uses			IN A 69.147.83.198
-static			CNAME y3b.php.net. ; Moved to myracloud.com (contact Dan or Rasmus)
+;static			CNAME y3b.php.net. ; Moved to myracloud.com (contact Dan or Rasmus)
 downloads		IN A 69.147.83.198
 y3			IN A 69.147.83.199
 y3a			IN A 69.147.83.200
@@ -191,6 +189,7 @@ euk2			IN A 92.48.119.85
 sph1			IN A 108.163.197.98
 
 ; servergrove
+sgrv20			IN A 69.195.222.219
 sgrv2			IN A 69.195.199.133
 sgrv3			IN A 149.5.47.192
 
@@ -205,19 +204,8 @@ ns6.is.not.my.friend	IN CNAME proto.php.streamservice.nl.
 
 mx._domainkey.php.net.	IN TXT "t=y; g=; k=rsa; p=MHwwDQYJKoZIhvcNAQEBBQADawAwaAJhANg8QYJB/6O2nGfNk1td5uRl1MMqETEAv/Jyv3wGPpoW7drSEVa7RsuZBgut/koWyJIpe0TWQRSSk+N6E0lNxkMwZVBSDU+HOpeO4+khXWtsq9Mv9BsAbPbf8VrgP5VsLQIDAQAB"
 
-; Manuel Kiessling // Seems to be defunct, temporarily-disabling, pending permanent removal.
-;wiki.gtk.php.net.	IN A 194.231.30.146
-
 ; Misc stuff
 localhost		IN A 127.0.0.1
-
-; Misc PHP user groups / Mirrors ?
-chiphpug		IN A 66.39.34.215
-quebec			IN CNAME www.phpquebec.com.
-melbourne.ug.php.net.   IN CNAME phpcname.phpmelb.org.
-
-; Obsolete?
-s390			IN A 32.97.40.56
 
 ; scaffolding for the unit tests
 mx1.tests.php.net.	IN MX 10 127.0.0.1.
@@ -234,5 +222,3 @@ k1b			IN A 77.72.6.44
 k1c			IN A 77.72.6.45
 k1d			IN A 77.72.6.46
 
-; Myracloud.com (contact Dan or Rasmus)
-;static			IN A 185.5.82.1

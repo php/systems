@@ -19,6 +19,8 @@ chdir(SSH_KEY_REPO)
 false !== system('git pull origin master')
     or die ('cannot update repository');
 
+#TODO: remove all keys first in order to remove unused keys!
+
 while($row = mysql_fetch_array($res, MYSQL_ASSOC)) {
     $username = $row['username'];
     $ssh_keys = get_ssh_keys($row['ssh_keys']);
@@ -30,7 +32,7 @@ while($row = mysql_fetch_array($res, MYSQL_ASSOC)) {
         }
     }
 
-    false !== system('git add -u')
+    false !== system('git add -u :/')
         or die ('cannot update git information');
 
     foreach($ssh_keys as $keyinfo) {

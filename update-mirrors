@@ -11,6 +11,7 @@ done
 for i in systems doc-editor docweb php-wiki php-rmtools php-people-web qaweb php-gcov-web php-master-web php-news-web php-bugs-web talks talks/presentations php-gtk-web php-gtk-doc; do
     cd /local/mirrors/$i
     git fetch origin && git reset --hard origin/master;
+    git submodule update --init
 done
 
 # special case for peclweb because master is b0rked

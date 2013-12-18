@@ -70,6 +70,18 @@ $b["5.5"] =
   ),
   );
 
+$b["5.6"] =
+  array(
+  "Source" => array(
+    "freq" => 3600 * 2,
+    "glob" => array(
+      "php-5.6-dev (tar.bz2)" => "php5.6-2*.tar.bz2",
+      "php-5.6-dev (tar.gz)"  => "php5.6-2*.tar.gz",
+      "php-5.6-dev (tar.xz)"  => "php5.6-2*.tar.xz",
+      ),
+  ),
+  );
+
 /* Git master */
 $b["master"] = 
   array(

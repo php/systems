@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php // vim: et ts=2 sw=2
+
+if (@mysql_connect("localhost","nobody","")) {
+  if (@mysql_select_db("phpmasterdb")) {
+    $u = mysql_real_escape_string($argv[1]);
+    $res = @mysql_query("SELECT ssh_keys FROM users where username='$u'");
+    if ($res) {
+      while ($row = @mysql_fetch_array($res)) {
+        printf("%s\n", trim($row["ssh_keys"]));
+      }
+    }
+  }
+}
