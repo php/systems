@@ -55,6 +55,7 @@ websvn			IN CNAME svn2.php.net.
 
 gtk			IN CNAME svn2.php.net.
 qa			IN CNAME sph1.php.net.
+downloads		IN CNAME sph1.php.net.
 
 ci.qa			IN CNAME k1a.php.net.
 
@@ -167,7 +168,7 @@ y2			IN A 69.147.83.197
 y2a			IN A 69.147.83.198
 uses			IN A 69.147.83.198
 ;static			CNAME y3b.php.net. ; Moved to myracloud.com (contact Dan or Rasmus)
-downloads		IN A 69.147.83.198
+;downloads		IN A 69.147.83.198
 y3			IN A 69.147.83.199
 y3a			IN A 69.147.83.200
 y3b			IN A 69.147.83.201
