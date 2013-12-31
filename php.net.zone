@@ -24,6 +24,7 @@ $ORIGIN php.net.
 ; Myracloud, contact sascha
 php-web2		IN A 72.52.91.14
 php-git1		IN A 72.52.91.13
+
 ; Jump servers, contact sascha
 php-jump1		IN A 72.52.91.11
 php-jump2		IN A 88.198.148.245
@@ -43,12 +44,6 @@ conf2			IN CNAME svn2.php.net.
 talks			IN CNAME svn2.php.net.
 pres			IN CNAME svn2.php.net.
 pres2			IN CNAME svn2.php.net.
-
-;cvs			IN CNAME y1.php.net.
-;cvsold			IN CNAME cvs.php.net.
-;cvsup			IN CNAME cvs.php.net.
-;cvsweb			IN CNAME cvs.php.net.
-;viewcvs		IN CNAME cvs.php.net.
 
 svn			IN CNAME svn2.php.net.
 websvn			IN CNAME svn2.php.net.
@@ -75,9 +70,6 @@ preview			IN CNAME pb11.php.net.
 mail 			IN CNAME osu1php.osuosl.org.
 master			IN CNAME osu1php.osuosl.org.
 master2			IN CNAME osu1php.osuosl.org.
-backend			IN CNAME rl2.php.net.
-frontend		IN CNAME rl2.php.net.
-beta.master		IN CNAME osu1php.osuosl.org.
 news			IN CNAME pair1.php.net.
 rsync			IN CNAME sc1.php.net.
 snaps			IN CNAME sph1.php.net.
@@ -159,27 +151,12 @@ dp1			IN A 89.151.87.82
 dp1a			IN A 89.151.87.83
 dp2     		IN A 89.151.87.86 ; for buildbot testing
 
-; Yahoo! (contact: Rasmus or Dan Brown)
-; y1			IN A 66.163.161.116
-; y2			IN A 66.163.161.117
-; y2a			IN A 66.163.161.118
-y1			IN A 69.147.83.196
-y2			IN A 69.147.83.197
-y2a			IN A 69.147.83.198
-uses			IN A 69.147.83.198
-;static			CNAME y3b.php.net. ; Moved to myracloud.com (contact Dan or Rasmus)
-;downloads		IN A 69.147.83.198
-y3			IN A 69.147.83.199
-y3a			IN A 69.147.83.200
-y3b			IN A 69.147.83.201
-
 ; OmniTI (contact: Wez or George)
 oti1   			IN A 8.8.38.133
 oti2   			IN A 8.8.38.129
 
 ; Redpill Linpro (contact: ms.shared+lists/php-ops@redpill-linpro.com)
 rl 			IN A 87.238.48.210
-rl2 			IN A 87.238.48.211
 
 
 ; eUKhost LTD. (contact Philip)
@@ -191,7 +168,6 @@ sph1			IN A 108.163.197.98
 
 ; servergrove
 sgrv20			IN A 69.195.222.219
-sgrv2			IN A 69.195.199.133
 sgrv3			IN A 149.5.47.192
 
 ; Bauer + Kirch GmbH (contact mj)
