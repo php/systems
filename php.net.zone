@@ -9,13 +9,12 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 					1048576		; expire (1 week 5 days 3 hours 16 minutes 16 seconds)
 					2560		; minimum (42 minutes 40 seconds)
 			)
-		IN A	72.52.91.14; sascha
+		IN A	72.52.91.14; php-web2
 		IN NS	ns1.easydns.com.
 		IN NS	ns2.easydns.com.
 		IN NS	remote1.easydns.com.
 		IN NS	remote2.easydns.com.
 		IN NS	remote3.easydns.com.
-;		IN MX 	5 osu1.php.net.
 		IN MX 	5 osu1php.osuosl.org.
 		IN MX 	15 smtp.osuosl.org.
 $ORIGIN php.net.
