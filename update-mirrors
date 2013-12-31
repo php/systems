@@ -8,10 +8,17 @@ for i in phpweb; do
     rsync -qrltDvzC --exclude=".git" /local/repos/$i/ /local/mirrors/$i
 done
 
-for i in systems doc-editor docweb php-shared php-wiki php-rmtools php-people-web qaweb php-gcov-web php-master-web php-news-web php-bugs-web talks talks/presentations php-gtk-web php-gtk-doc; do
+# Websites needing the 'shared' module
+for i in docweb php-wiki php-people-web qaweb php-gcov-web php-master-web php-news-web php-bugs-web php-gtk-web; do
     cd /local/mirrors/$i
     git fetch origin && git reset --hard origin/master;
-    git submodule update --init
+    (cd shared && git fetch origin && git reset --hard origin/master)
+done
+
+# Other stuffs
+for i in systems doc-editor php-shared php-rmtools talks talks/presentations php-gtk-doc; do
+    cd /local/mirrors/$i
+    git fetch origin && git reset --hard origin/master;
 done
 
 # special case for peclweb because master is b0rked
