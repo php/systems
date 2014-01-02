@@ -205,7 +205,6 @@ if (!empty($qs)) {
 
   <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic,600italic|Source+Code+Pro&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="//php.net/favicon.ico">
-  <script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?tseed=5d2c1bdf8687c762731f425556438dd5"></script>
 </head>
 <body id="qa">
 
@@ -216,10 +215,9 @@ if (!empty($qs)) {
     <div class="mainscreen">
       <a href="/" class="home"><img src="//php.net/images/logo.php?snap" width="72" height="36" alt="php"><span class="subdomain">snaps</span></a>
       <ul>
-        <li><a href="?branch=5.3&distro=Source">5.3</a></li>
-        <li><a href="?branch=5.4&distro=Source">5.4</a></li>
-        <li><a href="?branch=5.5&distro=Source">5.5</a></li>
-        <li><a href="?branch=master&distro=Source">master</a></li>
+<?php foreach($b as $branch => $array): ?>
+        <li><a href="?branch=<?php echo $branch?>"><?php echo $branch ?></a></li>
+<?php endforeach ?>
       </ul>
     </div>
     <div class="secondscreen">
@@ -233,11 +231,11 @@ if (!empty($qs)) {
     <section class="mainscreen">
         <h1>PHP Snapshots</h1>
 <?php   
-if (isset($_GET['branch']) && isset($_GET['distro']) && isset($b[$_GET['branch']][$_GET['distro']])) {
+if (isset($_GET['branch'], $b[$_GET['branch']]["Source"])) {
 
-  $distro = $b[$_GET['branch']][$_GET['distro']];
+  $distro = $b[$_GET['branch']]["Source"];
 
-  echo "<h2>PHP {$_GET['branch']} {$_GET['distro']}</h2>\n";
+  echo "<h2>PHP {$_GET['branch']} Source</h2>\n";
 
   echo '<table><tr>';
 
