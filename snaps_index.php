@@ -216,6 +216,10 @@ if (!empty($qs)) {
     <div class="mainscreen">
       <a href="/" class="home"><img src="//php.net/images/logo.php?snap" width="72" height="36" alt="php"><span class="subdomain">snaps</span></a>
       <ul>
+        <li><a href="?branch=5.3&distro=Source">5.3</a></li>
+        <li><a href="?branch=5.4&distro=Source">5.4</a></li>
+        <li><a href="?branch=5.5&distro=Source">5.5</a></li>
+        <li><a href="?branch=master&distro=Source">master</a></li>
       </ul>
     </div>
     <div class="secondscreen">
@@ -247,9 +251,9 @@ if (isset($_GET['branch']) && isset($_GET['distro']) && isset($b[$_GET['branch']
     $info = get_file_info($glob);
     echo "<td valign=\"top\">";
     for ($i=0; $i<count($info->files); $i++) {
-      echo "<span><a href=\"{$info->files[$i]->name}\">{$title}</a></span><br />\n";
-      echo "<span style=\"font-size: .8em\">Size: {$info->files[$i]->size_str}M</span><br />\n";
-      echo "<span style=\"font-size: .8em\">{$info->files[$i]->time_str}</span><br />\n";
+      echo "<a href=\"{$info->files[$i]->name}\">{$title}</a><br>\n";
+      echo "<small>Size: {$info->files[$i]->size_str}M</small><br>\n";
+      echo "<small>{$info->files[$i]->time_str}</small><br>\n";
       echo "<br />";
     }
     echo "</td>";
@@ -310,6 +314,9 @@ if (isset($_GET['branch']) && isset($_GET['distro']) && isset($b[$_GET['branch']
 </section>
 <section class="secondscreen">
 
+                <h3>Next snapshot</h3>
+                <dl><?php display_next_snap($b); ?></dl>
+
                 <h3>Snapshot Builds</h3>
                 <p>
                     You can find the latest development sources
@@ -330,9 +337,6 @@ if (isset($_GET['branch']) && isset($_GET['distro']) && isset($b[$_GET['branch']
                  URLs like <a href="php-master-latest.tar.bz2">php-master-latest.tar.bz2</a> also
                  work.
                 </p>
-                
-                <h3>Next snapshot</h3>
-                <dl><?php display_next_snap($b); ?></dl>
 
             
 </section>
