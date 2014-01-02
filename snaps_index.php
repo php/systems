@@ -219,10 +219,6 @@ if (!empty($qs)) {
       </ul>
     </div>
     <div class="secondscreen">
-      <form method="get" action="/start">
-        <input type="search" placeholder="Search" name="id" class="search">
-        <input type="hidden" name="do" value="search">
-      </form>
     </div>
   </nav>
 </header>
