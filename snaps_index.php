@@ -20,11 +20,6 @@
 
 /* $Id$ */
 
-/* Show source */
-if ($_SERVER['QUERY_STRING'] === "source") {
-  highlight_file($_SERVER['SCRIPT_FILENAME']);
-  die();
-}
 ini_set( 'display_errors', 1 );
 ini_set( 'error_reporting', 'E_ALL' );
 /* All times on this site are UTC */
@@ -199,77 +194,44 @@ if (!empty($qs)) {
   }
 }
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-    <head>
-        <title>PHP Sources Snapshots</title>
-        <style type="text/css" media="all">
-        @import url("http://static.php.net/www.php.net/styles/site.css");
-        @import url("http://static.php.net/www.php.net/styles/phpnet.css");
-        </style>
-        <!--[if IE]><![if gte IE 6]><![endif]-->
-        <style type="text/css" media="print">
-        @import url("http://static.php.net/www.php.net/styles/print.css");
-        </style>
-        <!--[if IE]><![endif]><![endif]-->
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <link rel="shortcut icon" href="http://static.php.net/www.php.net/favicon.ico" />
-    </head> 
-    <body>
-        <div id="headnav">
-            <a href="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>"><img src="http://static.php.net/www.php.net/images/php.gif"
-            alt="PHP" width="120" height="67" /></a>
-            <div id="headmenu">
-                <a href="http://www.php.net/downloads.php">downloads</a> |
-                <a href="http://www.php.net/docs.php">documentation</a> |
-                <a href="http://www.php.net/FAQ.php">faq</a> |
-                <a href="http://www.php.net/support.php">getting help</a> |
-                <a href="http://www.php.net/mailing-lists.php">mailing lists</a> |
-                <a href="http://bugs.php.net/">reporting bugs</a>
-            </div>
-        </div>
-        <div id="headsearch" style="margin-bottom: 0;">
-            <p>
-                <span><?php echo date("M d, Y H:i T") ?></span>
-            </p>
-        </div>
-        <div id="layout_2">
-            <div id="leftbar">
-                <h3>Snapshot Builds</h3>
-                <p>
-                    You can find the latest development sources
-                    packages for PHP 5, and master here. Source code is 
-                    checked out of Git and packaged every 2 hours.
-                </p>
-<!--
-                <p>
-		   <strong> For Windows builds, see <a href="http://windows.php.net/snapshots/">Windows Snapshot page</a>.</strong>
-                </p>
--->
-                <p>
-                    These packages are <strong>NOT</strong> intended for 
-                    production use; please use the packages at 
-                    <a href="http://www.php.net/downloads">PHP downloads</a>.
-                </p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-                <p>
-                 URL shortcuts: Downloading the latest snapshot for specific PHP branches is easy.
-                 Example URLs:
-                 <a href="?53">http://snaps.php.net/?53</a> (latest 5.3 snap),
-                 <a href="?master">http://snaps.php.net/?master</a> (latest master snap), and 
-                 URLs like <a href="php-master-latest.tar.bz2">php-master-latest.tar.bz2</a> also
-                 work.
-                </p>
-                
-                <h3>Next snapshot</h3>
-                <dl><?php display_next_snap($b); ?></dl>
+  <title>PHP Sources Snapshots</title>
+  <link type="text/css" media="all" rel="stylesheet" href="//shared.php.net/styles/defaults.css">
 
-            </div>
-            
-            <div id="content" class=".">
-                <div id="snaps">
-                    <h1>PHP Snapshots</h1>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic,600italic|Source+Code+Pro&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="//php.net/favicon.ico">
+  <script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?tseed=5d2c1bdf8687c762731f425556438dd5"></script>
+</head>
+<body id="qa">
+
+<header>
+  <div id="mainmenu-toggle-overlay"></div>
+  <input type="checkbox" id="mainmenu-toggle">
+  <nav class="fullscreen">
+    <div class="mainscreen">
+      <a href="/" class="home"><img src="//php.net/images/logo.php?snap" width="72" height="36" alt="php"><span class="subdomain">snaps</span></a>
+      <ul>
+      </ul>
+    </div>
+    <div class="secondscreen">
+      <form method="get" action="/start">
+        <input type="search" placeholder="Search" name="id" class="search">
+        <input type="hidden" name="do" value="search">
+      </form>
+    </div>
+  </nav>
+</header>
+<div id="flash-message"></div>
+<nav id="megadropdown"></nav>
+
+<section class="fullscreen">
+    <section class="mainscreen">
+        <h1>PHP Snapshots</h1>
 <?php   
 if (isset($_GET['branch']) && isset($_GET['distro']) && isset($b[$_GET['branch']][$_GET['distro']])) {
 
@@ -277,7 +239,7 @@ if (isset($_GET['branch']) && isset($_GET['distro']) && isset($b[$_GET['branch']
 
   echo "<h2>PHP {$_GET['branch']} {$_GET['distro']}</h2>\n";
 
-  echo '<table border="0" cellpadding="3" cellspacing="2" class="standard"><tr>';
+  echo '<table><tr>';
 
   foreach ($distro["glob"] as $title => $glob) {
     echo "<th>$title</th>\n";
@@ -304,7 +266,7 @@ if (isset($_GET['branch']) && isset($_GET['distro']) && isset($b[$_GET['branch']
   foreach($b as $branch_name => $branch) {
 
     echo "<h2>PHP $branch_name</h2>\n";
-    echo '<table border="0" cellpadding="3" cellspacing="2" class="standard">';
+    echo '<table>';
     echo "<tr>\n";
 
     foreach($branch as $distro_name => $distro) {
@@ -349,25 +311,48 @@ if (isset($_GET['branch']) && isset($_GET['distro']) && isset($b[$_GET['branch']
 }   
 
 ?>
-                </div>
-            </div>
-            <div class="cleaner">&nbsp;</div>
-        </div>
-        
-        <div id="footnav">
-            <a href="<?php echo htmlentities($_SERVER['PHP_SELF']) . "?source" ?>">show source</a>   
-        </div>
-        
-        <div id="pagefooter">
-            <div id="copyright">
-                <a href="http://www.php.net/copyright.php">Copyright &copy;2001-<?php echo date('Y'); ?> The PHP Group</a><br />
-                All rights reserved.
-            </div>
-        
-            <div id="thismirror">
-                <br />
-                Last updated: <?php echo  date("M d, Y H:i T", filemtime($_SERVER['SCRIPT_FILENAME'])) ?>
-            </div>
-        </div> 
-    </body> 
-</html> 
+</section>
+<section class="secondscreen">
+
+                <h3>Snapshot Builds</h3>
+                <p>
+                    You can find the latest development sources
+                    packages for PHP 5, and master here. Source code is 
+                    checked out of Git and packaged every 2 hours.
+                </p>
+                <p>
+                    These packages are <strong>NOT</strong> intended for 
+                    production use; please use the packages at 
+                    <a href="http://www.php.net/downloads">PHP downloads</a>.
+                </p>
+
+                <p>
+                 URL shortcuts: Downloading the latest snapshot for specific PHP branches is easy.
+                 Example URLs:
+                 <a href="?53">http://snaps.php.net/?53</a> (latest 5.3 snap),
+                 <a href="?master">http://snaps.php.net/?master</a> (latest master snap), and 
+                 URLs like <a href="php-master-latest.tar.bz2">php-master-latest.tar.bz2</a> also
+                 work.
+                </p>
+                
+                <h3>Next snapshot</h3>
+                <dl><?php display_next_snap($b); ?></dl>
+
+            
+</section>
+</section><!-- .fullscreen -->
+<footer>
+  <nav class="fullscreen">
+    <ul>
+      <li><a href="//php.net/copyright">Copyright © 2001-2014 The PHP Group</a></li>
+      <li><a href="//php.net/sites">Other PHP.net sites</a></li>
+      <li><a href="//php.net/privacy">Privacy policy</a></li>
+    </ul>
+  </nav>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//shared.php.net/js/external/mousetrap.min.js"></script>
+<script src="//shared.php.net/js/common.js"></script>
+</body>
+</html>
