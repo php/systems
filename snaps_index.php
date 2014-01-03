@@ -297,7 +297,7 @@ if (isset($_GET['branch'], $b[$_GET['branch']]["Source"])) {
       $f = $info->files[0];
 
       echo "<b>Built on:</b> " . $f->time_str ."<br />\n";
-      echo "<span class=\"filelink\"><a href=\"" . htmlentities($_SERVER['PHP_SELF']). "?branch=" . urlencode($branch_name) . "&distro=" . urlencode($distro_name) . "\">Previous Builds</a></span><br />\n";
+      echo "<span class=\"filelink\"><a href=\"" . htmlentities($_SERVER['PHP_SELF']). "?branch=" . urlencode($branch_name) . "\">Previous Builds</a></span><br />\n";
 
       echo "</td>\n";
       
