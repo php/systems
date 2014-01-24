@@ -1,11 +1,11 @@
 #!/bin/sh
 
-# Eventually moving everything to this section
+# Update in its own dedicate checkout first
+# It'll be moved to /local/mirrors/phpweb in update-phpweb-backend
 for i in phpweb; do
     cd /local/repos/$i
     git fetch origin && git reset --hard origin/master
     git submodule update
-    rsync -qrltDvzC --exclude=".git" /local/repos/$i/ /local/mirrors/$i
 done
 
 # Websites needing the 'shared' module
