@@ -24,7 +24,7 @@ nice -n 15 mysqldump --quote-names --quick phpbugsdb > $dir/phpbugs.sql
 #
 # Patches in the bug tracker
 #
-cp -r /srv/bugs.php.net/uploads $basedir/$dir/php-bug-patches/
+cp -r /srv/bugs.php.net/uploads $basedir/$dir/php-bugs-patches/
 
 #
 # Compress the whole stuff in a gzipped tar archive
