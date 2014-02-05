@@ -54,7 +54,7 @@ for svc in $WHAT ; do
 	# Alert systems@php.net if there's a possible zombie process here. <danbrown>
 	if test -x /tmp/.$svc.runone.pid; then
 		echo "I tried to run the $1 process on $svc, but found that /tmp/.$svc.runone.pid exists." \
-		| mail -s "Possible Zombie Process on master.php.net" systems@php.net;
+		| mail -s "Possible Zombie Process on `hostname`" systems@php.net -- -fnoreply@php.net;
 	fi;
 
 	if test -x /local/systems/$svc ; then
