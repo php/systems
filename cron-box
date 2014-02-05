@@ -59,5 +59,9 @@ for svc in $WHAT ; do
 
 	if test -x /local/systems/$svc ; then
 		runone /tmp/.$svc.runone.pid /local/systems/$svc
+	else
+		echo "Something is wrong. /local/systems/$svc on `hostname` is not executable." \
+		| mail -s "Broken cronjob on `hostname`" systems@php.net -- -fnoreply@php.net
 	fi
 done
+
