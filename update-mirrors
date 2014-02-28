@@ -21,14 +21,10 @@ git fetch origin && git reset --hard origin/master;
 (cd shared && git fetch origin && git reset --hard origin/master)
 
 # Other stuffs
-for i in systems doc-editor php-shared php-rmtools talks talks/presentations php-gtk-doc; do
+for i in systems doc-editor php-shared php-rmtools talks talks/presentations php-gtk-doc peclweb; do
     cd /local/mirrors/$i
     git fetch origin && git reset --hard origin/master;
 done
-
-# special case for peclweb because master is b0rked
-cd /local/mirrors/peclweb;
-git fetch origin && git reset --hard origin/old_auth;
 
 # Systems scripts were dropped down a level at some point.
 cd /local/systems;
