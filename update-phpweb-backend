@@ -3,7 +3,7 @@
 # phpweb has some hardcoded files in the repo for development purposes
 # these need to beo verwritten by the update-backend script to fetch new content
 /local/mirrors/php-master-web/scripts/update-backend /local/repos/phpweb
-rsync -qrltDvzC --exclude=".git" /local/repos/phpweb/ /local/mirrors/phpweb
+rsync -qrltDvzC --exclude=".git" --exclude="manual/en" /local/repos/phpweb/ /local/mirrors/phpweb
 
 if ls /local/mirrors/manual-chms/*.chm > /dev/null 2> /dev/null; then
   for i in /local/mirrors/manual-chms/*.chm; do
