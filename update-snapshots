@@ -5,22 +5,25 @@ t=/local/php/web/snaps/;
 
 fetch_index ( ) {
   cd /local/repository/systems
-  git pull > /dev/null;
+  git fetch --quiet;
+  git reset --quiet --hard origin/master;
+  cd /local/repository/php-src;
+  git fetch --quiet;
 }
 
 do_update ( ) {
   prefix=$1
-  
-  source=/local/repository/$1
+  branch=$2
+
+  source=/local/repository/php-src
   target=$1-$d
 
   cd $source
-  git pull > /dev/null;
+  git checkout --quiet origin/$branch
 
   cd /dev/shm || exit 1
   cp -rp $source $target
-  find $target -name '.git*' | xargs rm -rf
-  rm -f $target/.deps $target/ChangeLog*
+  rm -f $target/.git $target/.deps $target/ChangeLog*
   (cd $target && ./buildconf --force --copy && ./genfiles) >/dev/null 2>&1
   rm -f $target/buildmk.stamp
   f=$target.tar
@@ -36,11 +39,11 @@ do_update ( ) {
 }
 
 fetch_index
-do_update php-master
-do_update php5.3
-do_update php5.4
-do_update php5.5
-do_update php5.6
+do_update php-master master
+do_update php5.3 PHP-5.3
+do_update php5.4 PHP-5.4
+do_update php5.5 PHP-5.5
+do_update php5.6 PHP-5.6
 
 # purge files which are older than 12 hours
 find $t -name \*tar\* -mmin +540|xargs rm -rf
