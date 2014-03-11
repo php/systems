@@ -23,7 +23,7 @@ do_update ( ) {
 
   cd /dev/shm || exit 1
   cp -rp $source $target
-  rm -f $target/.git $target/.deps $target/ChangeLog*
+  rm -rf $target/.git $target/.deps $target/ChangeLog*
   (cd $target && ./buildconf --force --copy && ./genfiles) >/dev/null 2>&1
   rm -f $target/buildmk.stamp
   f=$target.tar
