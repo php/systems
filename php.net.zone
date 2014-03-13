@@ -175,6 +175,7 @@ sph1			IN A 108.163.197.98
 ; servergrove
 sgrv20			IN A 69.195.222.219
 sgrv3			IN A 149.5.47.192
+sgrv4 			IN A 149.5.47.136
 
 ; Bauer + Kirch GmbH (contact mj)
 bk1			IN A 89.238.71.179
