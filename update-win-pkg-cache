@@ -1,0 +1,2 @@
+#!/bin/sh
+sudo -u nobody php /usr/local/www/peclweb/cron/update-win-pkg-cache.php

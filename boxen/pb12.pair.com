@@ -5,7 +5,7 @@
 export CONTINENT="us"
 
 #HOURLY="update-systems"
-HOURLY=""
+HOURLY="update-win-pkg-cache"
 DAILY="update-time backup-pecl prune-backups"
 WEEKLY=""
 MONTHLY=""
