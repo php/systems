@@ -22,6 +22,17 @@ for i in $langs; do
 
 done;
 
+echo "Remove old languages from rsync space"
+cd /local/mirrors/phpweb/manual
+read -d '' SCRIPT <<"EOF"
+include "../include/languages.inc";
+$current_dirs   = array_map("basename", glob("??", GLOB_ONLYDIR));
+$dirs_to_delete = array_intersect($current_dirs, array_keys($INACTIVE_ONLINE_LANGUAGES));
+echo implode(" ", $dirs_to_delete);
+EOF
+stale_langs=`/usr/local/bin/php -r "${SCRIPT}"`
+rm -rf $stale_langs
+
 /usr/local/bin/php /local/bin/gen-phpweb-sqlite-db.php /local/mirrors/phpweb/backend/manual-lookup.sqlite /local/mirrors/phpweb /manual >/dev/null
 
 
