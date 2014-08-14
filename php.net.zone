@@ -44,7 +44,7 @@ svn			IN CNAME svn2.php.net.
 websvn			IN CNAME svn2.php.net.
 
 gtk			IN CNAME svn2.php.net.
-shared			IN CNAME sph1.php.net.
+shared			IN CNAME sgrv4.php.net.
 qa			IN CNAME sph1.php.net.
 downloads		IN CNAME sph1.php.net.
 
