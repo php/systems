@@ -111,6 +111,7 @@ lists.php.net.		IN TXT "v=spf1 a mx a:osu1php.osuosl.org."
 
 ; Myracloud, contact sascha
 php-web2		IN A 72.52.91.14
+			IN AAAA 2001:470:1:380::3
 php-git1		IN A 72.52.91.13
 
 ; Jump servers, contact sascha
