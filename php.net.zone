@@ -10,6 +10,7 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 					2560		; minimum (42 minutes 40 seconds)
 			)
 		IN A	72.52.91.14; php-web2
+		IN AAAA	2001:470:1:380::3; php-web2
 		IN NS	ns1.easydns.com.
 		IN NS	ns2.easydns.com.
 		IN NS	remote1.easydns.com.
