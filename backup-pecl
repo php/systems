@@ -26,7 +26,7 @@ cp -r /local/rrdtool $dir/
 #
 # Database
 #
-nice -n 15 mysqldump --quote-names --quick pear > $dir/pecl.sql
+nice -n -20 mysqldump --quote-names --quick pear > $dir/pecl.sql
 
 #
 # Packages
