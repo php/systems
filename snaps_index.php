@@ -168,7 +168,7 @@ function display_next_snap($conf)
     foreach($branch as $distro_name => $distro) {
       foreach($distro["glob"] as $glob) break;
       $info = get_file_info($glob, $distro["freq"]);
-      echo "<dt><b>PHP {$branch_name} {$distro_name}</b> in</dt><dd>{$info->files[0]->next}</dd>";
+      echo "<li>PHP {$branch_name} {$distro_name} in {$info->files[0]->next}</li>";
     }
   }
 }
@@ -177,14 +177,15 @@ function display_next_snap($conf)
 // Example usage: http://snaps.php.net/?latest
 // Example usage of tomorrow: http://snaps.php.net/latest
 // @todo consider adding information to $b, and using that instead
+$shortcuts = array(
+  'php5.3'    => array('53', 'latest53'),
+  'php5.4'    => array('54', 'latest54'),
+  'php5.5'	  => array('55', 'latest55'),
+  'php5.6'	  => array('56', 'latest56'),
+  'php-master' => array('master', 'latest', 'latestmaster'),
+);
 $qs = trim($_SERVER['QUERY_STRING']);
 if (!empty($qs)) {
-  $shortcuts = array(
-    'php-master' => array('master', 'latest', 'latestmaster'),
-    'php5.3'    => array('53', 'latest53'),
-    'php5.4'    => array('54', 'latest54'),
-    'php5.5'	=> array('55', 'latest55'),
-  );
   foreach ($shortcuts as $sc_branch_name => $sc_options) {
     if (in_array($qs, $sc_options)) {
       header('HTTP/1.1 302 Found');
@@ -202,18 +203,20 @@ if (!empty($qs)) {
 
   <title>PHP Sources Snapshots</title>
   <link type="text/css" media="all" rel="stylesheet" href="//shared.php.net/styles/defaults.css">
+  <link type="text/css" media="all" rel="stylesheet" href="//shared.php.net/styles/snaps.css">
 
   <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic,600italic|Source+Code+Pro&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="//php.net/favicon.ico">
 </head>
-<body id="qa">
+<body id="QA">
 
-<header>
+<div class="wrap">
+<header class="clearfix">
   <div id="mainmenu-toggle-overlay"></div>
   <input type="checkbox" id="mainmenu-toggle">
   <nav class="fullscreen">
     <div class="mainscreen">
-      <a href="/" class="home"><img src="//php.net/images/logo.php?snap" width="72" height="36" alt="php"><span class="subdomain">snaps</span></a>
+      <a href="/" class="home"><img src="//php.net/images/logo.php?snap" width="48" height="24" alt="php"><span class="subdomain">snaps</span></a>
       <ul>
 <?php foreach($b as $branch => $array): ?>
         <li><a href="?branch=<?php echo $branch?>"><?php echo $branch ?></a></li>
@@ -227,7 +230,7 @@ if (!empty($qs)) {
 <div id="flash-message"></div>
 <nav id="megadropdown"></nav>
 
-<section class="fullscreen">
+<section class="fullscreen clearfix">
     <section class="mainscreen">
         <h1>PHP Snapshots</h1>
 <?php   
@@ -261,59 +264,49 @@ if (isset($_GET['branch'], $b[$_GET['branch']]["Source"])) {
 
 } else {
 
-  foreach($b as $branch_name => $branch) {
+  foreach($b as $branch_name => $branch):
+?>
+    <h2>PHP <?php echo $branch_name; ?></h2>
 
-    echo "<h2>PHP $branch_name</h2>\n";
-    echo '<table>';
-    echo "<tr>\n";
+    <ul>
+      <?php foreach ($branch as $distro_name => $distro): ?>
+        <?php foreach ($distro['glob'] as $title => $glob): ?>
+          <?php
+          $info = get_file_info($glob);
+          $f = $info->files[0];
+          ?>
+          <li>
+            <a href="<?php echo $f->name; ?>"><?php echo $title; ?></a>
+            (<?php echo $f->size_str; ?>M)
+          </li>
+        <?php endforeach ?>
+      <?php endforeach ?>
+    </ul>
 
-    foreach($branch as $distro_name => $distro) {
-      echo "<th>$distro_name</th>";
-    }
-
-    echo "</tr>\n<tr>\n";
-
-    foreach($branch as $distro_name => $distro) {
-
-      echo "<td valign=\"top\">\n";
-      
-      foreach ($distro["glob"] as $title => $glob) {
-	$info = get_file_info($glob);
-	$f = $info->files[0];
-
-	echo "<span><a href=\"{$f->name}\">{$title}</a> ({$f->size_str}M)</span><br />\n";
-      }
-      
-      echo "<br /></td>\n";
-      
-    }
-
-    echo "</tr>\n<tr>\n";
-
-    foreach($branch as $distro_name => $distro) {
-      echo "<td>\n";
-      foreach ($distro["glob"] as $glob) break;
+    <p>
+      <?php
+      $distro = reset($branch);
+      $glob = end($distro);
       $info = get_file_info($glob);
       $f = $info->files[0];
+      ?>
+      <strong>Built on</strong>: <?php echo $f->time_str; ?>
+      <br>
+      <a href="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>?branch=<?php echo urlencode($branch_name); ?>">
+        Previous Builds
+      </a>
+    </p>
+  <?php endforeach ?>
+<?php
 
-      echo "<b>Built on:</b> " . $f->time_str ."<br />\n";
-      echo "<span class=\"filelink\"><a href=\"" . htmlentities($_SERVER['PHP_SELF']). "?branch=" . urlencode($branch_name) . "\">Previous Builds</a></span><br />\n";
-
-      echo "</td>\n";
-      
-    }
-
-    echo "</tr>\n</table>\n";
-
-  }
 }   
 
 ?>
 </section>
 <section class="secondscreen">
 
-                <h3>Next snapshot</h3>
-                <dl><?php display_next_snap($b); ?></dl>
+                <h3>Next Snapshots</h3>
+                <ul><?php display_next_snap($b); ?></ul>
 
                 <h3>Snapshot Builds</h3>
                 <p>
@@ -327,11 +320,25 @@ if (isset($_GET['branch'], $b[$_GET['branch']]["Source"])) {
                     <a href="http://www.php.net/downloads">PHP downloads</a>.
                 </p>
 
+                <h3>URL Shortcuts</h3>
                 <p>
-                 URL shortcuts: Downloading the latest snapshot for specific PHP branches is easy.
+                 Downloading the latest snapshot for specific PHP branches is easy.
                  Example URLs:
-                 <a href="?53">http://snaps.php.net/?53</a> (latest 5.3 snap),
-                 <a href="?master">http://snaps.php.net/?master</a> (latest master snap), and 
+                </p>
+
+                <ul>
+                  <?php foreach ($shortcuts as $sc_branch_name => $sc_options): ?>
+                    <?php $shortcut = reset($sc_options); ?>
+                    <li>
+                      <a href="?<?php echo $shortcut; ?>">
+                        http://snaps.php.net/?<?php echo $shortcut; ?>
+                      </a>
+                      (latest <?php echo $sc_branch_name; ?> snap)
+                    </li>
+                  <?php endforeach ?>
+                </ul>
+
+                <p>
                  URLs like <a href="php-master-latest.tar.bz2">php-master-latest.tar.bz2</a> also
                  work.
                 </p>
@@ -348,6 +355,7 @@ if (isset($_GET['branch'], $b[$_GET['branch']]["Source"])) {
     </ul>
   </nav>
 </footer>
+</div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="//shared.php.net/js/external/mousetrap.min.js"></script>
