@@ -284,12 +284,6 @@ if (isset($_GET['branch'], $b[$_GET['branch']]["Source"])) {
     </ul>
 
     <p>
-      <?php
-      $distro = reset($branch);
-      $glob = end($distro);
-      $info = get_file_info($glob);
-      $f = $info->files[0];
-      ?>
       <strong>Built on</strong>: <?php echo $f->time_str; ?>
       <br>
       <a href="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>?branch=<?php echo urlencode($branch_name); ?>">
