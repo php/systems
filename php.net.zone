@@ -46,13 +46,13 @@ websvn			IN CNAME svn2.php.net.
 
 gtk			IN CNAME svn2.php.net.
 shared			IN CNAME sgrv4.php.net.
-qa			IN CNAME sph1.php.net.
-downloads		IN CNAME sph1.php.net.
+qa			IN CNAME sgrv20.php.net.
+downloads		IN CNAME sgrv20.php.net.
 
 ci.qa			IN CNAME k1a.php.net.
 lxr			IN CNAME sp2.php.net.
 
-museum			IN CNAME sph1.php.net.
+museum			IN CNAME sgrv20.php.net.
 
 git			IN CNAME php-git1.php.net.
 
@@ -70,7 +70,7 @@ master			IN CNAME osu1php.osuosl.org.
 master2			IN CNAME osu1php.osuosl.org.
 news			IN CNAME pair1.php.net.
 rsync			IN CNAME sc1.php.net.
-snaps			IN CNAME sph1.php.net.
+snaps			IN CNAME sgrv20.php.net.
 snapsmaster		IN CNAME sc1.php.net.
 testfest		IN CNAME dp1a.php.net.
 
