@@ -192,6 +192,8 @@ k1d			IN A 77.72.6.46
 ; DigitalOcean
 museum			IN A 104.236.41.219
 			IN AAAA 2604:a880:800:10::2ce:1
+qa			IN A 104.236.36.140
+			IN AAAA 2604:a880:800:10::2d6:2001
 
 ; DomainKeys
 mx._domainkey.php.net.	IN TXT "t=y; g=; k=rsa; p=MHwwDQYJKoZIhvcNAQEBBQADawAwaAJhANg8QYJB/6O2nGfNk1td5uRl1MMqETEAv/Jyv3wGPpoW7drSEVa7RsuZBgut/koWyJIpe0TWQRSSk+N6E0lNxkMwZVBSDU+HOpeO4+khXWtsq9Mv9BsAbPbf8VrgP5VsLQIDAQAB"
