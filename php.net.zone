@@ -46,7 +46,6 @@ websvn			IN CNAME svn2.php.net.
 
 gtk			IN CNAME svn2.php.net.
 shared			IN CNAME sgrv4.php.net.
-downloads		IN CNAME sgrv20.php.net.
 
 ci.qa			IN CNAME k1a.php.net.
 lxr			IN CNAME sp2.php.net.
@@ -193,6 +192,8 @@ museum			IN A 104.236.41.219
 			IN AAAA 2604:a880:800:10::2ce:1
 qa			IN A 104.236.36.140
 			IN AAAA 2604:a880:800:10::2d6:2001
+downloads		IN A 104.236.32.144
+			IN AAAA 2604:a880:800:10::2dd:1
 
 ; DomainKeys
 mx._domainkey.php.net.	IN TXT "t=y; g=; k=rsa; p=MHwwDQYJKoZIhvcNAQEBBQADawAwaAJhANg8QYJB/6O2nGfNk1td5uRl1MMqETEAv/Jyv3wGPpoW7drSEVa7RsuZBgut/koWyJIpe0TWQRSSk+N6E0lNxkMwZVBSDU+HOpeO4+khXWtsq9Mv9BsAbPbf8VrgP5VsLQIDAQAB"
