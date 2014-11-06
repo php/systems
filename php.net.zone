@@ -177,9 +177,6 @@ sgrv4 			IN A 149.5.47.136
 ; Bauer + Kirch GmbH (contact mj)
 bk1			IN A 89.238.71.179
 
-; New IRC idling box for those who prefer persistent connections (contact Dan <danbrown@php.net>).
-idle			IN A 184.154.127.102
-
 ; Sponsored by krystal.co.uk (contact danbrown)
 k1			IN A 77.72.6.42
 k1a			IN A 77.72.6.43
@@ -194,6 +191,8 @@ qa			IN A 104.236.36.140
 			IN AAAA 2604:a880:800:10::2d6:2001
 downloads		IN A 104.236.32.144
 			IN AAAA 2604:a880:800:10::2dd:1
+idle		       IN A 104.236.32.173
+			IN AAAA 2604:a880:800:10::2dd:1001
 
 ; DomainKeys
 mx._domainkey.php.net.	IN TXT "t=y; g=; k=rsa; p=MHwwDQYJKoZIhvcNAQEBBQADawAwaAJhANg8QYJB/6O2nGfNk1td5uRl1MMqETEAv/Jyv3wGPpoW7drSEVa7RsuZBgut/koWyJIpe0TWQRSSk+N6E0lNxkMwZVBSDU+HOpeO4+khXWtsq9Mv9BsAbPbf8VrgP5VsLQIDAQAB"
