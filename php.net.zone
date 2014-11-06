@@ -46,7 +46,6 @@ websvn			IN CNAME svn2.php.net.
 
 gtk			IN CNAME svn2.php.net.
 shared			IN CNAME sgrv4.php.net.
-qa			IN CNAME sgrv20.php.net.
 downloads		IN CNAME sgrv20.php.net.
 
 ci.qa			IN CNAME k1a.php.net.
