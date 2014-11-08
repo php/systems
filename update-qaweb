@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rsync -qavzC --timeout=600 --delete --delete-after --exclude=reports/db rsync.php.net::qaweb /var/www/qa.php.net
+
