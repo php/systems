@@ -1,0 +1,2 @@
+#!/bin/sh
+/srv/bugs.php.net/scripts/cron/no-feedback
