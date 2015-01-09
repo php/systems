@@ -31,7 +31,6 @@ if ($q) {
 			$ipv4 = gethostbyname($row['cname']);
 			if ($ipv4 != $row['cname']) {
 				echo $row['load_balanced'].' IN A '.$ipv4.PHP_EOL;
-				echo 'www.'.$row['load_balanced'].' IN A '.$ipv4.PHP_EOL;
 			}
 		}
 
@@ -48,7 +47,6 @@ if ($q) {
 			$row['hostname'] .= '.';
 
 		printf("%s %s %s\n", $row['hostname'], $type, $row['cname']);
-		printf("www.%s %s %s\n", $row['hostname'], $type, $row['cname']);
 
 	}
 } else {
