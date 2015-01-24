@@ -4,4 +4,4 @@
 
 #find /local/repository -name '#cvs.lock' | xargs rm -rf
 
-svnsync sync file:///local/repository-svn/rsync-base > /dev/null
+svnsync sync --username svnsync file:///local/repository-svn/rsync-base > /dev/null
