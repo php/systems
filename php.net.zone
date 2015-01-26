@@ -32,7 +32,7 @@ europe.jump		IN CNAME php-jump2.php.net.
 ; Geodispersion of rsync; regional rsync nodes (RRNs)
 americas.rsync	IN CNAME rsync.php.net.
 asia.rsync		IN CNAME rsync.php.net.
-europe.rsync		IN CNAME rsync.php.streamservice.nl.
+europe.rsync		IN CNAME rsync.php.net.
 
 
 conf			IN CNAME svn2.php.net.
