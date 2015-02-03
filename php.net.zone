@@ -105,9 +105,9 @@ lists.php.net.		IN TXT "v=spf1 a mx a:osu1php.osuosl.org."
 
 ;------------ Physical boxen
 
-; Myracloud, contact sascha
+; Myracloud, contact Sascha / noc@myracloud.com
 php-web2		IN A 72.52.91.14
-php-web2		IN AAAA 2001:470:1:380::3
+php-web2		IN AAAA 2a02:cb41::7
 php-git1		IN A 72.52.91.13
 php-git1		IN AAAA 2a02:cb41::5
 
