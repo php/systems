@@ -109,14 +109,15 @@ lists.php.net.		IN TXT "v=spf1 a mx a:osu1php.osuosl.org."
 php-web2		IN A 72.52.91.14
 php-web2		IN AAAA 2001:470:1:380::3
 php-git1		IN A 72.52.91.13
-;php-git1		IN AAAA 2001:470:1:380::4
+php-git1		IN AAAA 2a02:cb41::5
 
 php-smtp1		IN A 72.52.91.13
+php-smtp1       IN AAAA 2a02:cb41::5
 @				30 IN MX 0 php-smtp1.php.net.
 
 ; Jump servers, contact sascha
 php-jump1		IN A 72.52.91.11
-;php-jump1		IN AAAA 2001:470:1:380::5
+php-jump1		IN AAAA 2a02:cb41::6
 php-jump2		IN A 88.198.148.245
 php-jump2		IN AAAA 2a01:4f8:1b7:257::2
 
