@@ -90,7 +90,7 @@ wiki 			IN CNAME rl.php.net.
 
 ; Ecelerity MX running on OSU1
 ecelerity		IN CNAME osu1php.osuosl.org.
-php.net.		IN TXT "v=spf1 ptr ?all"
+php.net.		IN TXT "v=spf1 ip4:72.52.91.13 ip6:2a02:cb41::5 ip4:140.211.15.143 ?all"
 
 gcov			IN CNAME nex2.php.net.
 
