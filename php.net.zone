@@ -115,7 +115,8 @@ php-smtp1		IN A 72.52.91.13
 php-smtp1       IN AAAA 2a02:cb41::5
 php-smtp2       IN A 72.52.91.12
 php-smtp2       IN AAAA 2a02:cb41::8
-@				30 IN MX 0 php-smtp1.php.net.
+;@				30 IN MX 0 php-smtp1.php.net.
+@				30 IN MX 0 php-smtp2.php.net.
 
 ; Jump servers, contact sascha
 php-jump1		IN A 72.52.91.11
