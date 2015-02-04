@@ -90,7 +90,7 @@ wiki 			IN CNAME rl.php.net.
 
 ; Ecelerity MX running on OSU1
 ecelerity		IN CNAME osu1php.osuosl.org.
-php.net.		IN TXT "v=spf1 ip4:72.52.91.13 ip6:2a02:cb41::5 ip4:140.211.15.143 ?all"
+php.net.		IN TXT "v=spf1 ip4:72.52.91.12 ip6:2a02:cb41::8 ip4:140.211.15.143 ?all"
 
 gcov			IN CNAME nex2.php.net.
 
@@ -111,11 +111,8 @@ php-web2		IN AAAA 2a02:cb41::7
 php-git1		IN A 72.52.91.13
 php-git1		IN AAAA 2a02:cb41::5
 
-php-smtp1		IN A 72.52.91.13
-php-smtp1       IN AAAA 2a02:cb41::5
 php-smtp2       IN A 72.52.91.12
 php-smtp2       IN AAAA 2a02:cb41::8
-;@				30 IN MX 0 php-smtp1.php.net.
 @				30 IN MX 0 php-smtp2.php.net.
 
 ; Jump servers, contact sascha
