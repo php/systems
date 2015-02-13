@@ -7,10 +7,7 @@ rsync -qrltDvzC --exclude=".git" --exclude="manual/en" /local/repos/phpweb/ /loc
 
 if ls /local/mirrors/manual-chms/*.chm > /dev/null 2> /dev/null; then
   for i in /local/mirrors/manual-chms/*.chm; do
-    /local/systems/checkchm $i
-    if [ $? == 0 ]; then
-      cp -p $i /local/mirrors/phpweb/distributions/manual
-    fi
+    cp -p $i /local/mirrors/phpweb/distributions/manual
   done
 fi
 
@@ -38,7 +35,4 @@ DATE=`date +"%s"`
 echo "<?php \$LAST_UPDATED=$DATE; ?>" \
   > /local/mirrors/phpweb/include/last_updated.inc
 
-
-#cp /local/tmp/GeoIP.dat \
-#    /local/mirrors/phpweb/backend
 
