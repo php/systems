@@ -8,7 +8,7 @@ langs=`php -r 'include "/local/mirrors/phpweb/include/languages.inc"; echo implo
 
 for i in $langs; do
 # Update the translation files
-	/bin/bash /local/systems/build-docs-rsync-lang.sh $i >>/tmp/log-$i 2>&1;
+	/bin/bash /local/systems/build-docs-rsync-lang $i >>/tmp/log-$i 2>&1;
 	if [ $? -ne 0 ]; then
 		echo "The $i build is broken :("
 		php -r 'mail("phpdoc@lists.php.net", "Br0ken build", "The '$i'-build is br0ken. Please fix", "From: Doc Builder <phpdoc@lists.php.net>", "-fnoreply@php.net");'
