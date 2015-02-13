@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/docbuilder/phpdoc
+cd /local/repos/phpdoc
 
 svn up >/tmp/log-svn 2>&1
 
