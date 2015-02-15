@@ -1,0 +1,3 @@
+#!/bin/sh
+cd /home/dsp/php-distributions && git checkout master && git fetch origin && git reset --hard origin/master
+rsync -avzr --exclude=".git" /home/dsp/php-distributions/ /local/mirrors/phpweb/distributions

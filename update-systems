@@ -2,4 +2,8 @@
 # $Id$
 # Update systems checkout under /local/systems
 
-rsync -qazC --timeout=600 --delete --delete-after rsync.php.net::systems /local/systems
+. /etc/profile
+
+cd /local/systems || exit 1
+
+git pull
