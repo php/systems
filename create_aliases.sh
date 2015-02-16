@@ -1,4 +1,6 @@
 #! /bin/sh
+#
+# creates aliases.
 
 . /etc/profile
 
