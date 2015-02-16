@@ -6,4 +6,10 @@
 
 cd /local/systems || exit 1
 
-git pull -q
+if test -d .git && test -x /usr/bin/git; then
+	# master.php.net
+	git pull -q
+else
+	# pb12.pair.com
+	rsync -qazC --timeout=600 --delete --delete-after rsync.php.net::systems /local/systems
+fi
