@@ -6,4 +6,4 @@
 
 cd /local/systems || exit 1
 
-git pull
+git pull -q
