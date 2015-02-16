@@ -1,31 +1,34 @@
 #!/bin/sh
 
+GIT_FETCH="git fetch --quiet origin"
+GIT_RESET="git reset --quiet --hard origin/master"
+
 # Update in its own dedicate checkout first
 # It'll be moved to /local/mirrors/phpweb in update-phpweb-backend
 for i in phpweb; do
     cd /local/repos/$i
-    git fetch origin && git reset --hard origin/master
+    $GIT_FETCH && $GIT_RESET
     git submodule update
 done
 
 # Websites needing the 'shared' module
 for i in docweb php-people-web qaweb php-gcov-web php-master-web php-news-web php-bugs-web php-gtk-web; do
     cd /local/mirrors/$i
-    git fetch origin && git reset --hard origin/master;
-    (cd shared && git fetch origin && git reset --hard origin/master)
+    $GIT_FETCH && $GIT_RESET;
+    (cd shared && $GIT_FETCH && $GIT_RESET)
 done
 
 # The wikibox is special. doesn't do full module rsync :(
 cd /local/mirrors/php-wiki/dokuwiki
-git fetch origin && git reset --hard origin/master;
-(cd shared && git fetch origin && git reset --hard origin/master)
+$GIT_FETCH && $GIT_RESET;
+(cd shared && $GIT_FETCH && $GIT_RESET)
 
 # Other stuffs
 for i in systems doc-editor php-shared php-rmtools talks talks/presentations php-gtk-doc peclweb; do
     cd /local/mirrors/$i
-    git fetch origin && git reset --hard origin/master;
+    $GIT_FETCH && $GIT_RESET;
 done
 
 # Systems scripts were dropped down a level at some point.
 cd /local/systems;
-git fetch origin && git reset --hard origin/master;
+$GIT_FETCH && $GIT_RESET;
