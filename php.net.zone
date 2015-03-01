@@ -66,7 +66,6 @@ master			IN CNAME osu1php.osuosl.org.
 master2			IN CNAME osu1php.osuosl.org.
 news			IN CNAME pair1.php.net.
 rsync			IN CNAME sc2.php.net.
-snapsmaster		IN CNAME sc1.php.net.
 testfest		IN CNAME dp1a.php.net.
 
 ; Network Health Status Page
@@ -148,7 +147,6 @@ windows 		IN A 195.8.208.241
 ; eZ/Hit (contact: Derick)
 ez1			IN A 128.39.198.38
 
-sc1			IN A 75.102.5.106
 sc2			IN A 50.31.206.50
 sp1			IN A 66.249.27.150
 sp2			IN A 173.236.52.218
