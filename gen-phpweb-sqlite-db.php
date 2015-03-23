@@ -146,8 +146,9 @@ function scan($dir, $lang)
 			// Hack until PhD generates ids from the DocBook files, and error.php uses them
 			// $hackme contains class [method] prefixes with their function counterparts
 			$hackme = array(
-				'mysqli-result.' => 'mysqli-',
 				'mysqli.'        => 'mysqli-',
+				'mysqli-result.' => 'mysqli-',
+				'mysqli-stmt.'   => 'mysqli-stmt-'
 			);
 			foreach ($hackme as $class => $procedural) {
 				if (false !== strpos($keyword, $class)) {
