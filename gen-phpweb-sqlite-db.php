@@ -147,6 +147,7 @@ function scan($dir, $lang)
 			// $hackme contains class [method] prefixes with their function counterparts
 			$hackme = array(
 				'mysqli.'        => 'mysqli-',
+				'mysqli-driver.' => 'mysqli-',
 				'mysqli-result.' => 'mysqli-',
 				'mysqli-stmt.'   => 'mysqli-stmt-'
 			);
