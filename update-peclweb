@@ -9,5 +9,5 @@
 #
 # $Id$
 
-/usr/bin/rsync -aC --delete --delete-after --exclude=logs --exclude=public_html/rest \
+/usr/bin/rsync -aC --delete --delete-after --exclude=logs --exclude=public_html/rest --exclude=public_html/packages \
     rsync.php.net::peclweb /local/www/sites/pecl.php.net
