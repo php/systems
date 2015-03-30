@@ -74,8 +74,11 @@ status			IN CNAME osu1php.osuosl.org.
 pear			IN CNAME euk1.php.net.
 pear2			IN CNAME euk1.php.net.
 pyrus			IN CNAME euk1.php.net.
+
 www.pecl		IN CNAME pair12.php.net.
-pecl			IN CNAME pair12.php.net.
+; old pecl box
+; pecl			IN CNAME pair12.php.net.
+pecl			IN A 104.236.228.160
 
 ; Misc. PEAR sites
 ie.pear.php.net.  	IN CNAME sgrv3.php.net.
@@ -138,7 +141,6 @@ pair12			IN A 76.75.200.106
 pb1			IN A 76.75.200.58
 pb11    	        IN A 76.75.200.61
 pb12            	IN A 76.75.200.106
-pecl2            	IN A 104.236.228.160
 
 ; OS Groups
 windows 		IN A 195.8.208.241 
