@@ -11,11 +11,10 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 			)
 		IN A	72.52.91.14; php-web2
 		IN AAAA	2a02:cb41::7; php-web2
-		IN NS	ns1.easydns.com.
-		IN NS	ns2.easydns.com.
-		IN NS	remote1.easydns.com.
-		IN NS	remote2.easydns.com.
-		IN NS	remote3.easydns.com.
+		IN NS   dns3.easydns.org.
+		IN NS   dns1.easydns.com.
+		IN NS   dns2.easydns.net.
+		IN NS   dns4.easydns.info.
 ;		IN MX 	5 osu1php.osuosl.org.
 ;		IN MX 	15 smtp.osuosl.org.
 $ORIGIN php.net.
