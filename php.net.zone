@@ -24,6 +24,8 @@ $ORIGIN php.net.
 www			IN NS   geo1.easydns.COM.
 www			IN NS   geo2.easydns.NET.
 www			IN NS   geo3.easydns.ORG.
+; https for www
+secure			IN CNAME php-web2.php.net.
 
 
 ; Services
