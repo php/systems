@@ -79,7 +79,8 @@ testfest		IN CNAME dp1a.php.net.
 ; Network Health Status Page
 status			IN CNAME osu1php.osuosl.org.
 
-pear			IN CNAME euk1.php.net.
+; Temporary hotfix while euk1 is down
+pear			IN A 5.35.241.22
 pear2			IN CNAME euk1.php.net.
 pyrus			IN CNAME euk1.php.net.
 
