@@ -144,10 +144,8 @@ us.pear.php.net. 	IN A 64.191.203.6
 ; PAIR
 pair1			IN A 76.75.200.58
 pair11			IN A 76.75.200.61
-pair12			IN A 76.75.200.106
 pb1			IN A 76.75.200.58
 pb11    	        IN A 76.75.200.61
-pb12            	IN A 76.75.200.106
 
 ; OS Groups
 windows 		IN A 195.8.208.241 
