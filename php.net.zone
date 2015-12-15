@@ -139,7 +139,6 @@ svn2			IN A 213.189.17.212
 ; PEAR mirrors
 de.pear.php.net. 	IN A 5.35.241.22
 de.pear.php.net. 	IN AAAA 2a01:488:66:1000:523:f116:0:1
-us.pear.php.net. 	IN A 64.191.203.6
 
 ; PAIR
 pair1			IN A 76.75.200.58
