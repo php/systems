@@ -56,7 +56,7 @@ gtk			IN CNAME svn2.php.net.
 shared			IN CNAME sgrv4.php.net.
 
 ci.qa			IN CNAME k1a.php.net.
-lxr			IN CNAME sp2.php.net.
+lxr			IN CNAME sph2.php.net.
 
 git			IN CNAME php-git1.php.net.
 
@@ -154,7 +154,6 @@ windows 		IN A 195.8.208.241
 ez1			IN A 128.39.198.38
 
 sc2			IN A 50.31.206.50
-sp2			IN A 173.236.52.218
 
 ; Nexcess (contact: Chris Wells clwells at nexcess dot net)
 nex2			IN A 208.69.122.227
@@ -178,6 +177,9 @@ euk3			IN A 109.203.101.62
 
 ; Dan's (maybe temp box, for now, replacement for micfo1)
 sph1			IN A 108.163.197.98
+
+; Replacement for the vanished-into-thin-air SP2 that hosted LXR.  See danbrown for details.
+sph2			IN A 198.245.50.74
 
 ; servergrove
 sgrv20			IN A 69.195.222.219
