@@ -147,7 +147,7 @@ pb1			IN A 76.75.200.58
 pb11    	        IN A 76.75.200.61
 
 ; OS Groups
-windows 		IN A 195.8.208.241 
+windows 		IN A 83.137.144.123
 
 
 ; eZ/Hit (contact: Derick)
