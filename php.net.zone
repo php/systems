@@ -96,8 +96,8 @@ test.pear		IN CNAME sgrv3.php.net.
 test.pear2		IN CNAME sgrv3.php.net.
 test.pyrus		IN CNAME sgrv3.php.net.
 
-wiki 			IN CNAME rl.php.net.
-wiki2 			IN A 45.55.181.207
+old-wiki 		IN CNAME rl.php.net.
+wiki.php.net.		IN A 45.55.181.207
 
 ; Ecelerity MX running on OSU1
 ecelerity		IN CNAME osu1php.osuosl.org.
