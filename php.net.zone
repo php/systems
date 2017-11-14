@@ -117,11 +117,14 @@ lists.php.net.		IN TXT "v=spf1 a mx a:osu1php.osuosl.org."
 ; Myracloud, contact Sascha / noc@myracloud.com
 php-web2		IN A 72.52.91.14
 php-web2		IN AAAA 2a02:cb41::7
+php-web3		IN A 208.43.231.9
 php-git1		IN A 72.52.91.13
 php-git1		IN AAAA 2a02:cb41::5
+php-git2		IN A 208.43.231.11
 
 php-smtp2       IN A 72.52.91.12
 php-smtp2       IN AAAA 2a02:cb41::8
+php-smtp3       IN A 208.43.231.10
 @				30 IN MX 0 php-smtp2.php.net.
 
 ; Jump servers, contact sascha
@@ -129,6 +132,7 @@ php-jump1		IN A 72.52.91.11
 php-jump1		IN AAAA 2a02:cb41::6
 php-jump2		IN A 88.198.148.245
 php-jump2		IN AAAA 2a01:4f8:1b7:257::2
+php-jump3		IN A 208.43.231.8
 
 ; Oregon State Uni
 osu1php			IN A 140.211.15.143
