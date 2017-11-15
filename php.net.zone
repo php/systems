@@ -15,8 +15,6 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 		IN NS   dns1.easydns.com.
 		IN NS   dns2.easydns.net.
 		IN NS   dns4.easydns.info.
-;		IN MX 	5 osu1php.osuosl.org.
-;		IN MX 	15 smtp.osuosl.org.
 $ORIGIN php.net.
 
 
@@ -100,7 +98,7 @@ wiki.php.net.		IN A 45.55.181.207
 
 ; Ecelerity MX running on OSU1
 ecelerity		IN CNAME osu1php.osuosl.org.
-php.net.		IN TXT "v=spf1 ip4:72.52.91.12 ip6:2a02:cb41::8 ip4:140.211.15.143 ?all"
+php.net.		IN TXT "v=spf1 ip4:72.52.91.12 ip6:2a02:cb41::8 ip4:140.211.15.143 ip4:208.43.231.10 ?all"
 
 gcov			IN CNAME nex2.php.net.
 
@@ -125,7 +123,7 @@ php-git2		IN A 208.43.231.11
 php-smtp2       IN A 72.52.91.12
 php-smtp2       IN AAAA 2a02:cb41::8
 php-smtp3       IN A 208.43.231.10
-@				30 IN MX 0 php-smtp2.php.net.
+@				30 IN MX 0 php-smtp3.php.net.
 
 ; Jump servers, contact sascha
 php-jump1		IN A 72.52.91.11
