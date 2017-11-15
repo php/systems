@@ -229,3 +229,4 @@ mx2.tests.php.net.	IN MX 20 10.0.0.20.
 ; streamservice (prototype website for new design)
 prototype		IN CNAME proto.php.streamservice.nl.
 ns6.is.not.my.friend	IN CNAME proto.php.streamservice.nl.
+
