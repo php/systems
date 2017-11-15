@@ -152,9 +152,6 @@ pb11    	        IN A 76.75.200.61
 windows 		IN A 83.137.144.123
 
 
-; eZ/Hit (contact: Derick)
-ez1			IN A 128.39.198.38
-
 ; FIXME contact unclear
 sc2			IN A 50.31.206.50
 
