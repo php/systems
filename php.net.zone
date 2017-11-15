@@ -55,7 +55,7 @@ shared			IN CNAME sgrv4.php.net.
 ci.qa			IN CNAME k1a.php.net.
 lxr			IN CNAME sph2.php.net.
 
-git			IN CNAME php-git1.php.net.
+git			IN CNAME php-git2.php.net.
 
 ; people.php.net user directory
 people			IN CNAME svn2.php.net.
