@@ -10,7 +10,6 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 					2560		; minimum (42 minutes 40 seconds)
 			)
 		IN A	208.43.231.9 ; php-web3
-		;IN AAAA	2a02:cb41::7; php-web2
 		IN NS   dns3.easydns.org.
 		IN NS   dns1.easydns.com.
 		IN NS   dns2.easydns.net.
@@ -31,7 +30,7 @@ static			IN CNAME php-web3.php.net.
 bugs			IN CNAME sgrv20.php.net.
 
 ; Jump boxes for login to .php.net servers
-americas.jump		IN CNAME php-jump1.php.net.
+americas.jump		IN CNAME php-jump3.php.net.
 europe.jump		IN CNAME php-jump2.php.net.
 
 ; Geodispersion of rsync; regional rsync nodes (RRNs)
@@ -113,23 +112,15 @@ lists.php.net.		IN TXT "v=spf1 a mx a:osu1php.osuosl.org."
 ;------------ Physical boxen
 
 ; Myracloud, contact Sascha / noc@myracloud.com
-php-web2		IN A 72.52.91.14
-php-web2		IN AAAA 2a02:cb41::7
 php-web3		IN A 208.43.231.9
-php-git1		IN A 72.52.91.13
-php-git1		IN AAAA 2a02:cb41::5
 php-git2		IN A 208.43.231.11
 
 mailout              IN CNAME php-smtp3.php.net.
 
-php-smtp2       IN A 72.52.91.12
-php-smtp2       IN AAAA 2a02:cb41::8
 php-smtp3       IN A 208.43.231.10
 @				30 IN MX 0 php-smtp3.php.net.
 
 ; Jump servers, contact sascha
-php-jump1		IN A 72.52.91.11
-php-jump1		IN AAAA 2a02:cb41::6
 php-jump2		IN A 88.198.148.245
 php-jump2		IN AAAA 2a01:4f8:1b7:257::2
 php-jump3		IN A 208.43.231.8
