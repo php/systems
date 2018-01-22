@@ -193,8 +193,6 @@ downloads	       IN A 104.236.32.144
 		       IN AAAA 2604:a880:800:10::2dd:1
 idle		       IN A 104.236.32.173
 		       IN AAAA 2604:a880:800:10::2dd:1001
-snaps		       IN A 104.236.26.243
-		       IN AAAA 2604:a880:800:10::2e6:c001
 lists-new	       IN A 45.55.233.128
 		       IN AAAA 2604:a880:800:10::8b7:2001
 test		       IN A 159.203.98.242
