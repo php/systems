@@ -92,7 +92,6 @@ test.pear		IN CNAME sgrv3.php.net.
 test.pear2		IN CNAME sgrv3.php.net.
 test.pyrus		IN CNAME sgrv3.php.net.
 
-old-wiki 		IN CNAME rl.php.net.
 wiki.php.net.		IN A 45.55.181.207
 
 ; Ecelerity MX running on OSU1
@@ -159,10 +158,6 @@ dp2     		IN A 89.151.87.86 ; for buildbot testing
 ; OmniTI (contact: Wez or George)
 oti1   			IN A 8.8.38.133
 oti2   			IN A 8.8.38.129
-
-; Redpill Linpro (contact: ms.shared+lists/php-ops@redpill-linpro.com)
-rl 			IN A 87.238.48.210
-
 
 ; eUKhost LTD. (contact Philip)
 euk2			IN A 92.48.119.85
