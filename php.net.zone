@@ -218,3 +218,9 @@ mx2.tests.php.net.	IN MX 20 10.0.0.20.
 prototype		IN CNAME proto.php.streamservice.nl.
 ns6.is.not.my.friend	IN CNAME proto.php.streamservice.nl.
 
+; php.net.		IN CAA	0 issue "gandi.net"
+; secure.php.net.	IN CAA	0 issue "gandi.net"
+; remove lines below when newer BIND is used
+
+php.net.		IN TYPE257	\# 16 0005697373756567616E64692E6E6574
+secure.php.net.	IN TYPE257	\# 16 0005697373756567616E64692E6E6574
