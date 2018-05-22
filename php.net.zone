@@ -9,7 +9,8 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 					1048576		; expire (1 week 5 days 3 hours 16 minutes 16 seconds)
 					2560		; minimum (42 minutes 40 seconds)
 			)
-		IN A	208.43.231.9 ; php-web3
+		IN A		208.43.231.9 ; php-web3
+		IN AAAA	2a02:cb41::7 ; php-web3
 		IN NS   dns3.easydns.org.
 		IN NS   dns1.easydns.com.
 		IN NS   dns2.easydns.net.
@@ -110,19 +111,23 @@ lists.php.net.		IN TXT "v=spf1 a mx a:osu1php.osuosl.org."
 
 ;------------ Physical boxen
 
-; Myracloud, contact Sascha / noc@myracloud.com
+; Myracloud, contact sascha@schumann.net and noc@myracloud.com
 php-web3		IN A 208.43.231.9
+php-web3		IN AAAA 2a02:cb41::7
 php-git2		IN A 208.43.231.11
+php-git2		IN AAAA 2a02:cb41::5
 
-mailout              IN CNAME php-smtp3.php.net.
+php-smtp3		IN A 208.43.231.12
+php-smtp3		IN AAAA 2a02:cb41::8
 
-php-smtp3       IN A 208.43.231.12
-@				30 IN MX 0 php-smtp3.php.net.
+@			30 IN MX 0 php-smtp3.php.net.
+mailout		IN CNAME php-smtp3.php.net.
 
-; Jump servers, contact sascha
+; Jump servers, contact sascha@schumann.net, noc@myracloud.com
 php-jump2		IN A 88.198.148.245
 php-jump2		IN AAAA 2a01:4f8:1b7:257::2
 php-jump3		IN A 208.43.231.8
+php-jump3		IN AAAA 2a02:cb41::1001
 
 ; Oregon State Uni
 osu1php			IN A 140.211.15.143
