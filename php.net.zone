@@ -28,7 +28,9 @@ secure			IN CNAME php-web3.php.net.
 ; Services
 
 static			IN CNAME php-web3.php.net.
-bugs			IN CNAME sgrv20.php.net.
+
+bugs			IN A	  206.189.200.141
+bugs		       IN AAAA  2604:a880:400:d1::24b:3001
 
 ; Jump boxes for login to .php.net servers
 americas.jump		IN CNAME php-jump3.php.net.
