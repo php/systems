@@ -88,12 +88,12 @@ www.pecl		IN CNAME pair12.php.net.
 pecl			IN A 104.236.228.160
 
 ; Misc. PEAR sites
-ie.pear.php.net.  	IN CNAME sgrv3.php.net.
+;ie.pear.php.net.  	IN CNAME sgrv3.php.net.
 blog.pear 		IN CNAME euk3.php.net.
 download.pear       	IN CNAME euk3.php.net.
-test.pear		IN CNAME sgrv3.php.net.
-test.pear2		IN CNAME sgrv3.php.net.
-test.pyrus		IN CNAME sgrv3.php.net.
+;test.pear		IN CNAME sgrv3.php.net.
+;test.pear2		IN CNAME sgrv3.php.net.
+;test.pyrus		IN CNAME sgrv3.php.net.
 
 wiki.php.net.		IN A 45.55.181.207
 
@@ -176,11 +176,6 @@ sph1			IN A 108.163.197.98
 
 ; Replacement for the vanished-into-thin-air SP2 that hosted LXR.  See danbrown for details.
 sph2			IN A 198.245.50.74
-
-; servergrove
-sgrv20			IN A 69.195.222.219
-sgrv3			IN A 149.5.47.192
-sgrv4 			IN A 149.5.47.136
 
 ; Bauer + Kirch GmbH (contact mj)
 bk1			IN A 89.238.71.179
