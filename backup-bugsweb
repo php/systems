@@ -14,7 +14,7 @@ mkdir $dir/php-bugs || exit 1
 #
 # Apache configuration
 #
-cp /etc/apache2/sites-available/bugs.php.net $dir/
+cp /etc/apache2/sites-available/bugs.conf $dir/
 
 #
 # Database
