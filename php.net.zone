@@ -88,12 +88,8 @@ www.pecl		IN CNAME pair12.php.net.
 pecl			IN A 104.236.228.160
 
 ; Misc. PEAR sites
-;ie.pear.php.net.  	IN CNAME sgrv3.php.net.
 blog.pear 		IN CNAME euk3.php.net.
 download.pear       	IN CNAME euk3.php.net.
-;test.pear		IN CNAME sgrv3.php.net.
-;test.pear2		IN CNAME sgrv3.php.net.
-;test.pyrus		IN CNAME sgrv3.php.net.
 
 wiki.php.net.		IN A 45.55.181.207
 
