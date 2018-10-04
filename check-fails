@@ -12,14 +12,7 @@ if ! test -r $FAIL_LOGFILE; then
     exit 0
 fi
 
-(echo From: $SMTP_FROM
-echo To: $SMTP_TO
-echo Subject: $SMTP_SUBJECT
-echo
-echo $SMTP_INTRO
-echo
-cat $FAIL_LOGFILE) | sendmail $SMTP_TO
-
-#cat $FAIL_LOGFILE | mail -s "php.net systems: failed jobs on $ME" systems@php.net
+(echo $SMTP_INTRO; echo; cat $FAIL_LOGFILE) | \
+    mail -s "$SMTP_SUBJECT" $SMTP_TO -- -f$SMTP_FROM
 
 rm -f $FAIL_LOGFILE
