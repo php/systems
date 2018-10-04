@@ -18,7 +18,7 @@ log_fail() {
 	SVC=$1
 	ERR=$2
 
-	echo "`now` $SVC $ERR" >> $FAIL_LOGFILE
+	echo "`now` job=$SVC exit-code=$ERR" >> $FAIL_LOGFILE
 }
 
 # pull in details for this box
