@@ -83,7 +83,7 @@ for svc in $WHAT ; do
 		ERR=$?
 
 		if test "$ERR" != "0"; then
-			log_fail $SVC $ERR
+			log_fail $svc $ERR
 		fi
 	else
 		echo "Something is wrong. /local/systems/$svc on `hostname` is not executable." \
