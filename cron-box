@@ -2,6 +2,25 @@
 # $Id$
 # Run the cron for a box
 
+FAIL_LOGFILE=/var/log/php-cron-box.fail
+
+LOGFILE=/var/log/php-cron-box.log
+
+exec >> $LOGFILE
+exec 2>&1
+exec </dev/null
+
+now() {
+	date +%Y.%m.%d-%H.%M.%S
+}
+
+log_fail() {
+	SVC=$1
+	ERR=$2
+
+	echo "`now` $SVC $ERR" >> $FAIL_LOGFILE
+}
+
 # pull in details for this box
 . /local/systems/boxen/`hostname`
 
@@ -58,7 +77,14 @@ for svc in $WHAT ; do
 	fi;
 
 	if test -x /local/systems/$svc ; then
+        echo
+        echo "`now` running $svc"
 		runone /tmp/.$svc.runone.pid /local/systems/$svc
+		ERR=$?
+
+		if test "$ERR" != "0"; then
+			log_fail $SVC $ERR
+		fi
 	else
 		echo "Something is wrong. /local/systems/$svc on `hostname` is not executable." \
 		| mail -s "Broken cronjob on `hostname`" systems@php.net -- -fnoreply@php.net

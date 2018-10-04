@@ -14,7 +14,7 @@ if (-e $lockfile) {
     # only warn when the lock is more than an hour old
     print "already running, pid $pid\n"
       if (stat _)[9] < time() - 3600;
-    exit;
+    exit(99);
   }
   close FILE;
 }
@@ -25,4 +25,7 @@ print FILE $$;
 close FILE;
 
 system @ARGV;
+my $err = $? >> 8; # perl wtf
 unlink $lockfile;
+
+exit($err);
