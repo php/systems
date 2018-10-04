@@ -1,0 +1,25 @@
+#! /bin/sh
+
+ME=`hostname`
+SMTP_FROM=systems@php.net
+SMTP_TO=systems@php.net
+SMTP_SUBJECT="php.net systems: failed jobs on $ME"
+SMTP_INTRO="please check /var/log/php-cron-box.log on $ME for details"
+
+FAIL_LOGFILE=/var/log/php-cron-box.fail
+
+if ! test -r $FAIL_LOGFILE; then
+    exit 0
+fi
+
+(echo From: $SMTP_FROM
+echo To: $SMTP_TO
+echo Subject: $SMTP_SUBJECT
+echo
+echo $SMTP_INTRO
+echo
+cat $FAIL_LOGFILE) | sendmail $SMTP_TO
+
+#cat $FAIL_LOGFILE | mail -s "php.net systems: failed jobs on $ME" systems@php.net
+
+rm -f $FAIL_LOGFILE
