@@ -3,5 +3,5 @@
 # sync system time using the NTP pool.
 #
 # $Id$
-
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin
 /usr/bin/env ntpdate -s ${CONTINENT}.pool.ntp.org >/dev/null 2>&1
