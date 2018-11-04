@@ -1,7 +1,12 @@
 #!/bin/sh
 #
 # sync system time using the NTP pool.
+
+. /etc/profile
+
+NTP_PARAMS=-s
+NTP_SERVER=${CONTINENT}.pool.ntp.org
+
+# try ntp using source port 123, and if that fails try an unprivileged port
 #
-# $Id$
-PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin
-/usr/bin/env ntpdate -s ${CONTINENT}.pool.ntp.org >/dev/null 2>&1
+ntpdate $NTP_PARAMS $NTP_SERVER || ntpdate $NTP_PARAMS -u $NTP_SERVER
