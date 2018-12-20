@@ -9,9 +9,8 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 					1048576		; expire (1 week 5 days 3 hours 16 minutes 16 seconds)
 					2560		; minimum (42 minutes 40 seconds)
 			)
-		IN A		208.43.231.10 ; php-web3
-		IN A		208.43.231.14 ; php-web3
-		IN AAAA	2a02:cb41::7 ; php-web3
+		IN A		185.85.0.29        ; php-web3 via myra proxy
+		IN AAAA	2a02:cb40:200::1ad ; php-web3 via myra proxy
 		IN NS   dns3.easydns.org.
 		IN NS   dns1.easydns.com.
 		IN NS   dns2.easydns.net.
@@ -24,11 +23,12 @@ www			IN NS   geo1.easydns.COM.
 www			IN NS   geo2.easydns.NET.
 www			IN NS   geo3.easydns.ORG.
 ; https for www
-secure			IN CNAME php-web3.php.net.
+secure			IN CNAME secure-php-net.ax4z.com.
 
 ; Services
 
-static			IN CNAME php-web3.php.net.
+; is static still being used?
+static			IN CNAME static-php-net.ax4z.com.
 
 bugs			IN A	  206.189.200.141
 bugs		       IN AAAA  2604:a880:400:d1::24b:3001
@@ -111,9 +111,7 @@ lists.php.net.		IN TXT "v=spf1 a mx a:osu1php.osuosl.org."
 ;------------ Physical boxen
 
 ; Myracloud, contact sascha@schumann.net and noc@myracloud.com
-;php-web3		IN A 208.43.231.9
-php-web3		IN A 208.43.231.10
-php-web3		IN A 208.43.231.14
+php-web3		IN A 208.43.231.9
 php-web3		IN AAAA 2a02:cb41::7
 php-git2		IN A 208.43.231.11
 php-git2		IN AAAA 2a02:cb41::5
