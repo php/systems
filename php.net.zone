@@ -9,7 +9,8 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 					1048576		; expire (1 week 5 days 3 hours 16 minutes 16 seconds)
 					2560		; minimum (42 minutes 40 seconds)
 			)
-		IN A		208.43.231.9 ; php-web3
+		IN A		208.43.231.10 ; php-web3
+		IN A		208.43.231.14 ; php-web3
 		IN AAAA	2a02:cb41::7 ; php-web3
 		IN NS   dns3.easydns.org.
 		IN NS   dns1.easydns.com.
@@ -110,7 +111,9 @@ lists.php.net.		IN TXT "v=spf1 a mx a:osu1php.osuosl.org."
 ;------------ Physical boxen
 
 ; Myracloud, contact sascha@schumann.net and noc@myracloud.com
-php-web3		IN A 208.43.231.9
+;php-web3		IN A 208.43.231.9
+php-web3		IN A 208.43.231.10
+php-web3		IN A 208.43.231.14
 php-web3		IN AAAA 2a02:cb41::7
 php-git2		IN A 208.43.231.11
 php-git2		IN AAAA 2a02:cb41::5
