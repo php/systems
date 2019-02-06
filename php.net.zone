@@ -79,9 +79,9 @@ testfest		IN CNAME dp1a.php.net.
 ; Network Health Status Page
 status			IN CNAME osu1php.osuosl.org.
 
-pear			IN CNAME cweiske.de.
-pear2			IN CNAME cweiske.de.
-pyrus			IN CNAME cweiske.de.
+pear			IN CNAME euk3.php.net.
+pear2			IN CNAME euk3.php.net.
+pyrus			IN CNAME euk3.php.net.
 
 www.pecl		IN CNAME pair12.php.net.
 ; old pecl box
@@ -89,8 +89,8 @@ www.pecl		IN CNAME pair12.php.net.
 pecl			IN A 104.236.228.160
 
 ; Misc. PEAR sites
-blog.pear 		IN CNAME cweiske.de.
-download.pear       	IN CNAME cweiske.de.
+blog.pear 		IN CNAME euk3.php.net.
+download.pear       	IN CNAME euk3.php.net.
 
 wiki.php.net.		IN A 45.55.181.207
 
