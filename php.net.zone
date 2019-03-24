@@ -19,12 +19,12 @@ $ORIGIN php.net.
 
 
 ; www.php.net is handled by GeoDNS
-;www			IN NS   geo1.easydns.COM.
-;www			IN NS   geo2.easydns.NET.
-;www			IN NS   geo3.easydns.ORG.
+www			IN NS   geo1.easydns.COM.
+www			IN NS   geo2.easydns.NET.
+www			IN NS   geo3.easydns.ORG.
 
 ; ax4z is a shortcut domain for CNAMEs by myracloud -- noc@myracloud.com
-www                  300 IN CNAME www-php-net.ax4z.com.
+;www                  300 IN CNAME www-php-net.ax4z.com.
 
 ; https for www
 secure			IN CNAME secure-php-net.ax4z.com.
