@@ -10,12 +10,12 @@ rsync -qavzC --timeout=600 --delete --delete-after --filter='P manage/github-con
 #include "/local/mirrors/php-master-web/fetch/cvspasswd.php";
 #' > /repository/CVSROOT/passwd
 
-/usr/local/bin/php /local/mirrors/php-master-web/scripts/mirror-test
+#/usr/local/bin/php /local/mirrors/php-master-web/scripts/mirror-test
 
 /local/systems/process-zone-file
 
 if test "$how" = "weekly" ; then
-	php /local/mirrors/php-master-web/scripts/mirror-summary
+	#php /local/mirrors/php-master-web/scripts/mirror-summary
 	php /local/mirrors/php-master-web/scripts/email-note-summaries
 	php /local/mirrors/php-master-web/scripts/event-weekly-email
 fi
