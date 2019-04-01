@@ -20,23 +20,25 @@ echo str_replace('@SERIAL@', time(), file_get_contents('/local/systems/php.net.z
 echo "\n; mirrors\n";
 echo "\$TTL 3600 ; 1 hour\n";
 
+$doneForCC = array();
+
 if ($q) {
 	while ($row = mysql_fetch_array($q)) {
-		if ($row['mirrortype'] != 1 || !preg_match("!^\\w{2}\\d?.php.net$!", $row['hostname']) || $row['active'] != 1) {
+		if ($row['mirrortype'] != 1 || !preg_match("!^\\w{2}\\d?.php.net$!", $row['hostname'])) {
 			continue;
 		}
 
 		// For load balancing
-		if (preg_match('/\w{2}/',$row['load_balanced']) && $row['up']) {
-			$ipv4 = gethostbyname($row['cname']);
-			if ($ipv4 != $row['cname']) {
-				echo $row['load_balanced'].' IN A '.$ipv4.PHP_EOL;
+		if (preg_match('/\w{2}/',$row['load_balanced'])) {
+			if (!array_key_exists($row['load_balanced'], $doneForCC)) {
+				echo $row['load_balanced'] . '.php.net.  IN CNAME STAR-php-net.ax4z.com.' . PHP_EOL;
+				$doneForCC[$row['load_balanced']] = true;
 			}
 		}
 
 
 		if (preg_match("!^\\d+\\.\\d+\\.\\d+\\.\\d+$!", $row['cname'])) {
-			$type = 'IN A';
+			continue;
 		} else {
 			$type = 'IN CNAME';
 			if (substr($row['cname'], -1) != '.')
@@ -46,7 +48,7 @@ if ($q) {
 		if (substr($row['hostname'], -1) != '.')
 			$row['hostname'] .= '.';
 
-		printf("%s %s %s\n", $row['hostname'], $type, $row['cname']);
+		printf("%s IN CNAME STAR-php-net.ax4z.com.\n", $row['hostname']);
 
 	}
 } else {
