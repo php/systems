@@ -129,6 +129,9 @@ mailout		IN CNAME php-smtp3.php.net.
 ; Jump servers, contact sascha@schumann.net, noc@myracloud.com
 php-jump2		IN A 116.203.146.57
 php-jump2		IN AAAA 2a01:4f8:c2c:3b3f::1
+
+php-jump2-old        IN A 88.198.148.245
+
 php-jump3		IN A 208.43.231.8
 php-jump3		IN AAAA 2a02:cb41::1001
 
