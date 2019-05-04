@@ -1,0 +1,40 @@
+#! /bin/sh
+
+jumphosts="php-jump2-old.php.net php-jump2.php.net php-jump3.php.net"
+
+# we only check IPv4 connectivity for now
+
+servers=`egrep "^[a-z0-9].*\s+IN\s+A\s+" php.net.zone|while read a b c d e; do echo $a=$d; done`
+
+old_IFS=$IFS
+for entry in $servers; do
+    IFS==
+    set $entry
+    IFS=$old_IFS
+    hostname=$1
+    ip=$2
+
+    echo -n $hostname $ip
+    for jump in $jumphosts; do
+        out=`ssh \
+            -o PreferredAuthentications=publickey \
+            -oStrictHostKeyChecking=no \
+            -oConnectTimeout=3 \
+            -oProxyJump=$jump:9022 \
+            $ip \
+            id 2>&1`
+
+        r=
+        case "$out" in
+        *refused*) r=PORT-22-REFUSED;;
+        Permission*) r=NO-LOGIN;;
+        *timed*) r=PORT-22-FIREWALLED;;
+        uid*) r=OK;;
+        *) r="???"; echo "UKNOWN RESULT: $out";;
+        esac
+
+        echo -n " $r"
+    done
+
+    echo
+done
