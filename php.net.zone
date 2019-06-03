@@ -67,7 +67,8 @@ lxr			IN CNAME sph2.php.net.
 git			IN CNAME php-git2.php.net.
 
 ; people.php.net user directory
-people			IN CNAME svn2.php.net.
+people-origin		IN CNAME svn2.php.net.
+people			IN CNAME people-php-net.ax4z.com.
 
 ; phpdoc stuff
 doc			IN CNAME euk2.php.net.
