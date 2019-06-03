@@ -193,8 +193,9 @@ k1c			IN A 77.72.6.45
 k1d			IN A 77.72.6.46
 
 ; DigitalOcean
-museum		       IN A 104.236.41.219
+museum-origin		IN A 104.236.41.219
 		       IN AAAA 2604:a880:800:10::2ce:1
+museum			IN CNAME museum-php-net.ax4z.com.
 qa		       IN A 104.236.36.140
 		       IN AAAA 2604:a880:800:10::2d6:2001
 downloads	       IN A 104.236.32.144
