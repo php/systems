@@ -53,7 +53,8 @@ talks			IN CNAME svn2.php.net.
 pres			IN CNAME svn2.php.net.
 pres2			IN CNAME svn2.php.net.
 
-svn			IN CNAME svn2.php.net.
+svn-origin		IN CNAME svn2.php.net.
+svn			IN CNAME svn-php-net.ax4z.com.
 websvn			IN CNAME svn2.php.net.
 
 gtk			IN CNAME svn2.php.net.
