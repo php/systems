@@ -83,7 +83,7 @@ master2			IN CNAME osu1php.osuosl.org.
 news			IN CNAME pair1.php.net.
 
 news-web-origin	IN CNAME news
-news-web		IN CNAME news-web-php-net.ax4z.com.
+news-web		IN CNAME news--web-php-net.ax4z.com.
 rsync			IN CNAME sc2.php.net.
 testfest		IN CNAME dp1a.php.net.
 
