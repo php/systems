@@ -79,7 +79,8 @@ preview			IN CNAME pb11.php.net.
 mail 			IN CNAME osu1php.osuosl.org.
 master			IN CNAME osu1php.osuosl.org.
 master2			IN CNAME osu1php.osuosl.org.
-news			IN CNAME pair1.php.net.
+news-origin		IN CNAME pair1.php.net.
+news			IN CNAME news-php-net.ax4z.com.
 rsync			IN CNAME sc2.php.net.
 testfest		IN CNAME dp1a.php.net.
 
