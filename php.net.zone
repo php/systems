@@ -237,7 +237,3 @@ ns6.is.not.my.friend	IN CNAME proto.php.streamservice.nl.
 
 ;php.net.		IN TYPE257	\# 16 0005697373756567616E64692E6E6574
 ;php.net.		IN TYPE257	\# 29 0005696F6465666D61696C746F3A73797374656D73407068702E6E6574
-
-; domain verification
-_github-challenge-php.php.net.        IN TXT "8fa89df867"
-_github-challenge-php.www.php.net.    IN TXT "0a2da460b1"
