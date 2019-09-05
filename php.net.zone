@@ -118,8 +118,9 @@ monitoring		IN CNAME bk1.php.net.
 
 ; lists operated from pair1
 lists.php.net.		IN A 76.75.200.58
+lists.php.net.		IN MX 0 php-smtp3.php.net.
 lists.php.net.		IN MX 10 pair1.php.net.
-lists.php.net.		IN TXT "v=spf1 a mx a:osu1php.osuosl.org."
+lists.php.net.		IN TXT "v=spf1 a mx a:osu1php.osuosl.org. ip4:76.75.200.58"
 
 ;------------ Physical boxen
 
