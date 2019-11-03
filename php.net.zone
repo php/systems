@@ -128,6 +128,8 @@ lists.php.net.		IN TXT "v=spf1 a mx a:osu1php.osuosl.org. ip4:76.75.200.58"
 ; Myracloud, contact sascha@schumann.net and noc@myracloud.com
 php-web3		IN A 208.43.231.9
 php-web3		IN AAAA 2a02:cb41::7
+php-web4		IN A 45.112.84.4
+php-web4		IN AAAA 2a02:cb43:8000::1101
 php-git2		IN A 208.43.231.11
 php-git2		IN AAAA 2a02:cb41::5
 
