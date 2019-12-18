@@ -130,11 +130,16 @@ php-web3		IN A 208.43.231.9
 php-web3		IN AAAA 2a02:cb41::7
 php-web4		IN A 45.112.84.4
 php-web4		IN AAAA 2a02:cb43:8000::1101
+
 php-git2		IN A 208.43.231.11
 php-git2		IN AAAA 2a02:cb41::5
+php-git4		IN A 45.112.84.6
+php-git4		IN AAAA 2a02:cb43:8000::1103
 
 php-smtp3		IN A 208.43.231.12
 php-smtp3		IN AAAA 2a02:cb41::8
+php-smtp4		IN A 45.112.84.5
+php-smtp4		IN AAAA 2a02:cb43:8000::1102
 
 @			30 IN MX 0 php-smtp3.php.net.
 mailout		IN CNAME php-smtp3.php.net.
@@ -147,6 +152,8 @@ php-jump2-old        IN A 88.198.148.245
 
 php-jump3		IN A 208.43.231.8
 php-jump3		IN AAAA 2a02:cb41::1001
+php-jump4		IN A 45.112.84.7
+php-jump4		IN AAAA 2a02:cb43:8000::1104
 
 ; Oregon State Uni
 osu1php			IN A 140.211.15.143
