@@ -142,7 +142,7 @@ php-smtp4		IN A 45.112.84.5
 php-smtp4		IN AAAA 2a02:cb43:8000::1102
 
 @			30 IN MX 0 php-smtp3.php.net.
-mailout		IN CNAME php-smtp4.php.net.
+mailout		IN CNAME php-smtp3.php.net.
 
 ; Jump servers, contact sascha@schumann.net, noc@myracloud.com
 php-jump2		IN A 116.203.146.57
