@@ -118,7 +118,7 @@ monitoring		IN CNAME bk1.php.net.
 
 ; lists operated from pair1
 lists.php.net.		IN A 76.75.200.58
-lists.php.net.		IN MX 0 php-smtp4.php.net.
+lists.php.net.		IN MX 0 php-smtp4-ip4.php.net.
 ; any issues with relaying through php-smtp4? reactivate below line + deactivate above line
 ;lists.php.net.		IN MX 10 pair1.php.net.
 lists.php.net.		IN TXT "v=spf1 a mx a:osu1php.osuosl.org. ip4:76.75.200.58"
@@ -139,9 +139,10 @@ php-git4		IN AAAA 2a02:cb43:8000::1103
 php-smtp3		IN A 208.43.231.12
 php-smtp3		IN AAAA 2a02:cb41::8
 php-smtp4		IN A 45.112.84.5
+php-smtp4-ip4		IN A 45.112.84.5
 php-smtp4		IN AAAA 2a02:cb43:8000::1102
 
-@			30 IN MX 0 php-smtp4.php.net.
+@			30 IN MX 0 php-smtp4-ip4.php.net.
 mailout		IN CNAME php-smtp4.php.net.
 
 ; Jump servers, contact sascha@schumann.net, noc@myracloud.com
