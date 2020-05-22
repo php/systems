@@ -12,7 +12,7 @@ php /local/repos/phpdoc/doc-base/configure.php --with-lang=$1 --disable-libxml-c
 date
 
 echo "Running test and build"
-phd --color false --package PHP --format php --format xhtml --format bigxhtml --format tocfeed -d /local/repos/phpdoc/doc-base/.manual.xml || exit 2
+php /local/repos/phpdoc/phd/render.php --color false --package PHP --format php --format xhtml --format bigxhtml --format tocfeed -d /local/repos/phpdoc/doc-base/.manual.xml || exit 2
 date
 
 cd output
