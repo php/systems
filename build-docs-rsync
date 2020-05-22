@@ -4,7 +4,7 @@
 GIT_FETCH="git fetch --quiet origin"
 GIT_RESET="git reset --quiet --hard origin/master"
 cd /local/repos/phpdoc/phd
-$GIT_FETCH && $GIT_RESET;
+$GIT_FETCH && $GIT_RESET >/tmp/log-phd 2>&1
 
 # Update docs sources
 cd /local/repos/phpdoc
