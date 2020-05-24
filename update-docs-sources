@@ -10,7 +10,7 @@ for i in phpdoc-all; do
 	svn up -q
 done
 
-langs=`/usr/local/bin/php -r 'include "/local/mirrors/phpweb/include/languages.inc"; echo implode( " ", array_keys( $ACTIVE_ONLINE_LANGUAGES ) );'`;
+langs=`/usr/bin/php -r 'include "/local/src/phpweb/include/languages.inc"; echo implode( " ", array_keys( $ACTIVE_ONLINE_LANGUAGES ) );'`;
 langs="base $langs"
 for i in $langs; do
   cd /local/src/phpdoc-git/$i
