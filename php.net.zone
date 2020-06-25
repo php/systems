@@ -155,7 +155,7 @@ php-jump4		IN AAAA 2a02:cb43:8000::1104
 osu1php			IN A 140.211.15.143
 
 ; sinnerg.nl VMs
-svn2			IN A 213.189.17.212
+svn2			IN A 91.199.167.250
 
 ; PEAR mirrors
 de.pear.php.net. 	IN A 5.35.241.22
