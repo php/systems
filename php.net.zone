@@ -75,7 +75,6 @@ doc-origin		IN CNAME euk2.php.net.
 docs-origin		IN CNAME euk2.php.net.
 doc			IN CNAME euk2.php.net.
 docs			IN CNAME euk2.php.net.
-edit			IN CNAME pb11.php.net.
 preview			IN CNAME pb11.php.net.
 
 mail 			IN CNAME osu1php.osuosl.org.
@@ -219,7 +218,7 @@ idle		       IN A 104.236.32.173
 		       IN AAAA 2604:a880:800:10::2dd:1001
 lists-new	       IN A 45.55.233.128
 		       IN AAAA 2604:a880:800:10::8b7:2001
-edit-new             IN A 142.93.253.55
+edit                 IN A 142.93.253.55
                      IN AAAA 2604:a880:400:d0::1ab2:f001
 newpear              IN A 157.230.57.99
                      IN AAAA 2604:a880:400:d1::a64:c001
