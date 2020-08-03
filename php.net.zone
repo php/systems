@@ -90,7 +90,7 @@ rsync			IN CNAME sc2.php.net.
 testfest		IN CNAME dp1a.php.net.
 
 ; Network Health Status Page
-status			IN CNAME osu1php.osuosl.org.
+status			IN CNAME status.ssl.ohdear.app.
 
 pear			IN CNAME euk3.php.net.
 pear2			IN CNAME euk3.php.net.
