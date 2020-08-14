@@ -238,7 +238,7 @@ mx1.tests.php.net.	IN MX 10 127.0.0.1.
 mx2.tests.php.net.	IN MX 10 10.0.0.10.
 mx2.tests.php.net.	IN MX 20 10.0.0.20.
 
-; streamservice (prototype website for new design)
+; prototype website for new design (contact: marandall@php.net)
 prototype		IN CNAME php-web.markrandall.uk.
 prototype-meta		IN CNAME php-meta.markrandall.uk.
 
