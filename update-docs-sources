@@ -14,7 +14,7 @@ langs=`/usr/bin/php -r 'include "/local/src/phpweb/include/languages.inc"; echo 
 langs="base $langs"
 for i in $langs; do
   cd /local/src/phpdoc-git/$i
-  git pull
+  git fetch origin && git reset --hard origin/master
 done
 
 rsync -avzC --timeout=600 --delete --delete-after \
