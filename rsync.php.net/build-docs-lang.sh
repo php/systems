@@ -11,11 +11,11 @@ rm -rf html php output
 date
 
 echo "Running configure"
-php /home/docbuilder/phpdoc-all/doc-base/configure.php --with-lang=$1 --disable-libxml-check --disable-segfault-speed || exit 1
+php /home/docbuilder/phpdoc-git/doc-base/configure.php --with-lang=$1 --disable-libxml-check --disable-segfault-speed || exit 1
 date
 
 echo "Running test and build"
-phd --color false --package PHP --format php --format xhtml --format bigxhtml --format tocfeed -d /home/docbuilder/phpdoc-all/doc-base/.manual.xml || exit 2
+phd --color false --package PHP --format php --format xhtml --format bigxhtml --format tocfeed -d /home/docbuilder/phpdoc-git/doc-base/.manual.xml || exit 2
 date
 
 cd output
