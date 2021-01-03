@@ -5,6 +5,11 @@ for i in phd; do
     git fetch origin && git reset --hard origin/master;
 done
 
+for i in phpdoc-all; do
+	cd /local/src/$i
+	svn up -q
+done
+
 langs=`/usr/bin/php -r 'include "/local/src/phpweb/include/languages.inc"; echo implode( " ", array_keys( $ACTIVE_ONLINE_LANGUAGES ) );'`;
 langs="base $langs"
 for i in $langs; do
