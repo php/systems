@@ -27,7 +27,8 @@ assertUpToDateRepo doc-base base
 # All translations depend on english being up2date
 assertUpToDateRepo en en
 
-cd /home/docbuilder/phpdoc-git
+cd $BASE_DIR
+
 for i in $langs; do
   # Update the translation files
   assertUpToDateRepo $i $i
