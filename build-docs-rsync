@@ -6,13 +6,14 @@ GIT_RESET="git reset --quiet --hard origin/master"
 cd /local/repos/phpdoc/phd
 $GIT_FETCH && $GIT_RESET >/tmp/log-phd 2>&1
 
+
 BASE_DIR=/local/repos/phpdoc-git
 
 assertUpToDateRepo() {
     if [ ! -d $BASE_DIR/$1 ]; then
         git clone https://git.php.net/repository/doc/$2.git $BASE_DIR/$1
     fi
-    git -C $BASE_DIR/$1 fetch origin && git -C $BASE_DIR/$1 reset --hard origin/master > /tmp/log-git 2>&1
+    git -C $BASE_DIR/$1 fetch origin && git -C $BASE_DIR/$1 reset --hard origin/master > /tmp/log-git-$i 2>&1
 }
 
 langs=`php -r 'include "/local/mirrors/phpweb/include/languages.inc"; echo implode( " ", array_keys( $ACTIVE_ONLINE_LANGUAGES ) );'`;
