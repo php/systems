@@ -167,7 +167,9 @@ broken_lang ()
 		pt_BR)
 			toaddr="doc-pt-br@lists.php.net"
 		;;
-
+		pt_br)
+			toaddr="doc-pt-br@lists.php.net"
+		;;
 		*)
 			toaddr="doc-$1@lists.php.net"
 		;;
