@@ -164,9 +164,6 @@ broken_lang ()
 		;;
 
 		# Slightly inconsistent mailinglist addr :)
-		pt_BR)
-			toaddr="doc-pt-br@lists.php.net"
-		;;
 		pt_br)
 			toaddr="doc-pt-br@lists.php.net"
 		;;
