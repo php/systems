@@ -216,8 +216,8 @@ downloads	       IN A 104.236.32.144
 		       IN AAAA 2604:a880:800:10::2dd:1
 idle		       IN A 104.236.32.173
 		       IN AAAA 2604:a880:800:10::2dd:1001
-lists-new	       IN A 45.55.233.128
-		       IN AAAA 2604:a880:800:10::8b7:2001
+main		       IN A 142.93.197.176
+		       IN AAAA 2604:a880:400:d0::1c74:1001
 edit                 IN A 142.93.253.55
                      IN AAAA 2604:a880:400:d0::1ab2:f001
 newpear              IN A 157.230.57.99
