@@ -32,8 +32,9 @@ cd $BASE_DIR
 
 for i in $langs; do
   # Update the translation files
-  assertUpToDateRepo $i $i
-  /bin/bash /local/systems/build-docs-lang-rsync $i >>/tmp/log-$i 2>&1;
+  folder=`echo "$i" | tr '[:upper:]' '[:lower:]'`
+  assertUpToDateRepo $folder $i
+  /bin/bash /local/systems/build-docs-lang-rsync $folder >>/tmp/log-$i 2>&1;
 done
 
 # Build manual lookup db
