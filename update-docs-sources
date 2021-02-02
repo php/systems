@@ -13,7 +13,8 @@ done
 langs=`/usr/bin/php -r 'include "/local/src/phpweb/include/languages.inc"; echo implode( " ", array_keys( $ACTIVE_ONLINE_LANGUAGES ) );'`;
 langs="base $langs"
 for i in $langs; do
-  cd /local/src/phpdoc-git/$i
+  lang=`echo "$i" | tr '[:upper:]' '[:lower:]'`
+  cd /local/src/phpdoc-git/$lang
   git fetch origin && git reset --hard origin/master
 done
 
