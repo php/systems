@@ -1,9 +1,9 @@
 # $Id$
 
-# Service configuration for osu1.php.net
+# Service configuration for main.php.net
 
-MINUTELY="update-ssh-keys"
+MINUTELY=""
 HOURLY="maintain-main"
-DAILY="backup-thisbox backup-main backup-ecelerity maintain-ecelerity prune-backups"
+DAILY="backup-thisbox backup-main prune-backups"
 WEEKLY="maintain-main"
 
