@@ -19,7 +19,7 @@ for i in docweb php-people-web qaweb php-gcov-web php-master-web php-news-web ph
     (cd shared && $GIT_FETCH && $GIT_RESET)
 done
 
-# For sites where we master has been renamed to main
+# For sites where master has been renamed to main
 for i in php-main-web; do
     cd /local/mirrors/$i
     $GIT_FETCH && $GIT_RESET_MAIN;
