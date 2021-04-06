@@ -2,7 +2,7 @@
 
 FILE=/repository/CVSROOT/passwd
 
-wget -q -O $FILE~ http://master.php.net/fetch/cvspasswd.php?token=$TOKEN
+wget -q -O $FILE~ http://main.php.net/fetch/cvspasswd.php?token=$TOKEN
 
 if test $? -eq 0 -a -s $FILE~; then
   mv $FILE~ $FILE
