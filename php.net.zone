@@ -78,8 +78,7 @@ docs			IN CNAME euk2.php.net.
 preview			IN CNAME pb11.php.net.
 
 mail 			IN CNAME osu1php.osuosl.org.
-master			IN CNAME osu1php.osuosl.org.
-master2			IN CNAME osu1php.osuosl.org.
+master			IN CNAME main.php.net.
 ; NNTP server, do NOT switch to CDN
 news			IN CNAME pair1.php.net.
 
