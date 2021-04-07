@@ -3,7 +3,7 @@
 # Do whatever we need to do to run the "main" facilities
 
 /local/systems/update-systems
-rsync -qavzC --timeout=600 --delete --delete-after --filter='P manage/github-config.php' rsync.php.net::php-main-web /local/mirrors/php-main-web
+rsync -qavzC --timeout=600 --delete --delete-after --filter='P github-config.php' rsync.php.net::php-main-web /local/mirrors/php-main-web
 
 #php -r '
 #$token=rtrim(file_get_contents("/local/this-box/CVSPASSTOKEN"));
