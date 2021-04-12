@@ -75,9 +75,9 @@ doc-origin		IN CNAME euk2.php.net.
 docs-origin		IN CNAME euk2.php.net.
 doc			IN CNAME euk2.php.net.
 docs			IN CNAME euk2.php.net.
-preview			IN CNAME pb11.php.net.
+preview		IN CNAME pb11.php.net.
 
-mail 			IN CNAME osu1php.osuosl.org.
+mail 			IN CNAME main.php.net.
 master			IN CNAME main.php.net.
 ; NNTP server, do NOT switch to CDN
 news			IN CNAME pair1.php.net.
@@ -107,7 +107,7 @@ wiki.php.net.		IN A 45.55.181.207
 
 ; Ecelerity MX running on OSU1
 ecelerity		IN CNAME osu1php.osuosl.org.
-php.net.		IN TXT "v=spf1 ip4:72.52.91.12 ip6:2a02:cb41::8 ip4:140.211.15.143 ip4:208.43.231.12 ip4:45.112.84.5 ip6:2a02:cb43:8000::1102 ?all"
+php.net.		IN TXT "v=spf1 ip4:72.52.91.12 ip6:2a02:cb41::8 ip4:140.211.15.143 ip4:208.43.231.12 ip4:45.112.84.5 ip4:142.93.197.176 ip6:2604:a880:400:d0::1c74:1001 ip6:2a02:cb43:8000::1102 ?all"
 
 gcov			IN CNAME nex2.php.net.
 
