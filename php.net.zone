@@ -107,7 +107,7 @@ wiki.php.net.		IN A 45.55.181.207
 
 ; Ecelerity MX running on OSU1
 ecelerity		IN CNAME osu1php.osuosl.org.
-php.net.		IN TXT "v=spf1 ip4:72.52.91.12 ip6:2a02:cb41::8 ip4:140.211.15.143 ip4:208.43.231.12 ip4:45.112.84.5 ip4:142.93.197.176 ip6:2604:a880:400:d0::1c74:1001 ip6:2a02:cb43:8000::1102 ip4:157.90.121.187 ip6:2a01:4f8:1c1e:416d::1 ?all"
+php.net.		IN TXT "v=spf1 ip4:140.211.15.143 ip4:45.112.84.5 ip4:142.93.197.176 ip6:2604:a880:400:d0::1c74:1001 ip6:2a02:cb43:8000::1102 ip4:157.90.121.187 ip6:2a01:4f8:1c1e:416d::1 ?all"
 
 gcov			IN CNAME nex2.php.net.
 
