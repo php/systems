@@ -38,7 +38,7 @@ bugs			IN A	  206.189.200.141
 bugs		       IN AAAA  2604:a880:400:d1::24b:3001
 
 ; Jump boxes for login to .php.net servers
-americas.jump		IN CNAME php-jump3.php.net.
+americas.jump		IN CNAME php-jump4.php.net.
 europe.jump		IN CNAME php-jump2.php.net.
 
 ; Geodispersion of rsync; regional rsync nodes (RRNs)
