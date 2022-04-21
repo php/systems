@@ -23,6 +23,11 @@ configure()
 	lang=$1
 	outputfile=$2 
 
+	log "git log -1 $lang"
+	(cd $lang; git log -1) >> $LOGFILE 2>&1
+	log "git status $lang"
+	(cd $lang; git status) >> $LOGFILE 2>&1
+
 	log "Configuring $lang"
 	pushd $BASEDIR
 	$PHP base/configure.php --with-lang=$lang --output=$outputfile --disable-segfault-speed >> $LOGFILE 2>&1
