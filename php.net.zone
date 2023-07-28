@@ -122,7 +122,7 @@ lists.php.net.		IN TXT "v=spf1 a mx a:osu1php.osuosl.org. ip4:76.75.200.58"
 
 ; Let's Encrypt ACME challenge
 
-_acme-challenge.php.net.	IN CNAME _acme-challenge.php.net.acme.myrasecurity.com.
+_acme-challenge.php.net.	IN CNAME _acme--challenge-php-net.ax4z.com.
 
 ;------------ Physical boxen
 
