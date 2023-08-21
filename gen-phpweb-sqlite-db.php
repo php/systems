@@ -164,6 +164,31 @@ function scan($dir, $lang)
 			$dbh->exec("INSERT INTO fs (lang, prefix, keyword, name, prio) values ('$lang', '$prefix', '" . metaphone($keyword) . "', '$doc_rel', ".($prio+10).")");
 
 		}
+
+		if ($f === 'reserved.keywords.php') {
+			// Yes, this is fragile.
+			$handle = fopen($file, 'r');
+			$stm = $dbh->prepare('INSERT INTO fs (lang, prefix, keyword, name, prio) VALUES (?, ?, ?, ?, ?)');
+			$path_base = dirname($doc_rel);
+			while ($stm && false !== ($line = fgets($handle))) {
+				if (strpos($line, '<a href=') === false) {
+					continue;
+				}
+
+				if (!preg_match('!<a href="([^"]+)" class="[^"]+">([^<]+)</a>!', $line, $matches)) {
+					continue;
+				}
+
+				$keyword = strtolower(rtrim($matches[2], '()'));
+				$href = $matches[1];
+
+				if ($x = strpos($href, '#')) {
+					$href = substr($href, 0, $x);
+				}
+
+				$stm->execute([$lang, $prefix ?? '', $keyword, $path_base . '/' . $href, $prio ?? 200]);
+			}
+		}
 	}
 	closedir($d);
 	
