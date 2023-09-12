@@ -1,0 +1,9 @@
+# $Id$
+
+# Service configuration for main.php.net
+
+MINUTELY=""
+HOURLY="maintain-main"
+DAILY="backup-thisbox backup-main prune-backups"
+WEEKLY="maintain-main"
+

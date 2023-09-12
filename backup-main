@@ -1,0 +1,19 @@
+#!/bin/sh
+# $Id$
+
+# Backup the main service
+
+dir=main-$date
+
+mkdir -p /local/backups
+cd /local/backups
+mkdir $dir || exit 1
+
+mysqldump -u nobody -Q phpmasterdb > $dir/phpmasterdb.sql
+cp /local/httpd/conf/main-php-net.conf $dir
+
+rm -f /local/backups/main-$date.tar.bz2
+tar cf - $dir | bzip2 -9 > /local/backups/main-$date.tar.bz2
+
+rm -rf $dir
+

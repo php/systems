@@ -1,0 +1,21 @@
+#!/bin/sh
+# $Id$
+# Do whatever we need to do to run the "main" facilities
+
+/local/systems/update-systems
+rsync -qavzC --timeout=600 --delete --delete-after --filter='P github-config.php' rsync.php.net::php-main-web /local/mirrors/php-main-web
+
+#php -r '
+#$token=rtrim(file_get_contents("/local/this-box/CVSPASSTOKEN"));
+#include "/local/mirrors/php-main-web/fetch/cvspasswd.php";
+#' > /repository/CVSROOT/passwd
+
+#/usr/local/bin/php /local/mirrors/php-main-web/scripts/mirror-test
+
+/local/systems/process-main-zone-file
+
+if test "$how" = "weekly" ; then
+	#php /local/mirrors/php-main-web/scripts/mirror-summary
+	php /local/mirrors/php-main-web/scripts/email-note-summaries
+	php /local/mirrors/php-main-web/scripts/event-weekly-email
+fi

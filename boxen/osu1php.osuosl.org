@@ -2,7 +2,7 @@
 
 # Service configuration for osu1.php.net
 
-MINUTELY="update-ssh-keys"
+MINUTELY=""
 HOURLY="maintain-master"
 DAILY="backup-thisbox backup-master backup-ecelerity maintain-ecelerity prune-backups"
 WEEKLY="maintain-master"

@@ -38,7 +38,7 @@ bugs			IN A	  206.189.200.141
 bugs		       IN AAAA  2604:a880:400:d1::24b:3001
 
 ; Jump boxes for login to .php.net servers
-americas.jump		IN CNAME php-jump3.php.net.
+americas.jump		IN CNAME php-jump4.php.net.
 europe.jump		IN CNAME php-jump2.php.net.
 
 ; Geodispersion of rsync; regional rsync nodes (RRNs)
@@ -62,7 +62,7 @@ gtk			IN CNAME svn2.php.net.
 shared               IN CNAME shared-php-net.ax4z.com.
 
 ci.qa			IN CNAME k1a.php.net.
-lxr			IN CNAME sph2.php.net.
+lxr			IN CNAME main.php.net.
 
 git			IN CNAME php-git2.php.net.
 
@@ -75,11 +75,10 @@ doc-origin		IN CNAME euk2.php.net.
 docs-origin		IN CNAME euk2.php.net.
 doc			IN CNAME euk2.php.net.
 docs			IN CNAME euk2.php.net.
-preview			IN CNAME pb11.php.net.
+preview		IN CNAME pb11.php.net.
 
-mail 			IN CNAME osu1php.osuosl.org.
-master			IN CNAME osu1php.osuosl.org.
-master2			IN CNAME osu1php.osuosl.org.
+mail 			IN CNAME main.php.net.
+master			IN CNAME main.php.net.
 ; NNTP server, do NOT switch to CDN
 news			IN CNAME pair1.php.net.
 
@@ -108,11 +107,10 @@ wiki.php.net.		IN A 45.55.181.207
 
 ; Ecelerity MX running on OSU1
 ecelerity		IN CNAME osu1php.osuosl.org.
-php.net.		IN TXT "v=spf1 ip4:72.52.91.12 ip6:2a02:cb41::8 ip4:140.211.15.143 ip4:208.43.231.12 ip4:45.112.84.5 ip6:2a02:cb43:8000::1102 ?all"
+php.net.		IN TXT "v=spf1 ip4:140.211.15.143 ip4:45.112.84.5 ip4:142.93.197.176 ip6:2604:a880:400:d0::1c74:1001 ip6:2a02:cb43:8000::1102 ip4:157.90.121.187 ip6:2a01:4f8:1c1e:416d::1 ?all"
+php.net.		IN TXT "_globalsign-domain-verification=YKIbqgUIt0x2vDkmdYS8TzqfqP6jyVp2fVVyJWyopw"
 
-gcov			IN CNAME nex2.php.net.
-
-monitoring		IN CNAME bk1.php.net.
+monitoring		IN CNAME bk2.php.net.
 
 
 ; lists operated from pair1
@@ -121,6 +119,10 @@ lists.php.net.		IN MX 0 php-smtp4-ip4.php.net.
 ; any issues with relaying through php-smtp4? reactivate below line + deactivate above line
 ;lists.php.net.		IN MX 10 pair1.php.net.
 lists.php.net.		IN TXT "v=spf1 a mx a:osu1php.osuosl.org. ip4:76.75.200.58"
+
+; Let's Encrypt ACME challenge
+
+_acme-challenge.php.net.	IN CNAME _acme--challenge-php-net.ax4z.com.
 
 ;------------ Physical boxen
 
@@ -167,15 +169,13 @@ pb1			IN A 76.75.200.58
 pb11    	        IN A 76.75.200.61
 
 ; OS Groups
-windows 		IN A 83.137.144.123
+windows		IN A 83.137.149.15
+windows		IN AAAA 2a01:1b0:7999:419::7
 windows			IN	TYPE257	\# 22 000569737375656C657473656E63727970742E6F7267
 windows			IN	TYPE257	\# 12 0009697373756577696C643B
 
 ; FIXME contact unclear
 sc2			IN A 50.31.206.50
-
-; Nexcess (contact: Chris Wells clwells at nexcess dot net)
-nex2			IN A 208.69.122.227
 
 ; PPC testing box, hosted by Dedipower
 dp1			IN A 89.151.87.82
@@ -193,11 +193,8 @@ euk3			IN A 109.203.101.62
 ; Dan's (maybe temp box, for now, replacement for micfo1)
 sph1			IN A 108.163.197.98
 
-; Replacement for the vanished-into-thin-air SP2 that hosted LXR.  See danbrown for details.
-sph2			IN A 198.245.50.74
-
 ; Bauer + Kirch GmbH (contact mj)
-bk1			IN A 89.238.71.179
+bk2			IN A 157.90.121.187
 
 ; Sponsored by krystal.co.uk (contact danbrown)
 k1			IN A 77.72.6.42
@@ -247,3 +244,146 @@ prototype-meta		IN CNAME php-meta.markrandall.uk.
 
 ;php.net.		IN TYPE257	\# 16 0005697373756567616E64692E6E6574
 ;php.net.		IN TYPE257	\# 29 0005696F6465666D61696C746F3A73797374656D73407068702E6E6574
+
+; mirrors
+$TTL 3600 ; 1 hour
+am.php.net.  IN CNAME STAR-php-net.ax4z.com.
+am1.php.net. IN CNAME STAR-php-net.ax4z.com.
+ar.php.net.  IN CNAME STAR-php-net.ax4z.com.
+ar2.php.net. IN CNAME STAR-php-net.ax4z.com.
+at.php.net.  IN CNAME STAR-php-net.ax4z.com.
+at1.php.net. IN CNAME STAR-php-net.ax4z.com.
+at2.php.net. IN CNAME STAR-php-net.ax4z.com.
+au.php.net.  IN CNAME STAR-php-net.ax4z.com.
+au1.php.net. IN CNAME STAR-php-net.ax4z.com.
+au2.php.net. IN CNAME STAR-php-net.ax4z.com.
+ba.php.net.  IN CNAME STAR-php-net.ax4z.com.
+ba1.php.net. IN CNAME STAR-php-net.ax4z.com.
+bd.php.net.  IN CNAME STAR-php-net.ax4z.com.
+bd1.php.net. IN CNAME STAR-php-net.ax4z.com.
+be.php.net.  IN CNAME STAR-php-net.ax4z.com.
+be2.php.net. IN CNAME STAR-php-net.ax4z.com.
+bg2.php.net. IN CNAME STAR-php-net.ax4z.com.
+br.php.net.  IN CNAME STAR-php-net.ax4z.com.
+br1.php.net. IN CNAME STAR-php-net.ax4z.com.
+br2.php.net. IN CNAME STAR-php-net.ax4z.com.
+ca.php.net.  IN CNAME STAR-php-net.ax4z.com.
+ca1.php.net. IN CNAME STAR-php-net.ax4z.com.
+ca3.php.net. IN CNAME STAR-php-net.ax4z.com.
+ch.php.net.  IN CNAME STAR-php-net.ax4z.com.
+ch1.php.net. IN CNAME STAR-php-net.ax4z.com.
+cl.php.net.  IN CNAME STAR-php-net.ax4z.com.
+cl1.php.net. IN CNAME STAR-php-net.ax4z.com.
+cn.php.net.  IN CNAME STAR-php-net.ax4z.com.
+cn2.php.net. IN CNAME STAR-php-net.ax4z.com.
+cz.php.net.  IN CNAME STAR-php-net.ax4z.com.
+cz1.php.net. IN CNAME STAR-php-net.ax4z.com.
+cz2.php.net. IN CNAME STAR-php-net.ax4z.com.
+de.php.net.  IN CNAME STAR-php-net.ax4z.com.
+de1.php.net. IN CNAME STAR-php-net.ax4z.com.
+de2.php.net. IN CNAME STAR-php-net.ax4z.com.
+dk.php.net.  IN CNAME STAR-php-net.ax4z.com.
+dk1.php.net. IN CNAME STAR-php-net.ax4z.com.
+dk2.php.net. IN CNAME STAR-php-net.ax4z.com.
+ee.php.net.  IN CNAME STAR-php-net.ax4z.com.
+ee1.php.net. IN CNAME STAR-php-net.ax4z.com.
+es.php.net.  IN CNAME STAR-php-net.ax4z.com.
+es1.php.net. IN CNAME STAR-php-net.ax4z.com.
+fi.php.net.  IN CNAME STAR-php-net.ax4z.com.
+fi1.php.net. IN CNAME STAR-php-net.ax4z.com.
+fi2.php.net. IN CNAME STAR-php-net.ax4z.com.
+fr.php.net.  IN CNAME STAR-php-net.ax4z.com.
+fr2.php.net. IN CNAME STAR-php-net.ax4z.com.
+hk.php.net.  IN CNAME STAR-php-net.ax4z.com.
+hk1.php.net. IN CNAME STAR-php-net.ax4z.com.
+hk2.php.net. IN CNAME STAR-php-net.ax4z.com.
+id.php.net.  IN CNAME STAR-php-net.ax4z.com.
+id1.php.net. IN CNAME STAR-php-net.ax4z.com.
+ie.php.net.  IN CNAME STAR-php-net.ax4z.com.
+ie1.php.net. IN CNAME STAR-php-net.ax4z.com.
+ie2.php.net. IN CNAME STAR-php-net.ax4z.com.
+il.php.net.  IN CNAME STAR-php-net.ax4z.com.
+il1.php.net. IN CNAME STAR-php-net.ax4z.com.
+in.php.net.  IN CNAME STAR-php-net.ax4z.com.
+in1.php.net. IN CNAME STAR-php-net.ax4z.com.
+in2.php.net. IN CNAME STAR-php-net.ax4z.com.
+in3.php.net. IN CNAME STAR-php-net.ax4z.com.
+ir.php.net.  IN CNAME STAR-php-net.ax4z.com.
+ir1.php.net. IN CNAME STAR-php-net.ax4z.com.
+ir2.php.net. IN CNAME STAR-php-net.ax4z.com.
+is.php.net.  IN CNAME STAR-php-net.ax4z.com.
+is1.php.net. IN CNAME STAR-php-net.ax4z.com.
+is2.php.net. IN CNAME STAR-php-net.ax4z.com.
+it.php.net.  IN CNAME STAR-php-net.ax4z.com.
+it1.php.net. IN CNAME STAR-php-net.ax4z.com.
+it2.php.net. IN CNAME STAR-php-net.ax4z.com.
+jm.php.net.  IN CNAME STAR-php-net.ax4z.com.
+jm2.php.net. IN CNAME STAR-php-net.ax4z.com.
+jp.php.net.  IN CNAME STAR-php-net.ax4z.com.
+jp1.php.net. IN CNAME STAR-php-net.ax4z.com.
+jp2.php.net. IN CNAME STAR-php-net.ax4z.com.
+kr1.php.net. IN CNAME STAR-php-net.ax4z.com.
+li.php.net.  IN CNAME STAR-php-net.ax4z.com.
+li1.php.net. IN CNAME STAR-php-net.ax4z.com.
+lt.php.net.  IN CNAME STAR-php-net.ax4z.com.
+lt1.php.net. IN CNAME STAR-php-net.ax4z.com.
+lu.php.net.  IN CNAME STAR-php-net.ax4z.com.
+lu1.php.net. IN CNAME STAR-php-net.ax4z.com.
+lv.php.net.  IN CNAME STAR-php-net.ax4z.com.
+lv1.php.net. IN CNAME STAR-php-net.ax4z.com.
+md.php.net.  IN CNAME STAR-php-net.ax4z.com.
+md1.php.net. IN CNAME STAR-php-net.ax4z.com.
+mx.php.net.  IN CNAME STAR-php-net.ax4z.com.
+mx1.php.net. IN CNAME STAR-php-net.ax4z.com.
+mx2.php.net. IN CNAME STAR-php-net.ax4z.com.
+my.php.net.  IN CNAME STAR-php-net.ax4z.com.
+my1.php.net. IN CNAME STAR-php-net.ax4z.com.
+nc.php.net.  IN CNAME STAR-php-net.ax4z.com.
+nc1.php.net. IN CNAME STAR-php-net.ax4z.com.
+nl.php.net.  IN CNAME STAR-php-net.ax4z.com.
+nl1.php.net. IN CNAME STAR-php-net.ax4z.com.
+nl3.php.net. IN CNAME STAR-php-net.ax4z.com.
+no.php.net.  IN CNAME STAR-php-net.ax4z.com.
+no1.php.net. IN CNAME STAR-php-net.ax4z.com.
+no2.php.net. IN CNAME STAR-php-net.ax4z.com.
+nz.php.net.  IN CNAME STAR-php-net.ax4z.com.
+nz2.php.net. IN CNAME STAR-php-net.ax4z.com.
+pa.php.net.  IN CNAME STAR-php-net.ax4z.com.
+pa1.php.net. IN CNAME STAR-php-net.ax4z.com.
+pl.php.net.  IN CNAME STAR-php-net.ax4z.com.
+pl1.php.net. IN CNAME STAR-php-net.ax4z.com.
+ro.php.net.  IN CNAME STAR-php-net.ax4z.com.
+ro1.php.net. IN CNAME STAR-php-net.ax4z.com.
+ru.php.net.  IN CNAME STAR-php-net.ax4z.com.
+ru2.php.net. IN CNAME STAR-php-net.ax4z.com.
+se.php.net.  IN CNAME STAR-php-net.ax4z.com.
+se1.php.net. IN CNAME STAR-php-net.ax4z.com.
+se2.php.net. IN CNAME STAR-php-net.ax4z.com.
+sg.php.net.  IN CNAME STAR-php-net.ax4z.com.
+sg2.php.net. IN CNAME STAR-php-net.ax4z.com.
+si.php.net.  IN CNAME STAR-php-net.ax4z.com.
+si1.php.net. IN CNAME STAR-php-net.ax4z.com.
+si2.php.net. IN CNAME STAR-php-net.ax4z.com.
+th.php.net.  IN CNAME STAR-php-net.ax4z.com.
+th1.php.net. IN CNAME STAR-php-net.ax4z.com.
+tr.php.net.  IN CNAME STAR-php-net.ax4z.com.
+tr1.php.net. IN CNAME STAR-php-net.ax4z.com.
+tr2.php.net. IN CNAME STAR-php-net.ax4z.com.
+tw1.php.net. IN CNAME STAR-php-net.ax4z.com.
+tw.php.net.  IN CNAME STAR-php-net.ax4z.com.
+tw2.php.net. IN CNAME STAR-php-net.ax4z.com.
+tz.php.net.  IN CNAME STAR-php-net.ax4z.com.
+tz1.php.net. IN CNAME STAR-php-net.ax4z.com.
+ua1.php.net. IN CNAME STAR-php-net.ax4z.com.
+ua2.php.net. IN CNAME STAR-php-net.ax4z.com.
+uk.php.net.  IN CNAME STAR-php-net.ax4z.com.
+uk1.php.net. IN CNAME STAR-php-net.ax4z.com.
+uk3.php.net. IN CNAME STAR-php-net.ax4z.com.
+us.php.net.  IN CNAME STAR-php-net.ax4z.com.
+us1.php.net. IN CNAME STAR-php-net.ax4z.com.
+us2.php.net. IN CNAME STAR-php-net.ax4z.com.
+us3.php.net. IN CNAME STAR-php-net.ax4z.com.
+vn.php.net.  IN CNAME STAR-php-net.ax4z.com.
+vn1.php.net. IN CNAME STAR-php-net.ax4z.com.
+za.php.net.  IN CNAME STAR-php-net.ax4z.com.
+za1.php.net. IN CNAME STAR-php-net.ax4z.com.
