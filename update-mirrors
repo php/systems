@@ -2,6 +2,7 @@
 
 GIT_FETCH="git fetch --quiet origin"
 GIT_RESET="git reset --quiet --hard origin/master"
+GIT_RESET_MAIN="git reset --quiet --hard origin/main"
 
 # Update in its own dedicate checkout first
 # It'll be moved to /local/mirrors/phpweb in update-phpweb-backend
@@ -12,9 +13,16 @@ for i in phpweb; do
 done
 
 # Websites needing the 'shared' module
-for i in docweb php-people-web qaweb php-gcov-web php-master-web php-news-web php-bugs-web php-gtk-web; do
+for i in docweb php-people-web qaweb php-gcov-web php-master-web php-news-web php-bugs-web php-gtk-web talks; do
     cd /local/mirrors/$i
     $GIT_FETCH && $GIT_RESET;
+    (cd shared && $GIT_FETCH && $GIT_RESET)
+done
+
+# For sites where master has been renamed to main
+for i in php-main-web; do
+    cd /local/mirrors/$i
+    $GIT_FETCH && $GIT_RESET_MAIN;
     (cd shared && $GIT_FETCH && $GIT_RESET)
 done
 

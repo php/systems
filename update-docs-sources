@@ -10,6 +10,13 @@ for i in phpdoc-all; do
 	svn up -q
 done
 
+langs=`/usr/bin/php -r 'include "/local/src/phpweb/include/languages.inc"; echo implode( " ", array_keys( $ACTIVE_ONLINE_LANGUAGES ) );'`;
+langs="base $langs"
+for i in $langs; do
+  cd /local/src/phpdoc-git/$i
+  git fetch origin && git reset --hard origin/master
+done
+
 rsync -avzC --timeout=600 --delete --delete-after \
 	--include='manual/*.php' \
 	--exclude='manual/**' \

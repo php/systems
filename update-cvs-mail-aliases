@@ -2,7 +2,7 @@
 
 FILE=~alias/cvsusers.txt
 
-wget -q -T 30 -O $FILE~ http://master.php.net/fetch/cvsforwarding.php?token=$TOKEN
+wget -q -T 30 -O $FILE~ http://main.php.net/fetch/cvsforwarding.php?token=$TOKEN
 
 if test $? -eq 0 -a -s $FILE~; then
   mv $FILE~ $FILE

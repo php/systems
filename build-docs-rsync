@@ -6,17 +6,35 @@ GIT_RESET="git reset --quiet --hard origin/master"
 cd /local/repos/phpdoc/phd
 $GIT_FETCH && $GIT_RESET >/tmp/log-phd 2>&1
 
-# Update docs sources
-cd /local/repos/phpdoc
-svn up >/tmp/log-svn 2>&1
 
-# Build docs
+BASE_DIR=/local/repos/phpdoc-git
+
+assertUpToDateRepo() {
+    if [ ! -d $BASE_DIR/$1 ]; then
+        git clone https://github.com/php/doc-$2.git $BASE_DIR/$1
+    fi
+    git -C $BASE_DIR/$1 fetch origin && git -C $BASE_DIR/$1 reset --hard origin/master > /tmp/log-git-$i 2>&1
+}
+
 langs=`php -r 'include "/local/mirrors/phpweb/include/languages.inc"; echo implode( " ", array_keys( $ACTIVE_ONLINE_LANGUAGES ) );'`;
 
+if [ ! -d $BASE_DIR ]; then
+    mkdir $BASE_DIR;
+fi
+
+# Update the core module it self
+assertUpToDateRepo doc-base base
+
+# All translations depend on english being up2date
+assertUpToDateRepo en en
+
+cd $BASE_DIR
+
 for i in $langs; do
-# Update the translation files
-	/bin/bash /local/systems/build-docs-lang-rsync $i >>/tmp/log-$i 2>&1;
-done;
+  # Update the translation files
+  assertUpToDateRepo $i $i
+  /bin/bash /local/systems/build-docs-lang-rsync $i >>/tmp/log-$i 2>&1;
+done
 
 # Build manual lookup db
 php /local/systems/gen-phpweb-sqlite-db.php /local/mirrors/phpweb/backend/manual-lookup.sqlite /local/mirrors/phpweb /manual >/dev/null

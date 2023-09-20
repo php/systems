@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BASEDIR=/local/src/phpdoc-all/
+BASEDIR=/local/src/phpdoc-git/
 TIMESTAMP=`/bin/date +%Y-%m-%d-%H`
 PHDROOT=/local/src/phd
 LOGFOLDER=/local/logs/docs/
@@ -25,7 +25,7 @@ configure()
 
 	log "Configuring $lang"
 	pushd $BASEDIR
-	$PHP doc-base/configure.php --with-lang=$lang --output=$outputfile --disable-segfault-speed >> $LOGFILE 2>&1
+	$PHP base/configure.php --with-lang=$lang --output=$outputfile --disable-segfault-speed >> $LOGFILE 2>&1
 	if [ "$?" -ne 0 ]; then
 		broken_lang $lang
 		popd
@@ -164,10 +164,9 @@ broken_lang ()
 		;;
 
 		# Slightly inconsistent mailinglist addr :)
-		pt_BR)
+		pt_br)
 			toaddr="doc-pt-br@lists.php.net"
 		;;
-
 		*)
 			toaddr="doc-$1@lists.php.net"
 		;;
@@ -187,7 +186,7 @@ log()
 do_lang ()
 {
 	LANG=$1
-	XMLFILENAME=$BASEDIR/doc-base/$TIMESTAMP-$LANG.xml
+	XMLFILENAME=$BASEDIR/base/$TIMESTAMP-$LANG.xml
 	LOGFILE=$LOGFOLDER/$TIMESTAMP/$LANG.txt
 
 	log "Starting $LANG"

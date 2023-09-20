@@ -16,6 +16,6 @@ rsync -qavzC --timeout=600 --delete --delete-after --filter='P manage/github-con
 
 if test "$how" = "weekly" ; then
 	#php /local/mirrors/php-master-web/scripts/mirror-summary
-	php /local/mirrors/php-master-web/scripts/email-note-summaries
-	php /local/mirrors/php-master-web/scripts/event-weekly-email
+	#php /local/mirrors/php-master-web/scripts/email-note-summaries
+	#php /local/mirrors/php-master-web/scripts/event-weekly-email
 fi
