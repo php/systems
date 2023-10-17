@@ -6,7 +6,7 @@ PHDROOT=/local/src/phd
 LOGFOLDER=/local/logs/docs/
 OUTPUTFOLDER=/local/building/
 DOCSWEB=/local/Web/sites/docs.php.net/
-PHP="/usr/php81 -dmemory_limit=1024M"
+PHP="/bin/php81 -dmemory_limit=1024M"
 
 
 HOUR=`/bin/date +%H`
