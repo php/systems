@@ -3,6 +3,7 @@
 # sync system time using the NTP pool.
 
 . /etc/profile
+. /local/systems/boxen/`hostname`
 
 NTP_PARAMS=-s
 NTP_SERVER=${CONTINENT}.pool.ntp.org
