@@ -16,7 +16,7 @@ assertUpToDateRepo() {
     git -C $BASE_DIR/$1 fetch origin && git -C $BASE_DIR/$1 reset --hard origin/master > /tmp/log-git-$i 2>&1
 }
 
-langs=`php -r 'include "/local/mirrors/phpweb/include/languages.inc"; echo implode( " ", array_keys( $ACTIVE_ONLINE_LANGUAGES ) );'`;
+langs=`php8.2 -r 'include "/local/mirrors/phpweb/include/languages.inc"; echo implode( " ", array_keys( $ACTIVE_ONLINE_LANGUAGES ) );'`;
 
 if [ ! -d $BASE_DIR ]; then
     mkdir $BASE_DIR;
@@ -37,5 +37,5 @@ for i in $langs; do
 done
 
 # Build manual lookup db
-php /local/systems/gen-phpweb-sqlite-db.php /local/mirrors/phpweb/backend/manual-lookup.sqlite /local/mirrors/phpweb /manual >/dev/null
+php8.2 /local/systems/gen-phpweb-sqlite-db.php /local/mirrors/phpweb/backend/manual-lookup.sqlite /local/mirrors/phpweb /manual >/dev/null
 
