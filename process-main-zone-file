@@ -4,7 +4,7 @@ file=/tmp/.dns.$$
 
 if php /local/systems/maintain-master-dns.php > $file ; then
 	if /usr/sbin/named-checkzone php.net $file ; then
-		cp -f $file /local/mirrors/php-main-web/fetch/php.net.zone
+		cp -f $file /local/mirrors/php-main-web/public/fetch/php.net.zone
 		mv -f $file /etc/bind/db.php.net
 		systemctl reload bind9
 	fi
