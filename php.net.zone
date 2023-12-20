@@ -160,10 +160,6 @@ osu1php			IN A 140.211.15.143
 ; sinnerg.nl VMs
 svn2			IN A 91.199.167.250
 
-; PEAR mirrors
-de.pear.php.net. 	IN A 5.35.241.22
-de.pear.php.net. 	IN AAAA 2a01:488:66:1000:523:f116:0:1
-
 ; PAIR
 pair1			IN A 76.75.200.58
 pair11			IN A 76.75.200.61
