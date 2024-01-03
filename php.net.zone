@@ -102,6 +102,7 @@ pecl			IN A 104.236.228.160
 ; Misc. PEAR sites
 blog.pear 		IN CNAME euk3.php.net.
 download.pear       	IN CNAME euk3.php.net.
+de.pear.php.net	IN CNAME euk3.php.net.
 
 wiki.php.net.		IN A 45.55.181.207
 
