@@ -224,6 +224,8 @@ svngit               IN A 134.209.209.3
 
 ; DomainKeys
 mx._domainkey.php.net.	IN TXT "t=y; g=; k=rsa; p=MHwwDQYJKoZIhvcNAQEBBQADawAwaAJhANg8QYJB/6O2nGfNk1td5uRl1MMqETEAv/Jyv3wGPpoW7drSEVa7RsuZBgut/koWyJIpe0TWQRSSk+N6E0lNxkMwZVBSDU+HOpeO4+khXWtsq9Mv9BsAbPbf8VrgP5VsLQIDAQAB"
+; DKIM key mail for php.net
+mail._domainkey.php.net.	IN TXT "v=DKIM1; h=sha256; k=rsa; s=email; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoTM+yKcObXSpuy9sAQP3pXM0kGg2Kbt6Uqf57ZGY7iNBrN/FB3w+xuYm8Ofk947N/dixNxCzhJ0yJ675m2fQap+EmBWke02OIl3jnqNccVuSpYTbIDQlsDDfQWrXKRgL6tA6l2WidxsosB5lf6IrIYXBWxTYJAB+aWuiJyFe+tfFZWnlPId7mFnda5PEpl3itg1xIbqLJgIhxZnZWwKg3/SJR1067tT4VuMw7fLJCMy1exDK2HMjWTUVMsJDJh/cv28M86GwkKDZjiHpBKXXVLeJeti9Iua/seYFt0Id7/A3wtu7IPHHTFLMqb4b1j5djWpNwwtcRTVPFN24CI9wYwIDAQAB"
 
 ; Misc stuff
 localhost		IN A 127.0.0.1
