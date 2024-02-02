@@ -216,13 +216,8 @@ idle		       IN A 104.236.32.173
 		       IN AAAA 2604:a880:800:10::2dd:1001
 main		       IN A 142.93.197.176
 		       IN AAAA 2604:a880:400:d0::1c74:1001
-edit                 IN A 142.93.253.55
-                     IN AAAA 2604:a880:400:d0::1ab2:f001
 newpear              IN A 157.230.57.99
                      IN AAAA 2604:a880:400:d1::a64:c001
-
-svngit               IN A 134.209.209.3
-                     IN AAAA 2604:a880:400:d1::b3c:c001
 
 ; DomainKeys
 mx._domainkey.php.net.	IN TXT "t=y; g=; k=rsa; p=MHwwDQYJKoZIhvcNAQEBBQADawAwaAJhANg8QYJB/6O2nGfNk1td5uRl1MMqETEAv/Jyv3wGPpoW7drSEVa7RsuZBgut/koWyJIpe0TWQRSSk+N6E0lNxkMwZVBSDU+HOpeO4+khXWtsq9Mv9BsAbPbf8VrgP5VsLQIDAQAB"
