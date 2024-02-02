@@ -85,6 +85,7 @@ news			IN CNAME pair1.php.net.
 news-web-origin	IN CNAME news
 news-web		IN CNAME news--web-php-net.ax4z.com.
 rsync			IN CNAME sc2.php.net.
+rsync2			IN CNAME sc3.php.net.
 testfest		IN CNAME dp1a.php.net.
 
 ; Network Health Status Page
@@ -173,8 +174,9 @@ windows		IN AAAA 2a01:1b0:7999:419::7
 windows			IN	TYPE257	\# 22 000569737375656C657473656E63727970742E6F7267
 windows			IN	TYPE257	\# 12 0009697373756577696C643B
 
-; FIXME contact unclear
+; Server Central/Deft, used for rsync. (contact: systems, or derick)
 sc2			IN A 50.31.206.50
+sc3			IN A 50.31.206.54
 
 ; PPC testing box, hosted by Dedipower
 dp1			IN A 89.151.87.82
