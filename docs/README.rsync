@@ -1,8 +1,5 @@
 
 Every hour systems/update-everything is executed which does:
-    systems/update-repository
-        Updates the svnsync checkout
-
     systems/update-mirrors
         Updates the entire SVN checkout
 
