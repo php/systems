@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # phpweb has some hardcoded files in the repo for development purposes
-# these need to beo verwritten by the update-backend script to fetch new content
-/local/mirrors/php-master-web/scripts/update-backend /local/repos/phpweb
+# these need to be overwritten by the update-backend script to fetch new content
+/local/mirrors/php-main-web/scripts/update-backend /local/repos/phpweb
 rsync -qrltDvzC --exclude=".git" --exclude="manual/en" /local/repos/phpweb/ /local/mirrors/phpweb
 
 if ls /local/mirrors/manual-chms/*.chm > /dev/null 2> /dev/null; then
@@ -13,7 +13,7 @@ fi
 
 # get manual notes
 mkdir -p /local/mirrors/manual-notes.new
-/local/mirrors/php-master-web/scripts/update-user-notes \
+/local/mirrors/php-main-web/scripts/update-user-notes \
       /local/mirrors/manual-notes.new
 if [ $? -eq 0 ]; then
   rm -rf /local/mirrors/manual-notes
