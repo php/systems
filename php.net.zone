@@ -80,7 +80,7 @@ preview		IN CNAME pb11.php.net.
 mail 			IN CNAME main.php.net.
 master			IN CNAME main.php.net.
 ; NNTP server, do NOT switch to CDN
-news			IN CNAME pair1.php.net.
+news			IN CNAME qa.php.net.
 
 news-web-origin	IN CNAME news
 news-web		IN CNAME news--web-php-net.ax4z.com.
