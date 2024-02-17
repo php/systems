@@ -113,6 +113,7 @@ ecelerity		IN CNAME osu1php.osuosl.org.
 php.net.		IN TXT "v=spf1 ip4:140.211.15.143 ip4:45.112.84.5 ip4:142.93.197.176 ip6:2604:a880:400:d0::1c74:1001 ip6:2a02:cb43:8000::1102 ip4:157.90.121.187 ip6:2a01:4f8:1c1e:416d::1 ?all"
 php.net.		IN TXT "_globalsign-domain-verification=YKIbqgUIt0x2vDkmdYS8TzqfqP6jyVp2fVVyJWyopw"
 php.net.		IN TXT "google-site-verification=R0anXzbL507wmRx5iv1S-5jN55RYVo2UYIqFP2L_k1g"
+php.net.		IN TXT "google-site-verification=kEZx29YwmdFCUifeR9miIOp-x_gvEpo_T_o9UzbilLA"
 
 monitoring		IN CNAME bk2.php.net.
 
