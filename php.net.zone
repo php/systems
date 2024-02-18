@@ -227,6 +227,11 @@ mail._domainkey.php.net.	IN TXT ( "v=DKIM1; h=sha256; k=rsa; s=email; "
 	"p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoTM+yKcObXSpuy9sAQP3pXM0kGg2Kbt6Uqf57ZGY7iNBrN/FB3w+xuYm8Ofk947N/dixNxCzhJ0yJ675m2fQap+EmBWke02OIl3jnqNccVuSpYTbIDQlsDDfQWrXKRgL6tA6l2WidxsosB5lf6IrIYXBWxTYJAB+aWuiJyFe+tfFZWnlPId7mFnda5PEpl3itg1xIbqLJgIhxZ"
 	"nZWwKg3/SJR1067tT4VuMw7fLJCMy1exDK2HMjWTUVMsJDJh/cv28M86GwkKDZjiHpBKXXVLeJeti9Iua/seYFt0Id7/A3wtu7IPHHTFLMqb4b1j5djWpNwwtcRTVPFN24CI9wYwIDAQAB" ) ;
 
+; DKIM key mail for lists.php.net
+mail._domainkey.lists.php.net. IN      TXT     ( "v=DKIM1; h=sha256; k=rsa; s=email; "
+          "p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtwBTcZalhSYtt2cyx+XD9CnvcelfnkEthOe1wFFKg+6YAwoVazJysjYszOtAuNhBN3Uo2cpEUqDX0hx36hp0f92Xhcb8Mg4hkPEgDBWUnMjd3re23x85yD4VIQWt7lZGMYiVdfDYVPL/utYzVJ3HkMnhJW9CvTjaurKfE/dyeSeu1/BSSbe55y5k4axVdOYyJ/QEbqK5+C3Hmb"
+          "Ku4DtkNpOijhgL/9vRXPAznasXB1IEDvQ/sySBxtJ51HCLpteTBabQ4T5A8pRsphOjJYSoSQ3OwD9k2H1m2Whcu0GTC0J1PkPiOZENprOKdqMP3ej4b6eZB1lkxiYpRccWd1m9TQIDAQAB" )  ;
+
 ; Misc stuff
 localhost		IN A 127.0.0.1
 
