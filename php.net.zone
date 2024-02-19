@@ -122,7 +122,8 @@ mail._domainkey.php.net.	IN TXT ( "v=DKIM1; h=sha256; k=rsa; s=email; "
 
 
 ; lists operated from qa
-lists.php.net.		IN CNAME qa.php.net
+lists.php.net.		IN A 45.112.84.5
+lists.php.net.		IN AAAA 2a02:cb43:8000::1102
 lists.php.net.		IN MX 0 php-smtp4-ip4.php.net.
 lists.php.net.		IN TXT "v=spf1 a mx a:osu1php.osuosl.org. ip4:45.112.84.5 ip6:2a02:cb43:8000::1102" ; ip4/6 of qa.php.net
 
