@@ -163,9 +163,6 @@ php-jump3		IN AAAA 2a02:cb41::1001
 php-jump4		IN A 45.112.84.7
 php-jump4		IN AAAA 2a02:cb43:8000::1104
 
-; Oregon State Uni
-osu1php			IN A 140.211.15.143
-
 ; sinnerg.nl VMs
 svn2			IN A 91.199.167.250
 
