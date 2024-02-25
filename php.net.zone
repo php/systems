@@ -123,6 +123,7 @@ lists.php.net.		IN A 104.236.36.140
 lists.php.net.		IN AAAA 2604:a880:800:10::2d6:2001
 lists.php.net.		IN MX 0 php-smtp4.php.net.
 lists.php.net.		IN TXT "v=spf1 a mx ~all"
+lists.php.net.      IN TXT "google-site-verification=zwHpiZeKUWs1ssCQQuLh_M8tK8YPNRFzu68t9MnBfjw"
 
 ; DMARC and DKIM key mail for lists.php.net
 _dmarc.lists.php.net.		IN TXT "v=DMARC1; p=none"
