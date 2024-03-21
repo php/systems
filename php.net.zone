@@ -84,8 +84,8 @@ news			IN CNAME qa.php.net.
 
 news-web-origin	IN CNAME news
 news-web		IN CNAME news--web-php-net.ax4z.com.
-rsync			IN CNAME sc2.php.net.
-rsync2			IN CNAME sc3.php.net.
+rsync-old		IN CNAME sc2.php.net. ; Remove when new rsync seems to work
+rsync			IN CNAME sc3.php.net.
 testfest		IN CNAME dp1a.php.net.
 
 ; Network Health Status Page
