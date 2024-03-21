@@ -3,7 +3,7 @@
 file=/tmp/.dns.$$
 
 if php /local/systems/maintain-master-dns.php > $file ; then
-	if /usr/sbin/named-checkzone php.net $file ; then
+	if /usr/bin/named-checkzone php.net $file ; then
 		cp -f $file /local/mirrors/php-master-web/fetch/php.net.zone
 		mv -f $file /var/named/php.net
 		/etc/init.d/named reload
