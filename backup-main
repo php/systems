@@ -10,7 +10,7 @@ cd /local/backups
 mkdir $dir || exit 1
 
 mysqldump -u nobody -Q phpmasterdb > $dir/phpmasterdb.sql
-cp /local/httpd/conf/main-php-net.conf $dir
+cp -r /etc/apache2 $dir
 
 rm -f /local/backups/main-$date.tar.bz2
 tar cf - $dir | bzip2 -9 > /local/backups/main-$date.tar.bz2
