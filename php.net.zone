@@ -63,6 +63,7 @@ shared               IN CNAME shared-php-net.ax4z.com.
 
 ci.qa			IN CNAME k1a.php.net.
 lxr			IN CNAME main.php.net.
+gcov			IN CNAME main.php.net.
 
 git			IN CNAME php-git2.php.net.
 
