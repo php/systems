@@ -127,7 +127,7 @@ lists.php.net.		IN MX 0 php-smtp4-ip4.php.net.
 lists.php.net.		IN TXT "v=spf1 a mx ip4:45.112.84.5 ip6:2a02:cb43:8000::1102 ~all" ; ip4/6 of php-smtp4.php.net
 
 ; DMARC and DKIM key mail for lists.php.net
-_dmarc.lists.php.net.		IN TXT "v=DMARC1; p=none"
+_dmarc.lists.php.net		IN TXT "v=DMARC1; p=none; rua=mailto:dmarc@php.net;"
 mail._domainkey.lists.php.net.	IN TXT ( "v=DKIM1; h=sha256; k=rsa; s=email; "
 	"p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtwBTcZalhSYtt2cyx+XD9CnvcelfnkEthOe1wFFKg+6YAwoVazJysjYszOtAuNhBN3Uo2cpEUqDX0hx36hp0f92Xhcb8Mg4hkPEgDBWUnMjd3re23x85yD4VIQWt7lZGMYiVdfDYVPL/utYzVJ3HkMnhJW9CvTjaurKfE/dyeSeu1/BSSbe55y5k4axVdOYyJ/QEbqK5+C3Hmb"
 	"Ku4DtkNpOijhgL/9vRXPAznasXB1IEDvQ/sySBxtJ51HCLpteTBabQ4T5A8pRsphOjJYSoSQ3OwD9k2H1m2Whcu0GTC0J1PkPiOZENprOKdqMP3ej4b6eZB1lkxiYpRccWd1m9TQIDAQAB" )
