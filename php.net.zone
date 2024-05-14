@@ -117,6 +117,7 @@ mx._domainkey.php.net.	IN TXT "t=y; g=; k=rsa; p=MHwwDQYJKoZIhvcNAQEBBQADawAwaAJ
 mail._domainkey.php.net.	IN TXT ( "v=DKIM1; h=sha256; k=rsa; s=email; "
 	"p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoTM+yKcObXSpuy9sAQP3pXM0kGg2Kbt6Uqf57ZGY7iNBrN/FB3w+xuYm8Ofk947N/dixNxCzhJ0yJ675m2fQap+EmBWke02OIl3jnqNccVuSpYTbIDQlsDDfQWrXKRgL6tA6l2WidxsosB5lf6IrIYXBWxTYJAB+aWuiJyFe+tfFZWnlPId7mFnda5PEpl3itg1xIbqLJgIhxZ"
 	"nZWwKg3/SJR1067tT4VuMw7fLJCMy1exDK2HMjWTUVMsJDJh/cv28M86GwkKDZjiHpBKXXVLeJeti9Iua/seYFt0Id7/A3wtu7IPHHTFLMqb4b1j5djWpNwwtcRTVPFN24CI9wYwIDAQAB" )
+_dmarc.php.net		IN TXT "v=DMARC1; p=none; rua=mailto:dmarc@php.net;"
 
 
 ; lists operated from qa
