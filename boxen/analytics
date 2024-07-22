@@ -1,0 +1,10 @@
+# $Id$
+
+# Service configuration for analytics.php.net
+
+export CONTINENT="us"
+
+HOURLY="update-systems update-analytics-web"
+DAILY="update-time"
+WEEKLY=""
+MONTHLY=""
