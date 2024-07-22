@@ -19,11 +19,17 @@ for i in docweb php-people-web qaweb php-gcov-web php-master-web php-news-web ph
     (cd shared && $GIT_FETCH && $GIT_RESET)
 done
 
-# For sites where master has been renamed to main
+# For sites where master has been renamed to main, and need the 'shared' module
 for i in php-main-web; do
     cd /local/mirrors/$i
     $GIT_FETCH && $GIT_RESET_MAIN;
     (cd shared && $GIT_FETCH && $GIT_RESET)
+done
+
+# For sites where the default branch is 'main', an do not use the 'shared' module
+for i in php-analytics-web; do
+    cd /local/mirrors/$i
+    $GIT_FETCH && $GIT_RESET_MAIN;
 done
 
 # The wikibox is special. doesn't do full module rsync :(
