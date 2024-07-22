@@ -44,10 +44,6 @@ $sql = "CREATE TABLE fs (
 try {
 	$res = $dbh->query( $sql );
 	$res = $dbh->query( 'CREATE INDEX map ON fs (lang,keyword)' );
-
-	// Insert the underscore function, _(), which is an alias to gettext(), before anything else (Bug #63490)
-	$dbh->exec("INSERT INTO fs(lang,prefix,keyword,name,prio) VALUES('en','function.','_','/manual/en/function.gettext.php',1)");
-
 } catch ( PDOException $e ) {
 	echo 'Error: Cannot create db table. Here is the error message: ' . $e->getMessage() . PHP_EOL;
 	exit;
