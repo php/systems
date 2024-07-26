@@ -72,10 +72,7 @@ people			IN CNAME people-php-net.ax4z.com.
 
 ; phpdoc stuff
 doc-origin		IN CNAME euk2.php.net.
-docs-origin		IN CNAME euk2.php.net.
 doc			IN CNAME euk2.php.net.
-docs			IN CNAME euk2.php.net.
-preview		IN CNAME pb11.php.net.
 
 mail 			IN CNAME main.php.net.
 master			IN CNAME main.php.net.
