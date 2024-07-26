@@ -1,4 +1,0 @@
-#!/bin/sh
-date=`date +"%Y%m%d"`
-/local/mysql/bin/mysqldump -q -u nobody --all-databases | \
-  bzip2 -9 > /local/backup/mysql.$date.bz2
