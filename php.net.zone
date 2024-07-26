@@ -61,7 +61,6 @@ gtk			IN CNAME svn2.php.net.
 ;shared			IN CNAME downloads.php.net.
 shared               IN CNAME shared-php-net.ax4z.com.
 
-ci.qa			IN CNAME k1a.php.net.
 lxr			IN CNAME main.php.net.
 gcov			IN CNAME main.php.net.
 
@@ -85,9 +84,7 @@ news			IN CNAME qa.php.net.
 
 news-web-origin	IN CNAME news
 news-web		IN CNAME news--web-php-net.ax4z.com.
-rsync-old		IN CNAME sc2.php.net. ; Remove when new rsync seems to work
 rsync			IN CNAME sc3.php.net.
-testfest		IN CNAME dp1a.php.net.
 
 ; Network Health Status Page
 status			IN CNAME main.php.net.
@@ -105,7 +102,6 @@ de.pear.php.net	IN CNAME euk3.php.net.
 
 ; Misc Other sites
 wiki.php.net.		IN A 45.55.181.207
-monitoring		IN CNAME bk2.php.net.
 
 php.net.		IN TXT "v=spf1 ip4:140.211.15.143 ip4:45.112.84.5 ip4:142.93.197.176 ip6:2604:a880:400:d0::1c74:1001 ip6:2a02:cb43:8000::1102 ip4:157.90.121.187 ip6:2a01:4f8:1c1e:416d::1 ~all"
 php.net.		IN TXT "_globalsign-domain-verification=YKIbqgUIt0x2vDkmdYS8TzqfqP6jyVp2fVVyJWyopw"
@@ -168,12 +164,6 @@ php-jump4		IN AAAA 2a02:cb43:8000::1104
 ; sinnerg.nl VMs
 svn2			IN A 91.199.167.250
 
-; PAIR
-pair1			IN A 76.75.200.58
-pair11			IN A 76.75.200.61
-pb1			IN A 76.75.200.58
-pb11    	        IN A 76.75.200.61
-
 ; OS Groups
 windows		IN A 83.137.149.15
 windows		IN AAAA 2a01:1b0:7999:419::7
@@ -181,34 +171,11 @@ windows			IN	TYPE257	\# 22 000569737375656C657473656E63727970742E6F7267
 windows			IN	TYPE257	\# 12 0009697373756577696C643B
 
 ; Server Central/Deft, used for rsync. (contact: systems, or derick)
-sc2			IN A 50.31.206.50
 sc3			IN A 50.31.206.54
-
-; PPC testing box, hosted by Dedipower
-dp1			IN A 89.151.87.82
-dp1a			IN A 89.151.87.83
-dp2     		IN A 89.151.87.86 ; for buildbot testing
-
-; OmniTI (contact: Wez or George)
-oti1   			IN A 8.8.38.133
-oti2   			IN A 8.8.38.129
 
 ; eUKhost LTD. (contact Philip)
 euk2			IN A 109.203.109.170
 euk3			IN A 109.203.101.62
-
-; Dan's (maybe temp box, for now, replacement for micfo1)
-sph1			IN A 108.163.197.98
-
-; Bauer + Kirch GmbH (contact mj)
-bk2			IN A 157.90.121.187
-
-; Sponsored by krystal.co.uk (contact danbrown)
-k1			IN A 77.72.6.42
-k1a			IN A 77.72.6.43
-k1b			IN A 77.72.6.44
-k1c			IN A 77.72.6.45
-k1d			IN A 77.72.6.46
 
 ; DigitalOcean
 museum-origin		IN A 104.236.41.219
@@ -234,10 +201,6 @@ localhost		IN A 127.0.0.1
 mx1.tests.php.net.	IN MX 10 127.0.0.1.
 mx2.tests.php.net.	IN MX 10 10.0.0.10.
 mx2.tests.php.net.	IN MX 20 10.0.0.20.
-
-; prototype website for new design (contact: marandall@php.net)
-prototype		IN CNAME php-web.markrandall.uk.
-prototype-meta		IN CNAME php-meta.markrandall.uk.
 
 ; php.net.		IN CAA	0 issue "gandi.net"
 ; php.net.		IN CAA	0 iodef "mailto:systems@php.net"
