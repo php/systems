@@ -38,7 +38,7 @@ $GIT_FETCH && $GIT_RESET;
 (cd shared && $GIT_FETCH && $GIT_RESET)
 
 # Other stuffs
-for i in systems doc-editor php-shared php-rmtools talks talks/presentations php-gtk-doc peclweb; do
+for i in systems doc-editor php-shared talks talks/presentations php-gtk-doc peclweb; do
     cd /local/mirrors/$i
     $GIT_FETCH && $GIT_RESET;
 done
