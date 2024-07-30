@@ -188,8 +188,7 @@ main		       IN A 142.93.197.176
 		       IN AAAA 2604:a880:400:d0::1c74:1001
 newpear              IN A 157.230.57.99
                      IN AAAA 2604:a880:400:d1::a64:c001
-analytics		IN A 167.71.71.110
-			IN AAAA 2a03:b0c0:2:d0::e8c:7001
+analytics		IN A 167.71.2.31
 
 ; Misc stuff
 localhost		IN A 127.0.0.1
