@@ -99,6 +99,7 @@ de.pear.php.net	IN CNAME euk3.php.net.
 
 ; Misc Other sites
 wiki.php.net.		IN A 45.55.181.207
+monitoring		IN CNAME bk2.php.net.
 
 php.net.		IN TXT "v=spf1 ip4:140.211.15.143 ip4:45.112.84.5 ip4:142.93.197.176 ip6:2604:a880:400:d0::1c74:1001 ip6:2a02:cb43:8000::1102 ip4:157.90.121.187 ip6:2a01:4f8:1c1e:416d::1 ~all"
 php.net.		IN TXT "_globalsign-domain-verification=YKIbqgUIt0x2vDkmdYS8TzqfqP6jyVp2fVVyJWyopw"
@@ -173,6 +174,9 @@ sc3			IN A 50.31.206.54
 ; eUKhost LTD. (contact Philip)
 euk2			IN A 109.203.109.170
 euk3			IN A 109.203.101.62
+
+; Bauer + Kirch GmbH (contact mj)
+bk2			IN A 157.90.121.187
 
 ; DigitalOcean
 museum-origin		IN A 104.236.41.219
