@@ -1,0 +1,34 @@
+#
+# This only changes defaults or makes explicit things we really count on
+#
+# We assume 3.6-era defaults, see http://www.postfix.org/COMPATIBILITY_README.html
+compatibility_level = 3.6
+
+# no need to 'biff' users when mail is delivered
+biff = no
+
+# TLS parameters
+smtpd_tls_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
+smtpd_tls_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
+smtpd_tls_security_level=may
+smtp_tls_CApath=/etc/ssl/certs
+smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
+
+# Just /etc/aliases, no NIS
+alias_maps = hash:/etc/aliases
+
+# Our origin and destinations we accept
+myorigin = php.net
+mydestination = $myhostname, lists.php.net, localhost
+
+# We relay everything going out through php-smtp4-ip4.php.net
+relayhost = php-smtp4-ip4.php.net
+
+# We only really trust localhost
+mynetworks = 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128
+
+# IMPORTANT, this is what mlmmj expects for things like +subscribe
+recipient_delimiter = +
+
+# This is smaller than default, not sure why
+mailbox_size_limit = 10240000
