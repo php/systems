@@ -1,0 +1,14 @@
+# crontab for root
+
+# m h  dom mon dow   command
+#
+# pull in new /local/systems
+1 * * * * /local/systems/update-systems 2&1> /dev/null
+# update the qa.php.net website contents
+*/5 * * * * /local/systems/update-qaweb 2&1> /dev/null
+# update the news-web.php.net website contents
+*/5 * * * * /local/systems/update-newsweb 2&1> /dev/null
+# renew the SSL certificate(s)
+20 2 * * 2 /usr/bin/certbot renew
+# update the colobus archives for all groups
+*/5 * * * * cd /local/colobus && ./colobus-archive -a 2&1> /dev/null
