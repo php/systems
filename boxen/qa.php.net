@@ -1,0 +1,11 @@
+# $Id$
+
+# Service configuration for qa.php.net
+
+export CONTINENT="us"
+
+MINUTELY="update-colobus-archive"
+HOURLY="update-systems update-qaweb update-newsweb"
+DAILY="update-time"
+WEEKLY=""
+MONTHLY="update-letsencrypt"
