@@ -24,10 +24,6 @@ www                  300 IN CNAME www-php-net.ax4z.com.
 ; TODO need to identify and set up shared-origin
 shared               IN CNAME shared-php-net.ax4z.com.
 
-; old aliases; they just bounce to www.php.net now
-secure			IN CNAME secure-php-net.ax4z.com.
-static			IN CNAME static-php-net.ax4z.com.
-
 ; Services
 
 ; bugs database, mostly read-only now
@@ -63,9 +59,6 @@ conf			IN CNAME talks-origin.php.net.
 conf2			IN CNAME talks-origin.php.net.
 pres			IN CNAME talks-origin.php.net.
 pres2			IN CNAME talks-origin.php.net.
-
-lxr			IN CNAME main.php.net.
-gcov			IN CNAME main.php.net.
 
 git			IN CNAME php-git2.php.net.
 
@@ -103,6 +96,16 @@ de.pear.php.net	IN CNAME euk3.php.net.
 ; Misc Other sites
 wiki.php.net.		IN A 45.55.181.207
 monitoring		IN CNAME bk2.php.net.
+
+;; Old hostnames that just get redirected
+
+; https://heap.space
+lxr			IN CNAME main.php.net.
+; https://app.codecov.io/gh/php/php-src
+gcov			IN CNAME main.php.net.
+; these redirect to www.php.net
+secure			IN CNAME secure-php-net.ax4z.com.
+static			IN CNAME static-php-net.ax4z.com.
 
 php.net.		IN TXT "v=spf1 ip4:140.211.15.143 ip4:45.112.84.5 ip4:142.93.197.176 ip6:2604:a880:400:d0::1c74:1001 ip6:2a02:cb43:8000::1102 ip4:157.90.121.187 ip6:2a01:4f8:1c1e:416d::1 ~all"
 php.net.		IN TXT "_globalsign-domain-verification=YKIbqgUIt0x2vDkmdYS8TzqfqP6jyVp2fVVyJWyopw"
