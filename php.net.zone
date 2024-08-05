@@ -25,6 +25,11 @@ $ORIGIN php.net.
 ; (see the 'Physical boxen' section below), ${SERVICE} should be a CNAME to
 ; a Myra hostname that pulls from that origin.
 
+; analytics - Matomo for collecting stats on php.net properties
+; analytics-origin is name of host, see Digital Ocean section
+; TODO protect with Myra
+analytics		IN CNAME analytics-origin.php.net.
+
 ; bugs database, mostly read-only now
 ; bugs-origin is name of host, see Digital Ocean section
 ; TODO protect with Myra
@@ -34,6 +39,11 @@ bugs			IN CNAME bugs-origin.php.net.
 doc-origin		IN CNAME euk2.php.net.
 ; TODO protect with Myra
 doc			IN CNAME doc-origin.php.net.
+
+; downloads -- used by release managers?
+; downloads-origin is name of host, see Digital Ocean section
+; TODO protect with Myra?
+downloads		IN CNAME downloads-origin.php.net.
 
 ; TODO protect with Myra? still being used?
 git			IN CNAME php-git2.php.net.
@@ -236,7 +246,7 @@ museum-origin		IN A 104.236.41.219
 pecl-origin		IN A 104.236.228.160
 qa		       IN A 104.236.36.140
 		       IN AAAA 2604:a880:800:10::2d6:2001
-downloads	       IN A 104.236.32.144
+downloads-origin	IN A 104.236.32.144
 		       IN AAAA 2604:a880:800:10::2dd:1
 idle		       IN A 104.236.32.173
 		       IN AAAA 2604:a880:800:10::2dd:1001
@@ -244,7 +254,8 @@ main-origin	       IN A 142.93.197.176
 		       IN AAAA 2604:a880:400:d0::1c74:1001
 newpear              IN A 157.230.57.99
                      IN AAAA 2604:a880:400:d1::a64:c001
-analytics		IN A 167.71.2.31
+; TODO does analytics-origin have IPv6?
+analytics-origin	IN A 167.71.2.31
 ; TODO does wiki-origin have IPv6?
 wiki-origin		IN A 45.55.181.207
 
