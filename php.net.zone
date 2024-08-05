@@ -31,6 +31,11 @@ static			IN CNAME static-php-net.ax4z.com.
 ; TODO protect with Myra
 bugs			IN CNAME bugs-origin.php.net.
 
+; gtk project is abandoned, but old site lives on
+gtk-origin		IN CNAME svn2.php.net.
+; TODO protect with Myra
+gtk			IN CNAME gtk-origin.php.net.
+
 ; Jump boxes for login to .php.net servers
 americas.jump		IN CNAME php-jump4.php.net.
 europe.jump		IN CNAME php-jump2.php.net.
@@ -55,7 +60,6 @@ conf2			IN CNAME talks-origin.php.net.
 pres			IN CNAME talks-origin.php.net.
 pres2			IN CNAME talks-origin.php.net.
 
-gtk			IN CNAME svn2.php.net.
 shared               IN CNAME shared-php-net.ax4z.com.
 
 lxr			IN CNAME main.php.net.
