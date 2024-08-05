@@ -40,12 +40,14 @@ americas.rsync	IN CNAME rsync.php.net.
 asia.rsync		IN CNAME rsync.php.net.
 europe.rsync		IN CNAME rsync.php.streamservice.nl.
 
-
-conf			IN CNAME svn2.php.net.
-conf2			IN CNAME svn2.php.net.
-talks			IN CNAME svn2.php.net.
-pres			IN CNAME svn2.php.net.
-pres2			IN CNAME svn2.php.net.
+; talks is our preferred name now, old aliases should redirect
+talks-origin		IN CNAME svn2.php.net.
+; TODO protect with Myra
+talks			IN CNAME talks-origin.php.net.
+conf			IN CNAME talks-origin.php.net.
+conf2			IN CNAME talks-origin.php.net.
+pres			IN CNAME talks-origin.php.net.
+pres2			IN CNAME talks-origin.php.net.
 
 svn-origin		IN CNAME svn2.php.net.
 svn			IN CNAME svn-php-net.ax4z.com.
