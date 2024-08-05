@@ -20,6 +20,10 @@ $ORIGIN php.net.
 ; ax4z is a shortcut domain for CNAMEs by myracloud -- noc@myracloud.com
 www                  300 IN CNAME www-php-net.ax4z.com.
 
+; shared is important, most php.net sites rely on it for styles, etc.
+; TODO need to identify and set up shared-origin
+shared               IN CNAME shared-php-net.ax4z.com.
+
 ; old aliases; they just bounce to www.php.net now
 secure			IN CNAME secure-php-net.ax4z.com.
 static			IN CNAME static-php-net.ax4z.com.
@@ -59,8 +63,6 @@ conf			IN CNAME talks-origin.php.net.
 conf2			IN CNAME talks-origin.php.net.
 pres			IN CNAME talks-origin.php.net.
 pres2			IN CNAME talks-origin.php.net.
-
-shared               IN CNAME shared-php-net.ax4z.com.
 
 lxr			IN CNAME main.php.net.
 gcov			IN CNAME main.php.net.
