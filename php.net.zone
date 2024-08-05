@@ -20,13 +20,11 @@ $ORIGIN php.net.
 ; ax4z is a shortcut domain for CNAMEs by myracloud -- noc@myracloud.com
 www                  300 IN CNAME www-php-net.ax4z.com.
 
-; https for www
+; old aliases; they just bounce to www.php.net now
 secure			IN CNAME secure-php-net.ax4z.com.
+static			IN CNAME static-php-net.ax4z.com.
 
 ; Services
-
-; is static still being used?
-static			IN CNAME static-php-net.ax4z.com.
 
 bugs			IN A	  206.189.200.141
 bugs		       IN AAAA  2604:a880:400:d1::24b:3001
