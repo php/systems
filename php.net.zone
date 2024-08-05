@@ -26,8 +26,10 @@ static			IN CNAME static-php-net.ax4z.com.
 
 ; Services
 
-bugs			IN A	  206.189.200.141
-bugs		       IN AAAA  2604:a880:400:d1::24b:3001
+; bugs database, mostly read-only now
+; bugs-origin is name of host, see Digital Ocean section
+; TODO protect with Myra
+bugs			IN CNAME bugs-origin.php.net.
 
 ; Jump boxes for login to .php.net servers
 americas.jump		IN CNAME php-jump4.php.net.
@@ -170,6 +172,8 @@ euk3			IN A 109.203.101.62
 bk2			IN A 157.90.121.187
 
 ; DigitalOcean
+bugs-origin		IN A 206.189.200.141
+			IN AAAA 2604:a880:400:d1::24b:3001
 museum-origin		IN A 104.236.41.219
 		       IN AAAA 2604:a880:800:10::2ce:1
 museum			IN CNAME museum-php-net.ax4z.com.
