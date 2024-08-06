@@ -1,4 +1,8 @@
 #
+# Edit this file in https://github.com/php/systems repo!
+#
+
+#
 # This only changes defaults or makes explicit things we really count on
 #
 # We assume 3.6-era defaults, see http://www.postfix.org/COMPATIBILITY_README.html
