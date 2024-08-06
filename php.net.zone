@@ -45,9 +45,6 @@ doc			IN CNAME doc-origin.php.net.
 ; TODO protect with Myra?
 downloads		IN CNAME downloads-origin.php.net.
 
-; TODO protect with Myra? still being used?
-git			IN CNAME php-git2.php.net.
-
 ; gtk project is abandoned, but old site lives on
 gtk-origin		IN CNAME svn2.php.net.
 ; TODO protect with Myra
@@ -189,11 +186,6 @@ _acme-challenge.php.net.	IN CNAME _acme--challenge-php-net.ax4z.com.
 ; Myracloud, contact sascha@schumann.net and noc@myracloud.com
 php-web4		IN A 45.112.84.4
 php-web4		IN AAAA 2a02:cb43:8000::1101
-
-php-git2		IN A 208.43.231.11
-php-git2		IN AAAA 2a02:cb41::5
-php-git4		IN A 45.112.84.6
-php-git4		IN AAAA 2a02:cb43:8000::1103
 
 php-smtp4		IN A 45.112.84.5
 php-smtp4-ip4		IN A 45.112.84.5
