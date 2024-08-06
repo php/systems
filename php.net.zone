@@ -116,12 +116,6 @@ status-origin		IN CNAME main.php.net.
 ; TODO protect with Myra
 status			IN CNAME status-origin.php.net.
 
-; svn is not really used any longer -- old version control
-svn-origin		IN CNAME svn2.php.net.
-svn			IN CNAME svn-php-net.ax4z.com.
-; TODO protect with Myra or retire
-websvn			IN CNAME svn2.php.net.
-
 ; talks is our preferred name now, old aliases should redirect
 talks-origin		IN CNAME svn2.php.net.
 ; TODO protect with Myra
