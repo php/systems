@@ -1,2 +1,0 @@
-#! /bin/sh
-./configure  --prefix=/local/squid --enable-underscores --disable-wccp --disable-ident-lookups --enable-snmp

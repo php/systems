@@ -1,7 +1,0 @@
-CXX=gcc \
-CXXFLAGS="-O2 -march=pentiumpro -felide-constructors -fno-exceptions -fno-rtti" \
-CFLAGS="-O2 -march=i686" \
-./configure \
---prefix=/usr/local/mysql \
---without-perl \
---without-bench

@@ -1,9 +1,0 @@
-# $Id$
-
-# Service configuration for osu1.php.net
-
-MINUTELY=""
-HOURLY="maintain-master"
-DAILY="backup-thisbox backup-master backup-ecelerity maintain-ecelerity prune-backups"
-WEEKLY="maintain-master"
-
