@@ -6,6 +6,6 @@ export CONTINENT="us"
 
 MINUTELY="update-colobus-archive"
 HOURLY="update-systems update-qaweb update-newsweb"
-DAILY="update-time"
+DAILY="update-time backup-thisbox prune-backups"
 WEEKLY=""
 MONTHLY="update-letsencrypt"

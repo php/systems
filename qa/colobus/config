@@ -20,7 +20,7 @@ disallow => ihave,xindex
 # dsn for connecting to database
 dsn => DBI:MariaDB:database=colobus;host=127.0.0.1
 # dbuser and dbpass are defined in this include file
-include => /local/secrets/colobus.config
+include => /local/this-box/colobus.config
 
 # newsgroups
 #
