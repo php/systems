@@ -1,0 +1,11 @@
+# $Id$
+
+# Service configuration for bk2
+
+export CONTINENT="eu"
+
+MINUTELY=""
+HOURLY="update-systems"
+DAILY="update-time backup-thisbox prune-backups"
+WEEKLY=""
+MONTHLY=""
