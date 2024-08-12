@@ -19,6 +19,6 @@ crontab -u root -l > $backup/crontab
 
 echo -n "Putting new configuration into place..."
 
-crontab -u root < /local/systems/cron-box-crontab
+crontab -u root - < /local/systems/cron-box-crontab
 
 echo "done."
