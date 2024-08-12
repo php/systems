@@ -44,7 +44,7 @@ crontab -u root - < /local/systems/cron-box-crontab
 
 # apache2
 rm -f /etc/apache2/sites-enabled/*.conf
-ln -s /etc/apache2/sites-enabled /local/systems/qa/apache/*.conf
+ln -s -t /etc/apache2/sites-enabled /local/systems/qa/apache/*.conf
 service apache2 reload
 
 # colobus
