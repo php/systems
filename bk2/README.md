@@ -10,6 +10,7 @@
 ## Access
  * mj
  * jimw
+ * derick
 
 ## Specs
  * Debian GNU/Linux 12 (bookworm)
