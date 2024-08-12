@@ -40,7 +40,7 @@ fi
 
 echo -n "Putting new configuration into place..."
 
-crontab -u root < /local/systems/cron-box-crontab
+crontab -u root - < /local/systems/cron-box-crontab
 
 # apache2
 rm -f /etc/apache2/sites-enabled/*.conf
