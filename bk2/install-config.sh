@@ -13,6 +13,8 @@ backup=/tmp/systems-$ts
 
 echo -n "Backing up existing files to $backup..."
 
+mkdir -p $backup
+
 crontab -u root -l > $backup/crontab
 
 echo -n "Putting new configuration into place..."
