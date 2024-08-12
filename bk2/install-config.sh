@@ -25,7 +25,7 @@ crontab -u root - < /local/systems/cron-box-crontab
 
 # apache2
 rm -f /etc/apache2/sites-enabled/*.conf
-ln -s /etc/apache2/sites-enabled /local/systems/bk2/apache2/*.conf
+ln -s -t /etc/apache2/sites-enabled /local/systems/bk2/apache2/*.conf
 service apache2 reload
 
 echo "done."
