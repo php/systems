@@ -17,6 +17,8 @@ mkdir -p $backup
 
 crontab -u root -l > $backup/crontab
 
+echo "done."
+
 echo -n "Putting new configuration into place..."
 
 crontab -u root - < /local/systems/cron-box-crontab
