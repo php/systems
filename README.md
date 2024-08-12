@@ -41,4 +41,4 @@ Secrets, tokens, and other configuration may be stored in `/local/this-box` on
 the individual boxen, in which case the `backup-thisbox` task should be
 included in the daily `cron-box` tasks for that boxen.
 
-[^wip]: Once they've all be configured, which is a work in progress right now.
+[^wip]: Once they've all been configured, which is a work in progress right now.
