@@ -27,27 +27,22 @@ $ORIGIN php.net.
 
 ; analytics - Matomo for collecting stats on php.net properties
 ; analytics-origin is name of host, see Digital Ocean section
-; TODO protect with Myra
 analytics		IN CNAME analytics-origin.php.net.
 
 ; bugs database, mostly read-only now
 ; bugs-origin is name of host, see Digital Ocean section
-; TODO protect with Myra
 bugs			IN CNAME bugs-origin.php.net.
 
 ; doc.php.net, managing the documentation project
 doc-origin		IN CNAME euk2.php.net.
-; TODO protect with Myra
 doc			IN CNAME doc-origin.php.net.
 
 ; downloads -- used by release managers?
 ; downloads-origin is name of host, see Digital Ocean section
-; TODO protect with Myra?
 downloads		IN CNAME downloads-origin.php.net.
 
 ; gtk project is abandoned, but old site lives on
 gtk-origin		IN CNAME svn2.php.net.
-; TODO protect with Myra
 gtk			IN CNAME gtk-origin.php.net.
 
 ; Jump boxes for login to .php.net servers
@@ -56,12 +51,10 @@ europe.jump		IN CNAME php-jump2.php.net.
 
 ; mailing lists, MX is configured down below
 lists-origin		IN CNAME qa.php.net.
-; TODO protect with Myra
 lists			IN CNAME lists-origin.php.net.
 
 ; main holds backend systems for user notes, @php.net user management
 ; main-origin is name of host, see Digital Ocean section
-; TODO protect with Myra
 main			IN CNAME main-origin.php.net.
 ; these two names can probably be retired
 mail 			IN CNAME main.php.net.
@@ -69,7 +62,6 @@ master			IN CNAME main.php.net.
 
 ; monitoring host for the php.net infrastructure
 monitoring-origin	IN CNAME bk2.php.net.
-; TODO protect with Myra
 monitoring		IN CNAME monitoring-origin.php.net.
 
 ; museum is a static archive of all releases
@@ -78,18 +70,16 @@ museum			IN CNAME museum-php-net.ax4z.com.
 
 ; NNTP server, do NOT switch to CDN
 news			IN CNAME qa.php.net.
-; HTTP view of mailing lists (TODO phase out, just use lists.php.net?)
+; HTTP view of mailing lists
 news-web-origin	IN CNAME qa.php.net.
 news-web		IN CNAME news--web-php-net.ax4z.com.
 
 ; PEAR
 pear-origin		IN CNAME euk3.php.net.
-; TODO protect with Myra
 pear	 		IN CNAME pear-origin.php.net.
 
 ; PECL
 ; pecl-origin is name of host, see Digital Ocean section
-; TODO protect with Myra
 pecl			IN CNAME pecl-origin.php.net.
 
 ; people.php.net user directory
@@ -105,17 +95,14 @@ asia.rsync		IN CNAME rsync.php.net.
 europe.rsync		IN CNAME rsync.php.streamservice.nl.
 
 ; shared is important, most php.net sites rely on it for styles, etc.
-; TODO need to identify and set up shared-origin
 shared               IN CNAME shared-php-net.ax4z.com.
 
 ; Network Health Status Page
 status-origin		IN CNAME main.php.net.
-; TODO protect with Myra
 status			IN CNAME status-origin.php.net.
 
 ; talks is our preferred name now, old aliases should redirect
 talks-origin		IN CNAME svn2.php.net.
-; TODO protect with Myra
 talks			IN CNAME talks-origin.php.net.
 conf			IN CNAME talks-origin.php.net.
 conf2			IN CNAME talks-origin.php.net.
@@ -124,7 +111,6 @@ pres2			IN CNAME talks-origin.php.net.
 
 ; wiki is used for project documentation and RFCs
 ; wiki-origin is name of host, see Digital Ocean section
-; TODO protect with Myra
 wiki			IN CNAME wiki-origin.php.net.
 
 ; windows.php.net is configured entirely as a physical host below
@@ -170,11 +156,10 @@ mail._domainkey.lists.php.net.	IN TXT ( "v=DKIM1; h=sha256; k=rsa; s=email; "
 
 ;------------ Text records for external services
 
-; GlobalSign domain verification -- TODO still necessary?
+; GlobalSign domain verification
 php.net.		IN TXT "_globalsign-domain-verification=YKIbqgUIt0x2vDkmdYS8TzqfqP6jyVp2fVVyJWyopw"
 
 ; Google site verification
-; TODO document who has access via this
 php.net.		IN TXT "google-site-verification=R0anXzbL507wmRx5iv1S-5jN55RYVo2UYIqFP2L_k1g"
 php.net.		IN TXT "google-site-verification=kEZx29YwmdFCUifeR9miIOp-x_gvEpo_T_o9UzbilLA"
 
@@ -225,7 +210,6 @@ bugs-origin		IN A 206.189.200.141
 			IN AAAA 2604:a880:400:d1::24b:3001
 museum-origin		IN A 104.236.41.219
 		       IN AAAA 2604:a880:800:10::2ce:1
-; TODO does pecl-origin have IPv6?
 pecl-origin		IN A 104.236.228.160
 qa		       IN A 104.236.36.140
 		       IN AAAA 2604:a880:800:10::2d6:2001
@@ -237,9 +221,7 @@ main-origin	       IN A 142.93.197.176
 		       IN AAAA 2604:a880:400:d0::1c74:1001
 newpear              IN A 157.230.57.99
                      IN AAAA 2604:a880:400:d1::a64:c001
-; TODO does analytics-origin have IPv6?
 analytics-origin	IN A 167.71.2.31
-; TODO does wiki-origin have IPv6?
 wiki-origin		IN A 45.55.181.207
 
 ; Misc stuff
