@@ -17,94 +17,125 @@ php.net.		IN SOA ns1.php.net. admin.easydns.com. (
 		IN NS   dns4.easydns.info.
 $ORIGIN php.net.
 
-
-; www.php.net is handled by GeoDNS
-;www			IN NS   geo1.easydns.COM.
-;www			IN NS   geo2.easydns.NET.
-;www			IN NS   geo3.easydns.ORG.
-
 ; ax4z is a shortcut domain for CNAMEs by myracloud -- noc@myracloud.com
-www                  300 IN CNAME www-php-net.ax4z.com.
 
-; https for www
-secure			IN CNAME secure-php-net.ax4z.com.
+;------------ Services - these are alphabetical by the primary name of the service.
 
-; Services
+; Each service should have ${SERVICE}-origin pointing to a host machine
+; (see the 'Physical boxen' section below), ${SERVICE} should be a CNAME to
+; a Myra hostname that pulls from that origin.
 
-; is static still being used?
-static			IN CNAME static-php-net.ax4z.com.
+; analytics - Matomo for collecting stats on php.net properties
+; analytics-origin is name of host, see Digital Ocean section
+analytics		IN CNAME analytics-origin.php.net.
 
-bugs			IN A	  206.189.200.141
-bugs		       IN AAAA  2604:a880:400:d1::24b:3001
+; bugs database, mostly read-only now
+; bugs-origin is name of host, see Digital Ocean section
+bugs			IN CNAME bugs-origin.php.net.
+
+; doc.php.net, managing the documentation project
+doc-origin		IN CNAME euk2.php.net.
+doc			IN CNAME doc-origin.php.net.
+
+; downloads -- used by release managers?
+; downloads-origin is name of host, see Digital Ocean section
+downloads		IN CNAME downloads-origin.php.net.
+
+; gtk project is abandoned, but old site lives on
+gtk-origin		IN CNAME svn2.php.net.
+gtk			IN CNAME gtk-origin.php.net.
 
 ; Jump boxes for login to .php.net servers
 americas.jump		IN CNAME php-jump4.php.net.
 europe.jump		IN CNAME php-jump2.php.net.
 
-; Geodispersion of rsync; regional rsync nodes (RRNs)
-americas.rsync	IN CNAME rsync.php.net.
-asia.rsync		IN CNAME rsync.php.net.
-europe.rsync		IN CNAME rsync.php.streamservice.nl.
+; mailing lists, MX is configured down below
+lists-origin		IN CNAME qa.php.net.
+lists			IN CNAME lists-origin.php.net.
 
+; main holds backend systems for user notes, @php.net user management
+; main-origin is name of host, see Digital Ocean section
+main			IN CNAME main-origin.php.net.
+; these two names can probably be retired
+mail 			IN CNAME main.php.net.
+master			IN CNAME main.php.net.
 
-conf			IN CNAME svn2.php.net.
-conf2			IN CNAME svn2.php.net.
-talks			IN CNAME svn2.php.net.
-pres			IN CNAME svn2.php.net.
-pres2			IN CNAME svn2.php.net.
+; monitoring host for the php.net infrastructure
+monitoring-origin	IN CNAME bk2.php.net.
+monitoring		IN CNAME monitoring-origin.php.net.
 
-svn-origin		IN CNAME svn2.php.net.
-svn			IN CNAME svn-php-net.ax4z.com.
-websvn			IN CNAME svn2.php.net.
+; museum is a static archive of all releases
+; museum-origin is name of host, see Digital Ocean section
+museum			IN CNAME museum-php-net.ax4z.com.
 
-gtk			IN CNAME svn2.php.net.
-;shared			IN CNAME downloads.php.net.
-shared               IN CNAME shared-php-net.ax4z.com.
+; NNTP server, do NOT switch to CDN
+news			IN CNAME qa.php.net.
+; HTTP view of mailing lists
+news-web-origin	IN CNAME qa.php.net.
+news-web		IN CNAME news--web-php-net.ax4z.com.
 
-lxr			IN CNAME main.php.net.
-gcov			IN CNAME main.php.net.
+; PEAR
+pear-origin		IN CNAME euk3.php.net.
+pear	 		IN CNAME pear-origin.php.net.
 
-git			IN CNAME php-git2.php.net.
+; PECL
+; pecl-origin is name of host, see Digital Ocean section
+pecl			IN CNAME pecl-origin.php.net.
 
 ; people.php.net user directory
 people-origin		IN CNAME svn2.php.net.
 people			IN CNAME people-php-net.ax4z.com.
 
-; phpdoc stuff
-doc-origin		IN CNAME euk2.php.net.
-doc			IN CNAME euk2.php.net.
-
-mail 			IN CNAME main.php.net.
-master			IN CNAME main.php.net.
-; NNTP server, do NOT switch to CDN
-news			IN CNAME qa.php.net.
-
-news-web-origin	IN CNAME news
-news-web		IN CNAME news--web-php-net.ax4z.com.
+; rsync is used for distributing lots of things
+; not behind Myra because only accessed via rsync
 rsync			IN CNAME sc3.php.net.
+; Geodispersion of rsync; regional rsync nodes (RRNs)
+americas.rsync	IN CNAME rsync.php.net.
+asia.rsync		IN CNAME rsync.php.net.
+europe.rsync		IN CNAME rsync.php.streamservice.nl.
+
+; shared is important, most php.net sites rely on it for styles, etc.
+shared               IN CNAME shared-php-net.ax4z.com.
 
 ; Network Health Status Page
-status			IN CNAME main.php.net.
+status-origin		IN CNAME main.php.net.
+status			IN CNAME status-origin.php.net.
 
-pear			IN CNAME euk3.php.net.
-pear2			IN CNAME euk3.php.net.
-pyrus			IN CNAME euk3.php.net.
+; talks is our preferred name now, old aliases should redirect
+talks-origin		IN CNAME svn2.php.net.
+talks			IN CNAME talks-origin.php.net.
+conf			IN CNAME talks-origin.php.net.
+conf2			IN CNAME talks-origin.php.net.
+pres			IN CNAME talks-origin.php.net.
+pres2			IN CNAME talks-origin.php.net.
 
-pecl			IN A 104.236.228.160
+; wiki is used for project documentation and RFCs
+; wiki-origin is name of host, see Digital Ocean section
+wiki			IN CNAME wiki-origin.php.net.
 
-; Misc. PEAR sites
-blog.pear 		IN CNAME euk3.php.net.
-download.pear       	IN CNAME euk3.php.net.
-de.pear.php.net	IN CNAME euk3.php.net.
+; windows.php.net is configured entirely as a physical host below
 
-; Misc Other sites
-wiki.php.net.		IN A 45.55.181.207
-monitoring		IN CNAME bk2.php.net.
+; www is kind of a big deal
+www-origin		IN CNAME php-web4.php.net.
+www                  300 IN CNAME www-php-net.ax4z.com.
+
+;------------ Old hostnames that just get redirected (or retired?)
+
+; https://heap.space
+lxr			IN CNAME main.php.net.
+; https://app.codecov.io/gh/php/php-src
+gcov			IN CNAME main.php.net.
+; these redirect to www.php.net - could just use STAR-php-net.ax4z.com?
+secure			IN CNAME secure-php-net.ax4z.com.
+static			IN CNAME static-php-net.ax4z.com.
+
+;------------ MX (mail) records
+
+; MX and related entries for php.net
+@			30 IN MX 0 php-smtp4-ip4.php.net.
+mailout		IN CNAME php-smtp4.php.net.
 
 php.net.		IN TXT "v=spf1 ip4:140.211.15.143 ip4:45.112.84.5 ip4:142.93.197.176 ip6:2604:a880:400:d0::1c74:1001 ip6:2a02:cb43:8000::1102 ip4:157.90.121.187 ip6:2a01:4f8:1c1e:416d::1 ~all"
-php.net.		IN TXT "_globalsign-domain-verification=YKIbqgUIt0x2vDkmdYS8TzqfqP6jyVp2fVVyJWyopw"
-php.net.		IN TXT "google-site-verification=R0anXzbL507wmRx5iv1S-5jN55RYVo2UYIqFP2L_k1g"
-php.net.		IN TXT "google-site-verification=kEZx29YwmdFCUifeR9miIOp-x_gvEpo_T_o9UzbilLA"
 
 ; DKIM key mail for php.net
 mx._domainkey.php.net.	IN TXT "t=y; g=; k=rsa; p=MHwwDQYJKoZIhvcNAQEBBQADawAwaAJhANg8QYJB/6O2nGfNk1td5uRl1MMqETEAv/Jyv3wGPpoW7drSEVa7RsuZBgut/koWyJIpe0TWQRSSk+N6E0lNxkMwZVBSDU+HOpeO4+khXWtsq9Mv9BsAbPbf8VrgP5VsLQIDAQAB"
@@ -113,10 +144,7 @@ mail._domainkey.php.net.	IN TXT ( "v=DKIM1; h=sha256; k=rsa; s=email; "
 	"nZWwKg3/SJR1067tT4VuMw7fLJCMy1exDK2HMjWTUVMsJDJh/cv28M86GwkKDZjiHpBKXXVLeJeti9Iua/seYFt0Id7/A3wtu7IPHHTFLMqb4b1j5djWpNwwtcRTVPFN24CI9wYwIDAQAB" )
 _dmarc.php.net.		IN TXT "v=DMARC1; p=none; rua=mailto:dmarc@php.net;"
 
-
-; lists operated from qa
-lists.php.net.		IN A 104.236.36.140
-lists.php.net.		IN AAAA 2604:a880:800:10::2d6:2001
+; MX and related entries for lists.php.net
 lists.php.net.		IN MX 0 php-smtp4-ip4.php.net.
 lists.php.net.		IN TXT "v=spf1 a mx ip4:45.112.84.5 ip6:2a02:cb43:8000::1102 ~all" ; ip4/6 of php-smtp4.php.net
 
@@ -126,10 +154,17 @@ mail._domainkey.lists.php.net.	IN TXT ( "v=DKIM1; h=sha256; k=rsa; s=email; "
 	"p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtwBTcZalhSYtt2cyx+XD9CnvcelfnkEthOe1wFFKg+6YAwoVazJysjYszOtAuNhBN3Uo2cpEUqDX0hx36hp0f92Xhcb8Mg4hkPEgDBWUnMjd3re23x85yD4VIQWt7lZGMYiVdfDYVPL/utYzVJ3HkMnhJW9CvTjaurKfE/dyeSeu1/BSSbe55y5k4axVdOYyJ/QEbqK5+C3Hmb"
 	"Ku4DtkNpOijhgL/9vRXPAznasXB1IEDvQ/sySBxtJ51HCLpteTBabQ4T5A8pRsphOjJYSoSQ3OwD9k2H1m2Whcu0GTC0J1PkPiOZENprOKdqMP3ej4b6eZB1lkxiYpRccWd1m9TQIDAQAB" )
 
+;------------ Text records for external services
+
+; GlobalSign domain verification
+php.net.		IN TXT "_globalsign-domain-verification=YKIbqgUIt0x2vDkmdYS8TzqfqP6jyVp2fVVyJWyopw"
+
+; Google site verification
+php.net.		IN TXT "google-site-verification=R0anXzbL507wmRx5iv1S-5jN55RYVo2UYIqFP2L_k1g"
+php.net.		IN TXT "google-site-verification=kEZx29YwmdFCUifeR9miIOp-x_gvEpo_T_o9UzbilLA"
 
 ; Let's Encrypt ACME challenge
 _acme-challenge.php.net.	IN CNAME _acme--challenge-php-net.ax4z.com.
-
 
 ;------------ Physical boxen
 
@@ -137,17 +172,9 @@ _acme-challenge.php.net.	IN CNAME _acme--challenge-php-net.ax4z.com.
 php-web4		IN A 45.112.84.4
 php-web4		IN AAAA 2a02:cb43:8000::1101
 
-php-git2		IN A 208.43.231.11
-php-git2		IN AAAA 2a02:cb41::5
-php-git4		IN A 45.112.84.6
-php-git4		IN AAAA 2a02:cb43:8000::1103
-
 php-smtp4		IN A 45.112.84.5
 php-smtp4-ip4		IN A 45.112.84.5
 php-smtp4		IN AAAA 2a02:cb43:8000::1102
-
-@			30 IN MX 0 php-smtp4-ip4.php.net.
-mailout		IN CNAME php-smtp4.php.net.
 
 ; Jump servers, contact sascha@schumann.net, noc@myracloud.com
 php-jump2		IN A 116.203.146.57
@@ -165,8 +192,8 @@ svn2			IN A 91.199.167.250
 ; OS Groups
 windows		IN A 83.137.149.15
 windows		IN AAAA 2a01:1b0:7999:419::7
-windows			IN	TYPE257	\# 22 000569737375656C657473656E63727970742E6F7267
-windows			IN	TYPE257	\# 12 0009697373756577696C643B
+windows		IN	TYPE257	\# 22 000569737375656C657473656E63727970742E6F7267
+windows		IN	TYPE257	\# 12 0009697373756577696C643B
 
 ; Server Central/Deft, used for rsync. (contact: systems, or derick)
 sc3			IN A 50.31.206.54
@@ -178,21 +205,26 @@ euk3			IN A 109.203.101.62
 ; Bauer + Kirch GmbH (contact mj)
 bk2			IN A 157.90.121.187
 
-; DigitalOcean
+; DigitalOcean - PHP Project (contact: systems or derick)
+bugs-origin		IN A 206.189.200.141
+			IN AAAA 2604:a880:400:d1::24b:3001
 museum-origin		IN A 104.236.41.219
 		       IN AAAA 2604:a880:800:10::2ce:1
-museum			IN CNAME museum-php-net.ax4z.com.
+pecl-origin		IN A 104.236.228.160
 qa		       IN A 104.236.36.140
 		       IN AAAA 2604:a880:800:10::2d6:2001
-downloads	       IN A 104.236.32.144
+downloads-origin	IN A 104.236.32.144
 		       IN AAAA 2604:a880:800:10::2dd:1
 idle		       IN A 104.236.32.173
 		       IN AAAA 2604:a880:800:10::2dd:1001
-main		       IN A 142.93.197.176
+main-origin	       IN A 142.93.197.176
 		       IN AAAA 2604:a880:400:d0::1c74:1001
+analytics-origin	IN A 167.71.2.31
+wiki-origin		IN A 45.55.181.207
+
+; DigitalOcean - Unknown
 newpear              IN A 157.230.57.99
                      IN AAAA 2604:a880:400:d1::a64:c001
-analytics		IN A 167.71.2.31
 
 ; Misc stuff
 localhost		IN A 127.0.0.1
@@ -202,14 +234,7 @@ mx1.tests.php.net.	IN MX 10 127.0.0.1.
 mx2.tests.php.net.	IN MX 10 10.0.0.10.
 mx2.tests.php.net.	IN MX 20 10.0.0.20.
 
-; php.net.		IN CAA	0 issue "gandi.net"
-; php.net.		IN CAA	0 iodef "mailto:systems@php.net"
-; remove lines below when newer BIND is used
-
-;php.net.		IN TYPE257	\# 16 0005697373756567616E64692E6E6574
-;php.net.		IN TYPE257	\# 29 0005696F6465666D61696C746F3A73797374656D73407068702E6E6574
-
-; mirrors
+; mirrors - these all just redirect to www.php.net now
 $TTL 3600 ; 1 hour
 am.php.net.  IN CNAME STAR-php-net.ax4z.com.
 am1.php.net. IN CNAME STAR-php-net.ax4z.com.
