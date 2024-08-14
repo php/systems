@@ -204,6 +204,7 @@ bugs-origin		IN A 206.189.200.141
 museum-origin		IN A 104.236.41.219
 		       IN AAAA 2604:a880:800:10::2ce:1
 pecl-origin		IN A 104.236.228.160
+			IN AAAA 2604:a880:800:10::621:6001
 qa		       IN A 104.236.36.140
 		       IN AAAA 2604:a880:800:10::2d6:2001
 downloads-origin	IN A 104.236.32.144
