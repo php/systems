@@ -205,7 +205,7 @@ euk3			IN A 109.203.101.62
 ; Bauer + Kirch GmbH (contact mj)
 bk2			IN A 157.90.121.187
 
-; DigitalOcean (contact: systems or derick)
+; DigitalOcean - PHP Project (contact: systems or derick)
 bugs-origin		IN A 206.189.200.141
 			IN AAAA 2604:a880:400:d1::24b:3001
 museum-origin		IN A 104.236.41.219
@@ -219,10 +219,12 @@ idle		       IN A 104.236.32.173
 		       IN AAAA 2604:a880:800:10::2dd:1001
 main-origin	       IN A 142.93.197.176
 		       IN AAAA 2604:a880:400:d0::1c74:1001
-newpear              IN A 157.230.57.99
-                     IN AAAA 2604:a880:400:d1::a64:c001
 analytics-origin	IN A 167.71.2.31
 wiki-origin		IN A 45.55.181.207
+
+; DigitalOcean - Unknown
+newpear              IN A 157.230.57.99
+                     IN AAAA 2604:a880:400:d1::a64:c001
 
 ; Misc stuff
 localhost		IN A 127.0.0.1
