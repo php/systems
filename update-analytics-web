@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# backup copy of config.ini.php
+DATE=`date "+%Y-%m-%d"`
+
+cp /var/www/analytics/www/config/config.ini.php /local/backup/config.ini.php-${DATE}
+
 rsync -aC --delete --delete-after --include "core" \
             rsync.php.net::php-analytics-web /var/www/analytics
 
