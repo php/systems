@@ -1,5 +1,5 @@
 #!/bin/sh
 
-rsync -aC --delete --delete-after \
+rsync -aC --delete --delete-after --include "core" \
             rsync.php.net::php-analytics-web /var/www/analytics
 chown -R www-data:www-data /var/www/analytics
