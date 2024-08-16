@@ -48,13 +48,13 @@ ln -s -t /etc/apache2/sites-enabled /local/systems/qa/apache/*.conf
 service apache2 reload
 
 # colobus
-rm -f /local/colobus/config; ln -s /local/colobus/config /local/systems/qa/colobus/config 
+rm -f /local/colobus/config; ln -s /local/systems/qa/colobus/config /local/colobus/config
 # doesn't need reload, gets loaded on the fly
 
 # postfix
 rm -f /etc/aliases /etc/postfix/main.cf
-ln -s /etc/aliases /local/systems/qa/postfix/aliases
-ln -s /etc/postfix /local/systems/qa/postfix/main.cf
+ln -s /local/systems/qa/postfix/aliases /etc/aliases
+ln -s /local/systems/qa/postfix/main.cf /etc/postfix
 newaliases
 service apache2 reload
 
