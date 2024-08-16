@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rsync -qavzC --timeout=600 --delete --delete-after --exclude=reports/db --exclude=pulls/config.php r
+sync.php.net::php-news-web /var/www/news.php.net
