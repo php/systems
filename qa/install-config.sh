@@ -44,7 +44,7 @@ crontab -u root - < /local/systems/cron-box-crontab
 
 # apache2
 rm -f /etc/apache2/sites-enabled/*.conf
-ln -s -t /etc/apache2/sites-enabled /local/systems/qa/apache/*.conf
+ln -s -t /etc/apache2/sites-enabled /local/systems/qa/apache2/*.conf
 service apache2 reload
 
 # colobus
@@ -56,6 +56,6 @@ rm -f /etc/aliases /etc/postfix/main.cf
 ln -s /local/systems/qa/postfix/aliases /etc/aliases
 ln -s /local/systems/qa/postfix/main.cf /etc/postfix
 newaliases
-service apache2 reload
+service postfix reload
 
 echo "done."
