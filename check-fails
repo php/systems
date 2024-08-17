@@ -13,6 +13,6 @@ if ! test -r $FAIL_LOGFILE; then
 fi
 
 (echo $SMTP_INTRO; echo; cat $FAIL_LOGFILE) | \
-    mail -s "$SMTP_SUBJECT" -r $STMP_FROM -- $SMTP_TO
+    mail -s "$SMTP_SUBJECT" -r $SMTP_FROM -- $SMTP_TO
 
 rm -f $FAIL_LOGFILE
