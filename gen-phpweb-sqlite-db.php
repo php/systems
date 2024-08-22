@@ -81,7 +81,7 @@ function scan($dir, $lang)
 		'control-structures.', 'language.',
 		'about.', 'faq.', 'features.',
 	);
-	
+
 	$count = 0;
 	echo "Lang: $lang\n";
 
@@ -115,7 +115,7 @@ function scan($dir, $lang)
 			if ($x !== false) {
 				$keyword = substr($keyword, 0, $x);
 			}
-			
+
 			// Skip PHP 4 domxml (book.domxml). It uses function. syntax, unlike book.dom
 			if (0 === strpos($keyword, 'function.dom') && false === strpos($keyword, 'simplexml')) {
 				continue;
@@ -165,9 +165,8 @@ function scan($dir, $lang)
 
 		}
 
-		if ($f === 'reserved.keywords.php') {
+		if ($f === 'reserved.keywords.php' && $handle = fopen($file, 'r')) {
 			// Yes, this is fragile.
-			$handle = fopen($file, 'r');
 			$stm = $dbh->prepare('INSERT INTO fs (lang, prefix, keyword, name, prio) VALUES (?, ?, ?, ?, ?)');
 			$path_base = dirname($doc_rel);
 			while ($stm && false !== ($line = fgets($handle))) {
@@ -191,7 +190,7 @@ function scan($dir, $lang)
 		}
 	}
 	closedir($d);
-	
+
 	echo "Added entries for $count files\n";
 	echo "\n";
 }
@@ -220,4 +219,3 @@ function scan_langs($root)
 	}
 	closedir($d);
 }
-
