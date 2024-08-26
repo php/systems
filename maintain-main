@@ -15,7 +15,7 @@ rsync -qavzC --timeout=600 --delete --delete-after --filter='P github-config.php
 /local/systems/process-main-zone-file
 
 if test "$how" = "weekly" ; then
-	#php /local/mirrors/php-main-web/scripts/mirror-summary
 	php /local/mirrors/php-main-web/scripts/email-note-summaries
 	php /local/mirrors/php-main-web/scripts/event-weekly-email
+	php /local/mirrors/php-main-web/scripts/remove-low-rated-notes
 fi
