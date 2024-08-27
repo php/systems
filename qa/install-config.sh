@@ -13,7 +13,7 @@ backup=/tmp/systems-$ts
 
 echo -n "Backing up existing files to $backup..."
 
-mkdir -p $backup/apache2 $backup/colobus $backup/postfix
+mkdir -p $backup/apache2 $backup/colobus $backup/postfix $backup/supervisor
 
 crontab -u root -l > $backup/crontab
 
@@ -25,6 +25,8 @@ crontab -u root -l > $backup/crontab
     cp /etc/apache2/sites-available/qa.php.net $backup/apache2/qa.php.net.conf
 
 [ ! -h /local/colobus/config ] && cp /local/colobus/config $backup/colobus/config
+
+cp /etc/supervisor/conf.d/* $backup/supervisor/
 
 [ ! -h /etc/aliases ] && \
     cp /etc/aliases $backup/postfix/aliases
@@ -47,15 +49,16 @@ rm -f /etc/apache2/sites-enabled/*.conf
 ln -s -t /etc/apache2/sites-enabled /local/systems/qa/apache2/*.conf
 service apache2 reload
 
-# colobus
-rm -f /local/colobus/config; ln -s /local/systems/qa/colobus/config /local/colobus/config
-# doesn't need reload, gets loaded on the fly
-
 # postfix
 rm -f /etc/aliases /etc/postfix/main.cf
 ln -s /local/systems/qa/postfix/aliases /etc/aliases
 ln -s /local/systems/qa/postfix/main.cf /etc/postfix
 newaliases
 service postfix reload
+
+# supervisor
+rm -f /etc/supervisor/conf.d/*.conf
+ln -s -t /etc/supervisor/conf.d /local/systems/qa/supervisor/*.conf
+service supervisor restart
 
 echo "done."
