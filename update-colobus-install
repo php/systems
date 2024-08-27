@@ -1,0 +1,17 @@
+#!/bin/sh
+set -e
+
+# "$@" passed to rsync so --dry-run works.
+
+VERSION=${VERSION:-2.2}
+
+DESTINATION=${DESTINATION:-/local/colobus}
+WORKDIR=/tmp/install-colobus.$$
+URL="https://github.com/jimwins/colobus/archive/refs/tags/${VERSION}.tar.gz"
+
+mkdir -p ${WORKDIR}
+cd ${WORKDIR}
+curl -s -L -o install.tgz ${URL}
+tar zxf install.tgz
+rsync -aC "$@" --delete --delete-after colobus-${VERSION}/ ${DESTINATION}/
+rm -rf ${WORKDIR}
