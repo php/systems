@@ -31,7 +31,7 @@ analytics		IN CNAME analytics-origin.php.net.
 
 ; bugs database, mostly read-only now
 ; bugs-origin is name of host, see Digital Ocean section
-bugs			IN CNAME bugs-origin.php.net.
+bugs			IN CNAME bugs-php-net.ax4z.com.
 
 ; doc.php.net, managing the documentation project
 doc-origin		IN CNAME euk2.php.net.
