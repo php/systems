@@ -49,9 +49,10 @@ gtk			IN CNAME gtk-origin.php.net.
 americas.jump		IN CNAME php-jump4.php.net.
 europe.jump		IN CNAME php-jump2.php.net.
 
-; mailing lists, MX is configured down below
+; mailing lists, MX is configured down below; lists can't be a CNAME due to MX/TXT records
+lists			IN A 104.236.36.140
+			IN AAAA 2604:a880:800:10::2d6:2001
 lists-origin		IN CNAME qa.php.net.
-lists			IN CNAME lists-origin.php.net.
 
 ; main holds backend systems for user notes, @php.net user management
 ; main-origin is name of host, see Digital Ocean section
