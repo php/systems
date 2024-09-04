@@ -55,6 +55,7 @@ group php.bugs {
   num => 3
   path => /var/spool/mlmmj/php-bugs
   desc => Automated mailings from the bug database
+  mail => php-bugs@lists.php.net
   followup => php.internals
 }
 
@@ -62,6 +63,7 @@ group php.cvs {
   num => 4
   path => /var/spool/mlmmj/php-cvs
   desc => Automated mailings from commits to the CVS repository
+  mail => php-cvs@lists.php.net
   followup => php.internals
 }
 
@@ -413,6 +415,7 @@ group php.notes {
   num => 60
   path => /var/spool/mlmmj/php-notes
   desc => Automated mailings from user annotations to the manual
+  mail => php-notes@lists.php.net
   followup => php.doc
 }
 
