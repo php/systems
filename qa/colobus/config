@@ -583,7 +583,6 @@ group php.zend-engine.cvs {
 group php.doc.ca {
   num => 87
   path => /var/spool/mlmmj/doc-ca
-  mail => doc-ca@lists.php.net
   desc => Creating the Catalan documentation translation
 }
 
@@ -686,7 +685,6 @@ group php.standards {
 group php.doc.sr {
   num => 107
   path => /var/spool/mlmmj/doc-sr
-  mail => doc-sr@lists.php.net
   desc => Creating the Serbian documentation translation
 }
 
