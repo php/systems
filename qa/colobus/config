@@ -54,7 +54,7 @@ group php.beta {
 group php.bugs {
   num => 3
   path => /var/spool/mlmmj/php-bugs
-  desc => Automated mailings from the bug database
+  desc => Automated mailings from the bug/issue trackers
   mail => php-bugs@lists.php.net
   followup => php.internals
 }
@@ -62,7 +62,7 @@ group php.bugs {
 group php.cvs {
   num => 4
   path => /var/spool/mlmmj/php-cvs
-  desc => Automated mailings from commits to the CVS repository
+  desc => Automated mailings from the PHP source repository
   mail => php-cvs@lists.php.net
   followup => php.internals
 }
@@ -92,14 +92,14 @@ group php.doc.bugs {
   num => 94
   path => /var/spool/mlmmj/doc-bugs
   mail => doc-bugs@lists.php.net
-  desc => Documentation Bugs
+  desc => Automated mailings from the documentation bug/issue trackers
 }
 
 group php.doc.cvs {
   num => 95
   path => /var/spool/mlmmj/doc-cvs
   mail => doc-cvs@lists.php.net
-  desc => Documentation Commits
+  desc => Changes to the main documentation repositories (doc-base, phd, doc-en)
 }
 
 group php.doc.chm {
@@ -112,7 +112,7 @@ group php.doc.web {
   num => 9
   path => /var/spool/mlmmj/doc-web
   mail => doc-web@lists.php.net
-  desc => The PHP Documentation Website
+  desc => Developing the PHP documentation website (http://doc.php.net)
 }
 
 group php.doc.ar {
@@ -320,7 +320,7 @@ group php.general.es {
   num => 45
   path => /var/spool/mlmmj/php-es
   mail => php-es@lists.php.net
-  desc => PHP discussion, in Spanish
+  desc => General discussions about PHP, in Spanish
 }
 
 group php.gtk {
@@ -377,7 +377,7 @@ group php.internals {
   num => 54
   path => /var/spool/mlmmj/internals
   mail => internals@lists.php.net
-  desc => Developing the PHP Runtime
+  desc => Developing the PHP language and runtime
 }
 
 group php.kb {
@@ -396,7 +396,7 @@ group php.doc.license {
   num => 57
   path => /var/spool/mlmmj/doc-license
   mail => doc-license@lists.php.net
-  desc => List to discuss license issues with the documentation
+  desc => Discussing license issues with the documentation
 }
 
 group php.migration {
@@ -469,7 +469,7 @@ group php.pear.qa {
   num => 68
   path => /var/spool/mlmmj/pear-qa
   mail => pear-qa@lists.php.net
-  desc => PEAR Quality Assurance
+  desc => Discussing the PEAR Quality Assurance Initiative
 }
 
 group php.pear.webmaster {
@@ -483,14 +483,14 @@ group php.pear.core {
   num => 70
   path => /var/spool/mlmmj/pear-core
   mail => pear-core@lists.php.net
-  desc => PEAR Core List
+  desc => Core developers of the PHP Extension and Application Repository
 }
 
 group php.pecl.cvs {
   num => 71
   path => /var/spool/mlmmj/pecl-cvs
   mail => pecl-cvs@lists.php.net
-  desc => Automated mailings from commits to the PECL CVS repository
+  desc => Automated mailings from commits to the PECL source repositories
 }
 
 group php.pecl.dev {
@@ -599,7 +599,7 @@ group php.gd.devel {
   num => 89
   path => /var/spool/mlmmj/gd-devel
   mail => gd-devel@lists.php.net
-  desc => GD Development Mailinglist
+  desc => Developing libgd (https://www.libgd.org)
 }
 
 group php.gd.bugs {
@@ -625,7 +625,7 @@ group php.webmaster {
   num => 96
   path => /var/spool/mlmmj/php-webmaster
   mail => php-webmaster@lists.php.net
-  desc => PHP Webmaster Mailinglist
+  desc => Discussing and maintaining the php.net web sites
 }
 
 group php.on.dlr {
@@ -695,7 +695,7 @@ group php.git-pulls {
   num => 108
   path => /var/spool/mlmmj/git-pulls
   mail => git-pulls@lists.php.net
-  desc => Git Pull Requests
+  desc => Automated mailings about pull requests to the PHP source
 }
 
 group php.standards.cvs {
