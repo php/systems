@@ -16,13 +16,13 @@ $ctx = stream_context_create([
     ]
 ]);
 
-echo "===== Organization Members =====\n\n";
+echo "# Organization Members\n\n";
 
 function print_members(string $url, $ctx) {
     $page = 1;
     while ($members = json_decode(file_get_contents($url . '?page=' . $page++, false, $ctx))) {
         foreach ($members as $member) {
-            echo " * [[{$member->html_url}|{$member->login}]]\n";
+            echo " * [{$member->login}]({$member->html_url})\n";
         }
     }
 }
@@ -30,12 +30,12 @@ print_members("https://api.github.com/orgs/{$org}/members", $ctx);
 
 echo "\n";
 
-echo "===== Teams and Members =====\n\n";
+echo "# Teams and Members\n\n";
 
 $teams = json_decode(file_get_contents("https://api.github.com/orgs/{$org}/teams", false, $ctx));
 
 foreach ($teams as $team) {
-    echo "==== [[{$team->html_url}|{$team->name}]]: {$team->description} ====\n\n";
+    echo "## [{$team->name}]({$team->html_url}): {$team->description}\n\n";
 
     print_members("https://api.github.com/orgs/{$org}/teams/{$team->slug}/members", $ctx);
 
