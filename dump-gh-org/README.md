@@ -2,7 +2,7 @@ This is a very simple script to dump the members of the PHP GitHub
 organization in Markdown format.
 
 It requires a GitHub personal access token (classic) with `read:org`
-privileges.
+and `admin:org` privileges.
 
 To run:
 
