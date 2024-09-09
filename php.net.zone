@@ -43,7 +43,7 @@ downloads		IN CNAME downloads-origin.php.net.
 
 ; gtk project is abandoned, but old site lives on
 gtk-origin		IN CNAME svn2.php.net.
-gtk			IN CNAME gtk-origin.php.net.
+gtk			IN CNAME gtk-php-net.ax4z.com.
 
 ; Jump boxes for login to .php.net servers
 americas.jump		IN CNAME php-jump4.php.net.
