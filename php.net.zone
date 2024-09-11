@@ -104,11 +104,11 @@ status			IN CNAME status-origin.php.net.
 
 ; talks is our preferred name now, old aliases should redirect
 talks-origin		IN CNAME svn2.php.net.
-talks			IN CNAME talks-origin.php.net.
-conf			IN CNAME talks-origin.php.net.
-conf2			IN CNAME talks-origin.php.net.
-pres			IN CNAME talks-origin.php.net.
-pres2			IN CNAME talks-origin.php.net.
+talks			IN CNAME talks-php-net.ax4z.com.
+conf			IN CNAME conf-php-net.ax4z.com.
+conf2			IN CNAME conf2-php-net.ax4z.com.
+pres			IN CNAME pres-php-net.ax4z.com.
+pres2			IN CNAME pres2-php-net.ax4z.com.
 
 ; wiki is used for project documentation and RFCs
 ; wiki-origin is name of host, see Digital Ocean section
