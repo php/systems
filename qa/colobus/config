@@ -244,6 +244,7 @@ group php.doc.ro {
 group php.doc.ru {
   num => 33
   path => /var/spool/mlmmj/doc-ru
+  mail => doc-ru@lists.php.net
   desc => Creating the Russian documentation translation
 }
 group php.doc.se {
