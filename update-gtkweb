@@ -1,0 +1,3 @@
+#!/bin/sh
+
+rsync -aC --timeout=600 --delete --exclude=configuration.inc --exclude=logs --exclude=.git rsync.php.net::php-gtk-web /local/Web/sites/php-gtk-web

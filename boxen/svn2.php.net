@@ -1,0 +1,11 @@
+# $Id$
+
+# Service configuration for svn (svn.php.net)
+
+export CONTINENT="us"
+
+MINUTELY=""
+HOURLY="update-gtkweb update-peopleweb update-talksweb"
+DAILY=""
+WEEKLY=""
+MONTHLY=""

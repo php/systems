@@ -1,0 +1,3 @@
+#!/bin/sh
+
+rsync -aC --exclude=config.php --exclude=logs --exclude=.git rsync.php.net::talks /local/Web/sites/talks.php.net
