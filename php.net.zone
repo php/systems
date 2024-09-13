@@ -78,6 +78,7 @@ news-web		IN CNAME news--web-php-net.ax4z.com.
 ; PEAR
 pear-origin		IN CNAME euk3.php.net.
 pear	 		IN CNAME pear-origin.php.net.
+download.pear        IN CNAME euk3.php.net.
 
 ; PECL
 ; pecl-origin is name of host, see Digital Ocean section
