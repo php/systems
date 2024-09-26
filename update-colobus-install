@@ -3,7 +3,7 @@ set -e
 
 # "$@" passed to rsync so --dry-run works.
 
-VERSION=${VERSION:-2.4}
+VERSION=${VERSION:-2.5}
 
 DESTINATION=${DESTINATION:-/local/colobus}
 WORKDIR=/tmp/install-colobus.$$
