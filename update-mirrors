@@ -26,8 +26,8 @@ for i in php-main-web; do
     (cd shared && $GIT_FETCH && $GIT_RESET)
 done
 
-# For sites where the default branch is 'main', an do not use the 'shared' module
-for i in php-analytics-web; do
+# For sites where the default branch is 'main', and do not use the 'shared' module
+for i in php-analytics-web php-downloads-web; do
     cd /local/mirrors/$i
     $GIT_FETCH && $GIT_RESET_MAIN;
 done
