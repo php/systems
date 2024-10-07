@@ -1,0 +1,3 @@
+#!/bin/sh
+
+rsync -avzC --timeout=600 --delete --delete-after rsync.php.net::php-downloads /local/www/sites/downloads.php.net

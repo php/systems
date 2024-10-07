@@ -1,0 +1,9 @@
+# $Id$
+
+# Service configuration for downloads.php.net
+
+MINUTELY=""
+HOURLY="update-systems update-downloads update-shared"
+DAILY=""
+WEEKLY=""
+
