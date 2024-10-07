@@ -1,3 +1,3 @@
 #!/bin/sh
 
-rsync -avzC --timeout=600 --delete --delete-after rsync.php.net::php-shared /local/www/sites/shared.php.net
+rsync -azC --timeout=600 --delete --delete-after rsync.php.net::php-shared /local/www/sites/shared.php.net
