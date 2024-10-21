@@ -32,7 +32,8 @@ while IFS= read -r line; do
 	GHUB=$( echo $line | cut -d ":" -f 3 )
 
 	if id "$USER" >/dev/null 2>&1; then
-		echo "$USER: found, doing nothing"
+		echo "$USER: found, adding to sudo group"
+                usermod $USER -a -G sudo
 	else
 		echo "$USER: not found, creating"
 		useradd $USER -c "$NAME" -G sudo -m -s /bin/bash
