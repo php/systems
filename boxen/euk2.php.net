@@ -2,7 +2,8 @@
 
 export CONTINENT="europe"
 
-HOURLY="update-systems update-docs-sources build-docs-snapshots update-phd-docs"
+#HOURLY="update-systems update-docs-sources build-docs-snapshots update-phd-docs"
+HOURLY="update-systems"
 DAILY="update-time "
 WEEKLY=""
 MONTHLY=""
