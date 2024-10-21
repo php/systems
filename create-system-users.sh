@@ -35,7 +35,7 @@ while IFS= read -r line; do
 		echo "$USER: found, doing nothing"
 	else
 		echo "$USER: not found, creating"
-		useradd $USER -c "$NAME" -m -s /bin/bash
+		useradd $USER -c "$NAME" -G sudo -m -s /bin/bash
 	fi
 
 
