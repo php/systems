@@ -1,3 +1,4 @@
 #!/bin/sh
 
-rsync -aC --timeout=600 --delete --exclude=configuration.inc --exclude=logs --exclude=.git rsync.php.net::php-doc-web /local/Web/sites/doc.php.net
+rsync -qavz --timeout=600 --delete --delete-after \
+    rsync.php.net::docweb /local/Web/sites/doc.php.net
