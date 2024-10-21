@@ -1,4 +1,4 @@
 #!/bin/sh
 
-rsync -qavz --timeout=600 --delete --delete-after \
+rsync -qavz --timeout=600 --delete --delete-after --exclude include/jpgraph \
     rsync.php.net::docweb /local/Web/sites/doc.php.net
