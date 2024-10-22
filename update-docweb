@@ -1,8 +1,10 @@
 #!/bin/sh
 
 rsync -qavz --timeout=600 --delete --delete-after \
-    --exclude include/jpgraph --exclude sqlite --exclude www/images/revcheck \
+    --exclude include/jpgraph --exclude sqlite \
+    --exclude www/images/revcheck --exclude www/phd/docs \
     rsync.php.net::docweb /local/Web/sites/doc.php.net
 # make sure directories for generated content exist
 mkdir -p /local/Web/sites/doc.php.net/sqlite
 mkdir -p /local/Web/sites/doc.php.net/www/images/revcheck
+mkdir -p /local/Web/sites/doc.php.net/www/phd/docs

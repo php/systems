@@ -2,4 +2,11 @@
 #
 # build the phd docs using phd itself. inception.
 
-/bin/php81 /local/src/phd/render.php  --docbook '/local/src/phd/docs/phd-guide/phd-guide.xml' --output '/local/Web/sites/doc.php.net/www/phd/docs/' --format 'bigxhtml' --outputfilename 'index.html' --verbose 0
+cd /local/src/phpdoc/phd
+
+php render.php \
+    --docbook docs/phd-guide/phd-guide.xml \
+    --output '/local/Web/sites/doc.php.net/www/phd/docs/' \
+    --format 'bigxhtml' \
+    --outputfilename 'index.html' \
+    --verbose 0
