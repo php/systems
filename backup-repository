@@ -1,7 +1,0 @@
-#!/bin/sh
-
-date=`date +"%Y%m%d"`
-
-cd /local/repository
-
-tar cf - . | bzip2 -9 > /local/backup/repository.$date.tar.bz2
