@@ -33,17 +33,3 @@ Every hour systems/update-everything is executed which does:
         php-main-web/scripts/update-user-notes
 
         Creates phpweb/include/last_updated.inc
-
-
-## Commented out, different box handles these now
-Every other hour systems/update-snapshots is executed 
-
-CHMS are copied from oti1.php.net with the phpdoc/doc-base/trunk/scripts/fetch-chms.php script
-
-Once a day systems/gen-phpweb-sqlite-db.php is executed (phpweb/backend/manual-lookup.sqlite)
-
-## Commented out, PEAR builds their own manuals now
-On sundays systems/update-pearweb-manuals -f is executed
-
-Once a day systems/update-php-gtk-web-manuals is executed
-
