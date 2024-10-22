@@ -1,0 +1,2 @@
+php-gd
+php-sqlite3
