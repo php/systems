@@ -1,0 +1,21 @@
+#!/bin/sh
+set -e
+
+cd /local/Web/sites/doc.php.net/scripts
+
+export GIT_DIR=/local/src/phpdoc
+export SQLITE_DIR=${PWD}/sqlite
+
+mkdir -p ${SQLITE_DIR}
+
+echo "Generating PHP database"
+php -q rev.php
+echo "... done."
+
+echo "Generating PHP pictures"
+php -q ./gen_picture_info.php
+echo "... done"
+
+echo "Generating global graphs"
+php -q ./gen_picture_info_all_lang.php
+echo "... done"

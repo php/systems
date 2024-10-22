@@ -1,4 +1,7 @@
 #!/bin/sh
 
-rsync -qavz --timeout=600 --delete --delete-after --exclude include/jpgraph \
+rsync -qavz --timeout=600 --delete --delete-after \
+    --exclude include/jpgraph --exclude www/images/revcheck \
     rsync.php.net::docweb /local/Web/sites/doc.php.net
+# make sure directory for images exists
+mkdir -p /local/Web/sites/doc.php.net/www/images/revcheck
