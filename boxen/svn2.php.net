@@ -5,7 +5,7 @@
 export CONTINENT="us"
 
 MINUTELY=""
-HOURLY="update-systems update-gtkweb update-peopleweb update-talksweb update-docweb"
+HOURLY="update-systems update-gtkweb update-peopleweb update-talksweb update-docweb update-docs-sources"
 DAILY="update-time backup-thisbox prune-backups"
 WEEKLY=""
 MONTHLY=""

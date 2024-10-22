@@ -1,22 +1,36 @@
 #!/bin/sh
+set -e
+
+mkdir -p /local/src/phpdoc
+cd /local/src/phpdoc
+
+# We rely on include/languages.inc from the web-php repo to know what
+# languages we want to keep track of
+rsync rsync.php.net::phpweb/include/languages.inc .
+
+langs=`/usr/bin/php -r 'include "languages.inc"; echo implode( " ", array_keys( $ACTIVE_ONLINE_LANGUAGES ) );'`;
+langs="base $langs"
 
 for i in phd; do
-    cd /local/src/$i
-    git fetch origin && git reset --hard origin/master;
+    if [ -d /local/src/phpdoc/$i ]; then
+        cd /local/src/phpdoc/$i
+        echo -n "updating $i: "
+        git fetch origin && git reset --hard origin/master
+    else
+        cd /local/src/phpdoc
+        echo -n "cloning $i: "
+        git clone https://github.com/php/phd.git phd
+    fi
 done
 
-langs=`/usr/bin/php -r 'include "/local/src/phpweb/include/languages.inc"; echo implode( " ", array_keys( $ACTIVE_ONLINE_LANGUAGES ) );'`;
-langs="base $langs"
-for i in $langs; do
-  cd /local/src/phpdoc-git/$i
-  git fetch origin && git reset --hard origin/master
+for lang in $langs; do
+    cd /local/src/phpdoc
+    if [ -d ${lang} ]; then
+        cd ${lang}
+        echo -n "updating ${lang}: "
+        git fetch origin && git reset --hard origin/master
+    else
+        echo -n "cloning ${lang}: "
+        git clone https://github.com/php/doc-${lang}.git ${lang}
+    fi
 done
-
-rsync -avzC --timeout=600 --delete --delete-after \
-	--include='manual/*.php' \
-	--exclude='manual/**' \
-	--exclude='distributions/manual/**' \
-	rsync.php.net::phpweb /local/src/phpweb
-
-rsync -avzC --timeout=600 \
-	rsync.php.net::docweb /local/src/docweb
