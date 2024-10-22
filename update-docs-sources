@@ -25,6 +25,7 @@ done
 
 for lang in $langs; do
     cd /local/src/phpdoc
+    lang=$(echo ${lang} | tr '[:upper:]' '[:lower:]')
     if [ -d ${lang} ]; then
         cd ${lang}
         echo -n "updating ${lang}: "

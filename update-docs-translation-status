@@ -4,7 +4,7 @@ set -e
 cd /local/Web/sites/doc.php.net/scripts
 
 export GIT_DIR=/local/src/phpdoc
-export SQLITE_DIR=${PWD}/sqlite
+export SQLITE_DIR=/local/Web/sites/doc.php.net/sqlite
 
 mkdir -p ${SQLITE_DIR}
 
