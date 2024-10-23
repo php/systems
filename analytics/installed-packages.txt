@@ -1,0 +1,11 @@
+apache2
+certbot
+git
+mariadb-client
+mariadb-server
+net-tools
+php-fpm
+php-gd
+php-mysql
+php-xml
+python3-certbot-apache
