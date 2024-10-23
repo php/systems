@@ -8,4 +8,6 @@ MAILTO=root
 
 # crontab for updates...
 
-0,10,20,30,40,50 * * * * /local/bin/update-everything
+*/10 * * * * /local/bin/update-everything
+0 */2 * * * /local/systems/build-docs-rsync
+10 9 * * 5 /local/repos/phpdoc-git/doc-base/scripts/fetch-chms.php
