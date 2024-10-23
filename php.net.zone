@@ -34,10 +34,8 @@ analytics		IN CNAME analytics-origin.php.net.
 bugs			IN CNAME bugs-php-net.ax4z.com.
 
 ; doc.php.net, managing the documentation project
-doc-origin		IN CNAME euk2.php.net.
-doc			IN CNAME doc-origin.php.net.
-; temporary, migrating doc to a new host (jimw, 2024-10-21)
-doc-new	       IN CNAME svn2.php.net.
+doc-origin		IN CNAME svn2.php.net.
+doc			IN CNAME doc-php-net.ax4z.com.
 
 ; downloads -- used by release managers?
 ; downloads-origin is name of host, see Digital Ocean section
