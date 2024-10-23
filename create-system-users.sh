@@ -2,6 +2,9 @@
 
 DIR=$(dirname $(realpath ${BASH_SOURCE[0]}))
 
+# Configure sudoers to require no password for these users
+cp "$DIR/shared-config/20-sudo-nopassword /etc/sudoers.d"
+
 # Find users file
 HOSTNAME=$( hostname )
 if [ -f "$DIR/$HOSTNAME/users" ]; then
