@@ -8,7 +8,7 @@ cd /local/src/phpdoc
 # languages we want to keep track of
 rsync rsync.php.net::phpweb/include/languages.inc .
 
-langs=`/usr/bin/php -r 'include "languages.inc"; echo implode( " ", array_keys( $ACTIVE_ONLINE_LANGUAGES ) );'`;
+langs=`/usr/bin/php -r 'include "languages.inc"; echo implode( " ", array_keys( $LANGUAGES ) );'`;
 langs="base $langs"
 
 for i in phd; do
