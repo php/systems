@@ -223,6 +223,7 @@ group php.doc.no {
 group php.doc.pl {
   num => 29
   path => /var/spool/mlmmj/doc-pl
+  mail => doc-pl@lists.php.net
   desc => Creating the Polish documentation translation
 }
 group php.doc.pt {
