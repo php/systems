@@ -1,0 +1,65 @@
+ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384;
+
+ssl_session_cache shared:SSL:10m;
+
+ssl_session_timeout 1440m;
+
+server {
+    listen              45.112.84.4:80;
+    listen              [2a02:cb43:8000::1101]:80;
+
+    server_name         php.net www.php.net secure.php.net;
+
+    return              301 https://www.php.net$request_uri;
+}
+
+server {
+    listen              45.112.84.4:443 ssl http2;
+    listen              [2a02:cb43:8000::1101]:443 ssl http2;
+
+    ssl_certificate     /etc/ssl/private/star_php_net_2019.all;
+    ssl_certificate_key /etc/ssl/private/star_php_net_2019.all;
+
+    server_name         php.net secure.php.net;
+
+    return              301 https://www.php.net$request_uri;
+}
+
+server {
+    listen              45.112.84.4:443 ssl http2;
+    listen              [2a02:cb43:8000::1101]:443 ssl http2;
+
+    ssl_certificate     /etc/ssl/private/star_php_net_2019.all;
+    ssl_certificate_key /etc/ssl/private/star_php_net_2019.all;
+
+    server_name         www.php.net;
+
+    root                /var/www/www.php.net;
+
+    # temp test
+    keepalive_timeout   3600;
+    keepalive_requests  10000000;
+
+    location ~ \.php$ {
+        if (!-f /var/www/www.php.net$uri) {
+            return      404;
+        }
+
+        include         snippets/fastcgi-php.conf;
+
+        fastcgi_pass    unix:/run/php/php8.2-fpm.sock;
+        fastcgi_intercept_errors on;
+
+        fastcgi_param   MIRROR_LANGUAGE "en";
+        fastcgi_param   MIRROR_STATS    "0";
+    }
+
+    location / {
+        index           index.php index.html;
+        try_files       $uri $uri/ $uri.php;
+    }
+
+    error_page          401 = /error.php;
+    error_page          403 = /error.php;
+    error_page          404 = /error.php;
+}
