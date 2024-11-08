@@ -1,13 +1,15 @@
 #!/bin/sh
 set -e
 
-cd /local/Web/sites/doc.php.net/scripts
+cd /local/src/phpdoc
 
-export PHPDOC_GIT_DIR=/local/src/phpdoc
+langs=`/usr/bin/php -r 'include "languages.inc"; echo implode( " ", array_keys( $LANGUAGES ) );'`;
+
 export SQLITE_DIR=/local/Web/sites/doc.php.net/sqlite
 
 mkdir -p ${SQLITE_DIR}
 
 echo "Generating PHP database"
-php -q rev.php
+php -q base/scripts/translation/genrevdb.php ${SQLITE_DIR}/status.sqlite.tmp ${langs}
+mv ${SQLITE_DIR}/status.sqlite.tmp ${SQLITE_DIR}/status.sqlite
 echo "... done."
