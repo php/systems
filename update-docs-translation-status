@@ -4,6 +4,7 @@ set -e
 cd /local/src/phpdoc
 
 langs=`/usr/bin/php -r 'include "languages.inc"; echo implode( " ", array_keys( $LANGUAGES ) );'`;
+langs=$(echo ${langs} | tr 'A-Z' 'a-z')
 
 export SQLITE_DIR=/local/Web/sites/doc.php.net/sqlite
 
