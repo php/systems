@@ -161,6 +161,9 @@ mail._domainkey.lists.php.net.	IN TXT ( "v=DKIM1; h=sha256; k=rsa; s=email; "
 ; Let's Encrypt ACME challenge
 _acme-challenge.php.net.	IN CNAME _acme--challenge-php-net.ax4z.com.
 
+; Verification for Google's Postmaster Tools and Search Console Tools
+php.net.		IN TXT "google-site-verification=O6K8miDfoyFI4IjIQ13207kl978tUNg1HYv3G-bLabo"
+
 ;------------ Physical boxen
 
 ; Myracloud, contact sascha@schumann.net and noc@myracloud.com
