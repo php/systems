@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+
+if [ ! -f /local/systems/shared-config/iptables.conf ]; then
+    echo $0: unable to find iptables.conf in /local/systems/shared-config
+    exit 1
+fi
+
+cat /local/systems/shared-config/iptables.conf | iptables-restore
