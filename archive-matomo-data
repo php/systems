@@ -1,0 +1,5 @@
+#!/bin/bash
+
+HOUR=`date +%H`
+php /var/www/analytics/www/console core:archive --url=https://analytics.php.net 2>/var/log/matomo-archive-error-${HOUR}.log >/var/log/matomo-archive-${HOUR}.log
+chown -R www-data:www-data /var/www/analytics
