@@ -1,5 +1,13 @@
 #!/bin/bash
 
+mkdir -p /local/repos
+mkdir -p /local/mirrors
+mkdir -p /local/repos/phpdoc
+
+cd /local/repos
+git clone https://github.com/php/web-php.git phpweb
+git clone https://github.com/php/phd.git phpdoc/phd
+
 cd /local/mirrors
 git clone https://github.com/php/web-doc-editor.git doc-editor
 git clone https://github.com/php/web-doc.git docweb
@@ -14,7 +22,6 @@ git clone https://github.com/php/web-master.git php-main-web
 git clone https://github.com/php/web-master.git php-master-web
 git clone https://github.com/php/web-news.git php-news-web
 git clone https://github.com/php/web-people.git php-people-web
-git clone https://github.com/php/web-rmtools.git php-rmtools
 git clone https://github.com/php/web-shared.git php-shared
 git clone https://github.com/php/web-wiki.git php-wiki
 git clone https://github.com/php/web-qa.git qaweb
