@@ -29,7 +29,7 @@ git clone https://github.com/php/web-shared.git shared
 git clone https://github.com/php/systems.git systems
 git clone https://github.com/php/web-pres2.git talks
 
-for i in docweb php-people-web qaweb php-gcov-web php-master-web php-news-web php-bugs-web php-gtk-web talks; do
+for i in php-main-web docweb php-people-web qaweb php-gcov-web php-master-web php-news-web php-bugs-web php-gtk-web talks; do
     cd /local/mirrors/$i
 	git clone https://github.com/php/web-shared.git shared
 done
