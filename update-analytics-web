@@ -13,3 +13,5 @@ SALT=`cat /local/this-box/matomo.env.salt`
 cat /var/www/analytics/www/config/config.ini.php | sed "s/PLACEHOLDERFORSALT-REPLACEDONDEPLOY/${SALT}/" > /tmp/config.ini.php && mv /tmp/config.ini.php /var/www/analytics/www/config/config.ini.php
 
 chown -R www-data:www-data /var/www/analytics
+
+ln -s /local/this-box/DBIP-City.mmdb /var/www/analytics/www/misc
