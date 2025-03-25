@@ -218,6 +218,11 @@ analytics-origin	IN A 167.71.2.31
 wiki-origin		IN A 45.55.181.207
 			IN AAAA 2604:a880:800:10::107a:4001
 
+; DigitalOcean - New Infrastructure (contact: systems or derick)
+; These will become the new origins
+jump-ams-1.internal	IN A 24.144.78.237
+jump-sfo-1.internal	IN A 209.38.118.252
+
 ; Misc stuff
 localhost		IN A 127.0.0.1
 
