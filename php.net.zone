@@ -223,8 +223,8 @@ wiki-origin		IN A 45.55.181.207
 jump-ams-1.internal	IN A 24.144.78.237
 jump-sfo-1.internal	IN A 209.38.118.252
 
-service0-ams.internal.php.net IN A 167.172.35.139
-museum.internal.php.net       IN A 167.172.35.139
+service0-ams.internal IN A 167.172.35.139
+museum.internal       IN A 167.172.35.139
 
 ; Misc stuff
 localhost		IN A 127.0.0.1
