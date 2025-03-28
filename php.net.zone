@@ -113,7 +113,7 @@ pres2			IN CNAME pres2-php-net.ax4z.com.
 
 ; wiki is used for project documentation and RFCs
 ; wiki-origin is name of host, see Digital Ocean section
-wiki			IN CNAME wiki-origin.php.net.
+wiki			IN CNAME wiki-php-net.ax4z.com.
 
 ; windows.php.net is configured entirely as a physical host below
 
