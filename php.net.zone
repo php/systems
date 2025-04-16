@@ -37,9 +37,8 @@ bugs			IN CNAME bugs-php-net.ax4z.com.
 doc-origin		IN CNAME svn2.php.net.
 doc			IN CNAME doc-php-net.ax4z.com.
 
-; downloads -- used by release managers?
-; downloads-origin is name of host, see Digital Ocean section
-downloads		IN CNAME downloads-origin.php.net.
+; downloads -- used by release managers for QA builds and windows downloads
+downloads		IN CNAME downloads-php-net.ax4z.com.
 
 ; gtk project is abandoned, but old site lives on
 gtk-origin		IN CNAME svn2.php.net.
