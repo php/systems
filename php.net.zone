@@ -225,6 +225,7 @@ wiki.internal         IN CNAME service1-ams.internal.php.net.
 service2-ams.internal IN A 206.189.2.9
 downloads.internal    IN CNAME service2-ams.internal.php.net.
 shared.internal       IN CNAME service2-ams.internal.php.net.
+qa.internal           IN CNAME service2-ams.internal.php.net.
 
 ; Misc stuff
 localhost		IN A 127.0.0.1
