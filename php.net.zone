@@ -87,6 +87,9 @@ pecl			IN CNAME pecl-origin.php.net.
 people-origin		IN CNAME svn2.php.net.
 people			IN CNAME people-php-net.ax4z.com.
 
+; old qa.php.net website, which besides robots.txt now redirects to other locations (only)
+qa			IN CNAME qa-php-net.ax4z.com.
+
 ; rsync is used for distributing lots of things
 ; not behind Myra because only accessed via rsync
 rsync			IN CNAME sc3.php.net.
