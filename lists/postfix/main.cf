@@ -11,6 +11,10 @@ compatibility_level = 3.6
 # no need to 'biff' users when mail is delivered
 biff = no
 
+# enable bad sender restrictions
+smtpd_sender_restrictions =
+    check_sender_access hash:/etc/postfix/bad_sender
+
 # TLS parameters
 smtpd_tls_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
 smtpd_tls_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
