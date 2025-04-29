@@ -21,8 +21,6 @@ crontab -u root -l > $backup/crontab
 
 [ ! -h /etc/apache2/sites-available/news.php.net ] && \
     cp /etc/apache2/sites-available/news.php.net $backup/apache2/news.php.net.conf
-[ ! -h /etc/apache2/sites-available/qa.php.net ] && \
-    cp /etc/apache2/sites-available/qa.php.net $backup/apache2/qa.php.net.conf
 
 [ ! -h /local/colobus/config ] && cp /local/colobus/config $backup/colobus/config
 
@@ -35,7 +33,7 @@ cp /etc/supervisor/conf.d/* $backup/supervisor/
 
 echo "done."
 
-if [ ! -f /local/systems/qa/colobus/config ]; then
+if [ ! -f /local/systems/lists/colobus/config ]; then
     echo $0: new config not available, not loading it
     exit 1
 fi
@@ -46,19 +44,19 @@ crontab -u root - < /local/systems/cron-box-crontab
 
 # apache2
 rm -f /etc/apache2/sites-enabled/*.conf
-ln -s -t /etc/apache2/sites-enabled /local/systems/qa/apache2/*.conf
+ln -s -t /etc/apache2/sites-enabled /local/systems/lists/apache2/*.conf
 service apache2 reload
 
 # postfix
 rm -f /etc/aliases /etc/postfix/main.cf
-ln -s /local/systems/qa/postfix/aliases /etc/aliases
-ln -s /local/systems/qa/postfix/main.cf /etc/postfix
+ln -s /local/systems/lists/postfix/aliases /etc/aliases
+ln -s /local/systems/lists/postfix/main.cf /etc/postfix
 newaliases
 service postfix reload
 
 # supervisor
 rm -f /etc/supervisor/conf.d/*.conf
-ln -s -t /etc/supervisor/conf.d /local/systems/qa/supervisor/*.conf
+ln -s -t /etc/supervisor/conf.d /local/systems/lists/supervisor/*.conf
 service supervisor restart
 
 echo "done."
