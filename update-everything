@@ -1,4 +1,5 @@
 #!/bin/sh
 
+/local/systems/install-composer && \
 /local/systems/update-mirrors && \
 /local/systems/update-phpweb-backend
