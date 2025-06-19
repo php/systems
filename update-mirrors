@@ -43,6 +43,9 @@ for i in systems doc-editor php-shared talks talks/presentations php-gtk-doc pec
     $GIT_FETCH && $GIT_RESET;
 done
 
+# The presentation system also uses the reveal.js submodule
+(cd /local/mirrors/talks && git submodule update --init reveal.js)
+
 # Systems scripts were dropped down a level at some point.
 cd /local/systems;
 $GIT_FETCH && $GIT_RESET;
