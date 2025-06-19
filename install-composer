@@ -11,7 +11,10 @@ then
     exit 1
 fi
 
-php composer-setup.php
+php composer-setup.php --quiet --install-dir=/local
 RESULT=$?
+if [ ! -f /local/composer ]; then
+    ln -s /local/composer.phar /local/composer
+fi
 rm composer-setup.php
 exit $RESULT
