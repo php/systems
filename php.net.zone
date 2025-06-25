@@ -81,7 +81,7 @@ download.pear        IN CNAME euk3.php.net.
 
 ; PECL
 ; pecl-origin is name of host, see Digital Ocean section
-pecl			IN CNAME pecl.internal.php.net.
+pecl			IN CNAME pecl-origin.php.net.
 
 ; people.php.net user directory
 people-origin		IN CNAME svn2.php.net.
