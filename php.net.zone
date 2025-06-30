@@ -207,10 +207,6 @@ bugs-origin		IN A 206.189.200.141
 			IN AAAA 2604:a880:400:d1::24b:3001
 pecl-origin		IN A 104.236.228.160
 			IN AAAA 2604:a880:800:10::621:6001
-; qa		       IN A 104.236.36.140
-;		       IN AAAA 2604:a880:800:10::2d6:2001
-downloads-origin	IN A 104.236.32.144
-		       IN AAAA 2604:a880:800:10::2dd:1
 main-origin	       IN A 142.93.197.176
 		       IN AAAA 2604:a880:400:d0::1c74:1001
 analytics-origin	IN A 167.71.2.31
