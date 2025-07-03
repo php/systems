@@ -1,6 +1,6 @@
 # $Id$
 
-# Service configuration for qa.php.net
+# Service configuration for lists.php.net
 
 export CONTINENT="us"
 
