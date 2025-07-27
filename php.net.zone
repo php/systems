@@ -221,6 +221,7 @@ pres2.internal        IN CNAME service2-ams.internal.php.net.
 
 service3-ams.internal IN A 157.245.79.146
 bugs.internal         IN CNAME service3-ams.internal.php.net.
+main.internal         IN CNAME service3-ams.internal.php.net.
 pecl.internal         IN CNAME service3-ams.internal.php.net.
 
 ; Misc stuff
