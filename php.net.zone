@@ -30,7 +30,6 @@ $ORIGIN php.net.
 analytics		IN CNAME analytics-origin.php.net.
 
 ; bugs database, mostly read-only now
-; bugs-origin is name of host, see Digital Ocean section
 bugs			IN CNAME bugs-php-net.ax4z.com.
 
 ; doc.php.net, managing the documentation project
@@ -101,7 +100,6 @@ europe.rsync		IN CNAME rsync.php.streamservice.nl.
 shared               IN CNAME shared-php-net.ax4z.com.
 
 ; talks is our preferred name now, old aliases should redirect
-talks-origin		IN CNAME svn2.php.net.
 talks			IN CNAME talks-php-net.ax4z.com.
 conf			IN CNAME conf-php-net.ax4z.com.
 conf2			IN CNAME conf2-php-net.ax4z.com.
@@ -194,10 +192,6 @@ euk3			IN A 109.203.101.62
 bk2			IN A 157.90.121.187
 
 ; DigitalOcean - PHP Project (contact: systems or derick)
-bugs-origin		IN A 206.189.200.141
-			IN AAAA 2604:a880:400:d1::24b:3001
-pecl-origin		IN A 104.236.228.160
-			IN AAAA 2604:a880:800:10::621:6001
 main-origin	       IN A 142.93.197.176
 		       IN AAAA 2604:a880:400:d0::1c74:1001
 analytics-origin	IN A 167.71.2.31
