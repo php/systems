@@ -100,10 +100,6 @@ europe.rsync		IN CNAME rsync.php.streamservice.nl.
 ; shared is important, most php.net sites rely on it for styles, etc.
 shared               IN CNAME shared-php-net.ax4z.com.
 
-; Network Health Status Page
-status-origin		IN CNAME main.php.net.
-status			IN CNAME status-origin.php.net.
-
 ; talks is our preferred name now, old aliases should redirect
 talks-origin		IN CNAME svn2.php.net.
 talks			IN CNAME talks-php-net.ax4z.com.
@@ -124,10 +120,6 @@ www                  300 IN CNAME www-php-net.ax4z.com.
 
 ;------------ Old hostnames that just get redirected (or retired?)
 
-; https://heap.space
-lxr			IN CNAME main.php.net.
-; https://app.codecov.io/gh/php/php-src
-gcov			IN CNAME main.php.net.
 ; these redirect to www.php.net - could just use STAR-php-net.ax4z.com?
 secure			IN CNAME secure-php-net.ax4z.com.
 static			IN CNAME static-php-net.ax4z.com.
