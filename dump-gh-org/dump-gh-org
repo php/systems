@@ -1,0 +1,90 @@
+#!/usr/bin/env php
+<?php
+$org = 'php';
+
+$token = getenv("GITHUB_TOKEN")
+    or die("Must set GITHUB_TOKEN in the environment to allow connection");
+
+$ctx = stream_context_create([
+    'http' => [
+        'header' => [
+            'User-agent: dump-gh-org/0.0',
+            'Accept: application/vnd.github+json',
+            'Authorization: Bearer ' . $token,
+            'X-GitHub-Api-Version: 2022-11-28'
+        ],
+    ]
+]);
+
+echo "# Organization Members\n\n";
+
+function print_members(string $url, $ctx) {
+    $page = 1;
+    $query = preg_match('/\?/', $url) ? '&' : '?';
+    while ($data = @file_get_contents($url . $query . 'page=' . $page++, false, $ctx)) {
+        $members = json_decode($data);
+        if (!count($members)) {
+            break;
+        }
+        foreach ($members as $member) {
+            if (property_exists($member, 'members_url')) {
+                echo " * @[{$member->slug}]({$member->html_url})\n";
+            } else {
+                echo " * [{$member->login}]({$member->html_url})\n";
+            }
+        }
+    }
+}
+print_members("https://api.github.com/orgs/{$org}/members", $ctx);
+
+echo "\n";
+
+echo "# Organization Roles\n\n";
+$roles = @json_decode(file_get_contents("https://api.github.com/orgs/{$org}/organization-roles", false, $ctx));
+
+if ($roles === null) {
+    echo "Not able to access roles, need `admin:org` scope.\n\n";
+} else {
+    foreach ($roles as $role) {
+        echo "## {$role->name}: {$role->description}\n\n";
+
+        print_members("https://api.github.com/orgs/{$org}/organization-roles/{$role->slug}/users", $ctx);
+        print_members("https://api.github.com/orgs/{$org}/organization-roles/{$role->slug}/teams", $ctx);
+
+        echo "\n";
+    }
+}
+
+echo "# Teams and Members\n\n";
+
+$teams = json_decode(file_get_contents("https://api.github.com/orgs/{$org}/teams", false, $ctx));
+
+foreach ($teams as $team) {
+    echo "## [{$team->name}]({$team->html_url}): {$team->description}\n\n";
+
+    print_members("https://api.github.com/orgs/{$org}/teams/{$team->slug}/members", $ctx);
+    print_members("https://api.github.com/orgs/{$org}/teams/{$team->slug}/teams", $ctx);
+
+    echo "\n";
+}
+
+echo "# Repositories and Members\n\n";
+
+function print_repos(string $url, string $org, $ctx) {
+    $page = 1;
+    while ($repos = json_decode(file_get_contents($url . '?page=' . $page++, false, $ctx))) {
+        foreach ($repos as $repo) {
+            if ($repo->archived || $repo->disabled) {
+                continue;
+            }
+            echo "## [{$repo->name}]({$repo->html_url}): {$repo->description}\n\n";
+
+            print_members("https://api.github.com/repos/{$org}/{$repo->name}/collaborators?affiliation=direct", $ctx);
+            print_members("https://api.github.com/repos/{$org}/{$repo->name}/teams", $ctx);
+
+            echo "\n";
+        }
+    }
+}
+
+print_repos("https://api.github.com/orgs/{$org}/repos", $org, $ctx);
