@@ -601,7 +601,7 @@ group php.gd.devel {
   num => 89
   path => /var/spool/mlmmj/gd-devel
   mail => gd-devel@lists.php.net
-  desc => Developing libgd (https://www.libgd.org)
+  desc => Developing libgd (https://libgd.github.io/)
 }
 
 group php.gd.bugs {
