@@ -77,7 +77,7 @@ function scan($dir, $lang)
 		'control-structures.', 'language.',
 		'about.', 'faq.', 'features.',
 	);
-	
+
 	$count = 0;
 	echo "Lang: $lang\n";
 
@@ -111,7 +111,7 @@ function scan($dir, $lang)
 			if ($x !== false) {
 				$keyword = substr($keyword, 0, $x);
 			}
-			
+
 			// Skip PHP 4 domxml (book.domxml). It uses function. syntax, unlike book.dom
 			if (0 === strpos($keyword, 'function.dom') && false === strpos($keyword, 'simplexml')) {
 				continue;
@@ -162,7 +162,7 @@ function scan($dir, $lang)
 		}
 	}
 	closedir($d);
-	
+
 	echo "Added entries for $count files\n";
 	echo "\n";
 }
@@ -175,14 +175,11 @@ function scan_langs($root)
 	if (!$d) {
 		return;
 	}
-	readdir($d); readdir($d);
 	while (($f = readdir($d)) !== false) {
-		if ($f === '.svn') {
+		if (strpos($f, '.') !== false) {
 			continue;
 		}
-		if ($f === '.git') {
-			continue;
-		}
+
 		$file = $root . DIRECTORY_SEPARATOR . $f;
 
 		if (is_dir($file)) {
@@ -191,4 +188,3 @@ function scan_langs($root)
 	}
 	closedir($d);
 }
-
